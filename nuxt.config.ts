@@ -95,8 +95,8 @@ export default defineNuxtConfig({
     },
 
   app: {
-    baseURL: '/',
-    buildAssetsDir: 'assets', // This can also help with caching. Best practice
+    // baseURL: '/',
+    // buildAssetsDir: 'assets', 
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       // Root level configuration parameters

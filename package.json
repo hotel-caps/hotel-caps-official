@@ -8,7 +8,6 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "gh-pages --dotfiles -d .output/public -b gh-pages -r git@github-hotelcaps:hotelcaps/hotelcaps.github.io.git",
     "ship": "git add . && git commit -m \"chore: update site and sync data\" && git push origin main"
   },
   "dependencies": {

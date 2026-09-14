@@ -89,7 +89,7 @@ onMounted(() => {
       // Force 0 delay on the text if it's a bot, otherwise calculate normally
       delay: isBot ? 0 : dynamicDelay + 0.5,
       y: 30,
-      duration: 0.6,
+      duration: 1.0,
       ease: 'power5.out'
     });
     

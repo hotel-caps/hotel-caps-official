@@ -22,12 +22,12 @@
     <!-- Foreground Content -->
     <div ref="heroContentRef" class="relative z-10 text-center flex flex-col  items-center text-white px-4">
       <!-- Eyebrow Title (Dancing Script + Scaled Down) -->
-      <span 
+      <!-- <span 
         class="block font-['Dancing_Script'] text-3xl sm:text-4xl lg:text-5xl mb-2 sm:mb-3 tracking-wide"
         :class="slide.eyebrowColorClass"
       >
         {{ slide.eyebrow }}
-      </span>
+      </span> -->
       <h1 class="font-display opacity-90 text-4xl max-w-sm sm:max-w-lg md:max-w-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-widest lg:tracking-widest md:leading-normal sm:leading-normal lg:leading-normal leading-relaxed">{{ slide.title }}</h1>
       <p class="font-body text-center max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mt-2 sm:mt-4 text-base sm:text-lg lg:text-xl opacity-90 tracking-wider leading-relaxed ">
         {{ slide.subtitle }}

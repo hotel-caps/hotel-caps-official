@@ -78,8 +78,8 @@ onMounted(() => {
     gsap.from(heroContentRef.value.children, {
       delay: dynamicDelay,
       y: 30,
-      duration: 1.8,
-      stagger: 0.6,
+      duration: 0.6,
+      stagger: 0.2,
       ease: 'power5.out'
     });
     

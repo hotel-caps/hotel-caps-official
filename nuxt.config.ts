@@ -34,8 +34,38 @@ export default defineNuxtConfig({
     // Explicitly tells Nuxt that your assets live in the /public folder
     dir: 'public', 
     
-    // Sets a high-quality baseline (90% is the industry sweet spot for WebP)
-    quality: 90 
+    // Sets a high-quality baseline (80% is the industry sweet spot for WebP)
+    quality: 80, 
+
+screens: {
+      // Standard Breakpoints
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      
+      // Custom UI Card & Gallery Specifics
+      w300: 300,
+      cardSm: 384,
+      card: 400,
+      w600: 600,
+      w603: 603,
+      w626: 626,
+      w655: 655,
+      gallerySm: 700,
+      w710: 710,
+      w711: 711,
+      galleryMd: 800,
+      galleryLg: 1200,
+      w1206: 1206,
+      w1252: 1252,
+      w1310: 1310,
+      galleryXl: 1400,
+      w1420: 1420,
+      w1422: 1422
+    }
   },
 
   // The modern, stable way to inline component CSS

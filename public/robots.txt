@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://capsfamily.in/sitemap.xml

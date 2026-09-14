@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     // Sets a high-quality baseline (80% is the industry sweet spot for WebP)
     quality: 80, 
 
-screens: {
+  screens: {
       // Standard Breakpoints
       xs: 320,
       sm: 640,
@@ -72,6 +72,7 @@ screens: {
       w1366: 1366,
       w1600: 1600,
       w1920: 1920,
+      w2400: 2400,
 
       // The 2x Retina & 4K display cuts Nuxt auto-calculated
       w2732: 2732,

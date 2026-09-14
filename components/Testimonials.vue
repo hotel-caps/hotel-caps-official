@@ -1,16 +1,8 @@
 <script setup>
-import { ref, onMounted, onUnmounted, markRaw } from 'vue';
-import Swiper from 'swiper';
-import { Navigation, EffectFade, Autoplay } from 'swiper/modules';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { PhUser } from '@phosphor-icons/vue';
 import IconHexagon from '~/components/icons/IconHexagon.vue';
-
-// Import Swiper's CSS
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-fade';
 
 // Register the GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -26,8 +18,8 @@ const galleryImages = ref([
   { 
     src: '/images/home/testimonial/rooms-t.jpg', 
     alt: 'A beautifully set up hall for an event',
-    width: 400, // Replace with actual native width
-    height: 400 // Replace with actual native height
+    width: 400, 
+    height: 400 
   },
   { 
     src: '/images/home/testimonial/restaurant-t.jpg', 
@@ -49,25 +41,34 @@ const galleryImages = ref([
   }
 ]);
 
-// Refs for GSAP and Swiper
+// Refs for DOM and State
 const main = ref(null);
-const swiperEl = ref(null);
+const activeIndex = ref(0);
+let autoplayInterval;
+let ctx; // Declare GSAP context at the root level for safe unmounting
 
-// --- ANIMATION & LOGIC ---
+// --- NATIVE SLIDER LOGIC ---
+const nextSlide = () => {
+  activeIndex.value = (activeIndex.value + 1) % testimonials.value.length;
+};
+
+const prevSlide = () => {
+  activeIndex.value = (activeIndex.value - 1 + testimonials.value.length) % testimonials.value.length;
+};
+
+const startAutoplay = () => {
+  autoplayInterval = setInterval(nextSlide, 5000);
+};
+
+const stopAutoplay = () => {
+  clearInterval(autoplayInterval);
+};
+
+// --- LIFECYCLES & ANIMATION ---
 onMounted(() => {
-  const testimonialSwiper = new Swiper(swiperEl.value, {
-    modules: [Navigation, EffectFade, Autoplay],
-    loop: true,
-    effect: 'fade',
-    fadeEffect: { crossFade: true },
-    autoplay: { delay: 5000, disableOnInteraction: false },
-    navigation: {
-      nextEl: '.testimonial-slider .swiper-button-next',
-      prevEl: '.testimonial-slider .swiper-button-prev',
-    },
-  });
+  startAutoplay(); // Ignite the native loop
 
-  let ctx = gsap.context(() => {
+  ctx = gsap.context(() => {
     const tl = gsap.timeline({
       scrollTrigger: { trigger: main.value, start: "top 75%" }
     });
@@ -81,7 +82,7 @@ onMounted(() => {
       { x: -50, y: -50 }, // Top-left
       { x: 50, y: -50 },  // Top-right
       { x: -50, y: 50 },  // Bottom-left
-      { x: 50, y: 50 }   // Bottom-right
+      { x: 50, y: 50 }    // Bottom-right
     ];
 
     galleryItems.forEach((item, index) => {
@@ -103,10 +104,12 @@ onMounted(() => {
     }, "-=0.4");
 
   }, main.value);
+});
 
-  onUnmounted(() => {
-    ctx.revert();
-  });
+// Cleanly registered at the top level to guarantee execution
+onUnmounted(() => {
+  ctx?.revert();
+  stopAutoplay(); // Prevent memory leaks and ghost loops
 });
 </script>
 
@@ -122,21 +125,29 @@ onMounted(() => {
           <p class="mt-4 text-lg text-gray-600 font-body">Hear directly from our valued guests about their memorable experiences and unforgettable stays with us.</p>
         </div>
 
-        <!-- Swiper Slider -->
-        <div class="testimonial-slider relative h-72">
-          <div ref="swiperEl" class="swiper h-full">
-            <div class="swiper-wrapper">
-              <!-- Refactored slide structure for correct layout -->
-              <div v-for="(testimonial, index) in testimonials" :key="index" class="swiper-slide flex items-center">
-                <div class="flex items-start">
-                  <!-- Vertical Bar -->
-                  <div class="w-1 bg-purple-500 rounded-full flex-shrink-0 self-stretch"></div>
-                  <!-- Content -->
-                  <div class="pl-0">
-                    <p class="testimonial-quote py-4 pr-3 text-lg md:text-lg text-gray-700 bg-purple-200 rounded-e-xl leading-relaxed font-body italic">
-                      "{{ testimonial.quote }}"
-                    </p>
-                    <!-- Author Block -->
+        <!-- Native Vue Slider -->
+        <div 
+          class="testimonial-slider relative h-72"
+          @mouseenter="stopAutoplay"
+          @mouseleave="startAutoplay"
+        >
+          <div class="relative w-full h-full">
+            <TransitionGroup name="fade">
+              <div 
+                v-for="(testimonial, index) in testimonials" 
+                v-show="activeIndex === index"
+                :key="index" 
+                class="absolute inset-0 flex items-center"
+              >
+                <!-- Your exact inner content structure -->
+                <div class="flex items-start h-full">
+                  <div class="pl-0 h-full relative">
+                    <div class="flex">
+                      <div class="w-1 bg-purple-500 rounded-full flex-shrink-0 self-stretch"></div>
+                      <p class="testimonial-quote py-4 pr-3 text-lg md:text-lg text-gray-700 bg-purple-200 rounded-e-xl leading-relaxed font-body italic">
+                        "{{ testimonial.quote }}"
+                      </p>
+                    </div>
                     <div class="mt-4 flex items-center absolute bottom-0 space-x-4">
                       <IconHexagon class="text-purple-500 w-16 h-16" />
                       <div>
@@ -147,12 +158,17 @@ onMounted(() => {
                   </div>
                 </div>
               </div>
-            </div>
+            </TransitionGroup>
           </div>
-          <!-- Navigation -->
+          
+          <!-- Native Navigation Controls -->
           <div class="absolute bottom-0 right-0 flex space-x-2 z-10">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <button @click="prevSlide" aria-label="Previous review" class="nav-btn group flex justify-center items-center">
+               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:-translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button @click="nextSlide" aria-label="Next review" class="nav-btn group flex justify-center items-center">
+               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
           </div>
         </div>
       </div>
@@ -217,25 +233,28 @@ onMounted(() => {
   opacity: 0;
 }
 
-/* Custom Swiper Navigation Styles */
-:deep(.testimonial-slider .swiper-button-next),
-:deep(.testimonial-slider .swiper-button-prev) {
-  position: static;
-  width: 3rem; height: 3rem;
-  margin: 0;
+/* --- Cinematic Crossfade Engine --- */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s ease-in-out;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* --- Native Navigation Buttons --- */
+.nav-btn {
+  width: 3rem; 
+  height: 3rem;
   background-color: #f1f5f9;
   color: #475569;
   border-radius: 0.5rem;
   transition: background-color 0.3s, color 0.3s;
 }
-:deep(.testimonial-slider .swiper-button-next:hover),
-:deep(.testimonial-slider .swiper-button-prev:hover) {
+.nav-btn:hover {
   background-color: #e2e8f0;
   color: #1e293b;
-}
-:deep(.testimonial-slider .swiper-button-next svg),
-:deep(.testimonial-slider .swiper-button-prev svg) {
-  width: 1rem;
 }
 
 /* --- HEXAGON AVATAR STYLES --- */

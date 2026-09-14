@@ -1,12 +1,6 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import Swiper from 'swiper';
-// Import the required Swiper modules
-import { Navigation, Thumbs } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { ref } from 'vue';
 
-// This component receives the list of gallery images as a prop
 const props = defineProps({
   galleryImages: {
     type: Array,
@@ -15,128 +9,122 @@ const props = defineProps({
   }
 });
 
-// Refs for our two Swiper instances
-const thumbsSwiperRef = ref(null);
-const mainSwiperRef = ref(null);
-const thumbsSwiperInstance = ref(null);
+const activeIndex = ref(0);
+const thumbScrollContainer = ref(null);
 
-onMounted(() => {
-  if (thumbsSwiperRef.value && mainSwiperRef.value) {
-    // Initialize the thumbnail slider first
-    thumbsSwiperInstance.value = new Swiper(thumbsSwiperRef.value, {
-      modules: [Navigation],
-      spaceBetween: 4,
-      slidesPerView: 4, // Show 4 thumbnails at a time
-      freeMode: true,
-      watchSlidesProgress: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
+const setActive = (index) => {
+  activeIndex.value = index;
+};
 
-    // Initialize the main preview slider, and link it to the thumbnails
-    new Swiper(mainSwiperRef.value, {
-      modules: [Thumbs],
-      spaceBetween: 10,
-      thumbs: {
-        swiper: thumbsSwiperInstance.value,
-      },
-    });
-  }
-});
+// Smooth native scrolling for the thumbnail track
+const scrollThumbs = (direction) => {
+  if (!thumbScrollContainer.value) return;
+  const scrollAmount = thumbScrollContainer.value.clientWidth * 0.75; // Scroll 75% of the view width
+  
+  thumbScrollContainer.value.scrollBy({
+    left: direction === 'left' ? -scrollAmount : scrollAmount,
+    behavior: 'smooth'
+  });
+};
 </script>
 
 <template>
-  <div class="room-gallery-container">
-    <!-- Main Preview Image Slider -->
-    <div ref="mainSwiperRef" class="swiper main-swiper">
-      <div class="swiper-wrapper">
-        <div v-for="(image, index) in galleryImages" :key="index" class="swiper-slide aspect-[3/2]">
-          <NuxtImg
-            :src="image" 
-            :alt="`Room image ${index + 1}`"
-            width="1200"
-            height="800"
-            format="webp"
-            quality="80"
-            loading="lazy" 
-            class="w-full h-full object-cover rounded-2xl transform transition-transform duration-300 hover:scale-110"
-          />
-        </div>
-      </div>
+  <div class="room-gallery-container w-full flex flex-col gap-4">
+    
+    <!-- Main Preview Image Slider (With Cinematic Crossfade) -->
+    <div class="relative w-full aspect-[3/2] overflow-hidden rounded-2xl bg-zinc-900">
+      <TransitionGroup name="fade">
+        <NuxtImg
+          v-for="(image, index) in galleryImages"
+          v-show="activeIndex === index"
+          :key="image"
+          :src="image"
+          :alt="`Room image ${index + 1}`"
+          width="1200"
+          height="800"
+          format="webp"
+          quality="80"
+          :loading="index === 0 ? 'eager' : 'lazy'"
+          :fetchpriority="index === 0 ? 'high' : 'auto'"
+          class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+        />
+      </TransitionGroup>
     </div>
 
     <!-- Thumbnail Slider -->
-    <div class="relative mt-4">
-      <div ref="thumbsSwiperRef" class="swiper thumbs-swiper">
-        <div class="swiper-wrapper">
-          <div v-for="(image, index) in galleryImages" :key="index" class="swiper-slide thumb-slide">
-            <NuxtImg
-              :src="image" 
-              :alt="`Room thumbnail ${index + 1}`"
-              width="1200"
-              height="800"
-              format="webp"
-              quality="80"
-              loading="lazy" 
-              class="w-full h-full object-cover rounded-lg cursor-pointer"
-            />
-          </div>
-        </div>
+    <div class="relative w-full group">
+      
+      <!-- Prev Button -->
+      <button 
+        v-if="galleryImages.length > 4" 
+        @click="scrollThumbs('left')"
+        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-8 h-8 flex items-center justify-center bg-amber-500/90 text-stone-900 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-amber-400"
+        aria-label="Previous images"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+
+      <!-- Scrollable Track -->
+      <div 
+        ref="thumbScrollContainer" 
+        class="flex gap-2 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
+      >
+        <button
+          v-for="(image, index) in galleryImages"
+          :key="'thumb-' + index"
+          @click="setActive(index)"
+          class="relative shrink-0 w-[calc(25%-0.375rem)] aspect-[3/2] snap-start rounded-lg overflow-hidden border-2 transition-all duration-300"
+          :class="activeIndex === index ? 'border-amber-500 opacity-100' : 'border-transparent opacity-50 hover:opacity-80'"
+        >
+          <!-- Optimized tiny thumbnail cuts from Vercel -->
+          <NuxtImg
+            :src="image"
+            :alt="`Thumbnail ${index + 1}`"
+            width="300"
+            height="200"
+            format="webp"
+            quality="80"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </button>
       </div>
-      <!-- Navigation arrows are only shown if there are more than 4 images -->
-      <template v-if="galleryImages.length > 4">
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </template>
+
+      <!-- Next Button -->
+      <button 
+        v-if="galleryImages.length > 4" 
+        @click="scrollThumbs('right')"
+        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-8 h-8 flex items-center justify-center bg-amber-500/90 text-stone-900 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-amber-400"
+        aria-label="Next images"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
     </div>
   </div>
 </template>
 
 <style scoped>
-.room-gallery-container {
-  position: relative;
+/* Cinematic Crossfade Engine */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.main-swiper {
-  border-radius: 1rem;
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
-
-.thumbs-swiper {
-  padding: 0 2.5rem; /* Make space for the arrows */
-}
-
-.thumb-slide {
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-  border: 2px solid transparent;
-  border-radius: 0.6rem;
-}
-
-.thumb-slide.swiper-slide-thumb-active {
+.fade-enter-to,
+.fade-leave-from {
   opacity: 1;
-  border-color: #f59e0b; /* amber-500 */
 }
 
-:deep(.swiper-button-next),
-:deep(.swiper-button-prev) {
-  color: #1c1917; /* stone-900 */
-  width: 2rem;
-  height: 2rem;
-  background-color: rgba(255, 174, 0, 0.9);
-  border-radius: 9999px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  top: 60%;
+/* Hide scrollbar natively across browsers while keeping functionality */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
-:deep(.swiper-button-next svg),
-:deep(.swiper-button-prev svg) {
-  width: .6rem;
-}
-:deep(.swiper-button-prev) {
-  left: 0;
-}
-:deep(.swiper-button-next) {
-  right: 0;
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 </style>

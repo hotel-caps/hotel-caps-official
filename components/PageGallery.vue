@@ -41,7 +41,7 @@
     <div class="w-full relative">
       <div 
         ref="scrollContainer"
-        class="flex overflow-x-auto overflow-y-hidden hide-scrollbar gap-4 sm:gap-5 lg:gap-6 px-4 sm:px-6 lg:px-8"
+        class="flex overflow-x-auto overflow-y-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] select-none !scroll-auto gap-4 sm:gap-5 lg:gap-6 px-4 sm:px-6 lg:px-8"
         :class="{ 'cursor-grab': !isDragging, 'cursor-grabbing': isDragging }"
         @mousedown="onMouseDown"
         @mousemove="onMouseMove"
@@ -214,17 +214,3 @@ onUnmounted(() => {
   if (resumeTimeout) clearTimeout(resumeTimeout);
 });
 </script>
-
-<style scoped>
-/* Hides the native scrollbar while retaining 100% native scroll/swipe functionality */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  scroll-behavior: auto !important; 
-  -webkit-user-select: none;
-  user-select: none;
-}
-</style>

@@ -25,6 +25,9 @@ export default defineNuxtConfig({
   },
 
   image: {
+    // Use Vercel's image optimization service for better performance
+    provider: 'vercel',
+
     // Forces the generator to always output highly compressed WebP files
     format: ['webp'], 
     
@@ -33,6 +36,11 @@ export default defineNuxtConfig({
     
     // Sets a high-quality baseline (90% is the industry sweet spot for WebP)
     quality: 90 
+  },
+
+  // The modern, stable way to inline component CSS
+  features: {
+    inlineStyles: true
   },
 
   // 2. Sitemap Module Configuration
@@ -59,6 +67,20 @@ export default defineNuxtConfig({
   robots: {
     disallow: [], // An empty array explicitly means "Allow Everything"
     sitemap: ['https://capsfamily.in/sitemap.xml']
+  },
+
+  // 3. Keep your Vite chunk splitting for GSAP
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules/gsap')) { return 'gsap-core'; }
+            if (id.includes('node_modules/vue')) { return 'vue-core'; }
+          }
+        }
+      }
+    }
   },
 
   routeRules: {

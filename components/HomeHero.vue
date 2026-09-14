@@ -77,7 +77,6 @@ onMounted(() => {
     // Hero Content Animation
     gsap.from(heroContentRef.value.children, {
       delay: dynamicDelay,
-      opacity: 0,
       y: 30,
       duration: 1.8,
       stagger: 0.6,

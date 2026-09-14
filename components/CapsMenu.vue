@@ -247,8 +247,8 @@
             <div class="grid transition-all duration-500 ease-in-out" :class="openAccordions.includes(category) ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
               <div class="overflow-hidden">
                 <div class="p-5 pt-7 flex flex-col gap-6 border-t border-[#2e2e2e]">
-                  <div v-for="item in getItemsByCategory(category)" :key="item.id" class="flex gap-4">
-                    <div class="w-24 h-18 shrink-0 rounded-xl overflow-hidden">
+                  <div v-for="item in getItemsByCategory(category)" :key="item.id" class="flex items-start gap-4">
+                    <div class="w-24 h-18 aspect-[4/3] shrink-0 rounded-xl overflow-hidden">
                       <NuxtImg 
                         :src="item.image ? item.image : '/images/live/placeholder.jpg'" 
                         @error="$event.target.src = '/images/menu/placeholder.jpg'"

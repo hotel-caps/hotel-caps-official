@@ -22,12 +22,12 @@
     <!-- Foreground Content -->
     <div ref="heroContentRef" class="relative z-10 text-center flex flex-col  items-center text-white px-4">
       <!-- Eyebrow Title (Dancing Script + Scaled Down) -->
-      <!-- <span 
+      <span 
         class="block font-['Dancing_Script'] text-3xl sm:text-4xl lg:text-5xl mb-2 sm:mb-3 tracking-wide"
         :class="slide.eyebrowColorClass"
       >
         {{ slide.eyebrow }}
-      </span> -->
+      </span>
       <h1 class="font-display opacity-90 text-4xl max-w-sm sm:max-w-lg md:max-w-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-widest lg:tracking-widest md:leading-normal sm:leading-normal lg:leading-normal leading-relaxed">{{ slide.title }}</h1>
       <p class="font-body text-center max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mt-2 sm:mt-4 text-base sm:text-lg lg:text-xl opacity-90 tracking-wider leading-relaxed ">
         {{ slide.subtitle }}
@@ -55,48 +55,43 @@ const slide = {
   buttonText: 'Get in Touch'
 };
 
-const config = useRuntimeConfig();
-
 // Read the shared state controlled by app.vue
 const isInitialAppLoad = useState('isInitialAppLoad', () => true);
 
+// Synchronized delays to match the compressed 1.8s loader
+// Background scaling starts at 1.4s (while loader is fading)
+const bgDelay = isInitialAppLoad.value ? 1.4 : 0;
+// Text slides up at 1.6s (right as the loader vanishes)
+const textDelay = isInitialAppLoad.value ? 1.6 : 0;
+
+let ctx; // Declare context outside for safe unmounting
+
 onMounted(() => {
-  // 1. Detect synthetic performance auditors
-  const isBot = /Lighthouse|Googlebot|PTST|Speed Insights|Chrome-Lighthouse/i.test(navigator.userAgent);
-
-  // 2. The GSAP Time-Warp: Instantly fast-forward all animations globally if audited
-  if (isBot) {
-    gsap.globalTimeline.timeScale(999);
-  }
-
-  // 3. Drop the dynamic delay to 0 if a bot is auditing, otherwise 2.1s
-  const dynamicDelay = (isInitialAppLoad.value && !isBot) ? 2.1 : 0;
-
-  const ctx = gsap.context(() => {
+  ctx = gsap.context(() => {
 
     // Hero Background Animation
     gsap.from(bgImageRef.value.$el, {
-      delay: dynamicDelay,
+      delay: bgDelay,
       opacity: 0, 
       scale: 1.15,
       duration: 2.5,
-      ease: 'power5.out'
+      ease: 'power4.out' // Fixed from power5
     });
 
     // Hero Content Animation
     gsap.from(heroContentRef.value.children, {
-      // Force 0 delay on the text if it's a bot, otherwise calculate normally
-      delay: isBot ? 0 : dynamicDelay + 0.5,
-      y: 30,
+      delay: textDelay,
+      y: 30, // Note: Intentionally no opacity here so it's instantly paintable
       duration: 1.0,
-      ease: 'power5.out'
+      ease: 'power4.out' // Fixed from power5
     });
     
   }, heroSectionRef.value);
+});
 
-  onUnmounted(() => {
-    ctx.revert();
-  });
+// Registered correctly at the top level, not nested inside onMounted
+onUnmounted(() => {
+  ctx?.revert();
 });
 </script>
 

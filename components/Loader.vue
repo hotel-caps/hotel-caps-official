@@ -75,81 +75,70 @@ const logoRef = ref(null);
 const hotelChars = "HOTEL".split("");
 const capsChars = "CAPS".split("");
 
+let ctx; // Declare context outside for safe unmounting
+
 // --- ANIMATION LOGIC ---
 onMounted(() => {
-  // 1. Detect synthetic performance auditors
-  const isBot = /Lighthouse|Googlebot|PTST|Speed Insights|Chrome-Lighthouse/i.test(navigator.userAgent);
-
-  // 2. The Auditor Bypass: Instantly destroy the loader if it's a bot or internal navigation
-  if (isBot || !isInitialAppLoad.value) {
+  // 1. Instantly skip if it's an internal route navigation
+  if (!isInitialAppLoad.value) {
     isVisible.value = false;
-    isInitialAppLoad.value = false;
-    document.body.style.overflow = ''; 
-    return; // Kill the execution immediately
+    return;
   }
 
-  // 3. Normal Human Execution: Lock scrolling immediately
+  // 2. Lock scrolling immediately
   document.body.style.overflow = 'hidden';
 
-  // 4. Yield to the browser's paint cycle
+  // 3. Single frame yield (No setTimeout delays)
   requestAnimationFrame(() => {
-    setTimeout(() => {
+    ctx = gsap.context(() => {
       const tl = gsap.timeline({
         onComplete: () => {
-          // Fluidly fade out the entire loader screen
+          // Fast, fluid exit
           gsap.to(loaderContainer.value, {
             opacity: 0,
-            duration: 1.2,
+            duration: 0.5, // ⚡ Slashed from 1.2s to 0.5s
             ease: "power2.inOut",
             onComplete: () => {
-              // Physically remove the node from the DOM
               isVisible.value = false;
               isInitialAppLoad.value = false; 
-              
-              // Unlock scrolling once the loader is completely gone
               document.body.style.overflow = '';
             }
           });
         }
       });
 
-      // Subtle Radial Glow Fade In (Slower)
-      tl.to(glowBg.value, {
-        opacity: 1,
-        duration: 2,
-        ease: "power2.inOut"
-      }, 0)
-
-      // Logo Fade In (Slower burn)
-      .to(logoRef.value.$el, {
-        opacity: 1,
-        duration: 2.5,
-        ease: "power2.inOut"
-      }, 0.5)
-
-      // "HOTEL" Swirl - Slower stagger, slower flip
-      .fromTo('.hotel-char',
-        { opacity: 0, rotationY: -90, z: -50 },
-        { opacity: 1, rotationY: 0, z: 0, duration: 1, stagger: 0.15, ease: "back.out(1.2)" },
-        0.8)
-
-      // "CAPS" Seal Stamp - Slower impact, softer scale drop
-      .fromTo('.caps-char',
-        { opacity: 0, scale: 3 },
-        { opacity: 1, scale: 1, duration: 0.7, stagger: 0.25, ease: "power3.out" },
-        1.3)
-
-      // Cinematic Hold before exit
-      .to({}, { duration: 0.4 }); 
-    }, 50); 
+      // The Compressed Cinematic Timeline
+      // 0.0s: Glow starts
+      tl.to(glowBg.value, { opacity: 1, duration: 1, ease: "power2.inOut" }, 0)
+        
+        // 0.15s: Logo fades in
+        .to(logoRef.value.$el, { opacity: 1, duration: 1.2, ease: "power2.inOut" }, 0.15)
+        
+        // 0.25s: "HOTEL" swirl (tighter stagger)
+        .fromTo('.hotel-char',
+          { opacity: 0, rotationY: -90, z: -50 },
+          { opacity: 1, rotationY: 0, z: 0, duration: 0.8, stagger: 0.1, ease: "back.out(1.2)" },
+          0.25)
+        
+        // 0.45s: "CAPS" stamp
+        .fromTo('.caps-char',
+          { opacity: 0, scale: 3 },
+          { opacity: 1, scale: 1, duration: 0.6, stagger: 0.15, ease: "power3.out" },
+          0.45)
+        
+        // Brief cinematic hold before exit triggers
+        .to({}, { duration: 0.2 }); 
+    });
   });
 });
 
-// Failsafe: Ensure overflow is restored if component is unmounted unexpectedly
+// Failsafe: Ensure overflow is restored and GSAP is cleaned up
 onBeforeUnmount(() => {
+  ctx?.revert(); 
   document.body.style.overflow = '';
 });
 </script>
+
 <style scoped>
 .perspective-\[1000px\] {
   perspective: 1000px;

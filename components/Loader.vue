@@ -45,7 +45,7 @@
         </p>
 
         <!-- "CAPS" Text - Spacing increased (changed -mt-2 to mt-3) -->
-        <p class="text-4xl sm:text-5xl font-bold tracking-[0.3em] mt-3 flex ml-[0.3em]">
+        <p class="text-4xl sm:text-5xl font-bold tracking-[0.3em] mt-1 flex ml-[0.3em]">
           <span
             v-for="(char, index) in capsChars"
             :key="'c-' + index"
@@ -117,14 +117,14 @@ onMounted(() => {
         // 0.25s: "HOTEL" swirl (tighter stagger)
         .fromTo('.hotel-char',
           { opacity: 0, rotationY: -90, z: -50 },
-          { opacity: 1, rotationY: 0, z: 0, duration: 0.8, stagger: 0.1, ease: "back.out(1.2)" },
-          0.25)
+          { opacity: 1, rotationY: 0, z: 0, duration: 0.9, stagger: 0.1, ease: "back.out(1.2)" },
+          0.15)
         
         // 0.45s: "CAPS" stamp
         .fromTo('.caps-char',
           { opacity: 0, scale: 3 },
-          { opacity: 1, scale: 1, duration: 0.6, stagger: 0.15, ease: "power3.out" },
-          0.45)
+          { opacity: 1, scale: 1, duration: 0.8, stagger: 0.15, ease: "power3.out" },
+          0.25)
         
         // Brief cinematic hold before exit triggers
         .to({}, { duration: 0.2 }); 

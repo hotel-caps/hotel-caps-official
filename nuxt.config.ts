@@ -64,7 +64,17 @@ screens: {
       w1310: 1310,
       galleryXl: 1400,
       w1420: 1420,
-      w1422: 1422
+      w1422: 1422,
+
+      // The new native 1x intrinsic widths
+      w1366: 1366,
+      w1600: 1600,
+      w1920: 1920,
+
+      // The 2x Retina & 4K display cuts Nuxt auto-calculated
+      w2732: 2732,
+      w3200: 3200,
+      w3840: 3840
     }
   },
 

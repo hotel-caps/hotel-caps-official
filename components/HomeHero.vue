@@ -82,7 +82,7 @@ onMounted(() => {
     gsap.from(heroContentRef.value.children, {
       delay: textDelay,
       y: 30, // Note: Intentionally no opacity here so it's instantly paintable
-      duration: 1.0,
+      duration: 1.5,
       ease: 'power4.out' // Fixed from power5
     });
     

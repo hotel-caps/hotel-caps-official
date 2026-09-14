@@ -92,7 +92,6 @@ onUnmounted(() => {
         format="webp"
         width="1600"
         height="1067"
-        sizes="100vw"
         quality="80"
         fetchpriority="high"
         loading="eager"

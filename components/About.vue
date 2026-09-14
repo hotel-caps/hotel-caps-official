@@ -54,7 +54,6 @@ onMounted(() => {
         alt="About Hotel CAPS"
         width="1366"
         height="910"
-        sizes="100vw"
         format="webp"
         quality="80"
         loading="lazy"

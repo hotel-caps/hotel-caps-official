@@ -41,7 +41,6 @@ onMounted(() => {
 </template>
 
 <style>
-@import '~/assets/css/fonts.css';
 
 /* This global style is a simple and effective way to lock the scroll 
    when the loader is active, without needing complex JavaScript watchers.

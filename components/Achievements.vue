@@ -138,6 +138,6 @@ onMounted(() => {
   background-size: 24px 24px;
 }
 .font-serif-thin {
-    font-family: 'Cinzel', serif;
+    font-family: 'Faculty Glyphic', serif;
 }
 </style>

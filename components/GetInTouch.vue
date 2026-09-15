@@ -44,7 +44,7 @@
           </div>
 
           <!-- Item Title -->
-          <h3 class="contact-text-reveal font-sans font-semibold text-[#df9c4d] text-sm uppercase tracking-widest mb-3">
+          <h3 class="contact-text-reveal font-sans font-semibold text-[#df9c4d] text-sm uppercase tracking-widest mt-2 mb-3">
             {{ item.title }}
           </h3>
 

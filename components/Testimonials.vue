@@ -144,8 +144,8 @@ onUnmounted(() => {
                   <div class="pl-0 h-full relative">
                     <div class="flex">
                       <div class="w-1 bg-purple-500 rounded-full flex-shrink-0 self-stretch"></div>
-                      <p class="testimonial-quote py-4 pr-3 text-lg md:text-lg text-gray-700 bg-purple-200 rounded-e-xl leading-relaxed font-body italic">
-                        "{{ testimonial.quote }}"
+                      <p class="testimonial-quote py-4 pr-3 text-2xl text-gray-700 bg-purple-200 rounded-e-xl leading-snug font-['Dancing_Script']">
+                        " {{ testimonial.quote }} "
                       </p>
                     </div>
                     <div class="mt-4 flex items-center absolute bottom-0 space-x-4">
@@ -226,7 +226,7 @@ onUnmounted(() => {
   position: absolute;
   top: 0; /* Adjusted position */
   left: -1rem;
-  font-family: 'Cinzel', serif;
+  font-family: 'Faculty Glyphic', serif;
   font-size: 5rem; /* Adjusted size */
   color: #c084fc; /* purple-400 */
   line-height: 1;

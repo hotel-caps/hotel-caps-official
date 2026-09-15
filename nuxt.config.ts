@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/image', '@nuxt/fonts'],
 
   // 1. Site configuration for Sitemap & Robots
   site: {
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     // Sets a high-quality baseline (80% is the industry sweet spot for WebP)
     quality: 80, 
 
-  screens: {
+    screens: {
       // Standard Breakpoints
       xs: 320,
       sm: 640,
@@ -79,6 +79,18 @@ export default defineNuxtConfig({
       w3200: 3200,
       w3840: 3840
     }
+  },
+
+  fonts: {
+    defaults: {
+      styles: ['normal'], 
+      subsets: ['latin'],
+    },
+    families: [
+      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700] },
+      { name: 'Faculty Glyphic', provider: 'google', weights: [400, 500, 600, 700] },
+      { name: 'Dancing Script', provider: 'google', weights: [400] }
+    ]
   },
 
   // The modern, stable way to inline component CSS

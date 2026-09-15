@@ -29,7 +29,7 @@
             />
 
             <!-- Thin, Uppercase Typography -->
-            <span class="font-display font-light uppercase tracking-[0.2em] text-lg sm:text-2xl whitespace-nowrap text-[var(--theme-color)]">
+            <span class="font-display font-normal uppercase tracking-[0.2em] text-lg sm:text-2xl whitespace-nowrap text-[var(--theme-color)]">
               {{ item.text }}
             </span>
 
@@ -43,7 +43,7 @@
           <NuxtLink 
             to="/contact" 
             @click="$emit('close')" 
-            class="mobile-contact-btn font-light relative flex items-center justify-center w-full py-2 px-8 font-display uppercase tracking-widest text-xl sm:text-2xl text-[#D97706] border border-[#D97776]/40 rounded-lg overflow-hidden transition-all duration-300 shadow-[0_0_15px_rgba(217,119,118,0)] hover:shadow-[0_0_20px_rgba(217,119,118,0.2)]"
+            class="mobile-contact-btn font-normal relative flex items-center justify-center w-full py-2 px-8 font-display uppercase tracking-widest text-xl sm:text-2xl text-[#D97706] border border-[#D97776]/40 rounded-lg overflow-hidden transition-all duration-300 shadow-[0_0_15px_rgba(217,119,118,0)] hover:shadow-[0_0_20px_rgba(217,119,118,0.2)]"
           >
             <span class="relative z-10 group-hover:text-white transition-colors duration-300">
               Contact Us

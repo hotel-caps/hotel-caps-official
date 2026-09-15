@@ -11,6 +11,7 @@
     "ship": "git add . && git commit -m \"chore: update site and sync data\" && git push origin main"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.14.0",
     "@nuxt/image": "^2.1.0",
     "@phosphor-icons/vue": "^2.2.1",
     "gsap": "^3.13.0",

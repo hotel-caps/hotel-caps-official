@@ -7,13 +7,19 @@
         <!-- CLICK TO START OVERLAY -->
         <div 
           v-if="!hasStarted"
-          class="absolute inset-0 z-[100000] bg-black flex flex-col items-center justify-center cursor-pointer"
+          class="absolute inset-0 z-[100000] bg-black flex flex-col items-center justify-center cursor-pointer p-4 sm:p-8"
           @click="startLiveSignage"
         >
-          <img src="/images/caps-solid-logo.png" alt="Hotel CAPS" class="h-[120px] mb-8 opacity-80 animate-pulse" />
-          <p class="text-white text-[24px] font-display tracking-widest opacity-80 uppercase">Click anywhere to start Live Feed</p>
+          <img 
+            src="/images/caps-solid-logo.png" 
+            alt="Hotel CAPS" 
+            class="h-16 sm:h-24 md:h-28 lg:h-[120px] w-auto mb-4 sm:mb-6 lg:mb-8 opacity-80 animate-pulse object-contain" 
+          />
+          <p class="text-white text-center text-xs sm:text-base md:text-xl lg:text-[24px] font-display tracking-widest opacity-80 uppercase max-w-[90%]">
+            Click anywhere to start Live Feed
+          </p>
         </div>
-
+        
         <!-- 1920x1080 SCALED STAGE -->
         <div 
           v-show="hasStarted"
@@ -145,7 +151,7 @@
                           <div class="flex flex-col min-w-0">
                             <span class="text-[24px] font-sans font-medium leading-tight text-white line-clamp-2 drop-shadow-sm">{{ item.name }}</span>
                             <!-- Offer / Description Rendering below title -->
-                            <span v-if="item.description" class="text-[15px] text-[#fbbf24] font-medium uppercase tracking-wider italic mt-1 line-clamp-1">{{ item.description }}</span>
+                            <span v-if="item.description" class="text-[15px] text-[#fbbf24] font-medium uppercase tracking-wider mt-1 line-clamp-1">{{ item.description }}</span>
                           </div>
                         </div>
                         
@@ -308,7 +314,7 @@
               <div class="absolute top-[280px] left-[70px] z-20">
                 
                 <!-- Scaled down Main Title -->
-                <h1 class="text-[80px] font-display font-black leading-[1.1] tracking-tighter drop-shadow-lg live-del-anim opacity-0 translate-x-[-30px]">
+                <h1 class="text-[80px] font-display font-bold leading-[1.1] tracking-tighter drop-shadow-lg live-del-anim opacity-0 translate-x-[-30px]">
                   FOOD.<br/>
                   <span class="text-[#2563eb] text-[100px] mb-[30px]">DELIVERED.</span>
                 </h1>
@@ -347,7 +353,7 @@
                   </div>
                    <div class="flex flex-col">
                      <span class="text-[24px] font-display font-bold text-[#2563eb] uppercase tracking-widest mb-[4px] leading-none">FREE HOME DELIVERY</span>
-                     <div class="flex mt-[10px] items-center gap-[12px] text-[34px] font-sans font-black text-gray-900 tracking-wider leading-none">
+                     <div class="flex mt-[10px] items-center gap-[12px] text-[34px] font-sans font-bold text-gray-900 tracking-wider leading-none">
                        <svg class="w-10 h-10 text-[#0f172a]" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"></path></svg>
                        92075 17064
                      </div>
@@ -375,7 +381,7 @@
               
               <!-- Floating Cursive Text (Moved Higher, Scaled Down) -->
               <div class="absolute top-[60px] right-[520px] -rotate-6 z-30 live-del-cursive opacity-0 scale-90">
-                 <p class="font-['Dancing_Script'] text-[50px] text-[#2563eb] font-bold leading-[1.1] drop-shadow-md">
+                 <p class="font-['Dancing_Script'] text-[50px] text-[#2563eb] leading-[1.1] drop-shadow-md">
                    Your favourites.<br/>Now closer to you.
                  </p>
               </div>
@@ -388,7 +394,7 @@
                  </div>
                  
                  <!-- Rider Image (Scaled down to 90% of the new smaller container) -->
-                 <img id="live-delivery-rider" src="/images/live/rider.png" class="absolute bottom-0 right-0 w-[90%] object-contain z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] opacity-0 translate-x-[400px]" alt="CAPS Delivery Rider" />
+                 <img id="live-delivery-rider" src="/images/live/rider.png" class="absolute -bottom-[100px] right-[100px] w-[90%] object-contain z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)] opacity-0 translate-x-[100px] -translate-y-[100px]" alt="CAPS Delivery Rider" />
               </div>
             </div>
 
@@ -730,7 +736,7 @@ const staticSlidesData = [
     images: ['/images/rooms/standard/1.jpg', '/images/rooms/deluxe/1.jpg', '/images/rooms/suite/1.jpg'],
     roomDetails: [
       { name: 'STANDARD ROOM', desc: 'Comfortable, elegantly furnished rooms designed for a restful stay.', price: '2,500' },
-      { name: 'DELUXE ROOM', desc: 'Spacious rooms with modern amenities for a more relaxed and enjoyable stay.', price: '2,8800' },
+      { name: 'DELUXE ROOM', desc: 'Spacious rooms with modern amenities for a more relaxed and enjoyable stay.', price: '2,800' },
       { name: 'PREMIUM SUITE', desc: 'An elevated experience with extra space, premium comfort and refined elegance.', price: '3,500' }
     ]
   },

@@ -19,8 +19,8 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'], 
         body: ['Inter', 'sans-serif'], 
-        number: ['Cinzel', 'serif'],
-        display: ['Faculty Glyphic', 'Cinzel', 'sans-serif'],
+        number: ['Inter', 'sans-serif'],
+        display: ['Faculty Glyphic', 'sans-serif'],
         decorative: ['Dancing Script', 'cursive'] 
       },
     },

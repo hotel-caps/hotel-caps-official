@@ -122,7 +122,7 @@ onUnmounted(() => {
         </h2>
         
         <!-- Subtitle (Inter / Sans-serif + Scaled Down) -->
-        <p class="font-sans text-base md:text-lg lg:text-xl mt-3 sm:mt-5 font-light tracking-wide leading-relaxed">
+        <p class="font-sans text-base md:text-lg lg:text-xl mt-3 sm:mt-5 font-normal tracking-wide leading-relaxed">
           {{ subtitle }}
         </p>
       </div>

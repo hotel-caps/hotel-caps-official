@@ -83,14 +83,18 @@ const initScrollAnimation = () => {
       }
     });
 
-    // 1. Container
-    tl.from('.hall-container-reveal', { opacity: 0, y: 10, duration: 1.2, ease: 'power3.out' })
-    // 2. Header Items
-    .from('.hall-header-reveal', { opacity: 0, y: 20, stagger: 0.1, duration: 0.8, ease: 'power3.out' }, "-=0.4")
-    // 3. Images (Icons)
-    .from('.hall-image-reveal', { opacity: 0, y: 20, stagger: 0.1, duration: 0.8, ease: 'power3.out' }, "-=0.6")
-    // 4. Texts
+    // 1. Container - Soft scale in instead of vertical drop
+    tl.from('.hall-container-reveal', { opacity: 0, scale: 0.95, duration: 1.2, ease: 'power3.out' })
+    
+    // 2. Header Items - Popping scale effect
+    .from('.hall-header-reveal', { opacity: 0, scale: 0.5, stagger: 0.1, duration: 0.8, ease: 'back.out(1.5)' }, "-=0.4")
+    
+    // 3. Images (Icons) - Popping scale effect
+    .from('.hall-image-reveal', { opacity: 0, scale: 0.5, stagger: 0.1, duration: 0.8, ease: 'back.out(1.5)' }, "-=0.6")
+    
+    // 4. Texts - Smooth vertical slide up (unchanged to keep text readable as it enters)
     .from('.hall-text-reveal', { opacity: 0, y: 20, stagger: 0.1, duration: 0.8, ease: 'power3.out' }, "-=0.8");
+    
   }, sectionRef.value);
 };
 

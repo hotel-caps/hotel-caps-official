@@ -32,7 +32,7 @@ onMounted(() => {
     </Transition>
     
     <!-- This div will now become visible after the loader fades out -->
-    <div :class="{ 'content-hidden': isLoading, 'content-visible': !isLoading }">
+    <div :class="{}">
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>

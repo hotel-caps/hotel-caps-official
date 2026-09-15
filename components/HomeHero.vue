@@ -81,8 +81,10 @@ onMounted(() => {
     // Hero Content Animation
     gsap.from(heroContentRef.value.children, {
       delay: textDelay,
+      opacity: 0, 
       y: 30, // Note: Intentionally no opacity here so it's instantly paintable
       duration: 1.5,
+      stagger: 0.1, // Gives a cinematic 1-2-3 reveal to your text elements
       ease: 'power4.out' // Fixed from power5
     });
     

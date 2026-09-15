@@ -60,9 +60,9 @@ const isInitialAppLoad = useState('isInitialAppLoad', () => true);
 
 // Synchronized delays to match the compressed 1.8s loader
 // Background scaling starts at 1.4s (while loader is fading)
-const bgDelay = isInitialAppLoad.value ? 1.4 : 0;
+const bgDelay = isInitialAppLoad.value ? 1.1 : 0;
 // Text slides up at 1.6s (right as the loader vanishes)
-const textDelay = isInitialAppLoad.value ? 1.6 : 0;
+const textDelay = isInitialAppLoad.value ? 1.4 : 0;
 
 let ctx; // Declare context outside for safe unmounting
 

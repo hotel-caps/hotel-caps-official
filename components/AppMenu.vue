@@ -72,16 +72,18 @@ defineEmits(['close']);
 import { 
   PhHouse, PhUsers, PhBed, PhTag, 
   PhForkKnife, PhBookOpen, PhPlayCircle, 
-  PhBuildings, PhCoffee 
+  PhBuildings, PhCoffee, PhShieldCheck, PhPencilSimpleLine  
 } from '@phosphor-icons/vue';
 
 const menuItems = [
   { text: 'Home', link: '/', color: '#D97706', icon: markRaw(PhHouse) },
   { text: 'About Us', link: '/about', color: '#e9a206', icon: markRaw(PhUsers) },
+  { text: 'Blog', link: '/blog', color: '#A95418', icon: markRaw(PhPencilSimpleLine) },
   { text: 'Rooms', link: '/rooms', color: '#2563eb', icon: markRaw(PhBed) },
   { text: 'Pricing', link: '/pricing', color: '#0284c7', icon: markRaw(PhTag) },
   { text: 'Restaurant', link: '/restaurant', color: '#03a661', icon: markRaw(PhForkKnife) },
   { text: 'Menu', link: '/menu', color: '#14b8a6', icon: markRaw(PhBookOpen) },
+  { text: 'Signatures', link: '/signatures', color: '#0f9a7d', icon: markRaw(PhShieldCheck) },
   { text: 'Live', link: '/live', color: '#82e9a6', icon: markRaw(PhPlayCircle) },
   { text: 'Events Hall', link: '/hall', color: '#e22473', icon: markRaw(PhBuildings) },
   { text: 'Catering', link: '/catering', color: '#df4444', icon: markRaw(PhCoffee) },

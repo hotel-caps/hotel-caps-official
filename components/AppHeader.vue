@@ -114,7 +114,7 @@ import { useRoute } from 'vue-router';
 // Import Phosphor Icons to act as our SVGs
 import { 
   PhCaretDown, PhHouse, PhUsers, PhBed, PhTag, 
-  PhForkKnife, PhBookOpen, PhPlayCircle, PhBuildings, PhCoffee 
+  PhForkKnife, PhBookOpen, PhPlayCircle, PhBuildings, PhCoffee, PhShieldCheck, PhPencilSimpleLine 
 } from '@phosphor-icons/vue';
 
 const props = defineProps({
@@ -136,7 +136,7 @@ const headerBgClass = computed(() => {
   const path = route.path;
   // Match the page themes (using Tailwind slate, emerald, rose, and a premium dark gold/zinc)
   if (path.includes('/rooms') || path.includes('/pricing')) return 'bg-slate-900/95 backdrop-blur-lg shadow-lg';
-  if (path.includes('/restaurant') || path.includes('/menu') || path.includes('/live')) return 'bg-[#051c14]/95 backdrop-blur-lg shadow-lg'; // Deep emerald
+  if (path.includes('/restaurant') || path.includes('/menu') || path.includes('/signatures') || path.includes('/live')) return 'bg-[#051c14]/95 backdrop-blur-lg shadow-lg'; // Deep emerald
   if (path.includes('/hall') || path.includes('/catering')) return 'bg-rose-950/95 backdrop-blur-lg shadow-lg';
   
   // Default (Home)
@@ -146,7 +146,7 @@ const headerBgClass = computed(() => {
 const dropdownBgClass = computed(() => {
   const path = route.path;
   if (path.includes('/rooms') || path.includes('/pricing')) return 'bg-[#141615]/95 border-slate-700';
-  if (path.includes('/restaurant') || path.includes('/menu') || path.includes('/live')) return 'bg-[#141615]/95 border-[#0d4a36]';
+  if (path.includes('/restaurant') || path.includes('/menu') || path.includes('/signatures') || path.includes('/live')) return 'bg-[#141615]/95 border-[#0d4a36]';
   if (path.includes('/hall') || path.includes('/catering')) return 'bg-[#141615]/95 border-rose-900';
   
   return 'bg-[#141615]/95 border-[#272a28]';
@@ -155,7 +155,7 @@ const dropdownBgClass = computed(() => {
 const dropdownCaretColor = computed(() => {
   const path = route.path;
   if (path.includes('/rooms') || path.includes('/pricing')) return 'border-b-slate-700';
-  if (path.includes('/restaurant') || path.includes('/menu') || path.includes('/live')) return 'border-b-[#0d4a36]';
+  if (path.includes('/restaurant') || path.includes('/menu') || path.includes('/signatures') || path.includes('/live')) return 'border-b-[#0d4a36]';
   if (path.includes('/hall') || path.includes('/catering')) return 'border-b-rose-900';
   
   return 'border-b-[#272a28]';
@@ -171,6 +171,7 @@ const navLinks = ref([
     subLinks: [
       { text: 'View Home', link: '/', icon: markRaw(PhHouse), hoverClass: 'hover:bg-[#D97706]/10 hover:text-[#D97706]' },
       { text: 'About Us', link: '/about', icon: markRaw(PhUsers), hoverClass: 'hover:bg-[#e9a206]/15 hover:text-[#e9a206]' },
+      { text: 'Our Blog', link: '/blog', icon: markRaw(PhPencilSimpleLine), hoverClass: 'hover:bg-[#A95418]/15 hover:text-[#A95418]' },
     ]
   },
   {
@@ -187,6 +188,7 @@ const navLinks = ref([
     subLinks: [
       { text: 'View Restaurant', link: '/restaurant', icon: markRaw(PhForkKnife), hoverClass: 'hover:bg-[#03a661]/15 hover:text-[#03a661]' },
       { text: 'Our Menu', link: '/menu', icon: markRaw(PhBookOpen), hoverClass: 'hover:bg-[#14b8a6]/15 hover:text-[#14b8a6]' },
+      { text: 'Signatures', link: '/signatures', icon: markRaw(PhShieldCheck ), hoverClass: 'hover:bg-[#0f9a7d]/15 hover:text-[#0f9a7d]' },
       { text: 'Live', link: '/live', icon: markRaw(PhPlayCircle), hoverClass: 'hover:bg-[#82e9a6]/15 hover:text-[#82e9a6]' },
     ]
   },

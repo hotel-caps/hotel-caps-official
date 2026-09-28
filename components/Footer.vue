@@ -20,8 +20,10 @@ const footerNav = ref([
   { text: 'Restaurant', href: '/restaurant' },
   { text: 'Auditorium', href: '/hall' },
   { text: 'About Us', href: '/about' },
+  { text: 'Our Blog', href: '/blog' },
   { text: 'Pricing', href: '/pricing' },
   { text: 'Our Menu', href: '/menu' },
+  { text: 'Signatures', href: 'signatures' },
   { text: 'Live', href: '/live' },
   { text: 'Our Catering', href: '/catering' }, 
   { text: 'Contact Us', href: '/contact' }

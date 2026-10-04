@@ -44,6 +44,7 @@ const footerNav = ref([
             quality="90"
             format="webp"
             loading="lazy"
+            densities="x1"
             class="h-[5rem] w-[5.618rem]" 
           />
           <div class="text-white flex flex-col items-center font-display">

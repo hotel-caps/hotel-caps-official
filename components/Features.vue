@@ -75,10 +75,12 @@ onMounted(() => {
             <NuxtImg 
               :src="feature.image" 
               :alt="feature.alt" 
-              format="webp"
+              width="600"
+              height="399"
               quality="90"
+              format="webp"
               loading="lazy"
-              sizes="sm:100vw md:50vw lg:400px"
+              densities="x1"
               class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
             />
           </div>

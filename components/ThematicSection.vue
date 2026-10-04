@@ -74,6 +74,7 @@ onMounted(() => {
         format="webp"
         quality="90"
         loading="lazy"
+        densities="x1"
         class="bg-image w-full h-full object-cover" 
       />
       <div class="absolute inset-0 bg-black/30"></div>

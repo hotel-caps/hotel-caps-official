@@ -1,7 +1,7 @@
 <template>
   <section 
     ref="heroSectionRef" 
-    class="relative w-full h-[99vh] min-h-[640px] portrait:h-[95vh] pb-12 sm:pb-16 lg:pb-20 flex items-end overflow-hidden bg-[#0B0D13]"
+    class="relative w-full h-[100vh] min-h-[640px] portrait:h-[96vh] pb-12 sm:pb-16 lg:pb-20 flex items-end overflow-hidden bg-[#0B0D13]"
   >
     <!-- 1. Background Image Layer (z-0) -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -13,6 +13,7 @@
         width="1600"
         height="1067"
         quality="100"
+        densities="x1"
         fetchpriority="high"
         loading="eager"
         preload

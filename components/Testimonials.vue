@@ -185,6 +185,7 @@ onUnmounted(() => {
               format="webp"
               quality="90"
               loading="lazy"
+              densities="x1"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
             />
             <div class="absolute inset-0 bg-black/10"></div>

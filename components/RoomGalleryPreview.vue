@@ -44,6 +44,7 @@ const scrollThumbs = (direction) => {
           height="800"
           format="webp"
           quality="90"
+          densities="x1"
           :loading="index === 0 ? 'eager' : 'lazy'"
           :fetchpriority="index === 0 ? 'high' : 'auto'"
           class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
@@ -85,6 +86,7 @@ const scrollThumbs = (direction) => {
             format="webp"
             quality="90"
             loading="lazy"
+            densities="x1"
             class="w-full h-full object-cover"
           />
         </button>

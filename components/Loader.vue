@@ -25,6 +25,7 @@
         height="267"
         format="webp"
         quality="90"
+        densities="x1"
         fetchpriority="high"
         loading="eager"
         preload

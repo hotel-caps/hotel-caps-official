@@ -142,7 +142,7 @@ const aboutGalleryData = {
     {
       src: "/images/about/caps-family/4.jpg",
       alt: "Hotel CAPS employees sharing a special team meal together",
-      width: 483,
+      width: 500,
       height: 400
     },
     {

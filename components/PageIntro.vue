@@ -69,6 +69,7 @@
               height="600"
               format="webp"
               quality="90"
+              densities="x1"
               loading="lazy"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />

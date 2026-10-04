@@ -93,6 +93,7 @@ onUnmounted(() => {
         width="1600"
         height="1067"
         quality="90"
+        densities="x1"
         fetchpriority="high"
         loading="eager"
         preload

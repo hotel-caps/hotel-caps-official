@@ -65,6 +65,7 @@
                     format="webp"
                     quality="90"
                     loading="lazy"
+                    densities="x1"
                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />    
             </div>
@@ -94,6 +95,7 @@
                     format="webp"
                     quality="90"
                     loading="lazy"
+                    densities="x1"
                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
             </div>

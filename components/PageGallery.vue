@@ -64,6 +64,7 @@
           quality="90"
           loading="lazy"
           draggable="false" 
+          densities="x1"
           class="h-[200px] sm:h-[300px] lg:h-[350px] w-auto max-w-none flex-shrink-0 rounded-[1.25rem] sm:rounded-[1.5rem] shadow-md duration-300 hover:brightness-110 hover:ring-2 hover:ring-[#1c1c1c]/30"
         />
       </div>

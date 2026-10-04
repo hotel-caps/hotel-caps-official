@@ -17,6 +17,7 @@
             format="webp"
             fetchpriority="high"
             loading="eager"
+            densities="x1"
             class="h-[2rem] sm:h-[2.5rem] w-[2.2472rem] sm:w-[2.809rem]" 
           />
           <div class="text-white font-medium font-display text-3xl leading-6 sm:text-3xl xl:text-4xl tracking-wider xl:leading-9 lg:leading-8 sm:leading-7">

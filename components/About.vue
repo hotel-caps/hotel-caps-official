@@ -57,6 +57,7 @@ onMounted(() => {
         format="webp"
         quality="90"
         loading="lazy"
+        densities="x1"
         class="absolute inset-0 w-full h-full object-cover object-center"
       />
       

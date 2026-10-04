@@ -17,7 +17,14 @@ export default defineNuxtConfig({
     port: 3002, // or your desired port
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/image', '@nuxt/fonts'],
+  modules: [
+    '@nuxtjs/tailwindcss', 
+    '@nuxtjs/sitemap', 
+    '@nuxtjs/robots', '@nuxt/image', 
+    '@nuxt/fonts', 
+    '@vercel/analytics/nuxt', 
+    '@vercel/speed-insights/nuxt'
+  ],
 
   // 1. Site configuration for Sitemap & Robots
   site: {

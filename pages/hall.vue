@@ -193,7 +193,7 @@ const hallGalleryData = {
     {
       src: "/images/hall/amenities/11.jpg",
       alt: "Parking area available for guests at Hotel CAPS",
-      width: 602,
+      width: 600,
       height: 400
     }
   ]

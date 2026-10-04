@@ -55,7 +55,7 @@ onMounted(() => {
         width="1366"
         height="910"
         format="webp"
-        quality="80"
+        quality="90"
         loading="lazy"
         class="absolute inset-0 w-full h-full object-cover object-center"
       />

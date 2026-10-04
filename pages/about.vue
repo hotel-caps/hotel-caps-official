@@ -136,7 +136,7 @@ const aboutGalleryData = {
     {
       src: "/images/about/caps-family/3.jpg",
       alt: "Hotel CAPS team enjoying a special treat arranged for employees",
-      width: 493,
+      width: 500,
       height: 400
     },
     {
@@ -154,7 +154,7 @@ const aboutGalleryData = {
     {
       src: "/images/about/caps-family/6.jpg",
       alt: "Hotel CAPS presenting a token of appreciation to the Nemmara MLA",
-      width: 298,
+      width: 300,
       height: 400
     },
     {
@@ -178,7 +178,7 @@ const aboutGalleryData = {
     {
       src: "/images/about/caps-family/10.jpg",
       alt: "Hotel CAPS sponsoring Souhrida Badminton Club Koduvayur and Smashfest tournament",
-      width: 398,
+      width: 400,
       height: 400
     },
     {

@@ -63,7 +63,7 @@
                     width="600"
                     height="400"
                     format="webp"
-                    quality="80"
+                    quality="90"
                     loading="lazy"
                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />    
@@ -92,7 +92,7 @@
                     width="600"
                     height="400"
                     format="webp"
-                    quality="80"
+                    quality="90"
                     loading="lazy"
                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />

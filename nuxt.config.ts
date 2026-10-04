@@ -2,10 +2,10 @@
 
 const baseImageWidths = [
   // Standard 100s & UI Breakpoints
-   300, 384, 400, 600, 700, 800, 960, 1200, 1366, 1536, 1600, 1920,
+  300, 320, 400, 500, 600, 700, 800, 900, 960, 1200, 1366, 1600, 1920,
   // Exact Folder Image Widths
-  266, 295, 298, 304, 309, 325, 348, 350, 398, 401, 402, 411, 435, 454, 457, 470, 483, 493,
-  515, 519, 527, 533, 576, 590, 602, 603, 610, 626, 634, 638, 655, 685, 710, 711, 712, 735, 1774
+  266, 325, 348, 350, 411, 435, 454, 457, 470, 515, 519, 
+  527, 533, 576, 590, 610, 626, 634, 638, 655, 685, 711, 735
 ]
 
 export default defineNuxtConfig({
@@ -15,14 +15,6 @@ export default defineNuxtConfig({
   devServer: {
     host: '0.0.0.0', // e.g., '0.0.0.0' for external access
     port: 3002, // or your desired port
-  },
-
-  runtimeConfig: {
-    // apiSecret: 'my-secret', 
-    public: {
-      // Public keys (client & server) - these are reactive on the client
-      initialAnimationDelay: 4, // Example: The delay you want to use
-    }
   },
 
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/image', '@nuxt/fonts'],

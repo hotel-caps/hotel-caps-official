@@ -183,7 +183,7 @@ onUnmounted(() => {
               :width="image.width"
               :height="image.height"
               format="webp"
-              quality="80"
+              quality="90"
               loading="lazy"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
             />

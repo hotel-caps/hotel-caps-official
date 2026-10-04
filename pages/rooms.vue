@@ -171,13 +171,13 @@ const roomsGalleryData = {
     {
       src: "/images/rooms/amenities/5.jpg",
       alt: "Wash basin and mirror in a Hotel CAPS room bathroom",
-      width: 266,
+      width: 300,
       height: 400
     },
     {
       src: "/images/rooms/amenities/6.jpg",
       alt: "Private bathroom with toilet and shower facilities at Hotel CAPS",
-      width: 266,
+      width: 300,
       height: 400
     },
     {
@@ -201,7 +201,7 @@ const roomsGalleryData = {
     {
       src: "/images/rooms/amenities/10.jpg",
       alt: "Parking area available for guests staying at Hotel CAPS",
-      width: 602,
+      width: 600,
       height: 400
     }
   ]

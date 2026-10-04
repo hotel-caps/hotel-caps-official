@@ -72,7 +72,7 @@ onMounted(() => {
         width="1920"
         height="1278"
         format="webp"
-        quality="80"
+        quality="90"
         loading="lazy"
         class="bg-image w-full h-full object-cover" 
       />

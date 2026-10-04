@@ -59,7 +59,7 @@
                   :height="blog.height || 675"
                   :style="{ aspectRatio: `${blog.width || 16} / ${blog.height || 9}` }"
                   format="webp"
-                  quality="80"
+                  quality="90"
                   loading="lazy"
                   draggable="false"
                   class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"

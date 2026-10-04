@@ -300,7 +300,7 @@
                         width="590"
                         height="442"
                         format="webp"
-                        quality="80"
+                        quality="90"
                         loading="lazy"
                         class="w-full h-full rounded-xl object-cover shadow-sm" 
                       />
@@ -616,7 +616,7 @@
                   width="590"
                   height="442"
                   format="webp"
-                  quality="80"
+                  quality="90"
                   loading="lazy"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />

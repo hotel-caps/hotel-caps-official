@@ -16,7 +16,7 @@
           format="webp"
           width="1600"
           height="1067"
-          quality="80"
+          quality="90"
           fetchpriority="high"
           loading="eager"
           preload

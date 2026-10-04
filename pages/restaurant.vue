@@ -167,7 +167,7 @@ const restaurantGalleryData = {
     {
       src: "/images/restaurant/food/7.jpg",
       alt: "Hotel CAPS mini meals with rice and assorted side dishes",
-      width: 309,
+      width: 300,
       height: 400
     },
     {
@@ -203,7 +203,7 @@ const restaurantGalleryData = {
     {
       src: "/images/restaurant/food/13.jpg",
       alt: "Spiced chicken fry served with fresh herbs",
-      width: 402,
+      width: 400,
       height: 400
     },
     {
@@ -227,7 +227,7 @@ const restaurantGalleryData = {
     {
       src: "/images/restaurant/food/17.jpg",
       alt: "Tandoori-style grilled chicken pieces fresh from the grill",
-      width: 295,
+      width: 300,
       height: 400
     },
     {
@@ -239,13 +239,13 @@ const restaurantGalleryData = {
     {
       src: "/images/restaurant/food/19.jpg",
       alt: "Hotel CAPS special Palada Payasam",
-      width: 304,
+      width: 300,
       height: 400
     },
     {
       src: "/images/restaurant/food/20.jpg",
       alt: "Hotel CAPS special Parippu Pradhaman",
-      width: 401,
+      width: 400,
       height: 400
     },
     {

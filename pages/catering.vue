@@ -137,7 +137,7 @@ const cateringGalleryData = {
     {
       src: "/images/catering/gallery/1.jpg",
       alt: "Hotel CAPS outdoor catering team preparing a live food counter",
-      width: 710,
+      width: 711,
       height: 400
     },
     {
@@ -155,7 +155,7 @@ const cateringGalleryData = {
     {
       src: "/images/catering/gallery/4.jpg",
       alt: "Freshly prepared dishes arranged for Hotel CAPS catering service",
-      width: 712,
+      width: 711,
       height: 400
     },
     {

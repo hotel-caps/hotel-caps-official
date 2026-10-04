@@ -38,7 +38,7 @@
                       width="600"
                       height="600"
                       format="webp"
-                      quality="80"
+                      quality="90"
                       loading="lazy"
                       class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     />

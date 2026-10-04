@@ -301,67 +301,19 @@ const restaurantCtaData = {
 };
 
 // 1. Core Meta Values
-const pageTitle = 'Multi-Cuisine Restaurant | Hotel CAPS, Koduvayur, Palakkad'
-const pageDesc = 'Enjoy memorable dining at Hotel CAPS, Koduvayur, Palakkad | Delicious dishes, quality service, multiple cuisines, varieties of flavors, snacks, refreshments & more.'
+const pageTitle = 'AC Family Restaurant | Hotel CAPS - Koduvayur, Palakkad'
+const pageDesc = 'Enjoy Multi-Cuisine Dining at Hotel CAPS, Koduvayur, Palakkad. Kerala, Indian, Chinese & Arabic dishes, snacks, desserts, hot & cold drinks & free delivery.'
 const canonicalUrl = 'https://capsfamily.in/restaurant'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-restaurant-og-image.jpg'
 
-// 2. Structured Link and JSON-LD Schema Injection
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        "name": "Hotel CAPS Multi-Cuisine Restaurant",
-        "description": pageDesc,
-        "url": canonicalUrl,
-        "image": ogImage,
-        "servesCuisine": [
-          "Kerala",
-          "Indian",
-          "Chinese",
-          "Multi-Cuisine"
-        ],
-        "telephone": [
-          "+919207517064",
-          "+918848369567"
-        ],
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Main Road, Pittupeedika",
-          "addressLocality": "Koduvayur",
-          "addressRegion": "Kerala",
-          "postalCode": "678501",
-          "addressCountry": "IN"
-        },
-        "parentOrganization": {
-          "@type": "Hotel",
-          "name": "Hotel CAPS",
-          "url": "https://capsfamily.in/"
-        }
-      })
-    }
-  ]
-})
-
-// 3. Nuxt 4 SEO Composable (Search & Social Cards)
-useSeoMeta({
-  title: pageTitle,
-  description: pageDesc,
-  ogTitle: pageTitle,
-  ogDescription: pageDesc,
-  ogUrl: canonicalUrl,
-  ogImage: ogImage,
-  twitterCard: 'summary_large_image',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDesc,
-  twitterImage: ogImage
+// 2. Master SEO, Sitelinks Navigation & JSON-LD Injection
+useCapsSeo({
+  pageTitle,
+  pageDesc,
+  canonicalUrl,
+  ogImage,
+  pageType: 'restaurant',
+  breadcrumbName: 'Multi-Cuisine Restaurant'
 })
 
 </script>

@@ -213,60 +213,19 @@ const hallCtaData = {
 };
 
 // 1. Core Meta Values
-const pageTitle = 'Auditorium & Event Hall | Hotel CAPS, Koduvayur, Palakkad'
-const pageDesc = 'Plan weddings, corporate events, banquets, meetings, functions & celebrations with us. Features modern amenities, parking space, AC seating & full catering.'
+const pageTitle = 'Auditorium & Event Hall | Hotel CAPS - Koduvayur, Palakkad'
+const pageDesc = 'Plan weddings, receptions, parties, meetings & celebrations at Hotel CAPS - Koduvayur, Palakkad. Spacious AC Auditorium with A/V, catering, lift & car parking.'
 const canonicalUrl = 'https://capsfamily.in/hall'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-hall-og-image.jpg'
 
-// 2. Structured Link and JSON-LD Schema Injection
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "EventVenue",
-        "name": "Hotel CAPS Auditorium & Event Hall",
-        "description": pageDesc,
-        "url": canonicalUrl,
-        "image": ogImage,
-        "telephone": [
-          "+919207517064",
-          "+918848369567"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Main Road, Pittupeedika",
-          "addressLocality": "Koduvayur",
-          "addressRegion": "Kerala",
-          "postalCode": "678501",
-          "addressCountry": "IN"
-        },
-        "containedInPlace": {
-          "@type": "Hotel",
-          "name": "Hotel CAPS",
-          "url": "https://capsfamily.in/"
-        }
-      })
-    }
-  ]
-})
-
-// 3. Nuxt 4 SEO Composable (Search & Social Cards)
-useSeoMeta({
-  title: pageTitle,
-  description: pageDesc,
-  ogTitle: pageTitle,
-  ogDescription: pageDesc,
-  ogUrl: canonicalUrl,
-  ogImage: ogImage,
-  twitterCard: 'summary_large_image',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDesc,
-  twitterImage: ogImage
+// 2. Master SEO, Sitelinks Navigation & JSON-LD Injection
+useCapsSeo({
+  pageTitle,
+  pageDesc,
+  canonicalUrl,
+  ogImage,
+  pageType: 'hall',
+  breadcrumbName: 'Auditorium & Events Hall'
 })
 
 </script>

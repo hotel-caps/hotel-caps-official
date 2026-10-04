@@ -61,7 +61,7 @@
           :height="img.height"
           :style="{ aspectRatio: `${img.width} / ${img.height}` }"
           format="webp"
-          quality="90"
+          quality="80"
           loading="lazy"
           draggable="false" 
           densities="x1"

@@ -24,7 +24,7 @@
         width="300"
         height="267"
         format="webp"
-        quality="90"
+        quality="80"
         densities="x1"
         fetchpriority="high"
         loading="eager"

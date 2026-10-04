@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { blogsData } from './data/blogs.js'
 
 const baseImageWidths = [
   // Standard 100s & UI Breakpoints
@@ -46,7 +47,7 @@ export default defineNuxtConfig({
     dir: 'public', 
     
     // Sets a high-quality baseline (80% is the industry sweet spot for WebP)
-    quality: 90, 
+    quality: 80, 
 
     screens: {
       // Standard Named Breakpoints
@@ -84,21 +85,29 @@ export default defineNuxtConfig({
 
   // 2. Sitemap Module Configuration
   sitemap: {
-    zeroRuntime: true, // Ensures the sitemap is generated at build time, not runtime
-    // Explicitly define all static routes
+    zeroRuntime: true,
     urls: [
       { loc: '/', changefreq: 'weekly', priority: 1.0 },
-      { loc: '/about', changefreq: 'monthly', priority: 0.8 },
       { loc: '/rooms', changefreq: 'weekly', priority: 0.9 },
-      { loc: '/pricing', changefreq: 'weekly', priority: 0.8 },
       { loc: '/restaurant', changefreq: 'weekly', priority: 0.9 },
       { loc: '/menu', changefreq: 'weekly', priority: 0.8 },
+      { loc: '/signatures', changefreq: 'weekly', priority: 0.8 },
       { loc: '/live', changefreq: 'weekly', priority: 0.8 },
+      { loc: '/pricing', changefreq: 'weekly', priority: 0.8 },
       { loc: '/hall', changefreq: 'monthly', priority: 0.8 },
       { loc: '/catering', changefreq: 'monthly', priority: 0.8 },
+      { loc: '/blog', changefreq: 'weekly', priority: 0.8 },
+      { loc: '/about', changefreq: 'monthly', priority: 0.8 },
       { loc: '/contact', changefreq: 'monthly', priority: 0.7 },
       { loc: '/policy', changefreq: 'yearly', priority: 0.3 },
       { loc: '/terms', changefreq: 'yearly', priority: 0.3 },
+      // Automatically inject all blog slugs into sitemap.xml
+      ...Object.entries(blogsData as Record<string, any>).map(([slug, post]) => ({
+        loc: `/blog/${slug}`,
+        lastmod: post.publishDate ? new Date(post.publishDate).toISOString() : undefined,
+        changefreq: 'monthly' as const,
+        priority: 0.7 as const
+      }))
     ]
   },
 
@@ -123,22 +132,26 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    // Core Navigation & Content (100% Static)
+    // Core Navigation & Content (100% Static Prerendered at Build Time)
     '/': { prerender: true },
     '/about': { prerender: true },
     '/rooms': { prerender: true },
     '/pricing': { prerender: true },
     '/restaurant': { prerender: true },
+    '/signatures': { prerender: true },
     '/hall': { prerender: true },
     '/catering': { prerender: true },
     '/contact': { prerender: true },
+
+    // Editorial Blog Ecosystem (Prerendered + ISR Edge Cached)
+    '/blog': { prerender: true },
+    '/blog/**': { prerender: true },
 
     // Legal (100% Static)
     '/policy': { prerender: true },
     '/terms': { prerender: true },
 
-    // The Dynamic Islands (HTML is Static, JS handles the WP Data)
-    // Nitro pre-builds the structure, and your client-side $fetch populates the text.
+    // Dynamic Islands (Static Shell + Client Fetch)
     '/menu': { prerender: true },
     '/live': { prerender: true },
   },
@@ -156,27 +169,22 @@ export default defineNuxtConfig({
   },
 
   app: {
-    // baseURL: '/',
-    // buildAssetsDir: 'assets', 
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      // Root level configuration parameters
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'Hotel CAPS - Luxury Rooms, Restaurant, Auditorium - Koduvayur',
+      title: 'Hotel CAPS - Koduvayur | AC Rooms, Restaurant & Auditorium',
 
-      // 1. Language metadata (Moved to correct root level)
       htmlAttrs: {
         lang: 'en'
       },
       
-      // 2. Base meta tags (Cleaned up duplicates)
       meta: [
-        { name: 'description', content: 'Welcome to Hotel CAPS - Koduvayur, Palakkad | Luxury Suites & Rooms | Multi-Cuisine Restaurant | Auditorium Hall | Outdoor Catering | Free Home Delivery' },
-        { name: 'robots', content: 'index, follow' },
+        { name: 'description', content: 'Stay, Dine & Celebrate at Hotel CAPS - Koduvayur, Palakkad. AC Luxury Rooms, Multi-Cuisine Restaurant & Auditorium. Catering, Free Delivery, Lift & Car Parking.' },
+        { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'author', content: 'kriz - https://brandsta.in' },
+        { name: 'application-name', content: 'Hotel CAPS' },
 
-        
         // Local Business Geographic Coordinates 
         { name: 'geo.region', content: 'IN-KL' },
         { name: 'geo.placename', content: 'Koduvayur, Palakkad' },
@@ -190,23 +198,21 @@ export default defineNuxtConfig({
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
         { property: 'og:image:type', content: 'image/jpeg' },
-        { property: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:card', content: 'summary_large_image' },
 
         // Windows PWA & Mobile Meta Tags
         { name: 'msapplication-TileColor', content: '#ffffff' },
         { name: 'msapplication-TileImage', content: '/images/favicons/ms-icon-144x144.png' },
         { name: 'theme-color', content: '#ffffff' },
-        { name: 'msapplication-config', content: 'browserconfig.xml' },
+        { name: 'msapplication-config', content: '/browserconfig.xml' },
 
-        // Apple Safari Device Customizations
         // PWA & Mobile Device Customizations
-        { name: 'mobile-web-app-capable', content: 'yes' }, // Modern generic standard
-        { name: 'apple-mobile-web-app-capable', content: 'yes' }, // Kept strictly for legacy iOS support
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
         { name: 'apple-mobile-web-app-title', content: 'Hotel CAPS' }
       ],
 
-      // 3. PWA & Favicon Links
       link: [
         // Apple Icons
         { rel: 'apple-touch-icon', sizes: '57x57', href: '/images/favicons/apple-icon-57x57.png' },
@@ -225,9 +231,9 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicons/favicon-32x32.png' },
         { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/images/favicons/favicon-96x96.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicons/favicon-16x16.png' },
-        // Cache-Busted Web Manifest Path
+        // Web Manifest
         { rel: 'manifest', crossorigin: 'use-credentials', href: '/manifest.json' }
-      ] // Empty script array completely dropped to keep runtime code light
+      ]
     }
-  }
+  },
 })

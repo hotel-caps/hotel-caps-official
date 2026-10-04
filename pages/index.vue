@@ -23,72 +23,18 @@ const homeGalleryData = {
 };
 
 // 1. Core Meta Values
-const pageTitle = 'Hotel CAPS - Luxury Rooms, Restaurant, Auditorium, Koduvayur'
-const pageDesc = 'Welcome to Hotel CAPS - Koduvayur, Palakkad | Luxury Suites & Rooms | Multi-Cuisine Restaurant | Auditorium Hall | Outdoor Catering | Free Home Delivery'
+const pageTitle = 'Hotel CAPS Koduvayur | Rooms, Restaurant & Auditorium'
+const pageDesc = 'Stay, Dine & Celebrate at Hotel CAPS - Koduvayur, Palakkad. AC Luxury Rooms, Multi-Cuisine Restaurant & Auditorium. Catering, Free Delivery, Lift & Car Parking.' 
 const canonicalUrl = 'https://capsfamily.in/' // Added trailing slash for consistency
 const ogImage = 'https://capsfamily.in/images/favicons/caps-home-og-image.jpg'
 
-// 2. Structured Link and Global Injection
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Hotel",
-        "name": "Hotel CAPS",
-        "description": pageDesc,
-        "url": canonicalUrl,
-        "image": ogImage,
-        "logo": "https://capsfamily.in/images/caps-solid-logo.png",
-        "email": "capsfamilybakes@gmail.com",
-        "telephone": [
-          "+919207517064",
-          "+918848369567"
-        ],
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Main Road, Pittupeedika",
-          "addressLocality": "Koduvayur",
-          "addressRegion": "Kerala",
-          "postalCode": "678501",
-          "addressCountry": "IN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "10.680926464534636",
-          "longitude": "76.65040838503162"
-        },
-        "amenityFeature": [
-          { "@type": "LocationFeatureSpecification", "name": "Luxury Rooms", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Multi-Cuisine Restaurant", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Auditorium Hall", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Outdoor Catering", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Free Home Delivery", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Ample Car Parking", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Elevator", "value": true }
-        ]
-      })
-    }
-  ]
-})
-
-// 3. Nuxt 4 Composable mapping both Search Engines and Social Cards
-useSeoMeta({
-  title: pageTitle,
-  description: pageDesc,
-  ogTitle: pageTitle,
-  ogDescription: pageDesc,
-  ogUrl: canonicalUrl,
-  ogImage: ogImage,
-  twitterCard: 'summary_large_image',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDesc,
-  twitterImage: ogImage
+// 2. Master SEO, Sitelinks Navigation & JSON-LD Injection
+useCapsSeo({
+  pageTitle,
+  pageDesc,
+  canonicalUrl,
+  ogImage,
+  pageType: 'home'
 })
 
 </script>

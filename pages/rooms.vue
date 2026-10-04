@@ -221,72 +221,19 @@ const roomsCtaData = {
 };
 
 // 1. Core Meta Values
-const pageTitle = 'Luxury Suites & Rooms | Hotel CAPS, Koduvayur, Palakkad'
-const pageDesc = 'Explore luxury suites and rooms at Hotel CAPS, Koduvayur | Experience comfortable stays, modern luxury, premium amenities & quality service in Palakkad.'
+const pageTitle = 'Luxury AC Suites & Rooms | Hotel CAPS - Koduvayur, Palakkad'
+const pageDesc = 'Explore Luxury AC Suites and Rooms at Hotel CAPS - Koduvayur, Palakkad. Experience comfortable stays, modern amenities, lift facility & ample car parking.'
 const canonicalUrl = 'https://capsfamily.in/rooms'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-rooms-og-image.jpg'
 
-// 2. Structured Link and JSON-LD Schema Injection
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "ItemPage",
-        "name": pageTitle,
-        "description": pageDesc,
-        "url": canonicalUrl,
-        "mainEntity": {
-          "@type": "Hotel",
-          "name": "Hotel CAPS",
-          "url": "https://capsfamily.in/",
-          "logo": "https://capsfamily.in/images/caps-solid-logo.png",
-          "image": ogImage,
-          "telephone": [
-            "+919207517064",
-            "+918848369567"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Main Road, Pittupeedika",
-            "addressLocality": "Koduvayur",
-            "addressRegion": "Kerala",
-            "postalCode": "678501",
-            "addressCountry": "IN"
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Accommodation & Suites",
-            "itemListElement": [
-              {
-                "@type": "HotelRoom",
-                "name": "Luxury Suites & Executive Rooms",
-                "description": "Comfortable stays with modern luxury, premium amenities, air conditioning, and room service."
-              }
-            ]
-          }
-        }
-      })
-    }
-  ]
-})
-
-// 3. Nuxt 4 SEO Composable (Search & Social Cards)
-useSeoMeta({
-  title: pageTitle,
-  description: pageDesc,
-  ogTitle: pageTitle,
-  ogDescription: pageDesc,
-  ogUrl: canonicalUrl,
-  ogImage: ogImage,
-  twitterCard: 'summary_large_image',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDesc,
-  twitterImage: ogImage
+// 2. Master SEO, Sitelinks Navigation & JSON-LD Injection
+useCapsSeo({
+  pageTitle,
+  pageDesc,
+  canonicalUrl,
+  ogImage,
+  pageType: 'rooms',
+  breadcrumbName: 'Suites & Rooms'
 })
 
 </script>

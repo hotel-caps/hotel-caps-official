@@ -16,7 +16,6 @@ export default defineEventHandler((event) => {
     }).toUpperCase().replace(/,/g, '');
 
     return {
-      // Splits "Title: Subtitle" to keep the listing card titles punchy
       title: article.pageTitle, 
       intro: article.pageDesc,
       date: formattedDate,

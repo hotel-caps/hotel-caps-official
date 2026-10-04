@@ -6,57 +6,21 @@ import PageHero from '~/components/PageHero.vue';
 const heroImages = ref([
   '/images/others/privacy.jpg'
 ]);
+
 // 1. Core Meta Values
 const pageTitle = 'Privacy Policy | Hotel CAPS - Koduvayur, Palakkad'
-const pageDesc = 'Learn how Hotel CAPS in Koduvayur, Palakkad collects, uses, and protects your personal data. Read our commitment to your privacy and data security.'
+const pageDesc = 'Learn how Hotel CAPS - Koduvayur, Palakkad collects, uses, and protects your personal data. Read our commitment to your privacy and data security.'
 const canonicalUrl = 'https://capsfamily.in/policy'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-policy-og-image.jpg'
 
-// 2. Structured Link and JSON-LD Schema Injection
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": pageTitle,
-        "description": pageDesc,
-        "url": canonicalUrl,
-        "publisher": {
-          "@type": "Hotel",
-          "name": "Hotel CAPS",
-          "url": "https://capsfamily.in/",
-          "logo": "https://capsfamily.in/images/caps-solid-logo.png",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Main Road, Pittupeedika",
-            "addressLocality": "Koduvayur",
-            "addressRegion": "Kerala",
-            "postalCode": "678501",
-            "addressCountry": "IN"
-          }
-        }
-      })
-    }
-  ]
-})
-
-// 3. Nuxt 4 SEO Composable (Search & Social Cards)
-useSeoMeta({
-  title: pageTitle,
-  description: pageDesc,
-  ogTitle: pageTitle,
-  ogDescription: pageDesc,
-  ogUrl: canonicalUrl,
-  ogImage: ogImage,
-  twitterCard: 'summary_large_image',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDesc,
-  twitterImage: ogImage
+// 2. Master SEO, Sitelinks Navigation & JSON-LD Injection
+useCapsSeo({
+  pageTitle,
+  pageDesc,
+  canonicalUrl,
+  ogImage,
+  pageType: 'webpage',
+  breadcrumbName: 'Privacy Policy'
 })
 
 </script>

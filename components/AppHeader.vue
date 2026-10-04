@@ -13,7 +13,7 @@
             alt="Hotel CAPS Logo"
             width="300"
             height="267"
-            quality="90"
+            quality="80"
             format="webp"
             fetchpriority="high"
             loading="eager"

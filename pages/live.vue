@@ -1152,7 +1152,7 @@ onBeforeUnmount(() => {
   clearTimeout(loopTimeout);
 });
 
-const pageTitle = 'CAPS Live | Hotel CAPS, Koduvayur, Palakkad'
+const pageTitle = 'CAPS Live | Hotel CAPS - Koduvayur, Palakkad'
 const pageDesc = 'Experience the Hotel CAPS Live digital feed. Stay updated with our daily specials, festive specials, exclusive highlights, & everything we offer.'
 const canonicalUrl = 'https://capsfamily.in/live'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-live-og-image.jpg'

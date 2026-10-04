@@ -76,7 +76,7 @@ const privacyData = {
     {
       heading: "1. Information We Collect",
       paragraphs: [
-        "At Hotel CAPS, we are committed to protecting your privacy. Whether you are booking a suite, reserving an event hall, or requesting catering services, we collect information to ensure a seamless and personalized experience."
+        "At Hotel CAPS, we are committed to protecting your privacy. Whether you are booking a suite, reserving an events hall, or requesting catering services, we collect information to ensure a seamless and personalized experience."
       ],
       bullets: [
         "Personal Identification: Full name, email address, phone number, and physical address.",
@@ -90,7 +90,7 @@ const privacyData = {
         "The data we collect is strictly used to fulfill our hospitality and service obligations to you. We do not sell your personal data to third parties under any circumstances."
       ],
       bullets: [
-        "To process hotel bookings and finalize event hall agreements.",
+        "To process hotel bookings and finalize events hall agreements.",
         "To customize catering menus and accommodate specific allergy or dietary requests.",
         "To send booking confirmations, receipts, and important pre-arrival communications."
       ]

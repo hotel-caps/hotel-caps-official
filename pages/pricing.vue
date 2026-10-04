@@ -131,67 +131,19 @@ const roomsGalleryData = {
 };
 
 // 1. Core Meta Values
-const pageTitle = 'Suites & Rooms Pricing | Hotel CAPS, Koduvayur, Palakkad'
-const pageDesc = 'View detailed rates & tariffs for Standard, Deluxe & Suite rooms at Hotel CAPS, Koduvayur. Plan your stay in Palakkad with transparent & competitive pricing.'
+const pageTitle = 'Room Tariffs & Pricing | Hotel CAPS - Koduvayur, Palakkad'
+const pageDesc = 'View detailed rates & tariffs for AC Standard, Deluxe & Suite rooms at Hotel CAPS, Koduvayur. Plan your stay in Palakkad with transparent & competitive pricing.'
 const canonicalUrl = 'https://capsfamily.in/pricing'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-pricing-og-image.jpg'
 
-// 2. Structured Link and JSON-LD Schema Injection
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "PriceSpecification",
-        "name": pageTitle,
-        "description": pageDesc,
-        "url": canonicalUrl,
-        "priceCurrency": "INR",
-        "eligibleQuantity": {
-          "@type": "QuantitativeValue",
-          "unitCode": "DAY",
-          "value": 1
-        },
-        "offeredBy": {
-          "@type": "Hotel",
-          "name": "Hotel CAPS",
-          "url": "https://capsfamily.in/",
-          "logo": "https://capsfamily.in/images/caps-solid-logo.png",
-          "image": ogImage,
-          "telephone": [
-            "+919207517064",
-            "+918848369567"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Main Road, Pittupeedika",
-            "addressLocality": "Koduvayur",
-            "addressRegion": "Kerala",
-            "postalCode": "678501",
-            "addressCountry": "IN"
-          }
-        }
-      })
-    }
-  ]
-})
-
-// 3. Nuxt 4 SEO Composable (Search & Social Cards)
-useSeoMeta({
-  title: pageTitle,
-  description: pageDesc,
-  ogTitle: pageTitle,
-  ogDescription: pageDesc,
-  ogUrl: canonicalUrl,
-  ogImage: ogImage,
-  twitterCard: 'summary_large_image',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDesc,
-  twitterImage: ogImage
+// 2. Master SEO, Sitelinks Navigation & JSON-LD Injection
+useCapsSeo({
+  pageTitle,
+  pageDesc,
+  canonicalUrl,
+  ogImage,
+  pageType: 'webpage',
+  breadcrumbName: 'Suites & Rooms Pricing'
 })
 
 </script>

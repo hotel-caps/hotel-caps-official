@@ -63,59 +63,20 @@ onMounted(async () => {
 // Define the data for our hero section
 const heroImages = '/images/menu/menu.jpg'
 
-const pageTitle = 'Digital Menu | Hotel CAPS, Koduvayur, Palakkad'
-const pageDesc = 'Browse the Hotel CAPS restaurant menu online, featuring multi-cuisine favorites, bestsellers, our delicacies, snacks, beverages & more.'
+// 1. Core Meta Values
+const pageTitle = 'Digital Restaurant Menu | Hotel CAPS - Koduvayur, Palakkad'
+const pageDesc = 'Browse the Digital Menu of Hotel CAPS - Koduvayur, Palakkad. Explore specials, multi-cuisine delicacies, snacks, hot & cold drinks & desserts for dining & delivery.'
 const canonicalUrl = 'https://capsfamily.in/menu'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-menu-og-image.jpg'
 
-// 2. Structured Link and JSON-LD Schema Injection
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Menu",
-        "name": pageTitle,
-        "description": pageDesc,
-        "url": canonicalUrl,
-        "mainEntity": {
-          "@type": "Restaurant",
-          "name": "Hotel CAPS Multi-Cuisine Restaurant",
-          "url": "https://capsfamily.in/restaurant",
-          "telephone": [
-            "+919207517064",
-            "+918848369567"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Main Road, Pittupeedika",
-            "addressLocality": "Koduvayur",
-            "addressRegion": "Kerala",
-            "postalCode": "678501",
-            "addressCountry": "IN"
-          }
-        }
-      })
-    }
-  ]
-})
-
-// 3. Nuxt 4 SEO Composable (Search & Social Cards)
-useSeoMeta({
-  title: pageTitle,
-  description: pageDesc,
-  ogTitle: pageTitle,
-  ogDescription: pageDesc,
-  ogUrl: canonicalUrl,
-  ogImage: ogImage,
-  twitterCard: 'summary_large_image',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDesc,
-  twitterImage: ogImage
+// 2. Master SEO, Sitelinks Navigation & JSON-LD Injection
+useCapsSeo({
+  pageTitle,
+  pageDesc,
+  canonicalUrl,
+  ogImage,
+  pageType: 'menu',
+  breadcrumbName: 'Digital Menu'
 })
 
 </script>

@@ -9,7 +9,7 @@ export const blogsData = {
     "publishDate": "2026-10-12T00:00:00Z",
     "readTime": 6,
     "featured": true,
-    "ogImage": "/images/blog/more-than-just-a-meal/cover.jpg",
+    "ogImage": "/images/blog/more-than-just-a-meal/og-image.jpg",
     "hero": {
       "image": "/images/blog/more-than-just-a-meal/cover.jpg",
       "breadcrumbs": [
@@ -111,6 +111,7 @@ export const blogsData = {
         "type": "quote-full",
         "quote": "Comfort is felt in the little things — space, privacy, warmth, and the ease of being welcomed well.",
         "color": "#7A3E12",
+        "Julee": true
       },
       {
         "type": "heading",

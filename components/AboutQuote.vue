@@ -57,7 +57,7 @@
                 width="800"
                 height="600"
                 format="webp"
-                quality="90"
+                quality="80"
                 loading="lazy"
                 densities="x1"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"

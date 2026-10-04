@@ -181,64 +181,19 @@ const cateringCtaData = {
 };
 
 // 1. Core Meta Values
-const pageTitle = 'Outdoor Catering Services | Hotel CAPS, Koduvayur, Palakkad'
-const pageDesc = 'Enjoy delicious flavors & quality service of Hotel CAPS to your events with our catering. Ideal for weddings, parties, meetings, functions & celebrations.'
+const pageTitle = 'Outdoor Catering | Hotel CAPS - Koduvayur, Palakkad'
+const pageDesc = 'Make weddings, parties, meetings, functions & celebrations memorable with the delicious flavors & quality catering services of Hotel CAPS - Koduvayur, Palakkad.'
 const canonicalUrl = 'https://capsfamily.in/catering'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-catering-og-image.jpg'
 
-// 2. Structured Link and JSON-LD Schema Injection
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FoodService",
-        "name": "Hotel CAPS Outdoor Catering Services",
-        "description": pageDesc,
-        "url": canonicalUrl,
-        "image": ogImage,
-        "provider": {
-          "@type": "Hotel",
-          "name": "Hotel CAPS",
-          "url": "https://capsfamily.in/"
-        },
-        "telephone": [
-          "+919207517064",
-          "+918848369567"
-        ],
-        "areaServed": {
-          "@type": "AdministrativeArea",
-          "name": "Palakkad"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Main Road, Pittupeedika",
-          "addressLocality": "Koduvayur",
-          "addressRegion": "Kerala",
-          "postalCode": "678501",
-          "addressCountry": "IN"
-        }
-      })
-    }
-  ]
-})
-
-// 3. Nuxt 4 SEO Composable (Search & Social Cards)
-useSeoMeta({
-  title: pageTitle,
-  description: pageDesc,
-  ogTitle: pageTitle,
-  ogDescription: pageDesc,
-  ogUrl: canonicalUrl,
-  ogImage: ogImage,
-  twitterCard: 'summary_large_image',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDesc,
-  twitterImage: ogImage
+// 2. Master SEO, Sitelinks Navigation & JSON-LD Injection
+useCapsSeo({
+  pageTitle,
+  pageDesc,
+  canonicalUrl,
+  ogImage,
+  pageType: 'catering',
+  breadcrumbName: 'Outdoor Catering'
 })
 
 </script>

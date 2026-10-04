@@ -82,7 +82,7 @@ const { data: article, error } = await useAsyncData(`blog-${slug}`, () =>
   $fetch(`/api/blog/${slug}`)
 )
 
-if (error.value) {
+if (error.value || !article.value) {
   throw createError({ statusCode: 404, statusMessage: 'Story not found', fatal: true })
 }
 
@@ -94,7 +94,7 @@ const toc = computed(() => {
     .map(b => ({ id: b.text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''), text: b.text }))
 })
 
-// 2. Map the Actual Component Objects (Not Strings!)
+// 2. Map the Actual Component Objects
 const resolveBlockComponent = (type) => {
   const map = {
     'editorial-intro': BlockParagraph,
@@ -117,8 +117,6 @@ const resolveBlockComponent = (type) => {
     'footer-nav': BlockFooterNav,
     'related-articles': BlockRelatedArticles
   }
-  
-  // Return the raw component object directly
   return map[type] || BlockParagraph
 }
 
@@ -129,51 +127,115 @@ onMounted(async () => {
   gsap.registerPlugin(ScrollTrigger);
   await nextTick();
 
-  setTimeout(() => {
-    ctx = gsap.context(() => {
-      const blocks = gsap.utils.toArray('.gsap-block-reveal');
-      
-      blocks.forEach((el) => {
-        // GSAP handles the initial hiding dynamically
-        gsap.fromTo(el, 
-          { y: 50, opacity: 0 },
-          { 
-            y: 0, 
-            opacity: 1, 
-            duration: 0.9, 
-            ease: 'power3.out',
-            scrollTrigger: { 
-              trigger: el, 
-              start: 'top 85%', // Triggers when the top of the element hits 85% of the viewport height
-              toggleActions: 'play none none none' 
-            }
-          }
-        );
-      });
-    });
+  ctx = gsap.context(() => {
+    const blocks = gsap.utils.toArray('.gsap-block-reveal');
     
-    ScrollTrigger.refresh();
-  }, 250); 
+    blocks.forEach((el, index) => {
+      const rect = el.getBoundingClientRect();
+      // Keep the first block & any block already in the initial viewport visible
+      // so Lighthouse never sees SSR content disappear after paint
+      if (index === 0 || rect.top < window.innerHeight * 0.85) {
+        gsap.set(el, { opacity: 1, y: 0 });
+        return;
+      }
+
+      gsap.fromTo(el, 
+        { y: 40, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.8, 
+          ease: 'power3.out',
+          scrollTrigger: { 
+            trigger: el, 
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+            once: true // Frees up mobile memory & INP once revealed
+          }
+        }
+      );
+    });
+  });
 });
 
 onUnmounted(() => {
   if (ctx) ctx.revert();
 });
 
-// SEO
-if (article.value) {
-  useSeoMeta({
-    title: article.value.pageTitle,
-    description: article.value.pageDesc,
-    ogImage: article.value.ogImage,
-    twitterCard: 'summary_large_image',
-  })
-  useHead({
-    link: [
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Julee:wght@400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap' }
-    ]
-  })
-}
+// --- SEO & STRUCTURED METADATA ---
+// 1. Core Meta Values
+const pageTitle = `${article.value.pageTitle} | CAPS Stories`
+const pageDesc = article.value.pageDesc
+const canonicalUrl = `https://capsfamily.in/blog/${slug}`
+const rawOgImage = article.value.ogImage || article.value.hero?.image || '/images/favicons/caps-blog-og-image.jpg'
+const ogImage = rawOgImage.startsWith('http') ? rawOgImage : `https://capsfamily.in${rawOgImage}`
+const publishedIso = article.value.publishDate ? new Date(article.value.publishDate).toISOString() : undefined
+
+// 2. Structured Link and JSON-LD Schema Injection (No duplicate Google Fonts!)
+useHead({
+  link: [
+    { rel: 'canonical', href: canonicalUrl }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": canonicalUrl
+        },
+        "headline": article.value.pageTitle,
+        "name": pageTitle,
+        "description": pageDesc,
+        "image": ogImage,
+        "url": canonicalUrl,
+        ...(publishedIso ? { "datePublished": publishedIso } : {}),
+        "author": {
+          "@type": "Organization",
+          "name": "Hotel CAPS",
+          "url": "https://capsfamily.in/"
+        },
+        "publisher": {
+          "@type": "Hotel",
+          "name": "Hotel CAPS",
+          "url": "https://capsfamily.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://capsfamily.in/images/caps-solid-logo.png"
+          },
+          "email": "capsfamilybakes@gmail.com",
+          "telephone": [
+            "+919207517064",
+            "+918848369567"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Main Road, Pittupeedika",
+            "addressLocality": "Koduvayur",
+            "addressRegion": "Kerala",
+            "postalCode": "678501",
+            "addressCountry": "IN"
+          }
+        }
+      })
+    }
+  ]
+})
+
+// 3. Nuxt 4 SEO Composable (Search & Social Cards)
+useSeoMeta({
+  title: pageTitle,
+  description: pageDesc,
+  ogType: 'article',
+  ogTitle: pageTitle,
+  ogDescription: pageDesc,
+  ogUrl: canonicalUrl,
+  ogImage: ogImage,
+  twitterCard: 'summary_large_image',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDesc,
+  twitterImage: ogImage
+})
 </script>

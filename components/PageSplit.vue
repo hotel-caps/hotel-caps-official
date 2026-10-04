@@ -80,7 +80,7 @@
               width="600"
               height="600"
               format="webp"
-              quality="90"
+              quality="80"
               loading="lazy"
               densities="x1"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"

@@ -92,28 +92,22 @@ const signatureCtaData = {
   watermarkSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="w-full h-full"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>`
 };
 
-// SEO & META
-const pageTitle = 'CAPS Signatures | Hotel CAPS Restaurant'
-const pageDesc = 'Discover the Hotel CAPS Signature Collection. Every month, our chefs handpick one vegetarian and one non-vegetarian dish to take the spotlight.'
-const canonicalUrl = 'https://capsfamily.in/restaurant/signatures'
+// 1. Core Meta Values
+const pageTitle = 'CAPS Signatures | Hotel CAPS - Koduvayur, Palakkad'
+const pageDesc = 'Discover the Signature Collection at Hotel CAPS - Koduvayur, Palakkad. Every month, we bring a special pair of veg & non-veg delights for you to savor & remember.'
+const canonicalUrl = 'https://capsfamily.in/signatures'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-signatures-og-image.jpg'
 
-useHead({
-  link: [{ rel: 'canonical', href: canonicalUrl }]
+// 2. Master SEO, Sitelinks Navigation & JSON-LD Injection
+useCapsSeo({
+  pageTitle,
+  pageDesc,
+  canonicalUrl,
+  ogImage,
+  pageType: 'webpage',
+  breadcrumbName: 'CAPS Signatures'
 })
 
-useSeoMeta({
-  title: pageTitle,
-  description: pageDesc,
-  ogTitle: pageTitle,
-  ogDescription: pageDesc,
-  ogUrl: canonicalUrl,
-  ogImage: ogImage,
-  twitterCard: 'summary_large_image',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDesc,
-  twitterImage: ogImage
-})
 </script>
 
 <template>

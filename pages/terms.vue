@@ -9,56 +9,19 @@ const heroImages = ref([
 ]);
 
 // 1. Core Meta Values
-const pageTitle = 'Terms & Conditions | Hotel CAPS, Koduvayur, Palakkad'
-const pageDesc = 'Read the terms and conditions for room bookings, guest stays, restaurant dining, and service policies at Hotel CAPS in Koduvayur, Palakkad.'
+const pageTitle = 'Terms & Conditions | Hotel CAPS - Koduvayur, Palakkad'
+const pageDesc = 'Read the terms and conditions for room bookings, guest stays, restaurant dining, auditorium events, and service policies at Hotel CAPS - Koduvayur, Palakkad.'
 const canonicalUrl = 'https://capsfamily.in/terms'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-terms-og-image.jpg'
 
-// 2. Structured Link and JSON-LD Schema Injection
-useHead({
-  link: [
-    { rel: 'canonical', href: canonicalUrl }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": pageTitle,
-        "description": pageDesc,
-        "url": canonicalUrl,
-        "publisher": {
-          "@type": "Hotel",
-          "name": "Hotel CAPS",
-          "url": "https://capsfamily.in/",
-          "logo": "https://capsfamily.in/images/caps-solid-logo.png",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Main Road, Pittupeedika",
-            "addressLocality": "Koduvayur",
-            "addressRegion": "Kerala",
-            "postalCode": "678501",
-            "addressCountry": "IN"
-          }
-        }
-      })
-    }
-  ]
-})
-
-// 3. Nuxt 4 SEO Composable (Search & Social Cards)
-useSeoMeta({
-  title: pageTitle,
-  description: pageDesc,
-  ogTitle: pageTitle,
-  ogDescription: pageDesc,
-  ogUrl: canonicalUrl,
-  ogImage: ogImage,
-  twitterCard: 'summary_large_image',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDesc,
-  twitterImage: ogImage
+// 2. Master SEO, Sitelinks Navigation & JSON-LD Injection
+useCapsSeo({
+  pageTitle,
+  pageDesc,
+  canonicalUrl,
+  ogImage,
+  pageType: 'webpage',
+  breadcrumbName: 'Terms & Conditions'
 })
 
 </script>

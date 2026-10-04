@@ -37,6 +37,9 @@ export default defineNuxtConfig({
     // Use Vercel's image optimization service for better performance
     provider: 'vercel',
 
+    // Prevent 2x upscaling requests so 1x widths never trigger console warnings
+    densities: [1],
+
     // Forces the generator to always output highly compressed WebP files
     format: ['webp'], 
     
@@ -44,7 +47,7 @@ export default defineNuxtConfig({
     dir: 'public', 
     
     // Sets a high-quality baseline (80% is the industry sweet spot for WebP)
-    quality: 80, 
+    quality: 90, 
 
     screens: {
       // Standard Named Breakpoints
@@ -57,8 +60,7 @@ export default defineNuxtConfig({
       // Auto-generated 1x and 2x Retina widths
       ...Object.fromEntries(
         baseImageWidths.flatMap((w) => [
-          [`w${w}`, w],
-          [`w${w * 2}`, w * 2]
+          [`w${w}`, w]
         ])
       )
     }

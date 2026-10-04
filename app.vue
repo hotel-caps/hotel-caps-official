@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import Loader from '~/components/Loader.vue';
+import { Analytics } from '@vercel/analytics/nuxt'
+import { SpeedInsights } from '@vercel/speed-insights/nuxt'
 
 const isLoading = ref(true);
 
@@ -26,6 +28,10 @@ onMounted(() => {
 
 <template>
   <div>
+    <!-- Vercel Web Analytics & Real-User Core Web Vitals -->
+    <Analytics />
+    <SpeedInsights />
+
     <!-- The Transition component handles the smooth fade-out -->
     <Transition name="fade">
       <Loader v-if="isLoading" />

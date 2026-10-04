@@ -166,16 +166,16 @@ const dropdownCaretColor = computed(() => {
 // ==========================================
 const navLinks = ref([
   {
-    text: 'Home', 
+    text: 'CAPS', 
     mainHoverClass: 'hover:text-amber-500',
     subLinks: [
-      { text: 'View Home', link: '/', icon: markRaw(PhHouse), hoverClass: 'hover:bg-[#D97706]/10 hover:text-[#D97706]' },
+      { text: 'View Home', link: '/', icon: markRaw(PhHouse), hoverClass: 'hover:bg-[#d18108]/10 hover:text-[#d18108]' },
       { text: 'About Us', link: '/about', icon: markRaw(PhUsers), hoverClass: 'hover:bg-[#e9a206]/15 hover:text-[#e9a206]' },
-      { text: 'Our Blog', link: '/blog', icon: markRaw(PhPencilSimpleLine), hoverClass: 'hover:bg-[#A95418]/15 hover:text-[#A95418]' },
+      { text: 'Our Blog', link: '/blog', icon: markRaw(PhPencilSimpleLine), hoverClass: 'hover:bg-[#bd5c17]/15 hover:text-[#bd5c17]' },
     ]
   },
   {
-    text: 'Rooms', 
+    text: 'Stay', 
     mainHoverClass: 'hover:text-[#2563eb]',
     subLinks: [
       { text: 'View Rooms', link: '/rooms', icon: markRaw(PhBed), hoverClass: 'hover:bg-[#2563eb]/15 hover:text-[#2563eb]' },
@@ -183,7 +183,7 @@ const navLinks = ref([
     ]
   },
   {
-    text: 'Restaurant', 
+    text: 'Dine', 
     mainHoverClass: 'hover:text-[#03a661]',
     subLinks: [
       { text: 'View Restaurant', link: '/restaurant', icon: markRaw(PhForkKnife), hoverClass: 'hover:bg-[#03a661]/15 hover:text-[#03a661]' },
@@ -193,7 +193,7 @@ const navLinks = ref([
     ]
   },
   {
-    text: 'Events Hall', 
+    text: 'Celebrate', 
     mainHoverClass: 'hover:text-[#e22473]',
     subLinks: [
       { text: 'View Hall', link: '/hall', icon: markRaw(PhBuildings), hoverClass: 'hover:bg-[#e22473]/15 hover:text-[#e22473]' },
@@ -256,14 +256,14 @@ onUnmounted(() => {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   border-radius: 0.5rem;
-  background-color: #D97706;
+  background-color: #d18108;
   transform: scaleX(0);
   transform-origin: left;
   transition: all 0.4s cubic-bezier(0.7, 0, 0.2, 1);
   z-index: -1;
 }
 .contact-bubble-button:hover {
-  border-color: #D97706;
+  border-color: #d18108;
 }
 .contact-bubble-button:hover::before {
   transform: scaleX(1);

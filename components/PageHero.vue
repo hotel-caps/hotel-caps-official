@@ -83,7 +83,7 @@ onUnmounted(() => {
   <section ref="heroSectionRef" class="relative h-[85vh] portrait:h-[60vh] w-full flex items-center text-white overflow-hidden">
     
     <!-- Background Image Layer (z-0) -->
-    <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       <NuxtImg 
         v-if="images.length > 0"
         ref="bgImageRef"
@@ -107,17 +107,17 @@ onUnmounted(() => {
     <div class="relative z-0 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
       <div ref="heroContentRef" class="max-w-3xl xl:max-w-4xl text-left mt-10 sm:mt-16">
         
-        <!-- Eyebrow Title (Dancing Script + Scaled Down) -->
+        <!-- Eyebrow Title (Julee + Scaled Down) -->
         <span 
           v-if="eyebrow" 
-          class="block font-['Dancing_Script'] text-xl sm:text-2xl lg:text-3xl mb-2 sm:mb-3 tracking-wide"
+          class="block font-['Julee'] text-xl sm:text-2xl lg:text-3xl mb-2 sm:mb-3 tracking-wide"
           :class="eyebrowColorClass"
         >
           {{ eyebrow }}
         </span>
 
         <!-- Main Title (Strict Capitalization + Defined Serif Font) -->
-        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold lg:font-semibold tracking-widest leading-tight capitalize mb-3">
+        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold lg:font-semibold tracking-widest leading-tight capitalize mb-3">
           {{ title }}
         </h2>
         

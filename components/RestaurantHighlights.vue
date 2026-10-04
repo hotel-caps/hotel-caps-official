@@ -20,10 +20,10 @@
                 
                 <!-- Text Content -->
                 <div class="w-full sm:w-1/2 flex flex-col items-center sm:items-start text-center sm:text-left">
-                  <h3 class="highlight-text-reveal font-['Dancing_Script'] text-2xl sm:text-3xl lg:text-4xl text-[#92e3a9] mb-3 tracking-wide">
+                  <h3 class="highlight-text-reveal font-['Julee'] text-2xl sm:text-3xl lg:text-4xl text-[#2d9b4c] mb-3 tracking-wide">
                     {{ item.title }}
                   </h3>
-                  <div class="highlight-text-reveal w-12 h-0.5 bg-[#03a661] mb-5 sm:mb-6"></div>
+                  <div class="highlight-text-reveal w-12 h-0.5 bg-[#2d9b4c] mb-5 sm:mb-6"></div>
                   <p class="highlight-text-reveal font-sans text-xs sm:text-sm lg:text-base text-emerald-100/80 leading-relaxed whitespace-pre-line">
                     {{ item.description }}
                   </p>
@@ -53,8 +53,8 @@
               v-if="index === 0" 
               class="highlight-divider-reveal w-full lg:w-auto flex lg:flex-col items-center justify-center my-2 lg:my-0 h-auto lg:h-full flex-shrink-0"
             >
-              <div class="h-px lg:h-full w-full lg:w-px border-t lg:border-t-0 lg:border-r border-dashed border-[#03a661]/40"></div>
-              <div class="mx-4 lg:mx-0 lg:my-4 w-10 h-10 rounded-full border border-[#03a661]/50 bg-[#112d1c] flex-shrink-0 flex items-center justify-center text-[#92e3a9] shadow-inner">
+              <div class="h-px lg:h-full w-full lg:w-px border-t lg:border-t-0 lg:border-r border-dashed border-[#2d9b4c]/40"></div>
+              <div class="mx-4 lg:mx-0 lg:my-4 w-10 h-10 rounded-full border border-[#2d9b4c]/50 bg-[#112d1c] flex-shrink-0 flex items-center justify-center text-[#2d9b4c] shadow-inner">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
                   <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 0 8.48A11.83 11.83 0 0 1 11 20Z"/>
                   <path d="M11 20v-5"/><path d="M11 15a4 4 0 0 1-3-3"/>

@@ -25,7 +25,7 @@
           <!-- Left Column: Quote Content -->
           <div class="w-full lg:w-3/5 flex flex-col items-center lg:items-start text-center lg:text-left">
             
-            <span class="quote-text-reveal block font-['Dancing_Script'] text-2xl sm:text-3xl lg:text-4xl text-amber-400 mb-3 sm:mb-4 tracking-wide">
+            <span class="quote-text-reveal block font-['Julee'] text-2xl sm:text-3xl lg:text-4xl text-amber-400 mb-3 sm:mb-4 tracking-wide">
               {{ directorsQuoteData.eyebrow }}
             </span>
 

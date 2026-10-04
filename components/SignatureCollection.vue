@@ -6,7 +6,7 @@
       <div class="w-full max-w-3xl flex flex-col items-center text-center mb-16 sm:mb-20">
         <span 
           v-if="eyebrow" 
-          class="sig-header-reveal block font-['Dancing_Script'] text-2xl sm:text-3xl lg:text-4xl mb-2 tracking-wide"
+          class="sig-header-reveal block font-['Julee'] text-2xl sm:text-3xl lg:text-4xl mb-2 tracking-wide"
           :class="themeTextClass"
         >
           {{ eyebrow }}

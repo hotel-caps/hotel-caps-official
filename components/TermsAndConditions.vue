@@ -4,7 +4,7 @@
       
       <!-- Page Header -->
       <div ref="headerRef" class="text-center mb-16 sm:mb-20">
-        <span class="legal-header-item block font-['Dancing_Script'] text-xl sm:text-2xl text-zinc-500 mb-3">
+        <span class="legal-header-item block font-['Julee'] text-xl sm:text-2xl text-zinc-500 mb-3">
           {{ termsData.eyebrow }}
         </span>
         <h1 class="legal-header-item font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-zinc-900 tracking-tight mb-6">

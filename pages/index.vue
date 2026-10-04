@@ -1,5 +1,10 @@
 <script setup>
 
+const { data: fetchedBlogs } = await useAsyncData('blog-list', () => $fetch('/api/blog'))
+
+// 2. Wrap the assignment in computed() to maintain reactivity
+const blogs = computed(() => fetchedBlogs.value || []);
+
 const homeGalleryData = {
   homeEyebrow: "Explore",
   title: "Nearby Tourist Attractions",
@@ -95,6 +100,7 @@ useSeoMeta({
     <About />
     <CapsTouch />
     <ThematicSections />
+    <BlogSection :blogs="blogs" />
     <Achievements />
     <PageGallery 
       :homeEyebrow="homeGalleryData.homeEyebrow"

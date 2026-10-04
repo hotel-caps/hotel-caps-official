@@ -6,7 +6,7 @@
       <div class="hall-container-reveal relative bg-gradient-to-r from-[#6b0832] via-[#a81350] to-[#6b0832] rounded-[1.75rem] sm:rounded-[2.5rem] p-8 sm:p-12 lg:p-16 shadow-2xl border border-pink-950/40 text-center flex flex-col items-center">
         
         <!-- Header Section -->
-        <span class="hall-header-reveal block font-['Dancing_Script'] text-2xl sm:text-3xl lg:text-4xl text-pink-200/90 mb-2 sm:mb-3 tracking-wide">
+        <span class="hall-header-reveal block font-['Julee'] text-2xl sm:text-3xl lg:text-4xl text-[#ff7dbe] mb-2 sm:mb-3 tracking-wide">
           {{ eventsHallData.eyebrow }}
         </span>
 
@@ -15,7 +15,7 @@
         </h2>
 
         <!-- Signature Pink/White Underline -->
-        <div class="hall-header-reveal w-16 sm:w-20 h-1 bg-pink-300 mb-10 sm:mb-14"></div>
+        <div class="hall-header-reveal w-16 sm:w-20 h-1 bg-[#ff7dbe] mb-10 sm:mb-14"></div>
 
         <!-- Events Flexbox -->
         <div class="flex flex-wrap justify-center items-start gap-x-6 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-8 sm:gap-y-10 w-full">
@@ -28,7 +28,7 @@
             <!-- White Icon Container with hover lift and soft glow -->
             <div class="hall-image-reveal">
                <div 
-                class="mb-3 sm:mb-4 text-pink-300 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:text-pink-100 group-hover:drop-shadow-[0_4px_12px_rgba(255,255,255,0.4)]"
+                class="mb-3 sm:mb-4 text-[#ff7dbe] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:text-[#ff9ece] group-hover:drop-shadow-[0_4px_12px_rgba(255,255,255,0.4)]"
                 v-html="event.svg"
                ></div>
             </div>

@@ -9,7 +9,7 @@
         <div class="flex items-center gap-4">
           <div class="w-8 sm:w-12 h-[2px] bg-[#C86A22]"></div>
           <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-[#7A3E12] tracking-wide">
-            Stories from <span class="text-[#A95418]">Our Table</span>
+            Stories from <span class="text-[#bd5c17]">Our Table</span>
           </h2>
         </div>
 
@@ -19,10 +19,12 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>    
           <input 
+            id="search"
+            name="search"
             v-model="searchQuery" 
             type="text" 
-            placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Search stories..." 
-            class="w-full rounded-full py-3 pl-12 pr-4 indent-10 border-transparent focus:border-transparent *:focus:outline-none focus-visible:outline-none focus-visible:border-transparent font-sans"
+            placeholder=" Search stories..." 
+            class="w-full rounded-full py-3 indent-10 border-transparent focus:border-transparent *:focus:outline-none focus-visible:outline-none focus-visible:border-transparent font-sans"
           />
         </div>
       </div>
@@ -53,13 +55,13 @@
               <div class="w-6 h-px bg-[#C86A22]"></div>
               <span class="text-xs font-semibold tracking-widest text-zinc-500 uppercase">{{ featuredBlog.date }}</span>
             </div>
-            <h3 class="font-display font-bold text-3xl lg:text-4xl text-zinc-900 mb-6 group-hover:text-[#A95418] transition-colors duration-300">
+            <h3 class="font-display font-bold text-3xl lg:text-4xl text-zinc-900 mb-6 group-hover:text-[#bd5c17] transition-colors duration-300">
               {{ featuredBlog.title }}
             </h3>
             <p class="font-sans text-zinc-600 text-base lg:text-lg leading-relaxed mb-8">
               {{ featuredBlog.intro }}
             </p>
-            <div class="flex items-center text-[#A95418] font-bold tracking-wide group-hover:text-[#C86A22] transition-colors duration-300">
+            <div class="flex items-center text-[#bd5c17] font-bold tracking-wide group-hover:text-[#C86A22] transition-colors duration-300">
               Read Story 
               <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
             </div>
@@ -83,13 +85,13 @@
                 <div class="w-6 h-px bg-[#C86A22]"></div>
                 <span class="text-xs font-semibold tracking-widest text-zinc-500 uppercase">{{ blog.date }}</span>
               </div>
-              <h3 class="font-display font-bold text-xl sm:text-2xl text-zinc-900 mb-4 group-hover:text-[#A95418] transition-colors duration-300">
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-zinc-900 mb-4 group-hover:text-[#bd5c17] transition-colors duration-300">
                 {{ blog.title }}
               </h3>
               <p class="font-sans text-zinc-600 text-sm sm:text-base leading-relaxed mb-6 flex-grow">
                 {{ blog.intro }}
               </p>
-              <div class="flex items-center text-[#A95418] font-bold text-sm tracking-wide group-hover:text-[#C86A22] transition-colors duration-300 mt-auto">
+              <div class="flex items-center text-[#bd5c17] font-bold text-sm tracking-wide group-hover:text-[#C86A22] transition-colors duration-300 mt-auto">
                 Read Story 
                 <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
               </div>

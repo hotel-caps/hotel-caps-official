@@ -59,7 +59,7 @@
       <!-- CTA Button Container -->
       <div class="contact-btn-reveal mt-16 lg:mt-20 flex justify-center">
           <NuxtLink :to="contactData.buttonLink" 
-            class="contact-bubble-button font-display px-8 py-2.5 text-sm lg:text-lg tracking-widest sm:px-8 sm:py-2.5 mt-2 rounded-lg">
+            class="contact-bubble-button font-display font-semibold px-8 py-2.5 text-sm lg:text-lg tracking-widest sm:px-8 sm:py-2.5 mt-2 rounded-lg">
             {{ contactData.buttonText }}
           </NuxtLink>
       </div>
@@ -141,14 +141,14 @@ onUnmounted(() => { if (ctx) ctx.revert(); });
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   border-radius: 0.5rem;
-  background-color: #D97706; 
+  background-color: #d18108; 
   transform: scaleX(0);
   transform-origin: left;
   transition: all 0.4s cubic-bezier(0.7, 0, 0.2, 1);
   z-index: -1;
 }
 .contact-bubble-button:hover {
-  border-color: #D97706;
+  border-color: #d18108;
 }
 .contact-bubble-button:hover::before {
   transform: scaleX(1);

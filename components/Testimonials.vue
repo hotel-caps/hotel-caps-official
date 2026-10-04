@@ -127,7 +127,7 @@ onUnmounted(() => {
 
         <!-- Native Vue Slider -->
         <div 
-          class="testimonial-slider relative h-72"
+          class="testimonial-slider relative h-64"
           @mouseenter="stopAutoplay"
           @mouseleave="startAutoplay"
         >
@@ -144,7 +144,7 @@ onUnmounted(() => {
                   <div class="pl-0 h-full relative">
                     <div class="flex">
                       <div class="w-1 bg-purple-500 rounded-full flex-shrink-0 self-stretch"></div>
-                      <p class="testimonial-quote py-4 pr-3 text-2xl text-gray-700 bg-purple-200 rounded-e-xl leading-snug font-['Dancing_Script']">
+                      <p class="testimonial-quote py-4 pr-3 text-lg sm:text-xl lg:text-2xl text-gray-700 bg-purple-200 rounded-e-xl leading-snug font-['Julee']">
                         " {{ testimonial.quote }} "
                       </p>
                     </div>
@@ -206,7 +206,7 @@ onUnmounted(() => {
         <span class="absolute inset-0 w-full h-full bg-purple-600 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
         
         <!-- Button Text -->
-        <span class="relative z-10 tracking-widest text-sm lg:text-lg font-display capitalize group-hover:text-white transition-colors duration-500 flex items-center">
+        <span class="relative z-10 tracking-widest text-sm lg:text-lg font-display capitalize group-hover:text-white font-semibold transition-colors duration-500 flex items-center">
           Read Reviews
         </span>
       </a>

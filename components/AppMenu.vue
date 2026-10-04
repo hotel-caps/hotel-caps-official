@@ -43,7 +43,7 @@
           <NuxtLink 
             to="/contact" 
             @click="$emit('close')" 
-            class="mobile-contact-btn font-normal relative flex items-center justify-center w-full py-2 px-8 font-display uppercase tracking-widest text-xl sm:text-2xl text-[#D97706] border border-[#D97776]/40 rounded-lg overflow-hidden transition-all duration-300 shadow-[0_0_15px_rgba(217,119,118,0)] hover:shadow-[0_0_20px_rgba(217,119,118,0.2)]"
+            class="mobile-contact-btn font-normal relative flex items-center justify-center w-full py-2 px-8 font-display uppercase tracking-widest text-xl sm:text-2xl text-[#d18108] border border-[#D97776]/40 rounded-lg overflow-hidden transition-all duration-300 shadow-[0_0_15px_rgba(217,119,118,0)] hover:shadow-[0_0_20px_rgba(217,119,118,0.2)]"
           >
             <span class="relative z-10 group-hover:text-white transition-colors duration-300">
               Contact Us
@@ -76,9 +76,9 @@ import {
 } from '@phosphor-icons/vue';
 
 const menuItems = [
-  { text: 'Home', link: '/', color: '#D97706', icon: markRaw(PhHouse) },
+  { text: 'Home', link: '/', color: '#d18108', icon: markRaw(PhHouse) },
   { text: 'About Us', link: '/about', color: '#e9a206', icon: markRaw(PhUsers) },
-  { text: 'Blog', link: '/blog', color: '#A95418', icon: markRaw(PhPencilSimpleLine) },
+  { text: 'Blog', link: '/blog', color: '#bd5c17', icon: markRaw(PhPencilSimpleLine) },
   { text: 'Rooms', link: '/rooms', color: '#2563eb', icon: markRaw(PhBed) },
   { text: 'Pricing', link: '/pricing', color: '#0284c7', icon: markRaw(PhTag) },
   { text: 'Restaurant', link: '/restaurant', color: '#03a661', icon: markRaw(PhForkKnife) },
@@ -124,14 +124,14 @@ const menuItems = [
   content: '';
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background-color: #D97706;
+  background-color: #d18108;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 0;
 }
 .mobile-contact-btn:hover {
-  border-color: #D97706;
+  border-color: #d18108;
   color: #ffffff;
 }
 .mobile-contact-btn:hover::before,

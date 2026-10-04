@@ -1,4 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+const baseImageWidths = [
+  // Standard 100s & UI Breakpoints
+  200, 300, 320, 384, 400, 500, 600, 700, 800, 900, 960, 1200, 1366, 1400, 1536, 1600, 1920,
+  // Exact Folder Image Widths
+  266, 295, 298, 304, 309, 325, 348, 350, 398, 401, 402, 411, 435, 454, 457, 470, 483, 493,
+  515, 519, 527, 533, 576, 590, 602, 603, 610, 626, 634, 638, 655, 685, 710, 711, 712, 735, 1774
+]
+
 export default defineNuxtConfig({
   compatibilityDate: '2026-07-30',
   ssr: true,
@@ -38,46 +47,20 @@ export default defineNuxtConfig({
     quality: 80, 
 
     screens: {
-      // Standard Breakpoints
+      // Standard Named Breakpoints
       xs: 320,
       sm: 640,
       md: 768,
       lg: 1024,
       xl: 1280,
       xxl: 1536,
-      
-      // Custom UI Card & Gallery Specifics
-      w300: 300,
-      cardSm: 384,
-      card: 400,
-      w590: 590,
-      w600: 600,
-      w603: 603,
-      w626: 626,
-      w655: 655,
-      gallerySm: 700,
-      w710: 710,
-      w711: 711,
-      galleryMd: 800,
-      w1180: 1180,
-      galleryLg: 1200,
-      w1206: 1206,
-      w1252: 1252,
-      w1310: 1310,
-      galleryXl: 1400,
-      w1420: 1420,
-      w1422: 1422,
-
-      // The new native 1x intrinsic widths
-      w1366: 1366,
-      w1600: 1600,
-      w1920: 1920,
-      w2400: 2400,
-
-      // The 2x Retina & 4K display cuts Nuxt auto-calculated
-      w2732: 2732,
-      w3200: 3200,
-      w3840: 3840
+      // Auto-generated 1x and 2x Retina widths
+      ...Object.fromEntries(
+        baseImageWidths.flatMap((w) => [
+          [`w${w}`, w],
+          [`w${w * 2}`, w * 2]
+        ])
+      )
     }
   },
 
@@ -87,9 +70,9 @@ export default defineNuxtConfig({
       subsets: ['latin'],
     },
     families: [
-      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700] },
-      { name: 'Faculty Glyphic', provider: 'google', weights: [400, 500, 600, 700] },
-      { name: 'Dancing Script', provider: 'google', weights: [400] }
+      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700], global: true },
+      { name: 'Faculty Glyphic', provider: 'google', weights: [400, 500, 600, 700], global: true },
+      { name: 'Julee', provider: 'google', weights: [400], global: true }
     ]
   },
 
@@ -139,37 +122,37 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-      // Core Navigation & Content (100% Static)
-      '/': { prerender: true },
-      '/about': { prerender: true },
-      '/rooms': { prerender: true },
-      '/pricing': { prerender: true },
-      '/restaurant': { prerender: true },
-      '/hall': { prerender: true },
-      '/catering': { prerender: true },
-      '/contact': { prerender: true },
+    // Core Navigation & Content (100% Static)
+    '/': { prerender: true },
+    '/about': { prerender: true },
+    '/rooms': { prerender: true },
+    '/pricing': { prerender: true },
+    '/restaurant': { prerender: true },
+    '/hall': { prerender: true },
+    '/catering': { prerender: true },
+    '/contact': { prerender: true },
 
-      // Legal (100% Static)
-      '/policy': { prerender: true },
-      '/terms': { prerender: true },
+    // Legal (100% Static)
+    '/policy': { prerender: true },
+    '/terms': { prerender: true },
 
-      // The Dynamic Islands (HTML is Static, JS handles the WP Data)
-      // Nitro pre-builds the structure, and your client-side $fetch populates the text.
-      '/menu': { prerender: true },
-      '/live': { prerender: true },
-    },
+    // The Dynamic Islands (HTML is Static, JS handles the WP Data)
+    // Nitro pre-builds the structure, and your client-side $fetch populates the text.
+    '/menu': { prerender: true },
+    '/live': { prerender: true },
+  },
 
-    nitro: {
-      // Tells the Nitro engine to compress the pre-rendered HTML files
-      // further reducing the initial payload for mobile devices.
-      compressPublicAssets: true
-    },
+  nitro: {
+    // Tells the Nitro engine to compress the pre-rendered HTML files
+    // further reducing the initial payload for mobile devices.
+    compressPublicAssets: true,
+  },
 
-    experimental: {
-      // Ensures Nuxt extracts the payloads for static routes so the Vue 
-      // router stays lightning fast during client-side navigation.
-      payloadExtraction: true
-    },
+  experimental: {
+    // Ensures Nuxt extracts the payloads for static routes so the Vue 
+    // router stays lightning fast during client-side navigation.
+    payloadExtraction: true
+  },
 
   app: {
     // baseURL: '/',
@@ -242,7 +225,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/images/favicons/favicon-96x96.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicons/favicon-16x16.png' },
         // Cache-Busted Web Manifest Path
-        { rel: 'manifest', crossorigin: 'use-credentials', href: 'manifest.json' }
+        { rel: 'manifest', crossorigin: 'use-credentials', href: '/manifest.json' }
       ] // Empty script array completely dropped to keep runtime code light
     }
   }

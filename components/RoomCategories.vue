@@ -6,7 +6,7 @@
       <div class="room-container-reveal relative bg-gradient-to-r from-[#03153b] via-[#072a75] to-[#03153b] rounded-[1.75rem] sm:rounded-[2.5rem] p-8 sm:p-12 lg:p-16 shadow-2xl border border-blue-950/40 text-center flex flex-col items-center">
         
         <!-- Header Section -->
-        <span class="room-text-reveal block font-['Dancing_Script'] text-xl sm:text-2xl lg:text-3xl mb-1 sm:mb-2 tracking-wide text-blue-200/90">
+        <span class="room-text-reveal block font-['Julee'] text-xl sm:text-2xl lg:text-3xl mb-1 sm:mb-2 tracking-wide text-[#12a5e6]">
           {{ roomCategoriesData.eyebrow }}
         </span>
 

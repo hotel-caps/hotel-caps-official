@@ -192,12 +192,13 @@ const aboutGalleryData = {
 
 const aboutCtaData = {
   eyebrow: "Experience Warm Hospitality",
+  eyebrowColorClass: "text-[#FBBF24]",
   title: "We're Ready to Welcome You.",
   description: "Whether for business, leisure, or dining, reach out to our team for inquiries and reservations.",
   buttonText: "Get in Touch",
   buttonLink: "/contact",
-  bgGradientClass: "bg-gradient-to-r from-[#78350f] via-[#d97706] to-[#f59e0b]",
-  buttonTextClass: "text-[#d97706]",
+  bgGradientClass: "bg-gradient-to-r from-[#78350f] via-[#d18108] to-[#f59e0b]",
+  buttonTextClass: "text-[#d18108]",
   // Ribbon / Excellence Watermark SVG
   watermarkSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="w-full h-full"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>`
 };
@@ -276,7 +277,7 @@ useSeoMeta({
       subtitle="A legacy of hospitality built on trust, passion and a commitment to provide exceptional experiences."
       :images="heroImages"
       imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-yellow-950/70 to-black/70 z-5"
-      eyebrowColorClass="text-[#e98206]"
+      eyebrowColorClass="text-[#FBBF24]"
       themeColorClass="text-[#854d0e]"
     />
 

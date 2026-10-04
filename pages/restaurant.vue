@@ -160,8 +160,8 @@ const restaurantGalleryData = {
     },
     {
       src: "/images/restaurant/food/6.jpg",
-      alt: "Kerala-style fried fish served on a banana leaf",
-      width: 524,
+      alt: "Hotel CAPS special biryani varieties including chicken, mutton, beef, vegetable and prawns",
+      width: 400,
       height: 400
     },
     {
@@ -274,33 +274,22 @@ const restaurantGalleryData = {
     },
     {
       src: "/images/restaurant/food/25.jpg",
-      alt: "Hotel CAPS special beef and chicken Kizhi Porotta wrapped in banana leaves",
-      width: 400,
-      height: 400
-    },
-    {
-      src: "/images/restaurant/food/26.jpg",
       alt: "Hotel CAPS biryani and mandi specials with aromatic rice and grilled meat",
       width: 400,
       height: 400
     },
     {
-      src: "/images/restaurant/food/27.jpg",
+      src: "/images/restaurant/food/26.jpg",
       alt: "Hotel CAPS special Paneer Roast and Mushroom Roast",
       width: 400,
       height: 400
     },
-    {
-      src: "/images/restaurant/food/28.jpg",
-      alt: "Hotel CAPS special biryani varieties including chicken, mutton, beef, vegetable and prawns",
-      width: 400,
-      height: 400
-    }
   ]
 };
 
 const restaurantCtaData = {
   eyebrow: "Craving Exceptional Cuisine?",
+  eyebrowColorClass: "text-[#4bb869]",
   title: "Reserve a Table for Your Next Meal.",
   description: "Visit us for an exquisite dining experience featuring fresh ingredients and delicious options.",
   buttonText: "Check Our Menu",
@@ -385,7 +374,7 @@ useSeoMeta({
       subtitle="Savour a world of culinary delights crafted uniquely for your taste."
       :images="heroImages"
       imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-green-950/70 to-black/70 z-5"
-      eyebrowColorClass="text-[#03a661]"
+      eyebrowColorClass="text-[#4bb869]"
       themeColorClass="text-[#166534]"
     />
 

@@ -21,7 +21,8 @@
           <!-- Eyebrow Title -->
           <span 
             v-if="eyebrow" 
-            class="cta-text-reveal block font-['Dancing_Script'] text-2xl sm:text-3xl lg:text-4xl text-white/90 mb-2 sm:mb-3 tracking-wide"
+            class="cta-text-reveal block font-['Julee'] text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-3 tracking-wide "
+            :class="eyebrowColorClass"
           >
             {{ eyebrow }}
           </span>
@@ -77,6 +78,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const props = defineProps({
   eyebrow: { type: String, required: true },
+  eyebrowColorClass: { type: String, default: "text-[#c2c2c2]" },
   title: { type: String, required: true },
   description: { type: String, required: true },
   buttonText: { type: String, default: 'Request a Quote' },

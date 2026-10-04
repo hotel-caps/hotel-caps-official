@@ -43,6 +43,50 @@
            ========================================== -->
       <div class="block lg:hidden">
 
+        <!-- MOBILE: MONTHLY SIGNATURES SLIDER -->
+        <div class="mb-6 flex flex-col gap-3">
+          
+          <div class="flex flex-col px-1">
+            <h3 class="font-display text-base font-bold text-[#927104] tracking-widest uppercase -mt-1">{{ currentMonthSignature.monthName }}</h3>
+            <h2 class="font-display text-2xl font-bold text-[#d4af37] tracking-wider uppercase drop-shadow-sm">Signatures</h2>
+          </div>
+
+          <div 
+            @touchstart="handleSigTouchStart" 
+            @touchend="handleSigTouchEnd" 
+            @mousedown="handleSigTouchStart" 
+            @mouseup="handleSigTouchEnd"
+            class="relative w-full h-auto bg-[#2a2a2a] rounded-3xl overflow-hidden shadow-md border border-[#1c1c1c]/30 transition-colors duration-500 flex flex-col select-none"
+          >
+            <transition-group name="fade" tag="div" class="grid w-full">
+              <div 
+                v-for="(sig, index) in activeSignatures" 
+                :key="sig.type" 
+                v-show="index === currentSignatureIndex"
+                class="col-start-1 row-start-1 w-full flex flex-col relative overflow-hidden bg-[#2a2a2a]"
+              >
+                <div class="w-full aspect-[4/3] relative overflow-hidden border-b border-[#2a2a2a]/50">
+                  
+                  <div class="absolute top-3 right-3 z-10 bg-black/60 backdrop-blur-md px-2 py-1 rounded shadow-sm">
+                    <svg v-if="sig.type === 'veg'" class="w-4 h-4" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#16a34a" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#16a34a"/></svg>
+                    <svg v-else class="w-4 h-4" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#dc2626" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#dc2626"/></svg>
+                  </div>
+                  <img :src="sig.image" :alt="sig.title" class="w-full h-full object-cover pointer-events-none" />
+                </div>
+                
+                <div class="p-5 pb-8 sm:p-6 sm:pb-10">
+                  <h3 class="text-xl sm:text-2xl font-bold text-white leading-tight mb-2">{{ sig.title }}</h3>
+                  <p class="text-xs sm:text-sm text-white/70 line-clamp-2 leading-relaxed">{{ sig.description }}</p>
+                </div>
+              </div>
+            </transition-group>
+
+            <div v-if="activeSignatures.length > 1" class="absolute bottom-3 inset-x-0 flex justify-center gap-2 z-20">
+              <div v-for="(_, idx) in activeSignatures" :key="'sig-dot-m-'+idx" :class="['h-1.5 rounded-full transition-all duration-300', currentSignatureIndex === idx ? 'w-5 bg-[#d4af37]' : 'w-1.5 bg-zinc-500']"></div>
+            </div>
+          </div>
+        </div>
+
         <!-- Outlet Tabs (Mobile - Grid Layout, No scroll) -->
         <div class="pt-3 pb-5 mb-5 grid grid-cols-3 gap-2 transition-colors duration-500 border-b border-[#2a2a2a]">
           <button 
@@ -198,7 +242,7 @@
               <div class="relative z-10 flex flex-col flex-grow pr-4">
                                 
                 <div class="flex items-center gap-2 sm:gap-3 mb-1.5">
-                  <h3 class="text-xl sm:text-2xl font-bold text-white leading-tight line-clamp-2">{{ special.title }}</h3>
+                  <h3 class="text-xl capitalize sm:text-2xl font-bold text-white leading-tight line-clamp-2">{{ special.title }}</h3>
                   
                   <!-- Veg / Non-Veg Icon -->
                   <svg v-if="special.isVeg" class="shrink-0 w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -211,7 +255,7 @@
                   </svg>
                 </div>
                 
-                <p class="text-xs sm:text-sm text-white/80 line-clamp-2 leading-relaxed">{{ special.intro }}</p>
+                <p class="text-xs capitalize sm:text-sm text-white/80 line-clamp-2 leading-relaxed">{{ special.intro }}</p>
               </div>
 
               <!-- Right Content (Price) -->
@@ -305,8 +349,53 @@
         
         <!-- LEFT COLUMN: Sticky Specials Slider (h-auto via Grid) -->
         <aside class="w-[30%] xl:w-[25%] sticky top-[6rem] flex flex-col gap-6 pt-2">
+
+          <!-- DESKTOP: MONTHLY SIGNATURES SLIDER -->
+          <div class="flex flex-col gap-3 mb-4">
+            
+            <div class="flex flex-col">
+              <h3 class="font-display text-xl font-bold text-[#927104] tracking-widest uppercase -mt-1">{{ currentMonthSignature.monthName }}</h3>
+              <h2 class="font-display text-3xl font-bold text-[#d4af37] tracking-wider uppercase drop-shadow-sm">Signatures</h2>
+            </div>
+
+            <div 
+              @touchstart="handleSigTouchStart" 
+              @touchend="handleSigTouchEnd" 
+              @mousedown="handleSigTouchStart" 
+              @mouseup="handleSigTouchEnd"
+              class="relative w-full h-auto bg-[#2a2a2a] rounded-3xl overflow-hidden shadow-lg border border-[#1c1c1c]/30 transition-colors duration-500 flex flex-col select-none mt-2"
+            >
+              <transition-group name="fade" tag="div" class="grid w-full">
+                <div 
+                  v-for="(sig, index) in activeSignatures" 
+                  :key="sig.type" 
+                  v-show="index === currentSignatureIndex"
+                  class="col-start-1 row-start-1 w-full flex flex-col relative overflow-hidden bg-[#2a2a2a]"
+                >
+                  
+                  <div class="w-full aspect-[4/3] relative overflow-hidden border-b border-[#2a2a2a]/50">
+                    <div class="absolute top-3 right-3 z-10 bg-black/60 backdrop-blur-md px-2 py-1.5 rounded shadow-sm">
+                      <svg v-if="sig.type === 'veg'" class="w-5 h-5" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#16a34a" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#16a34a"/></svg>
+                      <svg v-else class="w-5 h-5" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#dc2626" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#dc2626"/></svg>
+                    </div>
+                    <img :src="sig.image" :alt="sig.title" class="w-full h-full object-cover pointer-events-none" />
+                  </div>
+                  
+                  <div class="p-6 xl:p-8 pb-10">
+                    <h3 class="text-xl xl:text-2xl font-bold text-white leading-tight mb-2">{{ sig.title }}</h3>
+                    <p class="text-sm text-white/70 line-clamp-3 leading-relaxed">{{ sig.description }}</p>
+                  </div>
+                </div>
+              </transition-group>
+
+              <div v-if="activeSignatures.length > 1" class="absolute bottom-4 inset-x-0 flex justify-center gap-2 z-20">
+                <div v-for="(_, idx) in activeSignatures" :key="'sig-dot-d-'+idx" :class="['h-2 rounded-full transition-all duration-300', currentSignatureIndex === idx ? 'w-6 bg-[#d4af37]' : 'w-2 bg-zinc-500']"></div>
+              </div>
+            </div>
+          </div>
+
           <div class="flex flex-col">
-            <h2 class="font-display text-3xl font-bold mb-2 text-[#d4af37] tracking-wide uppercase transition-colors duration-500">Today's</h2>
+            <h2 class="font-display text-3xl font-bold mb-2 text-[#927104] tracking-wide uppercase transition-colors duration-500">Today's</h2>
             <h2 class="font-display text-4xl font-bold text-[#d4af37] tracking-wider uppercase -mt-1 drop-shadow-sm">Specials</h2>
           </div>
 
@@ -443,7 +532,7 @@
                 <!-- Content Area -->
                 <div class="relative z-10 flex-grow flex flex-col">
                   <div class="flex items-center gap-3 mb-2 lg:mb-3">
-                    <h3 class="text-xl lg:text-2xl font-semibold text-white leading-tight">{{ special.title }}</h3>
+                    <h3 class="text-xl capitalize lg:text-2xl font-semibold text-white leading-tight">{{ special.title }}</h3>
                     
                     <!-- Veg / Non-Veg Icon -->
                     <svg v-if="special.isVeg" class="shrink-0 w-4 h-4 lg:w-5 lg:h-5" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -456,7 +545,7 @@
                     </svg>
                   </div>
 
-                  <p class="text-sm lg:text-base text-white/80 leading-relaxed max-w-[85%]">{{ special.intro }}</p>
+                  <p class="text-sm capitalize lg:text-base text-white/80 leading-relaxed max-w-[85%]">{{ special.intro }}</p>
                   
                   <!-- Price (Bottom Left Anchored) -->
                   <div
@@ -616,11 +705,9 @@
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted, nextTick, markRaw } from 'vue';
 import { gsap } from 'gsap';
-import { 
-  PhPhone 
-} from '@phosphor-icons/vue';
+// 1. Import the current month's signatures from your data file
+import { currentMonthSignature } from '~/signaturesData.js';
 
-const PhoneIcon = markRaw(PhPhone);
 
 const props = defineProps({
   menuData: { type: Array, required: true },
@@ -629,6 +716,72 @@ const props = defineProps({
 
 const isDark = ref(false);
 const showOnlyVeg = ref(false); // Veg filter state
+
+// 2. Setup state for the Signature Slider
+const currentSignatureIndex = ref(0);
+let signatureTimer = null;
+
+// 3. Computed array that respects the showOnlyVeg filter
+const activeSignatures = computed(() => {
+  const sigs = [];
+  
+  // Always add Veg if it exists
+  if (currentMonthSignature.veg) {
+    sigs.push({ ...currentMonthSignature.veg, type: 'veg' });
+  }
+  
+  // Only add Non-Veg if "All" is selected (!showOnlyVeg)
+  if (!showOnlyVeg.value && currentMonthSignature.nonVeg) {
+    sigs.push({ ...currentMonthSignature.nonVeg, type: 'nonVeg' });
+  }
+  
+  return sigs;
+});
+
+// 4. Reset slider to 0 if they click the Veg toggle to prevent blank slides
+watch(showOnlyVeg, () => {
+  currentSignatureIndex.value = 0;
+});
+
+// 5. Independent Slider Timer (Start this inside onMounted)
+const startSignatureSlider = () => {
+  if (typeof window === 'undefined') return;
+  if (signatureTimer) clearInterval(signatureTimer);
+  
+  signatureTimer = setInterval(() => {
+    if (activeSignatures.value.length > 1) {
+      currentSignatureIndex.value = (currentSignatureIndex.value + 1) % activeSignatures.value.length;
+    }
+  }, 3500); // 3.5s so it doesn't perfectly sync/clash with the 3.0s Specials slider
+};
+
+// --- SIGNATURE SWIPE LOGIC ---
+const sigTouchStartX = ref(0);
+const sigTouchEndX = ref(0);
+
+const handleSigTouchStart = (e) => {
+  sigTouchStartX.value = e.changedTouches ? e.changedTouches[0].screenX : e.screenX;
+};
+
+const handleSigTouchEnd = (e) => {
+  sigTouchEndX.value = e.changedTouches ? e.changedTouches[0].screenX : e.screenX;
+  handleSigSwipe();
+};
+
+const handleSigSwipe = () => {
+  const swipeThreshold = 50;
+  const diff = sigTouchStartX.value - sigTouchEndX.value;
+  
+  if (Math.abs(diff) > swipeThreshold && activeSignatures.value.length > 1) {
+    startSignatureSlider(); // Reset timer so it doesn't instantly jump after a swipe
+
+    if (diff > 0) {
+      currentSignatureIndex.value = (currentSignatureIndex.value + 1) % activeSignatures.value.length;
+    } else {
+      currentSignatureIndex.value = (currentSignatureIndex.value - 1 + activeSignatures.value.length) % activeSignatures.value.length;
+    }
+  }
+};
 
 // Outlet Configuration with thicker SVG Icons
 const outlets = [
@@ -803,11 +956,13 @@ watch(activeCategory, async () => {
 });
 
 onMounted(() => {
-  startSlider();
+  startSlider(); // Your existing specials slider
+  startSignatureSlider(); // Start the new signature slider
 });
 
 onUnmounted(() => {
   if (specialTimer) clearInterval(specialTimer);
+  if (signatureTimer) clearInterval(signatureTimer);
 });
 </script>
 

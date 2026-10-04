@@ -169,6 +169,7 @@ const cateringGalleryData = {
 
 const cateringCtaData = {
   eyebrow: "Ready to Plan Your Event?",
+  eyebrowColorClass: "text-[#ff6262]",
   title: "Let's Make Your Occasion Unforgettable.",
   description: "Get in touch with us today to book our Events Hall.",
   buttonText: "Check Availability",
@@ -250,7 +251,7 @@ useSeoMeta({
       subtitle="From intimate gatherings to grand celebrations, we serve flavours that leave a lasting impression."
       :images="heroImages"
       imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-red-950/70 to-black/70 z-5"
-      eyebrowColorClass="text-[#df4444]"
+      eyebrowColorClass="text-[#ff6262]"
       themeColorClass="text-[#991b1b]"
     />
 

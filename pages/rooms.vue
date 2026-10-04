@@ -209,6 +209,7 @@ const roomsGalleryData = {
 
 const roomsCtaData = {
   eyebrow: "Need a Comfortable Stay?",
+  eyebrowColorClass: "text-[#12a5e6]",
   title: "Reserve Your Sanctuary with Us.",
   description: "Enjoy luxurious amenities, daily housekeeping, and peaceful relaxation. Book your stay now.",
   buttonText: "Check Pricing",
@@ -298,7 +299,7 @@ useSeoMeta({
       subtitle="Thoughtfully designed rooms and suites for a comfortable stay every time."
       :images="heroImages"
       imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-blue-950/70 to-black/70 z-5"
-      eyebrowColorClass="text-[#3b82f6]"
+      eyebrowColorClass="text-[#12a5e6]"
       themeColorClass="text-[#1e40af]"
     />
 

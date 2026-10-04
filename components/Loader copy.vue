@@ -155,6 +155,6 @@ onMounted(() => {
 .icon-color-2 { color: #57534e; } /* stone-600 */
 .icon-color-3 { color: #047857; } /* emerald-700 */
 .icon-color-4 { color: #db2777; } /* pink-600 */
-.icon-color-5 { color: #d97706; } /* amber-600 */
+.icon-color-5 { color: #d18108; } /* amber-600 */
 .icon-color-6 { color: #4b5563; } /* gray-600 */
 </style>

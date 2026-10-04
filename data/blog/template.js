@@ -1,0 +1,243 @@
+// data/blogs.js
+
+export const blogsData = {
+  // The key MUST be the exact slug used in the URL (e.g., /blog/more-than-just-a-meal)
+  "more-than-just-a-meal": {
+    "pageTitle": "More Than Just a Meal",
+    "pageSubTitle": "The Little Things That Make Dining Memorable.",
+    "pageDesc": "At CAPS, a memorable dining experience is shaped by more than the food on your plate. It is the atmosphere, the comfort, the little details, and the warm service that bring people together.",
+    "publishDate": "2026-10-12T00:00:00Z",
+    "readTime": 6,
+    "featured": true,
+    "ogImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=2500",
+    "hero": {
+      "image": "/images/blog/more-than-just-a-meal/cover.jpg",
+      "breadcrumbs": [
+        { "label": "Home", "url": "/" },
+        { "label": "Blog", "url": "/blog" },
+        { "label": "More Than Just a Meal", "url": "#" }
+      ],
+      "eyebrow": "CAPS Stories",
+      "imageGradientClass": "via-[#2A150A]/60",
+      "themeColorClass": "text-[#bd5c17]",
+      "eyebrowColorClass": "text-[#ce7f2e]"
+    },
+    "blocks": [
+      {
+        "type": "editorial-intro",
+        "text": "At Hotel CAPS, a memorable dining experience is shaped by more than the food on your plate. While our culinary team takes immense pride in sourcing premium ingredients and crafting a symphony of flavors, we understand that a truly exceptional meal involves all of your senses. The curated atmosphere sets the stage the moment you step through our doors, blending elegant lighting with a sophisticated aesthetic that makes you feel instantly at ease. Soft ambient music and a thoughtful layout ensure that whether you are hosting a lively family celebration or sharing an intimate, quiet evening, your surroundings adapt perfectly to the mood of the occasion. It is the little details—the thousand tiny, unseen decisions—that ultimately define our distinct approach to hospitality. These small elements work quietly in the background to elevate a standard lunch or dinner into something remarkably unique."
+      },
+      {
+        "type": "heading",
+        "level": "h2",
+        "text": "More Than Food on the Table"
+      },
+      {
+        "type": "split-text-quote",
+        "text": [
+          "A memorable meal is rarely remembered for just one reason.",
+          "Sometimes it is the dish itself. Sometimes it is the table where everyone stayed a little longer than expected. Sometimes it is the music playing softly in the background, the space to enjoy a conversation without being crowded, or the ease of finding exactly what you wanted without having to think too much about it.",
+          "At Hotel CAPS, we believe dining becomes memorable when all those little things come together."
+        ],
+        "quote": "A memorable meal isn’t only what arrives on the plate. It’s everything around it.",
+        "Julee": true
+      },
+      {
+        "type": "heading",
+        "level": "h2",
+        "text": "Where Comfort Meets Atmosphere"
+      },
+      {
+        "type": "split-text-masonry",
+        "text": [
+          "From Chill N' Chai to Arabic Corner to the Main Table.",
+          "At CAPS, memorable dining begins before the first dish arrives. The atmosphere is spacious, comfortable, and thoughtfully arranged — with music in the background, room to relax, and seating that lets families, friends, and teams enjoy their own space.",
+          "From the easygoing charm of Chill N' Chai to the rich flavours of Arabic Corner and the welcoming comfort of our multi-cuisine restaurant, every corner adds something to the experience. Even the little outdoor moments — a breath of fresh air, a casual table, a playful space for kids — become part of the memory."
+        ],
+        "images": [
+          "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800",
+          "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800"
+        ]
+      },
+      {
+        "type": "split-quote-image",
+        "quote": "Before the first bite arrives, the mood has already begun.",
+        "image": "https://images.unsplash.com/photo-1414235077428-338988692286?auto=format&fit=crop&q=80&w=1200",
+        "aspect": "4:3"
+      },
+      {
+        "type": "icon-strip",
+        "items": [
+          { "icon": "couch", "title": "Spacious Seating", "desc": "Comfortable tables, room to settle in, and space for every gathering." },
+          { "icon": "people", "title": "Private Corners", "desc": "Booth-style seating that gives families and groups their own little world." },
+          { "icon": "music", "title": "Warm Ambience", "desc": "Soft music, friendly energy, and a setting that balances calm with celebration." }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": "h2",
+        "text": "Different Corners. Different Moods."
+      },
+      {
+        "type": "paragraph",
+        "text": "CAPS is not one dining experience squeezed into one room. Step outside the main restaurant and the mood begins to change.<br><br>At Chill n' Chai, the experience is lighter and more casual — with hot snacks, cool treats, beverages and easy conversations. A few steps away, Arabic Corner brings its own flavours and distinct personality. And inside, the multi-cuisine restaurant brings together a wide range of dishes and familiar favourites for every kind of appetite.<br><br>Three spaces. Different moods. One CAPS family. Whether it's a quick chai, an Arabic classic, or a full family dinner, you'll always find a space that feels just right."
+      },
+      {
+        "type": "video",
+        "thumbnail": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1600",
+        "videoId": "dQw4w9WgXcQ",
+        "caption": "Hotel CAPS – More Than Just a Meal"
+      },
+      {
+        "type": "heading",
+        "level": "h2",
+        "text": "Good Hospitality Between the Tables"
+      },
+      {
+        "type": "split-text-image",
+        "text": [
+          "Great dining is not only about what is served, but how the whole space lets people enjoy it. At CAPS, the seating is spacious, the cabins offer privacy for families and groups, and the atmosphere stays easygoing whether it is a quiet meal, a catch-up over coffee, or a small celebration.",
+          "Friendly staff, comfortable seating, soft music, and thoughtful service all work together to make guests feel settled. With Chill N' Chai outside, Arabic Corner to one side, and the main restaurant inside, different moods and moments find their own place without ever feeling disconnected from the whole experience."
+        ],
+        "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1200",
+        "aspect": "4:3"
+      },
+      {
+        "type": "quote-full",
+        "quote": "Comfort is felt in the little things — space, privacy, warmth, and the ease of being welcomed well.",
+        "color": "#7A3E12",
+        "Julee": false
+      },
+      {
+        "type": "heading",
+        "level": "h2",
+        "text": "The Moments Between Everything."
+      },
+      {
+        "type": "paragraph",
+        "text": "There is another reason dining becomes memorable. People.<br><br>These are not things a restaurant can manufacture. But a restaurant can create the space for them to happen. Good food brings people to the table. Comfort, atmosphere and hospitality make them want to stay there."
+      },
+      {
+        "type": "list-ordered",
+        "items": [
+          "Someone saying, “Try this.”",
+          "A child stealing a bite from another plate.",
+          "Friends ordering one more dish because nobody is quite ready to leave.",
+          "A family conversation lasting longer than the meal itself.",
+          "A familiar favourite that someone orders every single time."
+        ]
+      },
+      {
+        "type": "masonry-full",
+        "images": [
+          "https://images.unsplash.com/photo-1414235077428-338988692286?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=800",
+          "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800",
+          "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800"
+        ]
+      },
+      {
+        "type": "heading",
+        "level": "h2",
+        "text": "When the CAPS Experience Travels to You."
+      },
+      {
+        "type": "paragraph",
+        "text": "Not every CAPS meal has to happen inside CAPS. For guests ordering from home, the same experience begins digitally.<br><br>The CAPS Digital Menu makes it easy to explore what is available before placing an order. The restaurant team can simply share the menu link with customers, allowing them to browse dishes directly from their phone.<br><br>And once the choice is made, CAPS takes the experience the rest of the way. With free home delivery and a focus on getting food to customers quickly and comfortably, the restaurant reaches beyond its own dining tables.<br><br>The idea is simple:<br>The table does not always have to be at CAPS.<br>Sometimes CAPS comes to the table instead."
+      },
+      {
+        "type": "banner-menu",
+        "title": "Hungry already?",
+        "subtitle": "Explore the CAPS Digital Menu and find your next favourite.",
+        "link": "/menu"
+      },
+      {
+        "type": "heading",
+        "level": "h2",
+        "text": "A Meal Can Start a Conversation."
+      },
+      {
+        "type": "paragraph",
+        "text": "Dining does not have to end when the bill arrives. On CAPS tables, simple digital touchpoints make it easier for guests to stay connected.<br><br>The digital menu helps people discover what is available. Instagram keeps the conversation going beyond the restaurant. Google Reviews gives guests a direct way to share what they enjoyed and what CAPS can continue improving.<br><br>The idea is not simply to collect ratings. It is to listen.<br><br>A review might highlight a dish someone loved. A social post might capture a birthday, a family dinner or a favourite dessert. Feedback might point to one little detail that can make the next visit better.<br><br>Those conversations matter because hospitality grows through them.<br><br>A memorable meal can become a recommendation.<br>A recommendation can bring someone new through the door.<br>And one good experience can quietly become part of someone else’s story."
+      },
+      {
+        "type": "banner-social",
+        "title": "Had a CAPS moment worth sharing?",
+        "subtitle": "Tell us what you loved, and tell us what we can do better.",
+        "googleLink": "#",
+        "instaLink": "#"
+      },
+      {
+        "type": "heading",
+        "level": "h2",
+        "text": "The Little Things Make the Memory."
+      },
+      {
+        "type": "paragraph",
+        "text": "A memorable dining experience is rarely created by one grand gesture."
+      },
+      {
+        "type": "list-unordered",
+        "items": [
+          "It is the dish arriving when you are hungry.",
+          "The music playing somewhere in the background.",
+          "The table where everyone feels comfortable.",
+          "The little bit of privacy that lets a conversation become its own world.",
+          "The choice between Chill n' Chai, Arabic Corner and the multi-cuisine restaurant.",
+          "The menu that is easy to reach even when you are at home.",
+          "The delivery that brings dinner to your doorstep.",
+          "The staff member who notices what you need.",
+          "The review you leave afterward.",
+          "The photo you share.",
+          "The person beside you saying, “We should come here again.”"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Individually, they are little things.<br>Together, they become the experience.<br>And sometimes, they become the meal you remember."
+      },
+      {
+        "type": "slider-horizontal",
+        "images": [
+          "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?auto=format&fit=crop&q=80&w=1200"
+        ]
+      },
+      {
+        "type": "slider-thumbnail",
+        "images": [
+          "https://images.unsplash.com/photo-1414235077428-338988692286?auto=format&fit=crop&q=80&w=1600",
+          "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1600",
+          "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1600"
+        ]
+      },
+      {
+        "type": "footer-nav"
+      },
+      {
+        "type": "related-articles",
+        "articles": [
+          {
+            "thumbnail": "https://images.unsplash.com/photo-1414235077428-338988692286?auto=format&fit=crop&q=80&w=800",
+            "date": "05 OCT 2026",
+            "title": "A Taste of Tradition: Inside Arabic Corner",
+            "intro": "Dive into the rich flavors and history of our traditional dishes.",
+            "link": "/blog/arabic-corner"
+          },
+          {
+            "thumbnail": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800",
+            "date": "28 SEP 2026",
+            "title": "Why Chill N' Chai is Your New Favorite Hangout",
+            "intro": "Creating the perfect space for easy conversations and cool treats.",
+            "link": "/blog/chill-n-chai"
+          }
+        ]
+      }
+    ]
+  },
+  
+  // You can easily add the next blog here later:
+  // "a-taste-of-the-coast": { ... }
+};

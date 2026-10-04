@@ -8,7 +8,7 @@
         <!-- Eyebrow Title -->
         <span 
           v-if="eyebrow" 
-          class="block font-['Dancing_Script'] text-xl sm:text-2xl lg:text-3xl mb-1 sm:mb-2 tracking-wide"
+          class="block font-['Julee'] text-xl sm:text-2xl lg:text-3xl mb-1 sm:mb-2 tracking-wide"
           :class="themeTextClass"
         >
           {{ eyebrow }}
@@ -59,6 +59,7 @@
           :alt="img.alt" 
           :width="img.width" 
           :height="img.height"
+          :style="{ aspectRatio: `${img.width} / ${img.height}` }"
           format="webp"
           quality="80"
           loading="lazy"

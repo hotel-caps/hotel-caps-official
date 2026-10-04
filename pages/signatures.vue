@@ -5,6 +5,7 @@ import PageIntro from '~/components/PageIntro.vue';
 import PageSplit from '~/components/PageSplit.vue';
 import SignatureCollection from '~/components/SignatureCollection.vue';
 import PageCtaBanner from '~/components/PageCtaBanner.vue';
+import { signatureMonths } from '~/signaturesData.js';
 
 // Define the data for our hero section
 const heroImages = ref([
@@ -14,11 +15,11 @@ const heroImages = ref([
 // INTRO SECTION (Mapped from Design 1)
 const signatureIntroData = {
   eyebrow: "Introducing CAPS Signatures",
-  title: "Two Dishes.\nOne Signature Month.",
+  title: "Two Signature Dishes.\nOne Month.",
   description: "Every month, we choose two dishes that deserve a little more of the spotlight. One vegetarian, one non-vegetarian, each selected to become a CAPS Signature for the month.",
   image: "/images/signatures/signature-intro.jpg", // Update with actual intro path
   themeTextClass: "text-[#0F9A7D]", 
-  themeBgClass: "bg-[#0F4A3D]",
+  themeBgClass: "bg-[#0F5A4D]",
   themeIconBgClass: "bg-[#0F5A5D]/10", // Soft teal background for icons
   features: [
     {
@@ -51,7 +52,7 @@ const signatureIntroData = {
 // SPLIT SECTION (Mapped from Design 3)
 const signatureSplitData = {
   eyebrow: "Signature Week",
-  title: "One Last Week.\nOne More Reason\nto Indulge.",
+  title: "One Last Week.\nOne More Reason to Indulge.",
   description: "Every month ends with something special. During the final week, our two CAPS Signature dishes take the spotlight, giving you seven days to discover the month's handpicked favourites.",
   bullets: [
     "Available during the last week of every month",
@@ -64,7 +65,7 @@ const signatureSplitData = {
   buttonText: "View Menu",
   buttonLink: "/menu",
   themeTextClass: "text-[#0F9A7D]", 
-  themeBgClass: "bg-[#0F4A3D]",
+  themeBgClass: "bg-[#0F5A4D]",
 };
 
 // COLLECTION SECTION (Mapped from Design 2)
@@ -72,29 +73,15 @@ const signatureCollectionData = {
   eyebrow: "Signature Collection",
   title: "One Veg. One Non-Veg. One Month.",
   description: "A fresh pair of specially chosen dishes every month, crafted with the finest ingredients and a touch of something special. Discover, enjoy, and look forward to what's next.",
-  themeTextClass: "text-[#0F4A3D]",
-  themeBgClass: "bg-[#0F4A3D]",
-  months: [
-    {
-      monthName: "October 2026",
-      subtitle: "THIS MONTH'S SIGNATURES",
-      veg: {
-        title: "Herb Garden Paneer",
-        description: "Chargrilled cottage cheese with garden herbs, seasonal vegetables and a hint of citrus.",
-        image: "/images/signatures/veg-signature.jpg" // Update path
-      },
-      nonVeg: {
-        title: "Smoked Pepper Chicken",
-        description: "Tender chicken finished with a smoky pepper glaze, served with creamy mash and seasonal greens.",
-        image: "/images/signatures/non-veg-signature.jpg" // Update path
-      }
-    }
-  ]
+  themeTextClass: "text-[#0F9A7D]",
+  themeBgClass: "bg-[#0F5A4D]",
+  months: signatureMonths
 };
 
 // CTA BANNER SECTION
 const signatureCtaData = {
   eyebrow: "Ready to Indulge?",
+  eyebrowColorClass: "text-[#1FAA8D]",
   title: "Discover This Month's Signatures.",
   description: "Reserve a table or explore our full menu to experience the culinary craftsmanship at Hotel CAPS.",
   buttonText: "Check Our Menu",
@@ -133,11 +120,11 @@ useSeoMeta({
   <div>
     <PageHero 
       eyebrow="CAPS Signatures"
-      title="Two Signature Dishes. One Month."
+      title="Two Dishes. One Month."
       subtitle="A fresh pair of chef-picked favourites, chosen each month for you to discover."
       :images="heroImages"
-      imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-[#0A3A3D]/70 to-black/70 z-5"
-      eyebrowColorClass="text-[#0F9A7D]"
+      imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-[#0F2A1D]/60 to-black/70 z-5"
+      eyebrowColorClass="text-[#1FAA8D]"
       themeColorClass="text-[#0F4A3D]"
     />
 

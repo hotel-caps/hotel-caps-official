@@ -149,7 +149,7 @@
                           </div>
                           
                           <div class="flex flex-col min-w-0">
-                            <span class="text-[24px] font-sans font-medium leading-tight text-white line-clamp-2 drop-shadow-sm">{{ item.name }}</span>
+                            <span class="text-[24px] capitalize font-sans font-medium leading-tight text-white line-clamp-2 drop-shadow-sm">{{ item.name }}</span>
                             <!-- Offer / Description Rendering below title -->
                             <span v-if="item.description" class="text-[15px] text-[#fbbf24] font-medium uppercase tracking-wider mt-1 line-clamp-1">{{ item.description }}</span>
                           </div>
@@ -173,6 +173,81 @@
               </div>
             </div>
 
+            <!-- ---------------------------------------- -->
+            <!-- FORMAT: MONTHLY SIGNATURES               -->
+            <!-- ---------------------------------------- -->
+            <div v-else-if="activeSlide.format === 'SIGNATURES'" class="w-full h-full flex flex-col pt-[50px] pb-[40px] px-[60px] live-slide-wrapper">
+              
+              <div class="flex justify-between items-start w-full mb-[40px] px-[20px] live-fade-el opacity-0 translate-y-[-20px]">
+                <div class="flex flex-col items-center flex-1 text-center">
+                  
+                  <p class="text-[24px] sm:text-[20px] tracking-[0.25em] font-semibold mb-2 font-sans uppercase text-[#0f172a]">
+                    <span class="text-[#b91c1c]">{{ liveDate.day }} </span>
+                    <span class="mx-1"> {{ liveDate.month }} </span>
+                    <span class="text-[#b91c1c]"> {{ liveDate.year }} </span>
+                    <span class="mx-3 opacity-70">&bull;</span>
+                    <span> {{ liveDate.weekday }} </span>
+                  </p>
+
+                  <h1 class="text-[55px] sm:text-[75px] font-bold tracking-widest font-display uppercase leading-none drop-shadow-sm mb-4">
+                    <span class="text-[#0f172a]">CAPS</span>
+                    <span class="text-[#b47525] ml-2 sm:ml-4">SIGNATURES</span>
+                  </h1>
+
+                  <p class="text-[24px] sm:text-[28px] tracking-[0.2em] uppercase text-[#0f172a]/90 font-sans font-bold mb-5">
+                    {{ activeSlide.month }}
+                  </p>
+
+                  <div class="w-[250px] sm:w-[350px] h-[2px] bg-gradient-to-r from-transparent via-[#b47525] to-transparent"></div>
+                </div>
+              </div>
+
+              <div class="flex-1 flex justify-center items-stretch gap-[60px] w-full live-anim-grid opacity-0 px-[40px]">
+                
+                <div v-if="activeSlide.veg" class="relative flex flex-col w-[600px] rounded-3xl overflow-hidden shadow-2xl backdrop-blur-md border border-white/20 bg-[#0A3A3D]/95 live-stagger-card flex-shrink-0">
+                   <svg class="absolute inset-[15px] w-[calc(100%-30px)] h-[calc(100%-30px)] opacity-20 pointer-events-none z-10" fill="none" preserveAspectRatio="none"><rect x="0" y="0" width="100%" height="100%" rx="16" stroke="white" stroke-width="2" stroke-dasharray="12 12" /></svg>
+                   
+                   <div class="w-full aspect-[4/3] relative overflow-hidden z-20 border-b border-[#187477]">
+                      <div class="absolute top-5 left-5 z-30 bg-[#16a34a] text-white text-[15px] font-bold tracking-widest px-4 py-2 rounded flex items-center gap-2 shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+                         <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="currentColor" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+                         VEG SIGNATURE
+                      </div>
+                      <img :src="activeSlide.veg.image" class="w-full h-full object-cover" />
+                   </div>
+                   
+                   <div class="p-[35px] flex flex-col flex-1 z-20">
+                      <h3 class="text-[38px] font-display font-bold text-white leading-tight mb-4 drop-shadow-md">{{ activeSlide.veg.title }}</h3>
+                      <p class="text-[20px] text-white/80 font-sans leading-relaxed line-clamp-3">{{ activeSlide.veg.description }}</p>
+                      
+                      <div v-if="activeSlide.veg.price" class="mt-auto pt-4 text-[46px] font-display font-bold text-[#d4af37] drop-shadow-md tracking-wide">
+                        <span class="text-[28px] text-[#e6c2a4] mr-1">₹</span>{{ activeSlide.veg.price }}
+                      </div>
+                   </div>
+                </div>
+
+                <div v-if="activeSlide.nonVeg" class="relative flex flex-col w-[600px] rounded-3xl overflow-hidden shadow-2xl backdrop-blur-md border border-white/20 bg-[#0A3A3D]/95 live-stagger-card flex-shrink-0">
+                   <svg class="absolute inset-[15px] w-[calc(100%-30px)] h-[calc(100%-30px)] opacity-20 pointer-events-none z-10" fill="none" preserveAspectRatio="none"><rect x="0" y="0" width="100%" height="100%" rx="16" stroke="white" stroke-width="2" stroke-dasharray="12 12" /></svg>
+                   
+                   <div class="w-full aspect-[4/3] relative overflow-hidden z-20 border-b border-[#187477]">
+                      <div class="absolute top-5 left-5 z-30 bg-[#dc2626] text-white text-[15px] font-bold tracking-widest px-4 py-2 rounded flex items-center gap-2 shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+                         <svg class="w-5 h-5" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="currentColor" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+                         NON-VEG SIGNATURE
+                      </div>
+                      <img :src="activeSlide.nonVeg.image" class="w-full h-full object-cover" />
+                   </div>
+                   
+                   <div class="p-[35px] flex flex-col flex-1 z-20">
+                      <h3 class="text-[38px] font-display font-bold text-white leading-tight mb-4 drop-shadow-md">{{ activeSlide.nonVeg.title }}</h3>
+                      <p class="text-[20px] text-white/80 font-sans leading-relaxed line-clamp-3">{{ activeSlide.nonVeg.description }}</p>
+                      
+                      <div v-if="activeSlide.nonVeg.price" class="mt-auto pt-4 text-[46px] font-display font-bold text-[#d4af37] drop-shadow-md tracking-wide">
+                        <span class="text-[28px] text-[#e6c2a4] mr-1">₹</span>{{ activeSlide.nonVeg.price }}
+                      </div>
+                   </div>
+                </div>
+
+              </div>
+            </div>
 
             <!-- ---------------------------------------- -->
             <!-- FORMAT B: UNIVERSAL (ROOMS, EVENTS, CATERING)-->
@@ -381,7 +456,7 @@
               
               <!-- Floating Cursive Text (Moved Higher, Scaled Down) -->
               <div class="absolute top-[60px] right-[520px] -rotate-6 z-30 live-del-cursive opacity-0 scale-90">
-                 <p class="font-['Dancing_Script'] text-[50px] text-[#2563eb] leading-[1.1] drop-shadow-md">
+                 <p class="font-['Julee'] text-[50px] text-[#2563eb] leading-[1.1] drop-shadow-md">
                    Your favourites.<br/>Now closer to you.
                  </p>
               </div>
@@ -476,6 +551,7 @@
 <script setup>
 import { ref, computed, nextTick, onMounted, onBeforeUnmount } from 'vue';
 import { gsap } from 'gsap';
+import { currentMonthSignature } from '~/signaturesData.js';
 
 // =====================================
 // UI CONSTANTS & DATA MAPS
@@ -829,14 +905,14 @@ const featureStrips = {
 // 2. Add this helper function to your <script setup> to route the colors perfectly
 const getCategoryColor = (categoryName) => {
   const colors = {
-    'specials': '#D97706',
+    'specials': '#d18108',
     'rooms': '#2563eb',
     'restaurant': '#03a661',
     'events': '#e22473', 
     'catering': '#df4444',
     'delivery' : '#0ea5e9'
   };
-  return colors[categoryName] || '#D97706'; // Defaults to gold if unmatched
+  return colors[categoryName] || '#d18108'; // Defaults to gold if unmatched
 };
 
 onMounted(async () => {
@@ -858,6 +934,7 @@ onMounted(async () => {
     console.error("Live Fetch Error:", error);
   }
 });
+
 
 const capsSpecialsData = computed(() => {
   const outletsConfig = [
@@ -954,7 +1031,17 @@ const capsSpecialsData = computed(() => {
     listSlides.push({ format: 'LIST', trackerId: 'specials', mainTitle: "TODAY'S SPECIALS", outlets: currentSlideOutlets });
   }
 
-  return [...listSlides, ...staticSlidesData];
+  // Create the Signature Slide object
+  const signatureSlide = {
+    format: 'SIGNATURES',
+    trackerId: 'specials', // Keeps the Specials tracker lit up
+    month: currentMonthSignature.monthName,
+    veg: currentMonthSignature.veg,
+    nonVeg: currentMonthSignature.nonVeg
+  };
+
+  // Prepend it so it is the absolute first slide
+  return [signatureSlide, ...listSlides, ...staticSlidesData];
 });
 
 // =====================================
@@ -994,7 +1081,7 @@ const runCycle = async (index) => {
     } else if (activeSlide.value.format === 'CATERING') {
       bgTintRef.value.style.backgroundColor = '#df4444'; // Red/Terracotta
       bgTintRef.value.style.opacity = '0.75';
-    } else if (activeSlide.value.format === 'LIST') {
+    } else if (activeSlide.value.format === 'LIST' || activeSlide.value.format === 'SIGNATURES') {
       bgTintRef.value.style.backgroundColor = 'transparent';
       bgTintRef.value.style.opacity = '0';
     } else {
@@ -1012,7 +1099,7 @@ const runCycle = async (index) => {
         .to('.live-del-cursive', { scale: 1, opacity: 1, duration: 1, ease: 'power3.out' }, 0.8)
         .to('#live-delivery-rider', { x: 0, opacity: 1, duration: 1.5, ease: 'power4.out' }, 0.2)
         .to('#live-delivery-marker', { y: 0, opacity: 1, scale: 1, duration: 1.2, ease: 'bounce.out' }, 1.0);
-  } else if (activeSlide.value.format === 'LIST') {
+  } else if (activeSlide.value.format === 'LIST' || activeSlide.value.format === 'SIGNATURES') {
     // Stage Lists float up
     tlIn.to('.live-fade-el', { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: 'power3.out' }, 0)
         .to('.live-anim-grid', { opacity: 1, duration: 1, ease: 'power2.out' }, 0.2)

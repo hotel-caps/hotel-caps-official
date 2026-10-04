@@ -11,7 +11,7 @@
           <!-- Eyebrow Title -->
           <span 
             v-if="eyebrow" 
-            class="intro-text-reveal block font-['Dancing_Script'] text-xl sm:text-2xl lg:text-3xl mb-1 sm:mb-2 tracking-wide"
+            class="intro-text-reveal block font-['Julee'] text-xl sm:text-2xl lg:text-3xl mb-1 sm:mb-2 tracking-wide"
             :class="themeTextClass"
           >
             {{ eyebrow }}

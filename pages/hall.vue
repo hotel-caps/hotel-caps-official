@@ -201,6 +201,7 @@ const hallGalleryData = {
 
 const hallCtaData = {
   eyebrow: "Planning a Special Celebration?",
+  eyebrowColorClass: "text-[#ff7dbe]",
   title: "Book Our Premium Catering Today.",
   description: "Contact our event specialists for menu, booking and finalizing arrangements.",
   buttonText: "Request a Quote",
@@ -278,7 +279,7 @@ useSeoMeta({
       subtitle="The perfect venue for your special moments - every celebration, meeting and milestone."
       :images="heroImages"
       imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-pink-950/70 to-black/70 z-5"
-      eyebrowColorClass="text-[#e22473]"
+      eyebrowColorClass="text-[#ff7dbe]"
       themeColorClass="text-[#be185d]"
     />
 

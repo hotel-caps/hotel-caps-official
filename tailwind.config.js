@@ -21,7 +21,7 @@ export default {
         body: ['Inter', 'sans-serif'], 
         number: ['Inter', 'sans-serif'],
         display: ['Faculty Glyphic', 'sans-serif'],
-        decorative: ['Dancing Script', 'cursive'] 
+        decorative: ['Julee', 'cursive'] 
       },
     },
   },

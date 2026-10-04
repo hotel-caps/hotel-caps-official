@@ -6,7 +6,7 @@
       <div class="catering-container-reveal relative bg-gradient-to-r from-[#4d0808] via-[#800d0d] to-[#4d0808] rounded-[1.75rem] sm:rounded-[2.5rem] p-8 sm:p-12 lg:p-16 shadow-2xl border border-red-950/40 text-center flex flex-col items-center">
         
         <!-- Header Section -->
-        <span class="catering-header-reveal block font-['Dancing_Script'] text-2xl sm:text-3xl lg:text-4xl text-amber-200/90 mb-2 sm:mb-3 tracking-wide">
+        <span class="catering-header-reveal block font-['Julee'] text-2xl sm:text-3xl lg:text-4xl text-[#ff6262] mb-2 sm:mb-3 tracking-wide">
           {{ cateringEventsData.eyebrow }}
         </span>
 
@@ -15,7 +15,7 @@
         </h2>
 
         <!-- Signature Gold Underline -->
-        <div class="catering-header-reveal w-16 sm:w-20 h-1 bg-amber-400 mb-10 sm:mb-14"></div>
+        <div class="catering-header-reveal w-16 sm:w-20 h-1 bg-[#ff6262] mb-10 sm:mb-14"></div>
 
         <!-- Events Flexbox -->
         <div class="flex flex-wrap justify-center items-start gap-x-6 sm:gap-x-8 lg:gap-x-10 xl:gap-x-12 gap-y-8 sm:gap-y-10 w-full">
@@ -28,7 +28,7 @@
             <!-- Gold Icon Container with hover lift -->
             <div class="catering-image-reveal">
               <div 
-                class="mb-3 sm:mb-4 text-amber-400 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:text-amber-300 group-hover:drop-shadow-[0_4px_12px_rgba(251,191,36,0.3)]"
+                class="mb-3 sm:mb-4 text-[#ff6262] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:text-[#ff8282] group-hover:drop-shadow-[0_4px_12px_rgba(251,191,36,0.3)]"
                 v-html="event.svg"
               ></div>
             </div>

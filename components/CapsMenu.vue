@@ -44,7 +44,7 @@
       <div class="block lg:hidden">
 
         <!-- MOBILE: MONTHLY SIGNATURES SLIDER -->
-        <!-- <div class="mb-6 flex flex-col gap-3">
+        <div class="mb-6 flex flex-col gap-3">
           
           <div class="flex flex-col px-1">
             <h3 class="font-display text-base font-bold text-[#927104] tracking-widest uppercase -mt-1">{{ currentMonthSignature.monthName }}</h3>
@@ -66,12 +66,23 @@
                 class="col-start-1 row-start-1 w-full flex flex-col relative overflow-hidden bg-[#2a2a2a]"
               >
                 <div class="w-full aspect-[4/3] relative overflow-hidden border-b border-[#2a2a2a]/50">
-                  
                   <div class="absolute top-3 right-3 z-10 bg-black/60 backdrop-blur-md px-2 py-1 rounded shadow-sm">
                     <svg v-if="sig.type === 'veg'" class="w-4 h-4" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#16a34a" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#16a34a"/></svg>
                     <svg v-else class="w-4 h-4" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#dc2626" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#dc2626"/></svg>
                   </div>
-                  <img :src="sig.image" :alt="sig.title" class="w-full h-full object-cover pointer-events-none" />
+                  <NuxtImg
+                    :src="sig.image"
+                    :alt="sig.title"
+                    width="600"
+                    height="450"
+                    sizes="360px sm:540px"
+                    format="webp"
+                    quality="80"
+                    densities="x1"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-full object-cover pointer-events-none"
+                  />
                 </div>
                 
                 <div class="p-5 pb-8 sm:p-6 sm:pb-10">
@@ -85,7 +96,7 @@
               <div v-for="(_, idx) in activeSignatures" :key="'sig-dot-m-'+idx" :class="['h-1.5 rounded-full transition-all duration-300', currentSignatureIndex === idx ? 'w-5 bg-[#d4af37]' : 'w-1.5 bg-zinc-500']"></div>
             </div>
           </div>
-        </div> -->
+        </div>
 
         <!-- Outlet Tabs (Mobile - Grid Layout, No scroll) -->
         <div class="pt-3 pb-5 mb-5 grid grid-cols-3 gap-2 transition-colors duration-500 border-b border-[#2a2a2a]">
@@ -295,14 +306,16 @@
                     <div class="w-24 h-18 aspect-[4/3] shrink-0 rounded-xl overflow-hidden">
                       <NuxtImg 
                         :src="item.image ? item.image : '/images/live/placeholder.jpg'" 
-                        @error="$event.target.src = '/images/menu/placeholder.jpg'"
+                        @error="$event.target.srcset = ''; $event.target.src = '/images/menu/placeholder.jpg'"
                         :alt="item.alt || item.name" 
                         width="590"
                         height="442"
+                        sizes="160px sm:240px md:340px lg:420px xl:590px"
                         format="webp"
                         quality="80"
-                        loading="lazy"
                         densities="x1"
+                        loading="lazy"
+                        decoding="async"
                         class="w-full h-full rounded-xl object-cover shadow-sm" 
                       />
                     </div>
@@ -352,7 +365,7 @@
         <aside class="w-[30%] xl:w-[25%] sticky top-[6rem] flex flex-col gap-6 pt-2">
 
           <!-- DESKTOP: MONTHLY SIGNATURES SLIDER -->
-          <!-- <div class="flex flex-col gap-3 mb-4">
+          <div class="flex flex-col gap-3 mb-4">
             
             <div class="flex flex-col">
               <h3 class="font-display text-xl font-bold text-[#927104] tracking-widest uppercase -mt-1">{{ currentMonthSignature.monthName }}</h3>
@@ -379,7 +392,19 @@
                       <svg v-if="sig.type === 'veg'" class="w-5 h-5" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#16a34a" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#16a34a"/></svg>
                       <svg v-else class="w-5 h-5" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#dc2626" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#dc2626"/></svg>
                     </div>
-                    <img :src="sig.image" :alt="sig.title" class="w-full h-full object-cover pointer-events-none" />
+                    <NuxtImg
+                      :src="sig.image"
+                      :alt="sig.title"
+                      width="600"
+                      height="450"
+                      sizes="340px md:400px lg:500px xl:600px"
+                      format="webp"
+                      quality="80"
+                      densities="x1"
+                      loading="lazy"
+                      decoding="async"
+                      class="w-full h-full object-cover pointer-events-none"
+                    />
                   </div>
                   
                   <div class="p-6 xl:p-8 pb-10">
@@ -393,7 +418,7 @@
                 <div v-for="(_, idx) in activeSignatures" :key="'sig-dot-d-'+idx" :class="['h-2 rounded-full transition-all duration-300', currentSignatureIndex === idx ? 'w-6 bg-[#d4af37]' : 'w-2 bg-zinc-500']"></div>
               </div>
             </div>
-          </div> -->
+          </div>
 
           <div class="flex flex-col">
             <h2 class="font-display text-3xl font-bold mb-2 text-[#927104] tracking-wide uppercase transition-colors duration-500">Today's</h2>
@@ -612,14 +637,16 @@
               <div class="w-full aspect-[4/3] overflow-hidden relative border-b border-[#2a2a2a]">
                 <NuxtImg 
                   :src="item.image ? item.image : '/images/live/placeholder.jpg'" 
-                  @error="$event.target.src = '/images/menu/placeholder.jpg'"
+                  @error="$event.target.srcset = ''; $event.target.src = '/images/menu/placeholder.jpg'"
                   :alt="item.name" 
                   width="590"
                   height="442"
+                  sizes="360px sm:480px md:340px lg:420px xl:590px"
                   format="webp"
                   quality="80"
-                  loading="lazy"
                   densities="x1"
+                  loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />
               </div>

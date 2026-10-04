@@ -2,7 +2,7 @@
   <section 
     id="home-blog" 
     ref="sectionRef" 
-    class="w-full bg-gradient-to-b from-stone-100 to-stone-200/70 py-16 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    class="w-full bg-gradient-to-b from-stone-100 to-stone-200/70 py-10 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
   >
     <div class="max-w-7xl mx-auto">
       
@@ -14,7 +14,6 @@
         <h2 class="text-3xl lg:text-4xl font-display font-bold tracking-wide text-zinc-900 leading-tight">
           Stories from <span class="text-[#bd5c17]">Our Table</span>
         </h2>
-        <div class="w-16 sm:w-20 h-1 bg-[#bd5c17] mx-auto mt-5 rounded-full"></div>
       </div>
 
       <!-- Carousel Viewport (Strictly 1 Card Visible at a Time) -->
@@ -44,7 +43,8 @@
             <article 
               v-for="(blog, index) in featuredList" 
               :key="blog.url || index"
-              class="w-full shrink-0 flex flex-col md:flex-row bg-white overflow-hidden"
+              class="group w-full shrink-0 flex flex-col md:flex-row bg-white overflow-hidden cursor-pointer"
+              @click="navigateTo(blog.url)"
             >
               <!-- Image Column: 16:9 on <md, Left Column on md+ -->
               <div class="w-full md:w-1/2 lg:w-3/5 aspect-video md:aspect-auto relative overflow-hidden bg-stone-100">
@@ -57,13 +57,15 @@
                   :alt="blog.title"
                   :width="blog.width || 1200"
                   :height="blog.height || 675"
+                  sizes="380px sm:580px md:450px lg:600px"
                   :style="{ aspectRatio: `${blog.width || 16} / ${blog.height || 9}` }"
                   format="webp"
                   quality="80"
-                  loading="lazy"
                   densities="x1"
+                  loading="lazy"
+                  decoding="async"
                   draggable="false"
-                  class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
 
@@ -76,7 +78,7 @@
                   </span>
                 </div>
 
-                <h3 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-zinc-900 mb-4 sm:mb-5 leading-snug">
+                <h3 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-zinc-900 mb-4 sm:mb-5 leading-snug group-hover:text-[#bd5c17] transition-colors duration-300">
                   {{ blog.title }}
                 </h3>
 
@@ -86,10 +88,13 @@
 
                 <div>
                   <NuxtLink 
-                    :to="blog.url" 
-                    class="bubble-button-base bubble-button-brown font-display tracking-wider font-semibold py-2.5 px-6 rounded-lg"
+                    :to="blog.url"
+                    @click.stop
+                    class="relative inline-flex items-center w-fit pb-1.5 text-[#bd5c17] font-bold tracking-wide group-hover:text-[#C86A22] transition-colors duration-300"
                   >
-                    Read Blog &rarr;
+                    <span>Read Story</span>
+                    <span class="ml-2 transform group-hover:translate-x-1.5 transition-transform duration-300 ease-out">→</span>
+                    <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#bd5c17] group-hover:bg-[#C86A22] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
                   </NuxtLink>
                 </div>
               </div>
@@ -121,7 +126,7 @@
       </div>
 
       <!-- Bottom CTA: See All Blogs -->
-      <div class="blog-reveal mt-10 lg:mt-14 text-center">
+      <div class="blog-reveal mt-12 lg:mt-18 text-center">
         <NuxtLink 
           to="/blog" 
           class="bubble-button-base bubble-button-brown font-display tracking-wider font-semibold py-3 px-8 rounded-lg text-base sm:text-lg shadow-sm"

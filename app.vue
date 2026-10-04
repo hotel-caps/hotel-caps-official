@@ -78,4 +78,8 @@ body:has(.loader) {
   opacity: 1;
   filter: blur(1rem);
 }
+
+a, button, [role="button"], input, select, textarea {
+  touch-action: manipulation;
+}
 </style>

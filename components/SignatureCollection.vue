@@ -57,18 +57,21 @@
                   <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
                   VEG SIGNATURE
                 </div>
+                <!-- Veg Card NuxtImg -->
                 <NuxtImg 
-                    :src="monthData.veg.image" 
-                    :alt="monthData.veg.title" 
-                    width="600"
-                    height="400"
-                    format="webp"
-                    quality="80"
-                    loading="lazy"
-                    densities="x1"
-                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                />    
-            </div>
+                  :src="monthData.veg.image" 
+                  :alt="monthData.veg.title" 
+                  width="600"
+                  height="450"
+                  sizes="380px sm:580px md:360px lg:580px"
+                  format="webp"
+                  quality="80"
+                  loading="lazy"
+                  decoding="async"
+                  densities="x1"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                /> 
+              </div>
               <div class="p-6 sm:p-8 text-center flex flex-col items-center">
                 <h4 class="font-display font-bold text-xl sm:text-2xl text-zinc-900 mb-3">
                   {{ monthData.veg.title }}
@@ -87,18 +90,21 @@
                   <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/><path d="M8 16l8-8" stroke-linecap="round"/><path d="M16 16L8 8" stroke-linecap="round"/></svg>
                   NON-VEG SIGNATURE
                 </div>
+                <!-- Non-Veg Card NuxtImg -->
                 <NuxtImg 
-                    :src="monthData.nonVeg.image" 
-                    :alt="monthData.nonVeg.title" 
-                    width="600"
-                    height="400"
-                    format="webp"
-                    quality="80"
-                    loading="lazy"
-                    densities="x1"
-                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                  :src="monthData.nonVeg.image" 
+                  :alt="monthData.nonVeg.title" 
+                  width="600"
+                  height="450"
+                  sizes="380px sm:580px md:360px lg:580px"
+                  format="webp"
+                  quality="80"
+                  loading="lazy"
+                  decoding="async"
+                  densities="x1"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-            </div>
+              </div>
               <div class="p-6 sm:p-8 text-center flex flex-col items-center">
                 <h4 class="font-display font-bold text-xl sm:text-2xl text-zinc-900 mb-3">
                   {{ monthData.nonVeg.title }}
@@ -138,63 +144,60 @@ const props = defineProps({
 const sectionRef = ref(null);
 const isInitialAppLoad = useState('isInitialAppLoad');
 let ctx;
+let rafId;
 
 // --- ANIMATION LOGIC ---
 const initScrollAnimation = () => {
   if (!sectionRef.value) return;
 
-  ctx = gsap.context(() => {
-    
-    // Header Animation
-    gsap.from('.sig-header-reveal', {
-      scrollTrigger: {
-        trigger: sectionRef.value,
-        start: 'top 80%', 
-      },
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      ease: 'power3.out',
-      stagger: 0.1
-    });
-
-    // Month Wrapper & Cards Staggering
-    const monthWrappers = gsap.utils.toArray('.sig-month-wrapper');
-    
-    monthWrappers.forEach((wrapper) => {
-      const cards = wrapper.querySelectorAll('.sig-card');
-      
-      gsap.from([wrapper.children[0], wrapper.children[1], ...cards], {
+  rafId = requestAnimationFrame(() => {
+    ctx = gsap.context(() => {
+      // Header Animation
+      gsap.from('.sig-header-reveal', {
         scrollTrigger: {
-          trigger: wrapper,
+          trigger: sectionRef.value,
           start: 'top 85%',
+          once: true
         },
         opacity: 0,
-        y: 40,
-        duration: 0.8,
+        y: 24,
+        duration: 0.7,
         ease: 'power3.out',
-        stagger: 0.15
+        stagger: 0.08
       });
-    });
 
-  }, sectionRef.value);
+      // Month Wrapper & Cards Staggering
+      const monthWrappers = gsap.utils.toArray('.sig-month-wrapper');
+      
+      monthWrappers.forEach((wrapper) => {
+        const cards = wrapper.querySelectorAll('.sig-card');
+        
+        gsap.from([wrapper.children[0], wrapper.children[1], ...cards], {
+          scrollTrigger: {
+            trigger: wrapper,
+            start: 'top 88%',
+            once: true
+          },
+          opacity: 0,
+          y: 32,
+          duration: 0.7,
+          ease: 'power3.out',
+          stagger: 0.12
+        });
+      });
+    }, sectionRef.value);
+  });
 };
 
 // --- LIFECYCLE HOOKS ---
 onMounted(() => {
   if (!isInitialAppLoad.value) {
-    setTimeout(() => {
-      initScrollAnimation();
-      ScrollTrigger.refresh();
-    }, 600);
+    initScrollAnimation();
   } else {
     const unwatch = watch(isInitialAppLoad, async (isStillLoading) => {
       if (!isStillLoading) {
         await nextTick();
-        setTimeout(() => {
-          initScrollAnimation();
-          ScrollTrigger.refresh();
-        }, 50); 
+        initScrollAnimation();
         unwatch();
       }
     });
@@ -202,6 +205,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+  if (rafId) cancelAnimationFrame(rafId);
   if (ctx) ctx.revert();
 });
 </script>

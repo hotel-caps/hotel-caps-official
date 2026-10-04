@@ -42,11 +42,12 @@ const scrollThumbs = (direction) => {
           :alt="`Room image ${index + 1}`"
           width="1200"
           height="800"
+          sizes="380px sm:640px md:768px lg:960px xl:1200px"
           format="webp"
           quality="80"
           densities="x1"
-          :loading="index === 0 ? 'eager' : 'lazy'"
-          :fetchpriority="index === 0 ? 'high' : 'auto'"
+          loading="lazy"
+          decoding="async"
           class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
         />
       </TransitionGroup>
@@ -83,10 +84,12 @@ const scrollThumbs = (direction) => {
             :alt="`Thumbnail ${index + 1}`"
             width="300"
             height="200"
+            sizes="100px sm:140px md:180px lg:240px"
             format="webp"
             quality="80"
-            loading="lazy"
             densities="x1"
+            loading="lazy"
+            decoding="async"
             class="w-full h-full object-cover"
           />
         </button>

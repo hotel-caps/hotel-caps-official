@@ -55,9 +55,9 @@ export const blogsData = {
           "From the easygoing charm of Chill N' Chai to the rich flavours of Arabic Corner and the welcoming comfort of our multi-cuisine restaurant, every corner adds something to the experience. Even the little outdoor moments — a breath of fresh air, a casual table, a playful space for kids — become part of the memory."
         ],
         "images": [
-          "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200",
-          "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800",
-          "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800"
+          "/images/blog/more-than-just-a-meal/restaurant.jpg",
+          "/images/blog/more-than-just-a-meal/chill-n-chai.jpg",
+          "/images/blog/more-than-just-a-meal/arabic-corner.jpg"
         ]
       },
       {
@@ -74,7 +74,7 @@ export const blogsData = {
           { "icon": "couch", "title": "Spacious Seating", "desc": "Comfortable tables, room to settle in, and space for every gathering." },
           { "icon": "music", "title": "Warm Ambience", "desc": "Soft music, friendly energy, and a setting that balances calm with celebration." },
           { "icon": "people", "title": "Private Corners", "desc": "Booth-style seating that gives families and groups their own little world." },
-          { "icon": "music", "title": "Warm Ambience", "desc": "Soft music, friendly energy, and a setting that balances calm with celebration." }
+          { "icon": "celebration", "title": "Celebration Ready", "desc": "A setting that moves easily from relaxed meals to cheerful gatherings." }
         ]
       },
       {
@@ -88,9 +88,9 @@ export const blogsData = {
       },
       {
         "type": "video",
-        "thumbnail": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1600",
-        "videoId": "dQw4w9WgXcQ",
-        "caption": "Hotel CAPS – More Than Just a Meal"
+        "thumbnail": "/images/blog/more-than-just-a-meal/video.jpg",
+        "videoId": "gtKgm-S74p0",
+        "caption": "Hotel CAPS – Restaurant & Dining Experience"
       },
       {
         "type": "heading",
@@ -98,14 +98,14 @@ export const blogsData = {
         "text": "Good Hospitality Between the Tables"
       },
       {
-        "type": "paragraph",
-        // "type": "split-text-image",
+        // "type": "paragraph",
+        "type": "split-text-image",
         "text": [
           "Great dining is not only about what is served, but how the whole space lets people enjoy it. At CAPS, the seating is spacious, the cabins offer privacy for families and groups, and the atmosphere stays easygoing whether it is a quiet meal, a catch-up over coffee, or a small celebration.",
           "Friendly staff, comfortable seating, soft music, and thoughtful service all work together to make guests feel settled. With Chill N' Chai outside, Arabic Corner to one side, and the main restaurant inside, different moods and moments find their own place without ever feeling disconnected from the whole experience."
         ],
-        // "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1200",
-        // "aspect": "4:3"
+        "image": "/images/blog/more-than-just-a-meal/service.jpg",
+        "aspect": "4:3"
       },
       {
         "type": "quote-full",

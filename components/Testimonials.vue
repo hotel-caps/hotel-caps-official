@@ -182,10 +182,12 @@ onUnmounted(() => {
               :alt="image.alt"
               :width="image.width"
               :height="image.height"
+              sizes="380px sm:480px md:450px lg:600px"
               format="webp"
               quality="80"
-              loading="lazy"
               densities="x1"
+              loading="lazy"
+              decoding="async"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
             />
             <div class="absolute inset-0 bg-black/10"></div>

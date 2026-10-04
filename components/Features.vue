@@ -76,11 +76,13 @@ onMounted(() => {
               :src="feature.image" 
               :alt="feature.alt" 
               width="600"
-              height="399"
+              height="400"
+              sizes="380px sm:580px md:360px lg:420px xl:600px"
               quality="80"
               format="webp"
-              loading="lazy"
               densities="x1"
+              loading="lazy"
+              decoding="async"
               class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
             />
           </div>

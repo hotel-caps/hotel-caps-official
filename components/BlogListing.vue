@@ -47,12 +47,24 @@
             <div class="absolute top-4 left-4 z-10 bg-black/70 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded flex items-center tracking-widest uppercase shadow-md">
               FEATURED
             </div>
-            <img :src="featuredBlog.coverImage" :alt="featuredBlog.title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" loading="lazy" />
+            <NuxtImg 
+              :src="featuredBlog.coverImage" 
+              :alt="featuredBlog.title" 
+              width="1200"
+              height="800"
+              sizes="380px sm:600px md:720px lg:900px xl:1200px"
+              format="webp"
+              quality="80"
+              densities="x1"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
+            />
           </div>
           
           <div class="w-full lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center">
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-6 h-px bg-[#C86A22]"></div>
+              <div class="w-6 h-[2px] bg-[#bd5c17]"></div>
               <span class="text-xs font-semibold tracking-widest text-zinc-500 uppercase">{{ featuredBlog.date }}</span>
             </div>
             <h3 class="font-display font-bold text-3xl lg:text-4xl text-zinc-900 mb-6 group-hover:text-[#bd5c17] transition-colors duration-300">
@@ -61,9 +73,10 @@
             <p class="font-sans text-zinc-600 text-base lg:text-lg leading-relaxed mb-8">
               {{ featuredBlog.intro }}
             </p>
-            <div class="flex items-center text-[#bd5c17] font-bold tracking-wide group-hover:text-[#C86A22] transition-colors duration-300">
-              Read Story 
-              <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+            <div class="relative inline-flex items-center w-fit pb-1.5 text-[#bd5c17] font-bold tracking-wide group-hover:text-[#C86A22] transition-colors duration-300">
+              <span>Read Story</span>
+              <span class="ml-2 transform group-hover:translate-x-1.5 transition-transform duration-300 ease-out">→</span>
+              <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#bd5c17] group-hover:bg-[#C86A22] origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
             </div>
           </div>
         </article>

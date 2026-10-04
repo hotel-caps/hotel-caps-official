@@ -69,12 +69,14 @@ onMounted(() => {
         ref="bgImageRef"
         :src="imageSrc" 
         :alt="imageAlt"
-        width="1920"
-        height="1278"
+        width="1600"
+        height="1067"
+        sizes="640px sm:768px md:1024px lg:1280px xl:1600px"
         format="webp"
         quality="80"
-        loading="lazy"
         densities="x1"
+        loading="lazy"
+        decoding="async"
         class="bg-image w-full h-full object-cover" 
       />
       <div class="absolute inset-0 bg-black/30"></div>

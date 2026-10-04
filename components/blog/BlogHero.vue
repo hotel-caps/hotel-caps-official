@@ -16,12 +16,14 @@
           format="webp"
           width="1600"
           height="1067"
+          sizes="640px sm:768px md:1024px lg:1280px xl:1600px"
           quality="80"
           densities="x1"
           fetchpriority="high"
           loading="eager"
-          preload
-          class="bg-image h-full w-full object-cover origin-center" 
+          decoding="sync"
+          :preload="{ fetchPriority: 'high' }"
+          class="bg-image h-full w-full object-cover origin-center will-change-transform" 
         />
       </div>
 

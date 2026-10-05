@@ -1,12 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { blogsData } from './data/blogs.js'
 
+// Every unique width used across all 29 `sizes="..."` tags (33 total widths with breakpoints — well under Vercel's 50 limit)
 const baseImageWidths = [
-  // Standard 100s & UI Breakpoints
-  300, 320, 400, 500, 600, 700, 800, 900, 960, 1200, 1366, 1600, 1920,
-  // Exact Folder Image Widths
-  266, 325, 348, 350, 384, 411, 435, 454, 457, 470, 515, 519, 
-  527, 533, 576, 590, 610, 626, 634, 638, 655, 685, 711, 735
+  100, 140, 160, 180, 190, 225, 240, 300, 340, 360, 
+  380, 400, 420, 450, 480, 500, 525, 540, 580, 590, 
+  600, 720, 800, 900, 960, 1200, 1366, 1600
 ]
 
 export default defineNuxtConfig({
@@ -33,7 +32,7 @@ export default defineNuxtConfig({
     name: 'Hotel CAPS'
   },
 
-  image: {
+image: {
     // Use Vercel's image optimization service for better performance
     provider: 'vercel',
 
@@ -41,27 +40,26 @@ export default defineNuxtConfig({
     densities: [1],
 
     // Forces the generator to always output highly compressed WebP files
-    format: ['webp'], 
-    
+    format: ['webp'],
+
     // Explicitly tells Nuxt that your assets live in the /public folder
-    dir: 'public', 
-    
+    dir: 'public',
+
     // Sets a high-quality baseline (80% is the industry sweet spot for WebP)
-    quality: 80, 
+    quality: 80,
 
     screens: {
-      // Standard Named Breakpoints
+      // Standard Named Breakpoints (Used by @nuxt/image to parse sm:, md:, lg:, xl:)
       xs: 320,
       sm: 640,
       md: 768,
       lg: 1024,
       xl: 1280,
       xxl: 1536,
-      // Auto-generated 1x and 2x Retina widths
+      '2xl': 1536,
+      // Auto-generated component widths from all 29 `sizes` attributes
       ...Object.fromEntries(
-        baseImageWidths.flatMap((w) => [
-          [`w${w}`, w]
-        ])
+        baseImageWidths.map((w) => [`w${w}`, w])
       )
     }
   },

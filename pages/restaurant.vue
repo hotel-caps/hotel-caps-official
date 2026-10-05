@@ -10,7 +10,7 @@ const heroImages = ref([
 // Your page-specific JSON payload for Intro Section
 const restaurantIntroData = {
   eyebrow: "Welcome to Hotel CAPS",
-  title: "Great Food.\nGood Times.",
+  title: "Good Food.\nGreat Times.",
   description: "At Hotel CAPS, our restaurant is where flavor meets comfort. From traditional favorites to modern delights, every dish is prepared with the finest ingredients and a lot of love.",
   image: "/images/restaurant/intro.jpg",
   themeTextClass: "text-[#03a661]", 

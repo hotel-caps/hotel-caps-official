@@ -61,12 +61,6 @@ export const blogsData = {
         ]
       },
       {
-        "type": "split-quote-image",
-        "quote": "Before the first bite arrives, the mood has already begun.",
-        "image": "https://images.unsplash.com/photo-1414235077428-338988692286?auto=format&fit=crop&q=80&w=1200",
-        "aspect": "4:3"
-      },
-      {
         "type": "icon-strip",
         "items": [
           { "icon": "couch", "title": "Spacious Seating", "desc": "Comfortable tables, room to settle in, and space for every gathering." },
@@ -95,13 +89,18 @@ export const blogsData = {
         "text": "Good Hospitality Between the Tables"
       },
       {
-        "type": "split-text-image",
+        "type": "split-text-masonry",
         "text": [
           "Great dining is not only about what is served, but how the whole space lets people enjoy it. At CAPS, the seating is spacious, the cabins offer privacy for families and groups, and the atmosphere stays easygoing whether it is a quiet meal, a catch-up over coffee, or a small celebration.",
           "Friendly staff, comfortable seating, soft music, and thoughtful service all work together to make guests feel settled. With Chill N' Chai outside, Arabic Corner to one side, and the main restaurant inside, different moods and moments find their own place without ever feeling disconnected from the whole experience."
         ],
-        "image": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1200",
-        "aspect": "4:3"
+        "images": [
+          {
+            "src": "/images/blog/more-than-just-a-meal/service.jpg",
+            "width": 800,
+            "height": 600
+          }
+        ]
       },
       {
         "type": "quote-full",
@@ -130,11 +129,28 @@ export const blogsData = {
       },
       {
         "type": "masonry-full",
+        "caption": "Hotel CAPS Culinary & Stay Highlights",
+        "captionMob": false,
+        "captionPc": true,
         "images": [
-          "https://images.unsplash.com/photo-1414235077428-338988692286?auto=format&fit=crop&q=80&w=1200",
-          "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=800",
-          "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800",
-          "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800"
+          {
+            "src": "/images/blog/courtyard.jpg",
+            "width": 1200,
+            "height": 600,
+            "caption": "Golden hour over the grand courtyard at Hotel CAPS"
+          },
+          {
+            "src": "/images/blog/dining.jpg",
+            "width": 900,
+            "height": 600,
+            "caption": "Handcrafted Malabar delicacies prepared fresh"
+          },
+          {
+            "src": "/images/blog/suite.jpg",
+            "width": 600,
+            "height": 600,
+            "caption": "Signature suite interiors"
+          }
         ]
       },
       {
@@ -200,17 +216,190 @@ export const blogsData = {
       {
         "type": "slider-horizontal",
         "images": [
-          "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=1200",
-          "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=1200",
-          "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?auto=format&fit=crop&q=80&w=1200"
+          "/images/hall/amenities/1.jpg",
+          "/images/hall/amenities/2.jpg",
+          "/images/hall/amenities/3.jpg"
+        ]
+      },
+      {
+        "type": "slider-horizontal",
+        "speed": 0.8,
+        "caption": "Hotel CAPS Events Hall & Facilities",
+        "images": [
+          {
+            "src": "/images/hall/amenities/1.jpg",
+            "width": 600,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall stage arranged for celebrations and special occasions"
+          },
+          {
+            "src": "/images/hall/amenities/2.jpg",
+            "width": 576,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall with theatre-style seating facing the stage"
+          },
+          {
+            "src": "/images/hall/amenities/3.jpg",
+            "width": 533,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall arranged with rows of seating for an event"
+          },
+          {
+            "src": "/images/hall/amenities/4.jpg",
+            "width": 600,
+            "height": 399,
+            "caption": "Spacious Hotel CAPS Events Hall with seating arranged for guests"
+          },
+          {
+            "src": "/images/hall/amenities/5.jpg",
+            "width": 519,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall interior prepared for a gathering"
+          },
+          {
+            "src": "/images/hall/amenities/6.jpg",
+            "width": 634,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall stage and seating area"
+          },
+          {
+            "src": "/images/hall/amenities/7.jpg",
+            "width": 533,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall with spacious seating and illuminated ceiling"
+          },
+          {
+            "src": "/images/hall/amenities/8.jpg",
+            "width": 711,
+            "height": 400,
+            "caption": "Interior corridor providing access to the Hotel CAPS Events Hall"
+          },
+          {
+            "src": "/images/hall/amenities/9.jpg",
+            "width": 600,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall stage with red backdrop and decorative seating"
+          },
+          {
+            "src": "/images/hall/amenities/10.jpg",
+            "width": 320,
+            "height": 400,
+            "caption": "Elevator / Lift facility at Hotel CAPS for convenient guest access"
+          },
+          {
+            "src": "/images/hall/amenities/11.jpg",
+            "width": 600,
+            "height": 400,
+            "caption": "Parking area available for guests at Hotel CAPS"
+          }
         ]
       },
       {
         "type": "slider-thumbnail",
         "images": [
-          "https://images.unsplash.com/photo-1414235077428-338988692286?auto=format&fit=crop&q=80&w=1600",
-          "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1600",
-          "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1600"
+          "/images/hall/amenities/1.jpg",
+          "/images/hall/amenities/2.jpg",
+          "/images/hall/amenities/3.jpg"
+        ]
+      },
+      {
+        "type": "slider-thumbnail",
+        "autoplay": false,
+        "interval": 4000,
+        "width": 1200,
+        "height": 900,
+        "caption": "Hotel CAPS Events Hall & Facilities",
+        "captionMob": true,
+        "captionPc": true,
+        "images": [
+          {
+            "src": "/images/hall/amenities/1.jpg",
+            "width": 600,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall stage arranged for celebrations and special occasions",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/hall/amenities/2.jpg",
+            "width": 576,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall with theatre-style seating facing the stage",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/hall/amenities/3.jpg",
+            "width": 533,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall arranged with rows of seating for an event",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/hall/amenities/4.jpg",
+            "width": 600,
+            "height": 399,
+            "caption": "Spacious Hotel CAPS Events Hall with seating arranged for guests",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/hall/amenities/5.jpg",
+            "width": 519,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall interior prepared for a gathering",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/hall/amenities/6.jpg",
+            "width": 634,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall stage and seating area",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/hall/amenities/7.jpg",
+            "width": 533,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall with spacious seating and illuminated ceiling",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/hall/amenities/8.jpg",
+            "width": 711,
+            "height": 400,
+            "caption": "Interior corridor providing access to the Hotel CAPS Events Hall",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/hall/amenities/9.jpg",
+            "width": 600,
+            "height": 400,
+            "caption": "Hotel CAPS Events Hall stage with red backdrop and decorative seating",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/hall/amenities/10.jpg",
+            "width": 320,
+            "height": 400,
+            "caption": "Elevator / Lift facility at Hotel CAPS for convenient guest access",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/hall/amenities/11.jpg",
+            "width": 600,
+            "height": 400,
+            "caption": "Parking area available for guests at Hotel CAPS",
+            "captionMob": true,
+            "captionPc": true
+          }
         ]
       },
       {

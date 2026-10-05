@@ -10,43 +10,39 @@ const props = defineProps({
 
 const playerContainer = ref(null);
 const playerDiv = ref(null);
-let player; 
+let player = null;
+let observer = null;
 
-// --- ROBUST LAZY LOADING & API SETUP ---
 const loadYouTubeAPI = () => {
-  // 1. If API is already fully loaded by a previous component, execute immediately
   if (window.YT && window.YT.Player) {
     createPlayer();
     return;
   }
 
-  // 2. If this is the FIRST component requesting the API, set up the queue and inject the script
   if (!window.__YT_CALLBACKS) {
     window.__YT_CALLBACKS = [];
-    
-    // YouTube calls this exact function name when its script finishes loading
+
+    const prevReady = window.onYouTubeIframeAPIReady;
     window.onYouTubeIframeAPIReady = () => {
-      // Run every component's initialization function
-      window.__YT_CALLBACKS.forEach(cb => cb());
-      // Clear the queue
-      window.__YT_CALLBACKS = []; 
+      if (typeof prevReady === 'function') prevReady();
+      window.__YT_CALLBACKS.forEach((cb) => cb());
+      window.__YT_CALLBACKS = [];
     };
 
-    // Inject the script only once
     const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
+    tag.src = 'https://www.youtube.com/iframe_api';
     const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   }
 
-  // 3. Add THIS specific component's createPlayer function to the global queue
   window.__YT_CALLBACKS.push(createPlayer);
 };
 
 const createPlayer = () => {
   if (!playerDiv.value) return;
-  
+
   player = new window.YT.Player(playerDiv.value, {
+    host: 'https://www.youtube-nocookie.com',
     height: '100%',
     width: '100%',
     videoId: props.videoId,
@@ -57,28 +53,31 @@ const createPlayer = () => {
       loop: 1,
       playlist: props.videoId,
       playsinline: 1,
-      showinfo: 0,
       rel: 0,
-      modestbranding: 1,
-      enablejsapi: 1, // Ensures postMessage API is active
-      origin: window.location.origin
+      disablekb: 1,
+      fs: 0,
+      iv_load_policy: 3
     },
     events: {
-      'onReady': (event) => {
+      onReady: (event) => {
         event.target.mute();
         event.target.playVideo();
+      },
+      onStateChange: (event) => {
+        // Seamless loop without black iframe reload flash
+        if (event.data === window.YT.PlayerState.ENDED) {
+          event.target.seekTo(0);
+          event.target.playVideo();
+        }
       }
     }
   });
 };
 
-// --- INTERSECTION OBSERVER ---
-let observer;
-
 onMounted(() => {
   observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           loadYouTubeAPI();
           observer.disconnect();
@@ -95,7 +94,9 @@ onMounted(() => {
 
 onUnmounted(() => {
   if (observer) observer.disconnect();
-  if (player && typeof player.destroy === 'function') player.destroy();
+  if (player && typeof player.destroy === 'function') {
+    player.destroy();
+  }
 });
 </script>
 
@@ -105,6 +106,7 @@ onUnmounted(() => {
       <div class="player-iframe">
         <div ref="playerDiv"></div>
       </div>
+      <!-- Blocks all cursor and touch interactions -->
       <div class="interaction-blocker"></div>
     </div>
   </div>
@@ -127,29 +129,26 @@ onUnmounted(() => {
 .aspect-ratio-box::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   border-radius: 1rem;
   border: 3px solid #d18108;
   z-index: 5;
+  pointer-events: none;
 }
 
 .player-iframe {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .interaction-blocker {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 </style>

@@ -25,7 +25,7 @@ export const blogsData = {
     "blocks": [
       {
         "type": "editorial-intro",
-        "text": "Hospitality at Hotel CAPS is about more than serving good food. It is about how the entire experience makes you feel. While our culinary team takes immense pride in sourcing premium ingredients and crafting a symphony of flavors, we understand that a truly exceptional meal involves all of your senses. The curated atmosphere sets the stage the moment you step through our doors, blending elegant lighting with a sophisticated aesthetic that makes you feel instantly at ease. Soft ambient music and a thoughtful layout ensure that whether you are hosting a lively family celebration or sharing an intimate, quiet evening, your surroundings adapt perfectly to the mood of the occasion. It is the little details—the thousand tiny, unseen decisions—that ultimately define our distinct approach to hospitality. These small elements work quietly in the background to elevate a standard lunch or dinner into something remarkably unique."
+        "text": "Hospitality at Hotel CAPS is about more than serving good food. It is about how the entire experience makes you feel. While our culinary team takes immense pride in sourcing premium ingredients and crafting a symphony of flavors, we understand that a truly exceptional meal involves all of your senses. The curated atmosphere sets the stage the moment you step through our doors, blending our facilities for your delight. It is the little details - the thousand tiny, unseen decisions that shall ultimately define our distinct approach to hospitality. These small elements work quietly in the background to elevate a standard lunch or dinner into something remarkably unique."
       },
       {
         "type": "heading",
@@ -51,13 +51,28 @@ export const blogsData = {
         "type": "split-text-masonry",
         "text": [
           "From Chill N' Chai to Arabic Corner to the Main Table.",
-          "At CAPS, memorable dining begins before the first dish arrives. The atmosphere is spacious, comfortable, and thoughtfully arranged — with music in the background, room to relax, and seating that lets families, friends, and teams enjoy their own space.",
-          "From the easygoing charm of Chill N' Chai to the rich flavours of Arabic Corner and the welcoming comfort of our multi-cuisine restaurant, every corner adds something to the experience. Even the little outdoor moments — a breath of fresh air, a casual table, a playful space for kids — become part of the memory."
+          "At CAPS, memorable dining begins before the first dish arrives. The atmosphere is spacious, comfortable, and thoughtfully arranged - with music in the background, room to relax, and seating that lets families, friends, and teams enjoy their own space. There is no single way a visit has to unfold. Some guests settle in for a long family dinner, while others stop by for an evening chai, a quick bite, or simply a little time together.",
+          "From the easygoing charm of Chill N' Chai to the rich flavours of Arabic Corner and the welcoming comfort of our multi-cuisine restaurant, every corner adds something to the experience. Each has its own character, yet they all belong to the same CAPS experience - familiar, relaxed, and made for sharing. Even the little outdoor moments - a breath of fresh air, a casual table, a playful space for kids - become part of the memory."
         ],
         "images": [
-          "/images/blog/more-than-just-a-meal/restaurant.jpg",
-          "/images/blog/more-than-just-a-meal/chill-n-chai.jpg",
-          "/images/blog/more-than-just-a-meal/arabic-corner.jpg"
+          {
+            "src": "/images/blog/more-than-just-a-meal/restaurant.jpg",
+            "caption": "Spacious family dining and comfortable seating inside the main restaurant at Hotel CAPS",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/blog/more-than-just-a-meal/chill-n-chai.jpg",
+            "caption": "A relaxed outdoor setting for quick bites, tea and easy conversations at Chill N' Chai",
+            "captionMob": true,
+            "captionPc": true
+          },
+          {
+            "src": "/images/blog/more-than-just-a-meal/arabic-corner.jpg",
+            "caption": "Bold Arabic flavours served fresh from the casual street-side Arabic Corner at Hotel CAPS",
+            "captionMob": true,
+            "captionPc": true
+          }
         ]
       },
       {
@@ -65,15 +80,13 @@ export const blogsData = {
         "quote": "Before the first bite arrives, the mood has already begun.",
         "color": "#7A3E12",
         "Julee": true
-        // "image": "/images/blog/more-than-just-a-meal/cover.jpg",
-        // "aspect": "4:3"
       },
       {
         "type": "icon-strip",
         "items": [
-          { "icon": "couch", "title": "Spacious Seating", "desc": "Comfortable tables, room to settle in, and space for every gathering." },
-          { "icon": "music", "title": "Warm Ambience", "desc": "Soft music, friendly energy, and a setting that balances calm with celebration." },
-          { "icon": "people", "title": "Private Corners", "desc": "Booth-style seating that gives families and groups their own little world." },
+          { "icon": "couch", "title": "Comfortable Seating", "desc": "Spacious tables, room to settle in, and designed for every gathering." },
+          { "icon": "music", "title": "Warm Ambience", "desc": "Soft music combined with a setting that balances calm with celebration." },
+          { "icon": "people", "title": "Space of Your Own", "desc": "Booth style seating that gives families and groups their own little world." },
           { "icon": "celebration", "title": "Celebration Ready", "desc": "A setting that moves easily from relaxed meals to cheerful gatherings." }
         ]
       },
@@ -98,14 +111,24 @@ export const blogsData = {
         "text": "Good Hospitality Between the Tables"
       },
       {
-        // "type": "paragraph",
-        "type": "split-text-image",
+        "type": "split-text-masonry",
+        "caption": "Default fallback caption for alt and lightbox",
+        "captionMob": true,
+        "captionPc": true,
         "text": [
-          "Great dining is not only about what is served, but how the whole space lets people enjoy it. At CAPS, the seating is spacious, the cabins offer privacy for families and groups, and the atmosphere stays easygoing whether it is a quiet meal, a catch-up over coffee, or a small celebration.",
-          "Friendly staff, comfortable seating, soft music, and thoughtful service all work together to make guests feel settled. With Chill N' Chai outside, Arabic Corner to one side, and the main restaurant inside, different moods and moments find their own place without ever feeling disconnected from the whole experience."
+          "Great dining is not only about what is served, but how the whole space lets people enjoy it. At CAPS, the seating is spacious, the cabins offer privacy for families and groups, and the atmosphere stays easygoing whether it is a quiet meal, a catch-up over coffee, or a small celebration. There is space to settle in, take your time, and enjoy the company around the table without the evening ever feeling rushed.",
+          "Friendly staff, comfortable seating, soft music, and thoughtful service all work together to make guests feel settled. It is the kind of comfort that often goes unnoticed in the moment, but makes a meal feel naturally enjoyable from beginning to end. With Chill N' Chai outside, Arabic Corner to one side, and the main restaurant inside, different moods and moments find their own place without ever feeling disconnected from the whole experience."
         ],
-        "image": "/images/blog/more-than-just-a-meal/service.jpg",
-        "aspect": "4:3"
+        "images": [
+          {
+            "src": "/images/blog/more-than-just-a-meal/service.jpg",
+            "width": 800,
+            "height": 600,
+            "caption": "Thoughtful table service and warm ambience inside the main dining hall at Hotel CAPS",
+            "captionMob": true,
+            "captionPc": true
+          }
+        ]
       },
       {
         "type": "quote-full",
@@ -133,13 +156,6 @@ export const blogsData = {
         ]
       },
       {
-        "type": "masonry-full",
-        "images": [
-          "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800",
-          "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800"
-        ]
-      },
-      {
         "type": "heading",
         "level": "h2",
         "text": "When the CAPS Experience Travels to You."
@@ -147,6 +163,19 @@ export const blogsData = {
       {
         "type": "paragraph",
         "text": "Not every CAPS meal has to happen inside CAPS. For guests ordering from home, the same experience begins digitally.<br><br>The CAPS Digital Menu makes it easy to explore what is available before placing an order. The restaurant team can simply share the menu link with customers, allowing them to browse dishes directly from their phone.<br><br>And once the choice is made, CAPS takes the experience the rest of the way. With free home delivery and a focus on getting food to customers quickly and comfortably, the restaurant reaches beyond its own dining tables.<br><br>The idea is simple:<br>The table does not always have to be at CAPS.<br>Sometimes CAPS comes to the table instead."
+      },
+      {
+        "type": "masonry-full",
+        "caption": "Your favourite delicacies delivered straight to your door by Hotel CAPS.",
+        "captionMob": true,
+        "captionPc": true,
+        "images": [
+          {
+            "src": "/images/blog/more-than-just-a-meal/delivery.jpg",
+            "width": 900,
+            "height": 600,
+          }
+        ]
       },
       {
         "type": "banner-menu",
@@ -162,6 +191,20 @@ export const blogsData = {
       {
         "type": "paragraph",
         "text": "Dining does not have to end when the bill arrives. On CAPS tables, simple digital touchpoints make it easier for guests to stay connected.<br><br>The digital menu helps people discover what is available. Instagram keeps the conversation going beyond the restaurant. Google Reviews gives guests a direct way to share what they enjoyed and what CAPS can continue improving.<br><br>The idea is not simply to collect ratings. It is to listen.<br><br>A review might highlight a dish someone loved. A social post might capture a birthday, a family dinner or a favourite dessert. Feedback might point to one little detail that can make the next visit better.<br><br>Those conversations matter because hospitality grows through them.<br><br>A memorable meal can become a recommendation.<br>A recommendation can bring someone new through the door.<br>And one good experience can quietly become part of someone else’s story."
+      },
+      {
+        "type": "masonry-full",
+        "caption": "A digital experience to discover, connect and enjoy Hotel CAPS.",
+        "captionMob": true,
+        "captionPc": true,
+        "images": [
+          {
+            "src": "/images/blog/more-than-just-a-meal/caps-digital.jpg",
+            "width": 960,
+            "height": 540,
+          }
+          
+        ]
       },
       {
         "type": "banner-social",
@@ -202,41 +245,214 @@ export const blogsData = {
       // {
       //   "type": "slider-horizontal",
       //   "images": [
-      //     "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=1200",
-      //     "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=1200",
-      //     "https://images.unsplash.com/photo-1490818387583-1b5ba4597d31?auto=format&fit=crop&q=80&w=1200"
+      //     "/images/hall/amenities/1.jpg",
+      //     "/images/hall/amenities/2.jpg",
+      //     "/images/hall/amenities/3.jpg"
+      //   ]
+      // },
+      // {
+      //   "type": "slider-horizontal",
+      //   "speed": 1.2,
+      //   "caption": "Hotel CAPS Events Hall & Facilities",
+      //   "images": [
+      //     {
+      //       "src": "/images/hall/amenities/1.jpg",
+      //       "width": 600,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall stage arranged for celebrations and special occasions"
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/2.jpg",
+      //       "width": 576,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall with theatre-style seating facing the stage"
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/3.jpg",
+      //       "width": 533,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall arranged with rows of seating for an event"
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/4.jpg",
+      //       "width": 600,
+      //       "height": 399,
+      //       "caption": "Spacious Hotel CAPS Events Hall with seating arranged for guests"
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/5.jpg",
+      //       "width": 519,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall interior prepared for a gathering"
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/6.jpg",
+      //       "width": 634,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall stage and seating area"
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/7.jpg",
+      //       "width": 533,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall with spacious seating and illuminated ceiling"
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/8.jpg",
+      //       "width": 711,
+      //       "height": 400,
+      //       "caption": "Interior corridor providing access to the Hotel CAPS Events Hall"
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/9.jpg",
+      //       "width": 600,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall stage with red backdrop and decorative seating"
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/10.jpg",
+      //       "width": 320,
+      //       "height": 400,
+      //       "caption": "Elevator / Lift facility at Hotel CAPS for convenient guest access"
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/11.jpg",
+      //       "width": 600,
+      //       "height": 400,
+      //       "caption": "Parking area available for guests at Hotel CAPS"
+      //     }
       //   ]
       // },
       // {
       //   "type": "slider-thumbnail",
       //   "images": [
-      //     "https://images.unsplash.com/photo-1414235077428-338988692286?auto=format&fit=crop&q=80&w=1600",
-      //     "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1600",
-      //     "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1600"
+      //     "/images/hall/amenities/1.jpg",
+      //     "/images/hall/amenities/2.jpg",
+      //     "/images/hall/amenities/3.jpg"
+      //   ]
+      // },
+      // {
+      //   "type": "slider-thumbnail",
+      //   "autoplay": true,
+      //   "interval": 3000,
+      //   "width": 4,
+      //   "height": 2,
+      //   "caption": "Hotel CAPS Events Hall & Facilities",
+      //   "captionMob": true,
+      //   "captionPc": true,
+      //   "images": [
+      //     {
+      //       "src": "/images/hall/amenities/1.jpg",
+      //       "width": 600,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall stage arranged for celebrations and special occasions",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/2.jpg",
+      //       "width": 576,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall with theatre-style seating facing the stage",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/3.jpg",
+      //       "width": 533,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall arranged with rows of seating for an event",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/4.jpg",
+      //       "width": 600,
+      //       "height": 399,
+      //       "caption": "Spacious Hotel CAPS Events Hall with seating arranged for guests",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/5.jpg",
+      //       "width": 519,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall interior prepared for a gathering",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/6.jpg",
+      //       "width": 634,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall stage and seating area",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/7.jpg",
+      //       "width": 533,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall with spacious seating and illuminated ceiling",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/8.jpg",
+      //       "width": 711,
+      //       "height": 400,
+      //       "caption": "Interior corridor providing access to the Hotel CAPS Events Hall",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/9.jpg",
+      //       "width": 600,
+      //       "height": 400,
+      //       "caption": "Hotel CAPS Events Hall stage with red backdrop and decorative seating",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/10.jpg",
+      //       "width": 320,
+      //       "height": 400,
+      //       "caption": "Elevator / Lift facility at Hotel CAPS for convenient guest access",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     },
+      //     {
+      //       "src": "/images/hall/amenities/11.jpg",
+      //       "width": 600,
+      //       "height": 400,
+      //       "caption": "Parking area available for guests at Hotel CAPS",
+      //       "captionMob": true,
+      //       "captionPc": true
+      //     }
       //   ]
       // },
       {
         "type": "footer-nav"
       },
-      {
-        "type": "related-articles",
-        "articles": [
-          {
-            "thumbnail": "/images/blog/more-than-just-a-meal/cover.jpg",
-            "date": "05 OCT 2026",
-            "title": "A Taste of Tradition: Inside Arabic Corner",
-            "intro": "Dive into the rich flavors and history of our traditional dishes.",
-            "link": "/blog/arabic-corner"
-          },
-          {
-            "thumbnail": "/images/blog/more-than-just-a-meal/cover.jpg",
-            "date": "28 SEP 2026",
-            "title": "Why Chill N' Chai is Your New Favorite Hangout",
-            "intro": "Creating the perfect space for easy conversations and cool treats.",
-            "link": "/blog/chill-n-chai"
-          }
-        ]
-      }
+      // {
+      //   "type": "related-articles",
+      //   "articles": [
+      //     {
+      //       "thumbnail": "/images/blog/more-than-just-a-meal/cover.jpg",
+      //       "date": "05 OCT 2026",
+      //       "title": "A Taste of Tradition: Inside Arabic Corner",
+      //       "intro": "Dive into the rich flavors and history of our traditional dishes.",
+      //       "link": "/blog/arabic-corner"
+      //     },
+      //     {
+      //       "thumbnail": "/images/blog/more-than-just-a-meal/cover.jpg",
+      //       "date": "28 SEP 2026",
+      //       "title": "Why Chill N' Chai is Your New Favorite Hangout",
+      //       "intro": "Creating the perfect space for easy conversations and cool treats.",
+      //       "link": "/blog/chill-n-chai"
+      //     }
+      //   ]
+      // }
     ]
   },
   

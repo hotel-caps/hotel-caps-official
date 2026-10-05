@@ -114,11 +114,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section ref="main" id="testimonials-component" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+  <section ref="main" id="testimonials-component" class="bg-gradient-to-b from-slate-100 to-stone-100 flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+    <div class="grid max-w-7xl mx-auto grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       
       <!-- Left Column: Text Content & Slider -->
-      <div class="text-content-col space-y-8">
+      <div class="text-content-col lg:col-span-7 space-y-8">
         <div>
           <p class="text-sm font-bold uppercase tracking-widest text-purple-700">Testimonials</p>
           <h2 class="text-gray-800 text-3xl sm:text-4xl lg:text-4xl font-display font-semibold tracking-wider mt-2">What Our Guests Say</h2>
@@ -174,7 +174,7 @@ onUnmounted(() => {
       </div>
 
       <!-- Right Column: 2x2 Image Gallery -->
-      <div class="image-gallery-col">
+      <div class="image-gallery-col lg:col-span-5">
         <div class="grid grid-cols-2 grid-rows-2 gap-4 aspect-square">
           <div v-for="(image, index) in galleryImages" :key="index" class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg">
             <NuxtImg 
@@ -250,13 +250,13 @@ onUnmounted(() => {
 .nav-btn {
   width: 3rem; 
   height: 3rem;
-  background-color: #f1f5f9;
-  color: #475569;
+  background-color: #e4d1fa;
+  color: #415168;
   border-radius: 0.5rem;
   transition: background-color 0.3s, color 0.3s;
 }
 .nav-btn:hover {
-  background-color: #e2e8f0;
+  background-color: #dfc4ff;
   color: #1e293b;
 }
 

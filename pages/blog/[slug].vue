@@ -35,7 +35,8 @@
             <div class="gsap-block-reveal w-full relative">
               <component 
                 :is="resolveBlockComponent(block.type)" 
-                :block="block" 
+                :block="block"
+                @open-lightbox="openLightbox"
               />
             </div>
           </template>
@@ -43,11 +44,19 @@
         </div>
       </div>
     </main>
+
+    <!-- 3. BLOG LIGHTBOX (Masonry & Split Sticky Images) -->
+    <BlogLightbox
+      :is-open="lightbox.isOpen"
+      :items="lightbox.items"
+      :initial-index="lightbox.index"
+      @close="closeLightbox"
+    />
   </div>
 </template>
 
 <script setup>
-import { computed, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRoute, useAsyncData, createError, useSeoMeta, useHead } from '#imports'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -55,12 +64,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 // 1. Explicitly Import Every Block Component
 import BlogHero from '~/components/blog/BlogHero.vue'
 import BlogSidebar from '~/components/blog/BlogSidebar.vue'
+import BlogLightbox from '~/components/blog/BlogLightBox.vue'
 import BlockHeading from '~/components/blog/blocks/BlockHeading.vue'
 import BlockParagraph from '~/components/blog/blocks/BlockParagraph.vue'
 import BlockQuote from '~/components/blog/blocks/BlockQuote.vue'
 import SplitSticky from '~/components/blog/blocks/SplitSticky.vue'
 import BlockMasonry from '~/components/blog/blocks/BlockMasonry.vue'
-import BlockSlider from '~/components/blog/blocks/BlockSlider.vue'
+import BlockHorizontalSlider from '~/components/blog/blocks/BlockHorizontalSlider.vue'
+import BlockThumbnailSlider from '~/components/blog/blocks/BlockThumbnailSlider.vue'
 import BlockVideo from '~/components/blog/blocks/BlockVideo.vue'
 import BlockIconStrip from '~/components/blog/blocks/BlockIconStrip.vue'
 import BannerMenu from '~/components/blog/blocks/BannerMenu.vue'
@@ -103,13 +114,11 @@ const resolveBlockComponent = (type) => {
     'list-ordered': BlockParagraph,
     'list-unordered': BlockParagraph,
     'quote-full': BlockQuote,
-    'split-quote-image': SplitSticky,
-    'split-text-image': SplitSticky,
     'split-text-quote': SplitSticky,
     'split-text-masonry': SplitSticky,
     'masonry-full': BlockMasonry,
-    'slider-horizontal': BlockSlider,
-    'slider-thumbnail': BlockSlider,
+    'slider-horizontal': BlockHorizontalSlider,
+    'slider-thumbnail': BlockThumbnailSlider,
     'video': BlockVideo,
     'icon-strip': BlockIconStrip,
     'banner-menu': BannerMenu,
@@ -118,6 +127,26 @@ const resolveBlockComponent = (type) => {
     'related-articles': BlockRelatedArticles
   }
   return map[type] || BlockParagraph
+}
+
+// --- LIGHTBOX STATE ---
+const lightbox = ref({
+  isOpen: false,
+  items: [],
+  index: 0
+})
+
+const openLightbox = (payload) => {
+  if (!payload?.items?.length) return
+  lightbox.value = {
+    isOpen: true,
+    items: payload.items,
+    index: payload.index || 0
+  }
+}
+
+const closeLightbox = () => {
+  lightbox.value.isOpen = false
 }
 
 // --- GSAP ANIMATIONS ---
@@ -228,11 +257,14 @@ useHead({
 useSeoMeta({
   title: pageTitle,
   description: pageDesc,
+  ogSiteName: 'Hotel CAPS',
   ogType: 'article',
   ogTitle: pageTitle,
   ogDescription: pageDesc,
   ogUrl: canonicalUrl,
   ogImage: ogImage,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
   twitterCard: 'summary_large_image',
   twitterTitle: pageTitle,
   twitterDescription: pageDesc,

@@ -44,7 +44,7 @@
       <div class="block lg:hidden">
 
         <!-- MOBILE: MONTHLY SIGNATURES SLIDER -->
-        <div class="mb-6 flex flex-col gap-3">
+        <!-- <div class="mb-6 flex flex-col gap-3">
           
           <div class="flex flex-col px-1">
             <h3 class="font-display text-base font-bold text-[#927104] tracking-widest uppercase -mt-1">{{ currentMonthSignature.monthName }}</h3>
@@ -96,7 +96,7 @@
               <div v-for="(_, idx) in activeSignatures" :key="'sig-dot-m-'+idx" :class="['h-1.5 rounded-full transition-all duration-300', currentSignatureIndex === idx ? 'w-5 bg-[#d4af37]' : 'w-1.5 bg-zinc-500']"></div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Outlet Tabs (Mobile - Grid Layout, No scroll) -->
         <div class="pt-3 pb-5 mb-5 grid grid-cols-3 gap-2 transition-colors duration-500 border-b border-[#2a2a2a]">
@@ -365,7 +365,7 @@
         <aside class="w-[30%] xl:w-[25%] sticky top-[6rem] flex flex-col gap-6 pt-2">
 
           <!-- DESKTOP: MONTHLY SIGNATURES SLIDER -->
-          <div class="flex flex-col gap-3 mb-4">
+          <!-- <div class="flex flex-col gap-3 mb-4">
             
             <div class="flex flex-col">
               <h3 class="font-display text-xl font-bold text-[#927104] tracking-widest uppercase -mt-1">{{ currentMonthSignature.monthName }}</h3>
@@ -418,7 +418,7 @@
                 <div v-for="(_, idx) in activeSignatures" :key="'sig-dot-d-'+idx" :class="['h-2 rounded-full transition-all duration-300', currentSignatureIndex === idx ? 'w-6 bg-[#d4af37]' : 'w-2 bg-zinc-500']"></div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="flex flex-col">
             <h2 class="font-display text-3xl font-bold mb-2 text-[#927104] tracking-wide uppercase transition-colors duration-500">Today's</h2>

@@ -1,8 +1,8 @@
 <template>
-  <div class="relative w-full rounded-3xl overflow-hidden shadow-lg bg-[#f0e8e1] text-[#7A3E12] p-10 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-8 border border-[#7A3E12]/10 my-6">
+  <div class="relative w-full rounded-3xl overflow-hidden shadow-lg bg-[#f0e8e1] text-[#7A3E12] p-10 md:p-14 flex flex-col 2xl:flex-row items-center justify-between gap-8 border border-[#7A3E12]/10 my-6">
     
     <!-- Text Content -->
-    <div class="relative z-10 max-w-xl text-center lg:text-left">
+    <div class="relative z-10 max-w-4xl text-center 2xl:text-left">
       <h3 class="text-3xl md:text-4xl font-display mb-3">{{ block.title }}</h3>
       <p class="text-lg font-sans opacity-80">{{ block.subtitle }}</p>
     </div>

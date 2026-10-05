@@ -24,7 +24,7 @@
                     {{ item.title }}
                   </h3>
                   <div class="highlight-text-reveal w-12 h-0.5 bg-[#2d9b4c] mb-5 sm:mb-6"></div>
-                  <p class="highlight-text-reveal font-sans text-xs sm:text-sm lg:text-base text-emerald-100/80 leading-relaxed whitespace-pre-line">
+                  <p class="highlight-text-reveal font-sans text-base sm:text-md lg:text-lg text-emerald-100/80 leading-relaxed whitespace-pre-line">
                     {{ item.description }}
                   </p>
                 </div>

@@ -24,27 +24,31 @@
         @mouseleave="resumeAutoplay"
       >
         <div 
-          class="overflow-hidden rounded-2xl shadow-lg border border-zinc-200/80 bg-white select-none"
+          class="overflow-hidden rounded-2xl shadow-lg border border-zinc-200/80 bg-white select-none touch-pan-y"
           :class="{ 'cursor-grab': featuredList.length > 1 && !isDragging, 'cursor-grabbing': isDragging }"
+          @dragstart.prevent
+          @click.capture="onClickCapture"
           @touchstart.passive="onTouchStart"
           @touchmove.passive="onTouchMove"
           @touchend="onTouchEnd"
+          @touchcancel="onTouchEnd"
           @mousedown="onMouseDown"
           @mousemove="onMouseMove"
           @mouseup="onMouseUp"
           @mouseleave="onMouseUp"
         >
-          <!-- Sliding Track -->
+          <!-- Sliding Track (Disables transition during active drag for 1:1 follow) -->
           <div 
-            class="flex w-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"
-            :style="{ transform: `translate3d(-${currentIndex * 100}%, 0, 0)` }"
+            class="flex w-full will-change-transform"
+            :class="isDragging ? 'transition-none' : 'transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]'"
+            :style="{ transform: `translate3d(calc(-${currentIndex * 100}% + ${dragOffset}px), 0, 0)` }"
           >
             <!-- Individual Featured Slide (100% Width) -->
             <article 
               v-for="(blog, index) in featuredList" 
               :key="blog.url || index"
               class="group w-full shrink-0 flex flex-col md:flex-row bg-white overflow-hidden cursor-pointer"
-              @click="navigateTo(blog.url)"
+              @click="handleCardNavigate(blog.url)"
             >
               <!-- Image Column: 16:9 on <md, Left Column on md+ -->
               <div class="w-full md:w-1/2 lg:w-3/5 aspect-video md:aspect-auto relative overflow-hidden bg-stone-100">
@@ -65,7 +69,7 @@
                   loading="lazy"
                   decoding="async"
                   draggable="false"
-                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none"
                 />
               </div>
 
@@ -89,6 +93,7 @@
                 <div>
                   <NuxtLink 
                     :to="blog.url"
+                    draggable="false"
                     @click.stop
                     class="relative inline-flex items-center w-fit pb-1.5 text-[#bd5c17] font-bold tracking-wide group-hover:text-[#C86A22] transition-colors duration-300"
                   >
@@ -102,26 +107,55 @@
           </div>
         </div>
 
-        <!-- Pagination Dots (Only shown if multiple featured blogs exist) -->
+        <!-- Subtle Navigation Arrows + Pagination Dots (Only shown if multiple featured blogs exist) -->
         <div 
           v-if="featuredList.length > 1" 
-          class="flex items-center justify-center gap-2.5 mt-6"
-          role="tablist"
-          aria-label="Featured story slides"
+          class="flex items-center justify-center gap-4 mt-6"
         >
+          <!-- Subtle Prev Arrow -->
           <button
-            v-for="(_, index) in featuredList"
-            :key="index"
             type="button"
-            role="tab"
-            :aria-selected="currentIndex === index"
-            :aria-label="`Go to slide ${index + 1}`"
-            @click="goToSlide(index)"
-            class="h-2.5 rounded-full transition-all duration-300 cursor-pointer"
-            :class="currentIndex === index 
-              ? 'w-8 bg-[#bd5c17]' 
-              : 'w-2.5 bg-[#bd5c17]/25 hover:bg-[#bd5c17]/50'"
-          />
+            aria-label="Previous featured story"
+            class="w-8 h-8 rounded-full flex items-center justify-center text-[#7A3E12]/70 hover:text-[#bd5c17] hover:bg-[#bd5c17]/10 active:scale-95 transition-all duration-200 cursor-pointer"
+            @click="handleManualPrev"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+
+          <!-- Dots -->
+          <div
+            class="flex items-center justify-center gap-2.5"
+            role="tablist"
+            aria-label="Featured story slides"
+          >
+            <button
+              v-for="(_, index) in featuredList"
+              :key="index"
+              type="button"
+              role="tab"
+              :aria-selected="currentIndex === index"
+              :aria-label="`Go to slide ${index + 1}`"
+              @click="goToSlide(index)"
+              class="h-2.5 rounded-full transition-all duration-300 cursor-pointer"
+              :class="currentIndex === index 
+                ? 'w-8 bg-[#bd5c17]' 
+                : 'w-2.5 bg-[#bd5c17]/25 hover:bg-[#bd5c17]/50'"
+            />
+          </div>
+
+          <!-- Subtle Next Arrow -->
+          <button
+            type="button"
+            aria-label="Next featured story"
+            class="w-8 h-8 rounded-full flex items-center justify-center text-[#7A3E12]/70 hover:text-[#bd5c17] hover:bg-[#bd5c17]/10 active:scale-95 transition-all duration-200 cursor-pointer"
+            @click="handleManualNext"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -140,7 +174,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -149,22 +183,11 @@ gsap.registerPlugin(ScrollTrigger);
 const props = defineProps({
   blogs: {
     type: Array,
-    default: () => [
-      {
-        title: 'More Than Just a Meal: The Art of Hospitality at CAPS',
-        intro: 'Step behind the scenes to discover how time-honored recipes, local Palakkad ingredients, and warm family traditions come together at our table.',
-        date: 'OCTOBER 2026',
-        coverImage: '/images/live-universal.jpg',
-        url: '/blog/more-than-just-a-meal',
-        width: 1200,
-        height: 675,
-        featured: true
-      }
-    ]
+    default: () => []
   },
   autoplayDelay: {
     type: Number,
-    default: 5000
+    default: 3000
   }
 });
 
@@ -174,12 +197,19 @@ const featuredList = computed(() => {
   return filtered.length > 0 ? filtered : props.blogs;
 });
 
-// --- CAROUSEL & TOUCH ENGINE ---
+// --- CAROUSEL, TOUCH & MOUSE DRAG ENGINE ---
 const currentIndex = ref(0);
 const isDragging = ref(false);
+const dragOffset = ref(0);
+
 let startX = 0;
+let startY = 0;
 let deltaX = 0;
+let isHorizontalGesture = null;
+let suppressNextClick = false;
+let suppressTimer = null;
 let autoplayTimer = null;
+let isMounted = false;
 
 const nextSlide = () => {
   if (featuredList.value.length <= 1) return;
@@ -196,9 +226,19 @@ const goToSlide = (index) => {
   resetAutoplay();
 };
 
+const handleManualPrev = () => {
+  prevSlide();
+  resetAutoplay();
+};
+
+const handleManualNext = () => {
+  nextSlide();
+  resetAutoplay();
+};
+
 // Autoplay Controls
 const startAutoplay = () => {
-  if (featuredList.value.length <= 1) return;
+  if (!isMounted || featuredList.value.length <= 1) return;
   stopAutoplay();
   autoplayTimer = setInterval(nextSlide, props.autoplayDelay);
 };
@@ -217,54 +257,137 @@ const resetAutoplay = () => {
   startAutoplay();
 };
 
-// Touch Handlers (Mobile)
+// Restart autoplay cleanly if blogs prop loads asynchronously
+watch(
+  () => featuredList.value.length,
+  (len) => {
+    if (currentIndex.value >= len) currentIndex.value = 0;
+    if (len > 1) startAutoplay();
+    else stopAutoplay();
+  }
+);
+
+// Arm click suppression briefly after a swipe/drag so release never navigates
+const armClickSuppression = () => {
+  suppressNextClick = true;
+  if (suppressTimer) clearTimeout(suppressTimer);
+  suppressTimer = setTimeout(() => {
+    suppressNextClick = false;
+  }, 120);
+};
+
+// Capture-phase click guard blocks both <article> and <NuxtLink> clicks after a swipe
+const onClickCapture = (e) => {
+  if (suppressNextClick) {
+    e.preventDefault();
+    e.stopPropagation();
+    suppressNextClick = false;
+  }
+};
+
+const handleCardNavigate = (url) => {
+  if (suppressNextClick || !url) return;
+  navigateTo(url);
+};
+
+// Touch Handlers (Mobile & Tablet)
 const onTouchStart = (e) => {
-  if (featuredList.value.length <= 1) return;
+  if (featuredList.value.length <= 1 || !e.touches[0]) return;
   pauseAutoplay();
   startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
   deltaX = 0;
+  dragOffset.value = 0;
+  isHorizontalGesture = null;
+  isDragging.value = true;
 };
 
 const onTouchMove = (e) => {
-  if (featuredList.value.length <= 1) return;
-  deltaX = e.touches[0].clientX - startX;
+  if (!isDragging.value || featuredList.value.length <= 1 || !e.touches[0]) return;
+  const dx = e.touches[0].clientX - startX;
+  const dy = e.touches[0].clientY - startY;
+
+  // Determine whether the user is swiping horizontally or scrolling vertically
+  if (isHorizontalGesture === null && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
+    isHorizontalGesture = Math.abs(dx) > Math.abs(dy);
+  }
+
+  // If scrolling vertically, release drag tracking so page scroll stays smooth
+  if (isHorizontalGesture === false) {
+    isDragging.value = false;
+    dragOffset.value = 0;
+    return;
+  }
+
+  if (isHorizontalGesture === true) {
+    deltaX = dx;
+    dragOffset.value = dx;
+    if (Math.abs(dx) > 8) {
+      suppressNextClick = true;
+    }
+  }
 };
 
 const onTouchEnd = () => {
-  if (featuredList.value.length <= 1) return;
+  if (!isDragging.value && deltaX === 0) {
+    resumeAutoplay();
+    return;
+  }
+
   const swipeThreshold = 45;
+  if (Math.abs(deltaX) > 8) {
+    armClickSuppression();
+  }
+
   if (deltaX < -swipeThreshold) {
     nextSlide();
   } else if (deltaX > swipeThreshold) {
     prevSlide();
   }
+
+  isDragging.value = false;
+  dragOffset.value = 0;
   deltaX = 0;
+  isHorizontalGesture = null;
   resumeAutoplay();
 };
 
 // Mouse Drag Handlers (Desktop)
 const onMouseDown = (e) => {
-  if (featuredList.value.length <= 1) return;
+  if (featuredList.value.length <= 1 || e.button !== 0) return;
   isDragging.value = true;
   pauseAutoplay();
   startX = e.clientX;
   deltaX = 0;
+  dragOffset.value = 0;
 };
 
 const onMouseMove = (e) => {
   if (!isDragging.value) return;
   deltaX = e.clientX - startX;
+  dragOffset.value = deltaX;
+
+  if (Math.abs(deltaX) > 8) {
+    suppressNextClick = true;
+  }
 };
 
 const onMouseUp = () => {
   if (!isDragging.value) return;
-  isDragging.value = false;
+
   const swipeThreshold = 50;
+  if (Math.abs(deltaX) > 8) {
+    armClickSuppression();
+  }
+
   if (deltaX < -swipeThreshold) {
     nextSlide();
   } else if (deltaX > swipeThreshold) {
     prevSlide();
   }
+
+  isDragging.value = false;
+  dragOffset.value = 0;
   deltaX = 0;
   resumeAutoplay();
 };
@@ -274,6 +397,7 @@ const sectionRef = ref(null);
 let ctx = null;
 
 onMounted(() => {
+  isMounted = true;
   startAutoplay();
 
   ctx = gsap.context(() => {
@@ -295,7 +419,9 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+  isMounted = false;
   stopAutoplay();
+  if (suppressTimer) clearTimeout(suppressTimer);
   if (ctx) ctx.revert();
 });
 </script>

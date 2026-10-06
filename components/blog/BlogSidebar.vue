@@ -126,7 +126,7 @@ const copyLink = async () => {
 
 const shareOnWhatsApp = () => {
   const url = getCurrentUrl()
-  const text = `${props.title} — ${url}`
+  const text = `${url}`
   window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer')
 }
 
@@ -135,8 +135,8 @@ const triggerNativeShare = async () => {
   if (typeof navigator !== 'undefined' && navigator.share) {
     try {
       await navigator.share({
-        title: props.title,
-        text: props.description,
+        // title: props.title,
+        // text: props.description,
         url
       })
     } catch (err) {

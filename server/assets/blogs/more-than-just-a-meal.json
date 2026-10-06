@@ -1,13 +1,10 @@
-// data/blogs.js
-
-export const blogsData = {
-  // The key MUST be the exact slug used in the URL (e.g., /blog/more-than-just-a-meal)
-  "more-than-a-meal": {
+{
     "pageTitle": "More Than Just a Meal",
     "pageSubTitle": "The Little Things That Make Dining Memorable.",
     "pageDesc": "At CAPS, a memorable dining experience is shaped by more than the food on your plate. It is the atmosphere, the comfort, the little details, and the warm service that bring people together.",
-    "publishDate": "2026-10-12T00:00:00Z",
+    "publishDate": "2026-10-06T00:00:00Z",
     "readTime": 6,
+    "showcase": true,
     "featured": true,
     "ogImage": "/images/blog/more-than-just-a-meal/og-image.jpg",
     "hero": {
@@ -173,7 +170,7 @@ export const blogsData = {
           {
             "src": "/images/blog/more-than-just-a-meal/delivery.jpg",
             "width": 900,
-            "height": 600,
+            "height": 600
           }
         ]
       },
@@ -201,7 +198,7 @@ export const blogsData = {
           {
             "src": "/images/blog/more-than-just-a-meal/caps-digital.jpg",
             "width": 960,
-            "height": 540,
+            "height": 540
           }
           
         ]
@@ -242,220 +239,8 @@ export const blogsData = {
         "type": "paragraph",
         "text": "Individually, they are little things.<br>Together, they become the experience.<br>And sometimes, they become the meal you remember."
       },
-      // {
-      //   "type": "slider-horizontal",
-      //   "images": [
-      //     "/images/hall/amenities/1.jpg",
-      //     "/images/hall/amenities/2.jpg",
-      //     "/images/hall/amenities/3.jpg"
-      //   ]
-      // },
-      // {
-      //   "type": "slider-horizontal",
-      //   "speed": 1.2,
-      //   "caption": "Hotel CAPS Events Hall & Facilities",
-      //   "images": [
-      //     {
-      //       "src": "/images/hall/amenities/1.jpg",
-      //       "width": 600,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall stage arranged for celebrations and special occasions"
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/2.jpg",
-      //       "width": 576,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall with theatre-style seating facing the stage"
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/3.jpg",
-      //       "width": 533,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall arranged with rows of seating for an event"
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/4.jpg",
-      //       "width": 600,
-      //       "height": 399,
-      //       "caption": "Spacious Hotel CAPS Events Hall with seating arranged for guests"
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/5.jpg",
-      //       "width": 519,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall interior prepared for a gathering"
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/6.jpg",
-      //       "width": 634,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall stage and seating area"
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/7.jpg",
-      //       "width": 533,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall with spacious seating and illuminated ceiling"
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/8.jpg",
-      //       "width": 711,
-      //       "height": 400,
-      //       "caption": "Interior corridor providing access to the Hotel CAPS Events Hall"
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/9.jpg",
-      //       "width": 600,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall stage with red backdrop and decorative seating"
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/10.jpg",
-      //       "width": 320,
-      //       "height": 400,
-      //       "caption": "Elevator / Lift facility at Hotel CAPS for convenient guest access"
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/11.jpg",
-      //       "width": 600,
-      //       "height": 400,
-      //       "caption": "Parking area available for guests at Hotel CAPS"
-      //     }
-      //   ]
-      // },
-      // {
-      //   "type": "slider-thumbnail",
-      //   "images": [
-      //     "/images/hall/amenities/1.jpg",
-      //     "/images/hall/amenities/2.jpg",
-      //     "/images/hall/amenities/3.jpg"
-      //   ]
-      // },
-      // {
-      //   "type": "slider-thumbnail",
-      //   "autoplay": true,
-      //   "interval": 3000,
-      //   "width": 4,
-      //   "height": 2,
-      //   "caption": "Hotel CAPS Events Hall & Facilities",
-      //   "captionMob": true,
-      //   "captionPc": true,
-      //   "images": [
-      //     {
-      //       "src": "/images/hall/amenities/1.jpg",
-      //       "width": 600,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall stage arranged for celebrations and special occasions",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/2.jpg",
-      //       "width": 576,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall with theatre-style seating facing the stage",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/3.jpg",
-      //       "width": 533,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall arranged with rows of seating for an event",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/4.jpg",
-      //       "width": 600,
-      //       "height": 399,
-      //       "caption": "Spacious Hotel CAPS Events Hall with seating arranged for guests",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/5.jpg",
-      //       "width": 519,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall interior prepared for a gathering",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/6.jpg",
-      //       "width": 634,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall stage and seating area",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/7.jpg",
-      //       "width": 533,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall with spacious seating and illuminated ceiling",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/8.jpg",
-      //       "width": 711,
-      //       "height": 400,
-      //       "caption": "Interior corridor providing access to the Hotel CAPS Events Hall",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/9.jpg",
-      //       "width": 600,
-      //       "height": 400,
-      //       "caption": "Hotel CAPS Events Hall stage with red backdrop and decorative seating",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/10.jpg",
-      //       "width": 320,
-      //       "height": 400,
-      //       "caption": "Elevator / Lift facility at Hotel CAPS for convenient guest access",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     },
-      //     {
-      //       "src": "/images/hall/amenities/11.jpg",
-      //       "width": 600,
-      //       "height": 400,
-      //       "caption": "Parking area available for guests at Hotel CAPS",
-      //       "captionMob": true,
-      //       "captionPc": true
-      //     }
-      //   ]
-      // },
       {
         "type": "footer-nav"
-      },
-      // {
-      //   "type": "related-articles",
-      //   "articles": [
-      //     {
-      //       "thumbnail": "/images/blog/more-than-just-a-meal/cover.jpg",
-      //       "date": "05 OCT 2026",
-      //       "title": "A Taste of Tradition: Inside Arabic Corner",
-      //       "intro": "Dive into the rich flavors and history of our traditional dishes.",
-      //       "link": "/blog/arabic-corner"
-      //     },
-      //     {
-      //       "thumbnail": "/images/blog/more-than-just-a-meal/cover.jpg",
-      //       "date": "28 SEP 2026",
-      //       "title": "Why Chill N' Chai is Your New Favorite Hangout",
-      //       "intro": "Creating the perfect space for easy conversations and cool treats.",
-      //       "link": "/blog/chill-n-chai"
-      //     }
-      //   ]
-      // }
+      }
     ]
-  },
-  
-  // You can easily add the next blog here later:
-  // "a-taste-of-the-coast": { ... }
-};
+  }

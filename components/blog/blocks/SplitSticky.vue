@@ -19,7 +19,7 @@
           v-if="block.type === 'split-text-quote'"
           class="bg-[#bd5c17]/5 border-l-[4px] border-[#bd5c17] px-8 md:px-14 py-14 rounded-r-3xl relative flex flex-col justify-center"
         >
-          <span class="absolute top-2 left-4 text-6xl md:text-9xl font-display opacity-20 text-[#bd5c17] leading-none select-none">“</span>
+          <span class="absolute top-2 left-4 text-7xl md:text-9xl font-display opacity-20 text-[#bd5c17] leading-none select-none">“</span>
           <p
             class="relative z-10 text-3xl md:text-4xl leading-tight text-[#bd5c17]"
             :class="block.Julee ? 'font-decorative' : 'font-display italic'"

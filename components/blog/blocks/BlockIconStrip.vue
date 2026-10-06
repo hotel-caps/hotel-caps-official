@@ -1,7 +1,14 @@
 <template>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 py-8 border-y border-[#7A3E12]/10 my-4">
-    <div v-for="item in block.items" :key="item.title" class="flex flex-col items-center text-center">
-      <div class="w-16 h-16 rounded-full bg-white shadow-sm border border-[#7A3E12]/20 text-[#bd5c17] flex items-center justify-center mb-5 hover:-translate-y-1 transition-transform" v-html="getIcon(item.icon)"></div>
+  <div class="flex flex-wrap justify-center gap-x-6 gap-y-8 py-8 border-y border-[#7A3E12]/10 my-4">
+    <div
+      v-for="item in block.items"
+      :key="item.title"
+      class="w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)] flex flex-col items-center text-center"
+    >
+      <div
+        class="w-16 h-16 rounded-full bg-white shadow-sm border border-[#7A3E12]/20 text-[#bd5c17] flex items-center justify-center mb-5 hover:-translate-y-1 transition-transform"
+        v-html="getIcon(item.icon)"
+      ></div>
       <h4 class="font-display font-semibold text-xl text-[#7A3E12] mb-2">{{ item.title }}</h4>
       <p class="text-sm font-sans text-[#7A3E12]/70 leading-relaxed">{{ item.desc }}</p>
     </div>

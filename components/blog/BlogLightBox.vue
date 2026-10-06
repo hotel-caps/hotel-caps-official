@@ -27,7 +27,7 @@
           <button
             type="button"
             aria-label="Previous image"
-            class="fixed left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-[#bd5c17] text-white border border-white/20 backdrop-blur-md flex items-center justify-center shadow-xl transition-all duration-200 cursor-pointer"
+            class="fixed left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/5 hover:bg-[#bd5c17]/30 text-white border border-white/20 backdrop-blur-md flex items-center justify-center shadow-xl transition-all duration-200 cursor-pointer"
             @click.stop="prev"
           >
             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
@@ -38,7 +38,7 @@
           <button
             type="button"
             aria-label="Next image"
-            class="fixed right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-[#bd5c17] text-white border border-white/20 backdrop-blur-md flex items-center justify-center shadow-xl transition-all duration-200 cursor-pointer"
+            class="fixed right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/5 hover:bg-[#bd5c17]/30 text-white border border-white/20 backdrop-blur-md flex items-center justify-center shadow-xl transition-all duration-200 cursor-pointer"
             @click.stop="next"
           >
             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@
           class="fixed bottom-4 sm:bottom-6 inset-x-4 sm:inset-x-16 z-30 flex justify-center pointer-events-none"
         >
           <p
-            class="max-w-3xl px-4 py-2 rounded-xl bg-black/60 backdrop-blur-sm text-white/95 text-xs sm:text-sm md:text-base font-sans text-center leading-relaxed tracking-wide pointer-events-auto"
+            class="max-w-3xl px-3 py-1.5 rounded-xl bg-black/30 backdrop-blur-sm text-white/95 text-xs sm:text-sm md:text-base font-sans text-center leading-relaxed tracking-wide pointer-events-auto"
             @click.stop
           >
             {{ currentItem.caption }}

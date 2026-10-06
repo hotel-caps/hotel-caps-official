@@ -57,20 +57,23 @@
       <!-- Blog Content Layout -->
       <div v-else class="flex flex-col gap-12 lg:gap-16">
         
-        <!-- 1. FEATURED POST (Centered & Constrained Inside Outer Container, No Line Clamp) -->
-        <div v-if="featuredBlog" class="w-full max-w-5xl xl:max-w-6xl mx-auto">
+        <!-- 1. SHOWCASE POST (Centered & Constrained Inside Outer Container, No Line Clamp) -->
+        <div v-if="showcaseBlog" class="w-full max-w-5xl xl:max-w-6xl mx-auto">
           <NuxtLink
-            :to="featuredBlog.url"
+            :to="showcaseBlog.url"
             class="blog-card group flex flex-col lg:flex-row bg-white rounded-2xl overflow-hidden border border-zinc-100/85 shadow-[0_10px_30px_-5px_rgba(10,10,28,0.18),0_4px_12px_-2px_rgba(122,62,18,0.11)] hover:shadow-[0_22px_48px_-10px_rgba(10,10,28,0.34),0_10px_24px_-6px_rgba(189,92,23,0.24)] hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-300 ease-out"
           >
-            <!-- Featured Image Wrapper (Compact 16:10 on Mobile, 55% Width on Desktop, Gracefully fits 1.5:1 to 1.9:1) -->
+            <!-- Showcase Image Wrapper (Compact 16:10 on Mobile, 54% Width on Desktop) -->
             <div class="w-full lg:w-[54%] aspect-[16/10] lg:aspect-auto lg:min-h-[360px] relative overflow-hidden bg-zinc-100 shrink-0">
-              <div class="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 z-10 bg-black/75 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1.5 rounded-md flex items-center tracking-widest uppercase shadow-md">
+              <div
+                v-if="showcaseBlog.featured"
+                class="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 z-10 bg-black/75 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1.5 rounded-md flex items-center tracking-widest uppercase shadow-md"
+              >
                 FEATURED
               </div>
               <NuxtImg
-                :src="featuredBlog.coverImage"
-                :alt="featuredBlog.title"
+                :src="showcaseBlog.coverImage"
+                :alt="showcaseBlog.title"
                 width="1200"
                 height="800"
                 sizes="380px sm:640px md:768px lg:640px xl:800px"
@@ -83,19 +86,19 @@
               />
             </div>
 
-            <!-- Featured Text Column (Compact Mobile Padding, Unclamped Copy) -->
+            <!-- Showcase Text Column (Compact Mobile Padding, Unclamped Copy) -->
             <div class="w-full lg:w-[46%] p-5 sm:p-7 lg:p-10 flex flex-col justify-center text-left">
               <div class="flex items-center gap-3 mb-2.5 sm:mb-3.5">
                 <div class="w-6 h-[2px] bg-[#bd5c17]"></div>
-                <span class="text-xs font-semibold tracking-widest text-zinc-500 uppercase">{{ featuredBlog.date }}</span>
+                <span class="text-xs font-semibold tracking-widest text-zinc-500 uppercase">{{ showcaseBlog.date }}</span>
               </div>
 
               <h3 class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-zinc-900 mb-3 sm:mb-4 leading-snug group-hover:text-[#bd5c17] transition-colors duration-300">
-                {{ featuredBlog.title }}
+                {{ showcaseBlog.title }}
               </h3>
 
               <p class="font-sans text-zinc-600 text-sm sm:text-base leading-relaxed mb-5 sm:mb-7">
-                {{ featuredBlog.intro }}
+                {{ showcaseBlog.intro }}
               </p>
 
               <div class="relative inline-flex items-center w-fit pb-1 text-sm sm:text-base text-[#bd5c17] font-bold tracking-wide group-hover:text-[#C86A22] transition-colors duration-300 mt-auto lg:mt-0">
@@ -115,8 +118,14 @@
             :to="blog.url"
             class="blog-card group flex flex-col bg-white rounded-2xl overflow-hidden border border-zinc-100/85 shadow-[0_10px_30px_-5px_rgba(10,10,28,0.18),0_4px_12px_-2px_rgba(122,62,18,0.11)] hover:shadow-[0_22px_48px_-10px_rgba(10,10,28,0.34),0_10px_24px_-6px_rgba(189,92,23,0.24)] hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-300 ease-out h-full"
           >
-            <!-- Standard Image Wrapper (16:10 bridges 1200x800 and 1.9:1 gracefully) -->
-            <div class="w-full aspect-[16/10] overflow-hidden bg-zinc-100 shrink-0">
+            <!-- Standard Image Wrapper (With Featured Badge Support) -->
+            <div class="w-full aspect-[16/10] relative overflow-hidden bg-zinc-100 shrink-0">
+              <div
+                v-if="blog.featured"
+                class="absolute top-3.5 left-3.5 z-10 bg-black/75 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1.5 rounded-md flex items-center tracking-widest uppercase shadow-md"
+              >
+                FEATURED
+              </div>
               <NuxtImg
                 :src="blog.coverImage"
                 :alt="blog.title"
@@ -150,7 +159,7 @@
               <div class="relative inline-flex items-center w-fit pb-1 text-[#bd5c17] font-bold text-sm tracking-wide group-hover:text-[#C86A22] transition-colors duration-300 mt-auto">
                 <span>Read Story</span>
                 <span class="ml-2 transform group-hover:translate-x-1.5 transition-transform duration-300 ease-out">→</span>
-                <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#bd5c17] group-hover:bg-[#C86A22] origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
+                <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#bd5c17] group-hover:bg-[#C86A22] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
               </div>
             </div>
           </NuxtLink>
@@ -185,13 +194,15 @@ const filteredBlogs = computed(() => {
   )
 })
 
-// Separation logic to maintain layout (Featured vs Standard)
-const featuredBlog = computed(() => {
-  return filteredBlogs.value.find(blog => blog.featured)
+// Top card is the newest blog with showcase: true
+const showcaseBlog = computed(() => {
+  return filteredBlogs.value.find(blog => blog.showcase)
 })
 
+// All other blogs (including other featured blogs) go into the grid in newest-first order
 const standardBlogs = computed(() => {
-  return filteredBlogs.value.filter(blog => !blog.featured)
+  if (!showcaseBlog.value) return filteredBlogs.value
+  return filteredBlogs.value.filter(blog => blog.url !== showcaseBlog.value.url)
 })
 
 // Zero-Opacity-Play GSAP Scroll Lift (Only subtle Y-axis movement for below-the-fold cards)
@@ -219,7 +230,7 @@ onMounted(async () => {
           y: 0,
           duration: 0.6,
           ease: 'power2.out',
-           clearProps: 'transform',
+          clearProps: 'transform',
           scrollTrigger: {
             trigger: card,
             start: 'top 92%',

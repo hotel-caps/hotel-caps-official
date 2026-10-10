@@ -25,7 +25,7 @@ export const blogsData = {
     "blocks": [
       {
         "type": "editorial-intro",
-        "text": "At Hotel CAPS, a memorable dining experience is shaped by more than the food on your plate. While our culinary team takes immense pride in sourcing premium ingredients and crafting a symphony of flavors, we understand that a truly exceptional meal involves all of your senses. The curated atmosphere sets the stage the moment you step through our doors, blending elegant lighting with a sophisticated aesthetic that makes you feel instantly at ease. Soft ambient music and a thoughtful layout ensure that whether you are hosting a lively family celebration or sharing an intimate, quiet evening, your surroundings adapt perfectly to the mood of the occasion. It is the little details—the thousand tiny, unseen decisions—that ultimately define our distinct approach to hospitality. These small elements work quietly in the background to elevate a standard lunch or dinner into something remarkably unique."
+        "text": "At Hotel CAPS, a memorable dining experience is shaped by more than the food on your plate. While our culinary team takes immense pride in sourcing premium ingredients and crafting a symphony of flavours, we understand that a truly exceptional meal involves all of your senses. The curated atmosphere sets the stage the moment you step through our doors, blending elegant lighting with a sophisticated aesthetic that makes you feel instantly at ease. Soft ambient music and a thoughtful layout ensure that whether you are hosting a lively family celebration or sharing an intimate, quiet evening, your surroundings adapt perfectly to the mood of the occasion. It is the little details—the thousand tiny, unseen decisions—that ultimately define our distinct approach to hospitality. These small elements work quietly in the background to elevate a standard lunch or dinner into something remarkably unique."
       },
       {
         "type": "heading",
@@ -412,13 +412,13 @@ export const blogsData = {
             "thumbnail": "https://images.unsplash.com/photo-1414235077428-338988692286?auto=format&fit=crop&q=80&w=800",
             "date": "05 OCT 2026",
             "title": "A Taste of Tradition: Inside Arabic Corner",
-            "intro": "Dive into the rich flavors and history of our traditional dishes.",
+            "intro": "Dive into the rich flavours and history of our traditional dishes.",
             "link": "/blog/arabic-corner"
           },
           {
             "thumbnail": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800",
             "date": "28 SEP 2026",
-            "title": "Why Chill N' Chai is Your New Favorite Hangout",
+            "title": "Why Chill N' Chai is Your New favourite Hangout",
             "intro": "Creating the perfect space for easy conversations and cool treats.",
             "link": "/blog/chill-n-chai"
           }

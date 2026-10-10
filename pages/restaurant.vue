@@ -11,7 +11,7 @@ const heroImages = ref([
 const restaurantIntroData = {
   eyebrow: "Welcome to Hotel CAPS",
   title: "Good Food.\nGreat Times.",
-  description: "At Hotel CAPS, our restaurant is where flavor meets comfort. From traditional favorites to modern delights, every dish is prepared with the finest ingredients and a lot of love.",
+  description: "At Hotel CAPS, our restaurant is where flavour meets comfort. From traditional favourites to modern delights, every dish is prepared with the finest ingredients and a lot of love.",
   image: "/images/restaurant/intro.jpg",
   themeTextClass: "text-[#03a661]", 
   themeBgClass: "bg-[#03a661]",
@@ -45,7 +45,7 @@ const restaurantIntroData = {
 
 const restaurantSplitData = {
   eyebrow: "Why Choose Us?",
-  title: "Flavors You Love.\nService You Trust.",
+  title: "flavours You Love.\nService You Trust.",
   description: "We combine great taste, a cozy atmosphere, and attentive service to create a dining experience you'll love.",
   bullets: [
     "Variety of cuisines to suit every mood",
@@ -123,7 +123,7 @@ const restaurantAssureData = {
 
 const restaurantGalleryData = {
   eyebrow: "Our Delicacies",
-  title: "Flavors That Speak for Us",
+  title: "flavours That Speak for Us",
   themeTextClass: "text-[#03a661]",
   themeBgClass: "bg-[#03a661]",
 
@@ -321,7 +321,7 @@ useCapsSeo({
 <template>
   <div>
     <PageHero 
-      eyebrow="Global Flavors. Local Freshness."
+      eyebrow="Global flavours. Local Freshness."
       title="Our Restaurant"
       subtitle="Savour a world of culinary delights crafted uniquely for your taste."
       :images="heroImages"

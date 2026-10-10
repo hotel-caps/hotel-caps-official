@@ -7,7 +7,7 @@
       :style="{ backgroundImage: `url(${heroImages})` }"
       aria-label="CAPS Digital Menu"
     >
-    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-green-950/20 to-black/70 z-5"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-green-950/40 to-black/70 z-5"></div>
       <!-- Content (if any) goes here -->
     </section>
 

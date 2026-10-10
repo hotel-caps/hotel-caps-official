@@ -56,7 +56,7 @@
             @touchend="handleSigTouchEnd" 
             @mousedown="handleSigTouchStart" 
             @mouseup="handleSigTouchEnd"
-            class="relative w-full h-auto bg-[#2a2a2a] rounded-3xl overflow-hidden shadow-md border border-[#1c1c1c]/30 transition-colors duration-500 flex flex-col select-none"
+            class="relative w-full h-auto bg-[#2a2a2a] rounded-3xl overflow-hidden shadow-md border border-[#1c1c1c]/30 transition-colors duration-300 flex flex-col select-none"
           >
             <transition-group name="fade" tag="div" class="grid w-full">
               <div 
@@ -362,7 +362,7 @@
       <div class="hidden lg:flex gap-10 items-start">
         
         <!-- LEFT COLUMN: Sticky Specials Slider (h-auto via Grid) -->
-        <aside class="w-[30%] xl:w-[25%] sticky top-[6rem] flex flex-col gap-6 pt-2">
+        <aside class="w-[30%] xl:w-[25%] relative [@media(max-aspect-ratio:1.9/1)]:sticky top-[6rem] flex flex-col gap-6 pt-2">
 
           <!-- DESKTOP: MONTHLY SIGNATURES SLIDER -->
           <div class="flex flex-col gap-3 mb-4">
@@ -377,7 +377,7 @@
               @touchend="handleSigTouchEnd" 
               @mousedown="handleSigTouchStart" 
               @mouseup="handleSigTouchEnd"
-              class="relative w-full h-auto bg-[#2a2a2a] rounded-3xl overflow-hidden shadow-lg border border-[#1c1c1c]/30 transition-colors duration-500 flex flex-col select-none mt-2"
+              class="relative w-full h-auto bg-[#2a2a2a] rounded-3xl overflow-hidden shadow-lg border border-[#1c1c1c]/30 transition-colors duration-300 flex flex-col select-none mt-2"
             >
               <transition-group name="fade" tag="div" class="grid w-full">
                 <div 
@@ -430,7 +430,7 @@
             @touchend="handleTouchEnd" 
             @mousedown="handleTouchStart" 
             @mouseup="handleTouchEnd"
-            class="relative w-full h-auto bg-[#2a2a2a] rounded-3xl overflow-hidden shadow-lg border border-[#2a2a2a] transition-colors duration-500 flex flex-col cursor-grab active:cursor-grabbing select-none"
+            class="relative w-full h-auto bg-[#2a2a2a] rounded-3xl overflow-hidden shadow-lg border border-[#2a2a2a] transition-colors duration-300 flex flex-col cursor-grab active:cursor-grabbing select-none"
           >
             
             <div v-if="outletSpecials.length === 0" class="p-12 text-center text-zinc-400 text-sm font-medium tracking-wide">
@@ -442,7 +442,7 @@
                 v-for="(special, index) in outletSpecials" 
                 :key="special.title" 
                 v-show="index === currentSpecialIndex" 
-                class="col-start-1 row-start-1 w-full h-full flex flex-col p-6 lg:p-8 rounded-[24px] relative overflow-hidden shadow-2xl transition-colors duration-500"
+                class="col-start-1 row-start-1 w-full h-full flex flex-col p-6 lg:p-8 rounded-[24px] relative overflow-hidden shadow-2xl transition-colors duration-300"
                 :class="[
                   special.category === 'Chill N Chai' ? 'bg-gradient-to-br from-[#5C4033] to-[#2A1C14]' :
                   special.category === 'Arabic Corner' ? 'bg-gradient-to-br from-[#3E2723] to-[#1B100B]' :

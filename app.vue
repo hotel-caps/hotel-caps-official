@@ -36,6 +36,9 @@ onMounted(() => {
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
+
+      <!-- Global Google Review Nudge -->
+      <ReviewNudge />
     </div>
   </div>
 </template>

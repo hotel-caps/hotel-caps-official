@@ -5,7 +5,7 @@
       <!-- Main Container Card -->
       <div class="highlight-container-reveal relative bg-[#112d1c] rounded-[1.75rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 shadow-2xl border border-green-950/40">
         
-        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-12 xl:gap-16">
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-6 xl:gap-16">
           
           <template v-for="(item, index) in highlightsData" :key="index">
             
@@ -15,11 +15,11 @@
               <!-- Container for Text & Image -->
               <div 
                 class="w-full flex flex-col items-center gap-6 sm:gap-8"
-                :class="index === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'"
+                :class="index === 0 ? 'sm:flex-col xl:flex-row' : 'lg:flex-col-reverse xl:flex-row-reverse'"
               >
                 
                 <!-- Text Content -->
-                <div class="w-full sm:w-1/2 flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div class="w-full sm:w-3/4 lg:w-4/5 text-center lg:text-left flex flex-col items-center lg:items-start">
                   <h3 class="highlight-text-reveal font-['Julee'] text-2xl sm:text-3xl lg:text-4xl text-[#2d9b4c] mb-3 tracking-wide">
                     {{ item.title }}
                   </h3>
@@ -30,7 +30,7 @@
                 </div>
 
                 <!-- Image Container -->
-                <div class="highlight-image-reveal w-full sm:w-1/2 flex-shrink-0">
+                <div class="highlight-image-reveal w-full sm:w-3/4 xl:w-1/2 flex-shrink-0">
                   <div class="relative w-full aspect-square rounded-2xl sm:rounded-3xl overflow-hidden border border-[#03a661]/30 shadow-xl group">
                     <NuxtImg 
                       :src="item.image" 
@@ -84,7 +84,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const highlightsData = [
-  { title: "Chill & Chai", description: "Your cozy corner for relaxing vibes and refreshing sips.\n\nEnjoy a variety of teas, snacks, and light bites in a calm and inviting atmosphere.", image: "/images/restaurant/chill-chai.jpg", imageAlt: "Chill and Chai special tea and snacks" },
+  { title: "Chill N' Chai", description: "Your cozy corner for relaxing vibes and refreshing sips.\n\nEnjoy a variety of teas, snacks, and light bites in a calm and inviting atmosphere.", image: "/images/restaurant/chill-chai.jpg", imageAlt: "Chill and Chai special tea and snacks" },
   {
     title: "Arabic Corner",
     description: "Authentic flavours. Richly spiced. Always satisfying.\n\nFrom aromatic rice and grilled favourites to classic Arabic dishes, discover bold flavours made to be shared.",

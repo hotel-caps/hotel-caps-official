@@ -9,7 +9,7 @@ const heroImages = ref([
 
 // 1. Core Meta Values
 const pageTitle = 'Contact & Bookings | Hotel CAPS - Koduvayur, Palakkad'
-const pageDesc = 'Contact Hotel CAPS - Koduvayur, Palakkad for Luxury AC Room Bookings, Restaurant Reservations, Auditorium & Event Hall enquiries, Catering & Free Delivery.'
+const pageDesc = 'Contact Hotel CAPS - Koduvayur, Palakkad for Luxury AC Room Bookings, Restaurant Reservations, Auditorium & Events Hall enquiries, Catering & Free Delivery.'
 const canonicalUrl = 'https://capsfamily.in/contact'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-contact-og-image.jpg'
 

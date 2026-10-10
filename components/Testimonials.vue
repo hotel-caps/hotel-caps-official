@@ -57,7 +57,7 @@ const prevSlide = () => {
 };
 
 const startAutoplay = () => {
-  autoplayInterval = setInterval(nextSlide, 5000);
+  autoplayInterval = setInterval(nextSlide, 4000);
 };
 
 const stopAutoplay = () => {
@@ -114,7 +114,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section ref="main" id="testimonials-component" class="bg-gradient-to-b from-slate-100 to-stone-100 flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
+  <section ref="main" id="testimonials-component" class="bg-gradient-to-b from-stone-50 to-stone-100 flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20 overflow-hidden">
     <div class="grid max-w-7xl mx-auto grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       
       <!-- Left Column: Text Content & Slider -->

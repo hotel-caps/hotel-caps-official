@@ -46,7 +46,7 @@ const SITELINK_NAV_ITEMS = [
   {
     name: 'Outdoor Catering',
     url: `${SITE_URL}/catering`,
-    description: 'Delicious flavors & quality outdoor catering services for weddings, parties, meetings & celebrations.'
+    description: 'Delicious flavours & quality outdoor catering services for weddings, parties, meetings & celebrations.'
   },
   {
     name: 'Room Tariffs & Pricing',

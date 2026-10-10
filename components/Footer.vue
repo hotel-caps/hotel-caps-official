@@ -67,7 +67,7 @@ const footerNav = ref([
 
           <div class="flex flex-col items-center md:w-96 mb-8">
             <p class="font-sans mb-2 text-center leading-loose">Hotel CAPS - Main Road, Pittupeedika, Koduvayur, Palakkad, Kerala, India - 678501.</p>
-            <a href="capsfamilybakes@gmail.com" aria-label="E-Mail" class="flex items-center text-stone-200 transition-all duration-300 hover:text-[#d99706] hover:underline">
+            <a href="mailto:capsfamilybakes@gmail.com" aria-label="E-Mail" class="flex items-center text-stone-200 transition-all duration-300 hover:text-[#d99706] hover:underline">
               <IconEnvelope class="w-5 h-5 mr-2" />
               <span>capsfamilybakes@gmail.com</span>
             </a>

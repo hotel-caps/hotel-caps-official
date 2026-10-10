@@ -40,7 +40,7 @@
           <!-- Sliding Track (Disables transition during active drag for 1:1 follow) -->
           <div 
             class="flex w-full will-change-transform"
-            :class="isDragging ? 'transition-none' : 'transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]'"
+            :class="isDragging ? 'transition-none' : 'transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]'"
             :style="{ transform: `translate3d(calc(-${currentIndex * 100}% + ${dragOffset}px), 0, 0)` }"
           >
             <!-- Individual Featured Slide (100% Width) -->
@@ -184,10 +184,6 @@ const props = defineProps({
   blogs: {
     type: Array,
     default: () => []
-  },
-  autoplayDelay: {
-    type: Number,
-    default: 3000
   }
 });
 
@@ -240,7 +236,7 @@ const handleManualNext = () => {
 const startAutoplay = () => {
   if (!isMounted || featuredList.value.length <= 1) return;
   stopAutoplay();
-  autoplayTimer = setInterval(nextSlide, props.autoplayDelay);
+  autoplayTimer = setInterval(nextSlide, 4500); // Strictly set to 4500ms
 };
 
 const stopAutoplay = () => {

@@ -49,7 +49,7 @@ const roomsSplitData = {
   title: "Designed for Your Comfort,\nBuilt for Your Satisfaction.",
   description: "Every detail in our rooms is carefully curated to provide you with a restful and refreshing stay.",
   bullets: [
-    "Spacious, hygenic and well-furnished rooms",
+    "Spacious, hygienic and well-furnished rooms",
     "Modern amenities for a hassle-free stay",
     "Peaceful atmosphere for better relaxation",
     "Dedicated service for a memorable experience"

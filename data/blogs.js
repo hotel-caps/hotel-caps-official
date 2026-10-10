@@ -25,7 +25,7 @@ export const blogsData = {
     "blocks": [
       {
         "type": "editorial-intro",
-        "text": "Hospitality at Hotel CAPS is about more than serving good food. It is about how the entire experience makes you feel. While our culinary team takes immense pride in sourcing premium ingredients and crafting a symphony of flavors, we understand that a truly exceptional meal involves all of your senses. The curated atmosphere sets the stage the moment you step through our doors, blending our facilities for your delight. It is the little details - the thousand tiny, unseen decisions that shall ultimately define our distinct approach to hospitality. These small elements work quietly in the background to elevate a standard lunch or dinner into something remarkably unique."
+        "text": "Hospitality at Hotel CAPS is about more than serving good food. It is about how the entire experience makes you feel. While our culinary team takes immense pride in sourcing premium ingredients and crafting a symphony of flavours, we understand that a truly exceptional meal involves all of your senses. The curated atmosphere sets the stage the moment you step through our doors, blending our facilities for your delight. It is the little details - the thousand tiny, unseen decisions that shall ultimately define our distinct approach to hospitality. These small elements work quietly in the background to elevate a standard lunch or dinner into something remarkably unique."
       },
       {
         "type": "heading",
@@ -441,13 +441,13 @@ export const blogsData = {
       //       "thumbnail": "/images/blog/more-than-just-a-meal/cover.jpg",
       //       "date": "05 OCT 2026",
       //       "title": "A Taste of Tradition: Inside Arabic Corner",
-      //       "intro": "Dive into the rich flavors and history of our traditional dishes.",
+      //       "intro": "Dive into the rich flavours and history of our traditional dishes.",
       //       "link": "/blog/arabic-corner"
       //     },
       //     {
       //       "thumbnail": "/images/blog/more-than-just-a-meal/cover.jpg",
       //       "date": "28 SEP 2026",
-      //       "title": "Why Chill N' Chai is Your New Favorite Hangout",
+      //       "title": "Why Chill N' Chai is Your New favourite Hangout",
       //       "intro": "Creating the perfect space for easy conversations and cool treats.",
       //       "link": "/blog/chill-n-chai"
       //     }

@@ -1,57 +1,61 @@
 <template>
-  <div v-if="article" class="bg-[#fafaf9] min-h-screen font-sans text-[#7A3E12] selection:bg-[#C86A22] selection:text-white pb-24 overflow-x-clip">
+  <div v-if="article">
     
-    <!-- 1. HERO SECTION -->
-    <BlogHero 
-      :hero="article.hero" 
-      :pageTitle="article.pageTitle" 
-      :pageSubTitle="article.pageSubTitle" 
-      :publishDate="article.publishDate" 
-      :readTime="article.readTime"
-      :eyebrow="article.hero.eyebrow"
-      :imageGradientClass="article.hero.imageGradientClass"
-      :themeColorClass="article.hero.themeColorClass"
-      :eyebrowColorClass="article.hero.eyebrowColorClass"
-    />
+    <!-- IMMERSIVE LISTICLE LAYOUT -->
+    <BlogListicle v-if="article.layout === 'listicle'" :article="article" />
 
-    <!-- 2. EDITORIAL GRID -->
-    <main class="max-w-full mx-auto px-6 md:px-12 mt-2 md:mt-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-        
-        <!-- LEFT COLUMN (Mobile: Top Share Bar below Metadata | Desktop: Sticky Left Sidebar) -->
-        <aside class="lg:col-span-3 sticky top-[72px] lg:top-[100px] z-30 self-start bg-[#fafaf9]/95 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none -mx-6 px-6 pt-3 pb-2 lg:mx-0 lg:px-0 lg:py-0 border-b border-[#7A3E12]/10 lg:border-b-0">
-          <BlogSidebar 
-            :toc="toc" 
-            :title="article.pageTitle" 
-            :description="article.pageDesc" 
-          />
-        </aside>
+    <!-- STANDARD BLOG LAYOUT (Your existing code) -->
+    <div v-else class="bg-[#fafaf9] min-h-screen font-sans text-[#7A3E12] selection:bg-[#C86A22] selection:text-white pb-24 overflow-x-clip">
+      
+      <!-- 1. HERO SECTION -->
+      <BlogHero 
+        :hero="article.hero" 
+        :pageTitle="article.pageTitle" 
+        :pageSubTitle="article.pageSubTitle" 
+        :publishDate="article.publishDate" 
+        :readTime="article.readTime"
+        :eyebrow="article.hero.eyebrow"
+        :imageGradientClass="article.hero.imageGradientClass"
+        :themeColorClass="article.hero.themeColorClass"
+        :eyebrowColorClass="article.hero.eyebrowColorClass"
+      />
 
-        <!-- RIGHT COLUMN: DYNAMIC CONTENT LOOP -->
-        <div class="lg:col-span-9 flex flex-col gap-6 md:gap-10 w-full max-w-7xl">
+      <!-- 2. EDITORIAL GRID -->
+      <main class="max-w-full mx-auto px-6 md:px-12 mt-2 md:mt-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+          
+          <!-- LEFT COLUMN -->
+          <aside class="lg:col-span-3 sticky top-[72px] lg:top-[100px] z-30 self-start bg-[#fafaf9]/95 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none -mx-6 px-6 pt-3 pb-2 lg:mx-0 lg:px-0 lg:py-0 border-b border-[#7A3E12]/10 lg:border-b-0">
+            <BlogSidebar 
+              :toc="toc" 
+              :title="article.pageTitle" 
+              :description="article.pageDesc" 
+            />
+          </aside>
 
-          <!-- Component Builder -->
-          <template v-for="(block, idx) in article.blocks" :key="idx">
-            <div class="gsap-block-reveal w-full relative">
-              <component 
-                :is="resolveBlockComponent(block.type)" 
-                :block="block"
-                @open-lightbox="openLightbox"
-              />
-            </div>
-          </template>
-
+          <!-- RIGHT COLUMN -->
+          <div class="lg:col-span-9 flex flex-col gap-6 md:gap-10 w-full max-w-7xl">
+            <template v-for="(block, idx) in article.blocks" :key="idx">
+              <div class="gsap-block-reveal w-full relative">
+                <component 
+                  :is="resolveBlockComponent(block.type)" 
+                  :block="block"
+                  @open-lightbox="openLightbox"
+                />
+              </div>
+            </template>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
 
-    <!-- 3. BLOG LIGHTBOX (Masonry & Split Sticky Images) -->
-    <BlogLightbox
-      :is-open="lightbox.isOpen"
-      :items="lightbox.items"
-      :initial-index="lightbox.index"
-      @close="closeLightbox"
-    />
+      <!-- 3. BLOG LIGHTBOX -->
+      <BlogLightbox
+        :is-open="lightbox.isOpen"
+        :items="lightbox.items"
+        :initial-index="lightbox.index"
+        @close="closeLightbox"
+      />
+    </div>
   </div>
 </template>
 
@@ -62,6 +66,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // 1. Explicitly Import Every Block Component
+import BlogListicle from '~/components/blog/BlogListicle.vue'
 import BlogHero from '~/components/blog/BlogHero.vue'
 import BlogSidebar from '~/components/blog/BlogSidebar.vue'
 import BlogLightbox from '~/components/blog/BlogLightBox.vue'

@@ -213,7 +213,7 @@ const hallCtaData = {
 };
 
 // 1. Core Meta Values
-const pageTitle = 'Auditorium & Event Hall | Hotel CAPS - Koduvayur, Palakkad'
+const pageTitle = 'Auditorium & Events Hall | Hotel CAPS - Koduvayur, Palakkad'
 const pageDesc = 'Plan weddings, receptions, parties, meetings & celebrations at Hotel CAPS - Koduvayur, Palakkad. Spacious AC Auditorium with A/V, catering, lift & car parking.'
 const canonicalUrl = 'https://capsfamily.in/hall'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-hall-og-image.jpg'

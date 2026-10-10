@@ -182,7 +182,7 @@ const cateringCtaData = {
 
 // 1. Core Meta Values
 const pageTitle = 'Outdoor Catering | Hotel CAPS - Koduvayur, Palakkad'
-const pageDesc = 'Make weddings, parties, meetings, functions & celebrations memorable with the delicious flavors & quality catering services of Hotel CAPS - Koduvayur, Palakkad.'
+const pageDesc = 'Make weddings, parties, meetings, functions & celebrations memorable with the delicious flavours & quality catering services of Hotel CAPS - Koduvayur, Palakkad.'
 const canonicalUrl = 'https://capsfamily.in/catering'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-catering-og-image.jpg'
 

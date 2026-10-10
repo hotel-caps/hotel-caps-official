@@ -3,7 +3,7 @@
 
 // --- THIN SVG ASSETS (Stroke 1.2px) ---
 const iconFresh = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/><path d="M12 22V12"/></svg>`;
-const iconFlavors = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+const iconflavours = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
 const iconLove = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78v0z"/></svg>`;
 const iconParking = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 8h4a2 2 0 010 4H9v4"/></svg>`;
 const iconElevator = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M12 6v4m0-4l-2 2m2-2l2 2m-2 6v4m0 0l-2-2m2 2l2-2"/></svg>`;
@@ -13,10 +13,10 @@ const iconCorp = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
 const iconDecor = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>`;
 const iconOutdoor = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>`;
 
-const foodTags = [{ text: "Always Fresh", icon: iconFresh }, { text: "Authentic Flavors", icon: iconFlavors }, { text: "Made With Love", icon: iconLove }];
+const foodTags = [{ text: "Always Fresh", icon: iconFresh }, { text: "Authentic flavours", icon: iconflavours }, { text: "Made With Love", icon: iconLove }];
 const roomTags = [{ text: "Car Parking", icon: iconParking }, { text: "Elevator Access", icon: iconElevator }, { text: "24 Hour Service", icon: icon24h }];
 const hallTags = [{ text: "A/V Capabilities", icon: iconAV }, { text: "Corporate Events", icon: iconCorp }, { text: "Grand Decor", icon: iconDecor }];
-const cateringTags = [{ text: "Outdoor Setup", icon: iconOutdoor }, { text: "Custom Menus", icon: iconFlavors }, { text: "Live Counters", icon: iconFresh }];
+const cateringTags = [{ text: "Outdoor Setup", icon: iconOutdoor }, { text: "Custom Menus", icon: iconflavours }, { text: "Live Counters", icon: iconFresh }];
 
 export const capsCategoriesData = [
   { id: 'specials', name: 'Specials', icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>` },

@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // The paragraph content with styled keywords. Using v-html to render this.
 const aboutParagraph = ref(`
-  Nestled in the <strong class="text-sky-400 font-semibold">geographical, commercial and cultural hub</strong> of Southern Palakkad in Koduvayur, Hotel CAPS is an <strong class="font-semibold text-rose-500">immersive experience</strong> for every guest. We blend luxury with tradition, offering an <strong class="font-semibold text-amber-500">inviting and homely flavor</strong> with rich amenities and the warmth of <strong class="font-semibold text-emerald-500 ">Kerala hospitality</strong>. Your journey into comfort and elegance starts here.
+  Nestled in the <strong class="text-sky-400 font-semibold">geographical, commercial and cultural hub</strong> of Southern Palakkad in Koduvayur, Hotel CAPS is an <strong class="font-semibold text-rose-500">immersive experience</strong> for every guest. We blend luxury with tradition, offering an <strong class="font-semibold text-amber-500">inviting and homely flavour</strong> with rich amenities and the warmth of <strong class="font-semibold text-emerald-500 ">Kerala hospitality</strong>. Your journey into comfort and elegance starts here.
 `);
 
 // A ref to hold the main section element for GSAP context

@@ -2,27 +2,27 @@
   <section id="achievements-section" class="bg-stone-300 pt-12 pb-16 lg:pt-20 lg:pb-28 dotted-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12 md:mb-16">
-        <p 
-          class="font-sans text-sm font-bold uppercase tracking-widest mb-2 text-stone-500"
-        >
+        <p class="font-sans text-sm font-bold uppercase tracking-widest mb-2 text-stone-500">
           Our Stats
         </p>
-        <h2 class=" text-gray-800 text-3xl sm:text-4xl text-center lg:text-4xl font-display font-semibold tracking-wider mt-2">Our Achievements in Numbers</h2>
+        <h2 class=" text-gray-800 text-3xl sm:text-4xl text-center lg:text-4xl font-display font-semibold tracking-wider mt-2">
+          Our Achievements in Numbers
+        </h2>
       </div>
       <div class="flex flex-wrap justify-center gap-4 sm:gap-8">
 
         <div 
           v-for="(stat, index) in achievements" 
           :key="index"
-          class="achievement-card p-4 sm:p-6 lg:p-10 rounded-xl shadow-lg text-center flex flex-col items-center justify-center aspect-square  w-[calc(47%)] sm:w-[calc(33.33%-1.5rem)] md:w-[calc(25%-1.5rem)]"
+          class="achievement-card p-4 sm:p-6 lg:p-10 rounded-xl shadow-lg text-center flex flex-col items-center justify-center aspect-square w-[calc(47%)] sm:w-[calc(33.33%-1.5rem)] md:w-[calc(25%-1.5rem)]"
           :class="[stat.colorClass,stat.shadowClass]"
         >
-          <component :is="stat.iconComponent" class="text-4xl sm:text-5xl  w-12 h-12 sm:w-12 sm:h-12 lg:w-14 lg:h-14 p-2 rounded-full" :class="stat.iconBg" weight="regular" />
+          <component :is="stat.iconComponent" class="text-4xl sm:text-5xl w-12 h-12 sm:w-12 sm:h-12 lg:w-14 lg:h-14 p-2 rounded-full" :class="stat.iconBg" weight="regular" />
           <h3 :class="stat.colorClass" class="font-number text-4xl sm:text-5xl lg:text-7xl font-semibold mt-4">
-            <span :ref="el => { if (el) statNumbers[index] = el }">{{ stat.startNumber }}</span>{{ stat.suffix }}
+            <!-- SSR and Crawlers receive the target number immediately -->
+            <span :ref="el => { if (el) statNumbers[index] = el }">{{ stat.targetNumber }}</span>{{ stat.suffix }}
           </h3>
           <p class="mt-2 text-sm sm:text-base text-gray-600 tracking-wide">{{ stat.label }}</p>
-          <!-- Bottom Accent Line -->
           <div 
             class="w-10 h-1 rounded-full mt-4"
             :class="stat.lineBg"
@@ -35,15 +35,13 @@
 </template>
 
 <script setup>
-import { shallowRef, onMounted } from 'vue';
+import { shallowRef, onMounted, ref } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PhUsersThree, PhForkKnife, PhCalendarCheck, PhSparkle } from '@phosphor-icons/vue';
 
-// Register the GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Data for our achievement cards. To add/edit a card, just change this array.
 const achievements = shallowRef([
   { 
     iconComponent: PhUsersThree, 
@@ -91,11 +89,9 @@ const achievements = shallowRef([
   }
 ]);
 
-// An array to hold the references to our number spans
 const statNumbers = ref([]);
 
 onMounted(() => {
-  // --- Animate Cards into view ---
   gsap.from(".achievement-card", {
     y: 100,
     opacity: 0,
@@ -109,11 +105,13 @@ onMounted(() => {
     }
   });
 
-  // --- Animate each number counting up ---
   statNumbers.value.forEach((el, index) => {
     const stat = achievements.value[index];
+    
+    // Instantly snap the DOM element to the startNumber (0) before the user sees it
+    el.textContent = stat.startNumber;
+    
     const proxy = { val: stat.startNumber };
-
     gsap.to(proxy, {
       val: stat.targetNumber,
       duration: 2.5,
@@ -124,7 +122,7 @@ onMounted(() => {
         toggleActions: 'play none none none'
       },
       onUpdate: () => {
-        el.textContent = Math.floor(proxy.val); // Update the text content on each frame
+        el.textContent = Math.floor(proxy.val);
       }
     });
   });
@@ -132,7 +130,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Subtle dotted background grid matching the design */
 .dotted-bg {
   background-image: radial-gradient(circle at 1.5px 1.5px, rgba(0, 0, 0, 0.05) 1.5px, transparent 0);
   background-size: 24px 24px;

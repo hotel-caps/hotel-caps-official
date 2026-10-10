@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { blogsData } from './data/blogs.js'
+// import { blogsData } from './data/blogs.js'
 
 // Every unique width used across all 29 `sizes="..."` tags (33 total widths with breakpoints — well under Vercel's 50 limit)
 const baseImageWidths = [
@@ -32,9 +32,16 @@ export default defineNuxtConfig({
     name: 'Hotel CAPS'
   },
 
-image: {
-    // Use Vercel's image optimization service for better performance
-    provider: 'vercel',
+  image: {
+    // 1. Register our Custom Local Engine
+    providers: {
+      localSharp: {
+        name: 'localSharp',
+        provider: '~/providers/local-sharp.ts'
+      }
+    },
+    // 2. Set it as the default provider (Bypassing Vercel completely!)
+    provider: 'localSharp',
 
     // Prevent 2x upscaling requests so 1x widths never trigger console warnings
     densities: [1],
@@ -45,11 +52,11 @@ image: {
     // Explicitly tells Nuxt that your assets live in the /public folder
     dir: 'public',
 
-    // Sets a high-quality baseline (80% is the industry sweet spot for WebP)
+    // Sets a high-quality baseline
     quality: 80,
 
     screens: {
-      // Standard Named Breakpoints (Used by @nuxt/image to parse sm:, md:, lg:, xl:)
+      // Standard Named Breakpoints
       xs: 320,
       sm: 640,
       md: 768,
@@ -57,7 +64,7 @@ image: {
       xl: 1280,
       xxl: 1536,
       '2xl': 1536,
-      // Auto-generated component widths from all 29 `sizes` attributes
+      // Auto-generated component widths from all 28 `sizes` attributes
       ...Object.fromEntries(
         baseImageWidths.map((w) => [`w${w}`, w])
       )
@@ -100,12 +107,12 @@ image: {
       { loc: '/policy', changefreq: 'yearly', priority: 0.3 },
       { loc: '/terms', changefreq: 'yearly', priority: 0.3 },
       // Automatically inject all blog slugs into sitemap.xml
-      ...Object.entries(blogsData as Record<string, any>).map(([slug, post]) => ({
-        loc: `/blog/${slug}`,
-        lastmod: post.publishDate ? new Date(post.publishDate).toISOString() : undefined,
-        changefreq: 'monthly' as const,
-        priority: 0.7 as const
-      }))
+      // ...Object.entries(blogsData as Record<string, any>).map(([slug, post]) => ({
+      //   loc: `/blog/${slug}`,
+      //   lastmod: post.publishDate ? new Date(post.publishDate).toISOString() : undefined,
+      //   changefreq: 'monthly' as const,
+      //   priority: 0.7 as const
+      // }))
     ]
   },
 

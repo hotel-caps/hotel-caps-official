@@ -3,8 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "node scripts/optimize-images.mjs",
-    "predev": "node scripts/optimize-images.mjs",
+    "optimize-images": "node scripts/optimize-images.mjs",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",

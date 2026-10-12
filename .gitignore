@@ -24,4 +24,4 @@ logs
 !.env.example
 
 # Image provider cache
-public/_img
+# public/_img

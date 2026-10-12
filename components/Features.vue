@@ -69,7 +69,7 @@ onMounted(() => {
         <div 
           v-for="feature in features" 
           :key="feature.title"
-          class="feature-card group block bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-500 ease-out hover:-translate-y-5 w-[92%] sm:w-[80%] md:w-[45%] lg:w-[30%]"
+          class="feature-card group block bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-500 ease-out hover:shadow-2xl w-[92%] sm:w-[80%] md:w-[45%] lg:w-[30%]"
         >
           <div class="relative overflow-hidden">
             <img 
@@ -150,11 +150,11 @@ onMounted(() => {
 }
 
 /* Pink Button */
-.bubble-button-pink { 
-  border: 2px solid #991b1b; 
-  color: #991b1b; 
+.bubble-button-red { 
+  border: 2px solid #ce3636; 
+  color: #ce3636; 
 }
-.bubble-button-pink::before { 
-  background-color: #991b1b; 
+.bubble-button-red::before { 
+  background-color: #ce3636; 
 }
 </style>

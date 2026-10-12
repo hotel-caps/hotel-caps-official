@@ -118,7 +118,7 @@ const slide = {
   ctaTarget: '#discover',
 
   // Typography & Overlay Classes
-  imageGradientClass: 'absolute inset-0 bg-gradient-to-r from-black/85 to-black/50 z-[5]',
+  imageGradientClass: 'absolute inset-0 bg-gradient-to-r from-black/90 to-black/60 z-[5]',
   eyebrowColorClass: 'text-[#d18108]/95',
   eyebrowBgClass: 'bg-white/60',
   highlightColorClass: 'text-[#d18108]',

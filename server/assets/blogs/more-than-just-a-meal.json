@@ -4,7 +4,7 @@
     "pageDesc": "At CAPS, a memorable dining experience is shaped by more than the food on your plate. It is the atmosphere, the comfort, the little details, and the warm service that bring people together.",
     "publishDate": "2026-10-06T00:00:00Z",
     "readTime": 6,
-    "showcase": true,
+    "showcase": false,
     "featured": true,
     "ogImage": "/images/blog/more-than-just-a-meal/og-image.jpg",
     "hero": {

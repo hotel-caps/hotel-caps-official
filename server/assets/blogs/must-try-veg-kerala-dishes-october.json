@@ -1,12 +1,13 @@
 {
   "slug": "must-try-veg-kerala-dishes-october",
   "layout": "listicle",
-  "showcase": false,
+  "showcase": true,
   "featured": true,
   "pageTitle": "10 Must-Try Veg Kerala Dishes This October",
   "pageDesc": "Discover 10 delicious vegetarian Kerala favourites to try this October.",
   "publishDate": "2026-10-12T00:00:00Z",
   "author": "Hotel CAPS",
+  "ogImage": "/images/blog/must-try-veg-kerala-dishes-october/og-image.jpg",
   "coverImage": "/images/blog/must-try-veg-kerala-dishes-october/cover.jpg",
   "tags": ["Kerala Food", "Vegetarian", "Local Flavours"],
   "listicleData": {

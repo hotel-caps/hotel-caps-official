@@ -1,0 +1,94 @@
+{
+  "slug": "must-try-veg-kerala-dishes-october",
+  "layout": "listicle",
+  "showcase": false,
+  "featured": true,
+  "pageTitle": "10 Must-Try Veg Kerala Dishes This October",
+  "pageDesc": "Discover 10 delicious vegetarian Kerala favourites to try this October.",
+  "publishDate": "2026-10-12T00:00:00Z",
+  "author": "Hotel CAPS",
+  "coverImage": "/images/blog/must-try-veg-kerala-dishes-october/cover.jpg",
+  "tags": ["Kerala Food", "Vegetarian", "Local Flavours"],
+  "listicleData": {
+    "titleSlide": {
+      "eyebrow": "Taste of Kerala",
+      "titleMain": "10 Must-Try Veg Kerala Dishes",
+      "titleItalic": "This October.",
+      "image": "/images/blog/must-try-veg-kerala-dishes-october/title.jpg"
+    },
+    "slides": [
+      {
+        "num": "01",
+        "title": "Appam with Vegetable Stew",
+        "text": "Soft, lace-edged appams paired with a gently spiced coconut milk vegetable stew make this one of Kerala's most comforting and elegant breakfast favourites.",
+        "image": "/images/blog/must-try-veg-kerala-dishes-october/appam.jpg"
+      },
+      {
+        "num": "02",
+        "title": "Puttu with Kadala Curry",
+        "text": "Steamed layers of rice flour and coconut served with rich black chickpea curry create a hearty Kerala classic packed with earthy flavour and comforting texture.",
+        "image": "/images/blog/must-try-veg-kerala-dishes-october/puttu.jpg"
+      },
+      {
+        "num": "03",
+        "title": "Idiyappam with Vegetable Kurma",
+        "text": "Delicate steamed rice-noodle nests paired with creamy vegetable kurma make for a light, fragrant and beautifully balanced Kerala-style meal.",
+        "image": "/images/blog/must-try-veg-kerala-dishes-october/idiyappam.jpg"
+      },
+      {
+        "num": "04",
+        "title": "Kerala Porotta with Paneer Butter Masala",
+        "text": "Flaky, layered Kerala porotta meets rich and creamy paneer butter masala in an indulgent combination that brings together local comfort and restaurant-style flavour.",
+        "image": "/images/blog/must-try-veg-kerala-dishes-october/porotta.jpg"
+      },
+      {
+        "num": "05",
+        "title": "Malabar Vegetable Biriyani",
+        "text": "Fragrant rice, vegetables, aromatic spices and the distinctive flavours of Malabar come together in a colourful biriyani that feels both festive and deeply satisfying.",
+        "image": "/images/blog/must-try-veg-kerala-dishes-october/biriyani.jpg"
+      },
+      {
+        "num": "06",
+        "title": "Kerala Sadhya",
+        "text": "A traditional vegetarian feast served on a banana leaf, Kerala Sadhya brings together rice, curries, vegetables, pickles, pappadam and payasam in one unforgettable spread.",
+        "image": "/images/blog/must-try-veg-kerala-dishes-october/sadhya.jpg"
+      },
+      {
+        "num": "07",
+        "title": "Ada with Aviyal",
+        "text": "Traditional savoury ada paired with creamy, coconut-rich aviyal creates a wonderfully regional combination with gentle spices, vegetables and distinctly Kerala character.",
+        "image": "/images/blog/must-try-veg-kerala-dishes-october/ada.jpg"
+      },
+      {
+        "num": "08",
+        "title": "Kappa Cutlet",
+        "text": "Crisp on the outside and soft within, kappa cutlets turn Kerala's beloved tapioca into a flavourful tea-time snack that pairs perfectly with a fresh chutney or dip.",
+        "image": "/images/blog/must-try-veg-kerala-dishes-october/cutlet.jpg"
+      },
+      {
+        "num": "09",
+        "title": "Ilayada",
+        "text": "A soft rice parcel filled with coconut and jaggery, wrapped in banana leaf and gently steamed, Ilayada is a simple Kerala sweet with beautiful aroma and texture.",
+        "image": "/images/blog/must-try-veg-kerala-dishes-october/ilayada.jpg"
+      },
+      {
+        "num": "10",
+        "title": "Palada Payasam",
+        "text": "Creamy, silky and delicately sweet, Palada Payasam combines soft rice ada with slowly cooked milk for a rich Kerala dessert that needs little else to shine.",
+        "image": "/images/blog/must-try-veg-kerala-dishes-october/palada.jpg"
+      }
+    ],
+    "relatedSlide": {
+      "backgroundImage": "/images/blog/more-than-just-a-meal/cover.jpg",
+      "articles": [
+        {
+          "title": "More Than Just a Meal: The Little Things That Make Dining Memorable",
+          "date": "06 October 2026",
+          "tag": "Dining",
+          "image": "/images/blog/more-than-just-a-meal/cover.jpg",
+          "url": "/blog/more-than-just-a-meal"
+        }
+      ]
+    }
+  }
+}

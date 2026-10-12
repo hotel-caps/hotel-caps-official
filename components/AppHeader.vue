@@ -131,17 +131,20 @@ const activeDropdown = ref(null);
 // ==========================================
 // DYNAMIC ROUTE-BASED BACKGROUNDS
 // ==========================================
+// Add this global state
+const forceOpaqueHeader = useState('forceOpaqueHeader', () => false);
+
 const headerBgClass = computed(() => {
-  if (!isScrolled.value) return 'bg-transparent';
+  // If not scrolled AND not forced opaque, stay transparent
+  if (!isScrolled.value && !forceOpaqueHeader.value) return 'bg-transparent';
   
   const path = route.path;
-  // Match the page themes (using Tailwind slate, emerald, rose, and a premium dark gold/zinc)
   if (path.includes('/rooms') || path.includes('/pricing')) return 'bg-slate-900/95 backdrop-blur-lg shadow-lg';
-  if (path.includes('/restaurant') || path.includes('/menu') || path.includes('/signatures') || path.includes('/live')) return 'bg-[#051c14]/95 backdrop-blur-lg shadow-lg'; // Deep emerald
+  if (path.includes('/restaurant') || path.includes('/menu') || path.includes('/signatures') || path.includes('/live')) return 'bg-[#051c14]/95 backdrop-blur-lg shadow-lg'; 
   if (path.includes('/hall') || path.includes('/catering')) return 'bg-rose-950/95 backdrop-blur-lg shadow-lg';
   
-  // Default (Home)
-  return 'bg-[#0f1110]/95 backdrop-blur-lg shadow-lg'; // Deep premium zinc/gold hint
+  // Default 
+  return 'bg-[#0f1110]/95 backdrop-blur-lg shadow-lg'; 
 });
 
 const dropdownBgClass = computed(() => {

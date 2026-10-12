@@ -67,8 +67,8 @@
       <!-- Gradient Overlay (z-10) -->
       <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-black/60 pointer-events-none z-10"></div>
 
-      <!-- SLIDE CONTENT VIEWS (z-20) -->
-      <div class="absolute inset-0 z-20 pointer-events-none">
+      <!-- SLIDE CONTENT VIEWS (z-40) -->
+      <div class="absolute inset-0 z-40 pointer-events-none">
   
         <transition name="cinematic-drift" mode="out-in">
     
@@ -125,9 +125,10 @@
                     :src="post.image" 
                     :alt="post.title"
                     format="webp"
-                    width="400"
-                    height="300"
-                    sizes="100px" 
+                    width="1200"
+                    height="800"
+                    sizes= "100px"
+                    densities="x1"
                     quality="80"
                     loading="lazy"
                     class="w-20 h-20 rounded-xl object-cover shrink-0 shadow-md" 
@@ -139,6 +140,46 @@
                 </div>
               </NuxtLink>
             </div>
+
+            <!-- SHARE STORY (Dark Theme for Listicle) -->
+            <div class="mt-8 w-full flex flex-row items-center justify-between border-t border-white/10 pt-6 pointer-events-auto z-50">
+              <h5 class="text-[10px] font-sans tracking-[0.3em] text-white/70 uppercase font-bold">
+                Share Story
+              </h5>
+              
+              <div class="flex items-center gap-3">
+                <!-- 1. Copy Link -->
+                <button 
+                  type="button"
+                  @click="copyLink"
+                  :title="copied ? 'Copied!' : 'Copy Link'"
+                  class="w-10 h-10 rounded-full border border-white/20 bg-white/5 text-white hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center cursor-pointer"
+                >
+                  <PhCheck v-if="copied" :size="16" weight="bold" />
+                  <PhLink v-else :size="16" weight="bold" />
+                </button>
+
+                <!-- 2. WhatsApp -->
+                <button 
+                  type="button"
+                  @click="shareOnWhatsApp"
+                  title="Share on WhatsApp"
+                  class="w-10 h-10 rounded-full border border-[#25D366]/30 bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366] hover:text-black transition-all duration-300 flex items-center justify-center cursor-pointer"
+                >
+                  <PhWhatsappLogo :size="18" weight="fill" />
+                </button>
+
+                <!-- 3. Native Share -->
+                <button 
+                  type="button"
+                  @click="triggerNativeShare"
+                  title="Share Story"
+                  class="w-10 h-10 rounded-full border border-[#d99706]/30 bg-[#d99706]/10 text-[#d99706] hover:bg-[#d99706] hover:text-black transition-all duration-300 flex items-center justify-center cursor-pointer"
+                >
+                  <PhShareNetwork :size="16" weight="bold" />
+                </button>
+              </div>
+            </div>
           </div>
 
         </transition>
@@ -148,8 +189,8 @@
       <div @click="prevSlide" class="absolute left-0 top-16 bottom-0 w-[40%] z-30 cursor-w-resize pointer-events-auto" aria-label="Previous Slide"></div>
       <div @click="nextSlide" class="absolute right-0 top-16 bottom-0 w-[40%] z-30 cursor-e-resize pointer-events-auto" aria-label="Next Slide"></div>
 
-      <!-- PROGRESS DASHES (z-40) -->
-      <div class="absolute top-0 left-0 w-full px-3 md:px-4 pt-4 flex gap-1.5 z-40 pointer-events-auto">
+      <!-- PROGRESS DASHES (z-50) -->
+      <div class="absolute top-0 left-0 w-full px-3 md:px-4 pt-4 flex gap-1.5 z-50 pointer-events-auto">
         <button 
           v-for="i in totalSlides" 
           :key="i"
@@ -159,10 +200,10 @@
         ></button>
       </div>
 
-      <!-- BACK TO BLOG BUTTON (z-40) -->
+      <!-- BACK TO BLOG BUTTON (z-50) -->
       <NuxtLink 
         to="/blog" 
-        class="absolute top-9 left-3 md:left-4 z-40 flex items-center gap-1 text-white/70 hover:text-[#d99706] transition-colors drop-shadow-md pointer-events-auto py-2 px-1"
+        class="absolute top-9 left-3 md:left-4 z-50 flex items-center gap-1 text-white/70 hover:text-[#d99706] transition-colors drop-shadow-md pointer-events-auto py-2 px-1"
         aria-label="Back to Blog"
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="w-4 h-4">
@@ -188,6 +229,64 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useState } from '#imports'
+
+import { PhLink, PhCheck, PhWhatsappLogo, PhShareNetwork } from '@phosphor-icons/vue'
+
+// --- SHARE ACTIONS ---
+const copied = ref(false)
+
+const getCurrentUrl = () => {
+  return typeof window !== 'undefined' ? window.location.href : ''
+}
+
+const copyLink = async () => {
+  const url = getCurrentUrl()
+  if (!url) return
+  try {
+    await navigator.clipboard.writeText(url)
+    copied.value = true
+    setTimeout(() => { copied.value = false }, 2000)
+  } catch (err) {
+    console.error('Failed to copy link:', err)
+  }
+}
+
+const shareOnWhatsApp = () => {
+  const url = getCurrentUrl()
+  const text = `${url}`
+  window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer')
+}
+
+const triggerNativeShare = async () => {
+  const url = getCurrentUrl()
+  if (typeof navigator !== 'undefined' && navigator.share) {
+    try {
+      await navigator.share({
+        // title: listicle.value.titleMain,
+        url
+      })
+    } catch (err) {
+      // User dismissed native share sheet
+    }
+  } else {
+    await copyLink()
+  }
+}
+
+// Add this near your other state variables
+const forceOpaqueHeader = useState('forceOpaqueHeader')
+
+onMounted(() => {
+  forceOpaqueHeader.value = true // Force header to be opaque
+  startAutoplay()
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onBeforeUnmount(() => {
+  forceOpaqueHeader.value = false // Reset it for the rest of the site
+  if (autoplayTimer) clearInterval(autoplayTimer)
+  window.removeEventListener('keydown', handleKeydown)
+})
 
 const props = defineProps({
   article: { type: Object, required: true }

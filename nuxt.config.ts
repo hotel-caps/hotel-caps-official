@@ -1,12 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // import { blogsData } from './data/blogs.js'
 
-// Every unique width used across all 29 `sizes="..."` tags (33 total widths with breakpoints — well under Vercel's 50 limit)
-const baseImageWidths = [
-  100, 140, 160, 180, 190, 225, 240, 300, 340, 360, 
-  380, 400, 420, 450, 480, 500, 525, 540, 580, 590, 
-  600, 720, 800, 900, 960, 1200, 1366, 1600
-]
+// Universal core cache tiers
+const baseImageWidths = [300, 600, 1000]
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-07-30',
@@ -40,11 +36,11 @@ export default defineNuxtConfig({
         provider: '~/providers/local-sharp.ts'
       }
     },
-    // 2. Set it as the default provider (Bypassing Vercel completely!)
+    // 2. Set it as the default provider
     provider: 'localSharp',
 
-    // Prevent 2x upscaling requests so 1x widths never trigger console warnings
-    densities: [1],
+    // Allow native browser srcset switching for high-DPI screens
+    densities: [1, 2],
 
     // Forces the generator to always output highly compressed WebP files
     format: ['webp'],
@@ -56,7 +52,6 @@ export default defineNuxtConfig({
     quality: 80,
 
     screens: {
-      // Standard Named Breakpoints
       xs: 320,
       sm: 640,
       md: 768,
@@ -64,7 +59,7 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1536,
       '2xl': 1536,
-      // Auto-generated component widths from all 28 `sizes` attributes
+      // Maps your universal cache widths
       ...Object.fromEntries(
         baseImageWidths.map((w) => [`w${w}`, w])
       )

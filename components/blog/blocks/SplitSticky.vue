@@ -33,14 +33,12 @@
           <figure class="w-full flex flex-col">
             <NuxtImg
               :src="singleImageLayout.src"
-              :alt="singleImageLayout.alt"
+              :alt="singleImageLayout.alt || 'Split image'"
               :width="singleImageLayout.renderWidth"
               :height="singleImageLayout.renderHeight"
-              :style="{ aspectRatio: `${singleImageLayout.renderWidth} / ${singleImageLayout.renderHeight}` }"
-              sizes="380px sm:640px md:450px lg:600px xl:800px"
+              sizes="300px md:600px lg:1000px"
               format="webp"
               quality="80"
-              densities="x1"
               loading="lazy"
               decoding="async"
               class="w-full h-auto object-cover rounded-3xl shadow-xl cursor-zoom-in"
@@ -68,14 +66,12 @@
           >
             <NuxtImg
               :src="item.src"
-              :alt="item.alt"
+              :alt="item.alt || 'Split image'"
               :width="item.renderWidth"
               :height="item.renderHeight"
-              :style="{ aspectRatio: `${item.renderWidth} / ${item.renderHeight}` }"
-              :sizes="item.sizes"
+              sizes="300px md:600px"
               format="webp"
               quality="80"
-              densities="x1"
               loading="lazy"
               decoding="async"
               class="w-full h-auto object-cover rounded-2xl shadow-md cursor-zoom-in"
@@ -103,13 +99,12 @@
           >
             <NuxtImg
               :src="item.src"
-              :alt="item.alt"
+              :alt="item.alt || 'Grid image'"
               :width="item.renderWidth"
               :height="item.renderHeight"
-              :sizes="item.sizes"
+              sizes="300px md:600px"
               format="webp"
               quality="80"
-              densities="x1"
               loading="lazy"
               decoding="async"
               :class="[

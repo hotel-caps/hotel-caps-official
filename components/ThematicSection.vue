@@ -65,16 +65,13 @@ onMounted(() => {
   <section ref="sectionRef" class="feature-section relative w-full flex items-center justify-center overflow-hidden rounded-2xl">
     <!-- Background Image Layer -->
     <div class="absolute inset-0 z-0 overflow-hidden">
-      <NuxtImg 
+      <img 
         ref="bgImageRef"
+        v-if="imageSrc"
         :src="imageSrc" 
-        :alt="imageAlt"
-        width="1600"
-        height="1067"
-        sizes="640px sm:768px md:1024px lg:1280px xl:1600px"
-        format="webp"
-        quality="80"
-        densities="x1"
+        :alt="imageAlt || 'CAPS Theme background image'"
+        width="960"
+        height="639"
         loading="lazy"
         decoding="async"
         class="bg-image w-full h-full object-cover" 

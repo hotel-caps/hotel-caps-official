@@ -27,13 +27,13 @@ const features = ref([
     buttonClass: 'bubble-button-green'
   },
   {
-    image: '/images/home/plan-cards/hall.jpg',
-    alt: 'Spacious and decorated auditorium hall for events',
-    title: 'Book an Event',
-    description: 'Host your special occasions in our state-of-the-art auditorium.',
-    buttonText: 'See Hall',
-    buttonLink: '/hall',
-    buttonClass: 'bubble-button-pink'
+    image: '/images/home/plan-cards/catering.jpg',
+    alt: 'Freshly prepared catering spread for special occasions',
+    title: 'Catering for Events',
+    description: 'Serve your special occasions with our flavourful catering services.',
+    buttonText: 'Book Catering',
+    buttonLink: '/catering',
+    buttonClass: 'bubble-button-red'
   }
 ]);
 
@@ -72,15 +72,12 @@ onMounted(() => {
           class="feature-card group block bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-500 ease-out hover:-translate-y-5 w-[92%] sm:w-[80%] md:w-[45%] lg:w-[30%]"
         >
           <div class="relative overflow-hidden">
-            <NuxtImg 
+            <img 
+              v-if="feature?.image"
               :src="feature.image" 
-              :alt="feature.alt" 
+              :alt="feature.alt || 'Feature'" 
               width="600"
               height="400"
-              sizes="380px sm:580px md:360px lg:420px xl:600px"
-              quality="80"
-              format="webp"
-              densities="x1"
               loading="lazy"
               decoding="async"
               class="w-full aspect-[3/2] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
@@ -154,10 +151,10 @@ onMounted(() => {
 
 /* Pink Button */
 .bubble-button-pink { 
-  border: 2px solid #e22473; 
-  color: #e22473; 
+  border: 2px solid #991b1b; 
+  color: #991b1b; 
 }
 .bubble-button-pink::before { 
-  background-color: #e22473; 
+  background-color: #991b1b; 
 }
 </style>

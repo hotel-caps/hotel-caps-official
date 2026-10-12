@@ -17,15 +17,15 @@
     >
       <transition name="fade">
         <NuxtImg
+          v-if="activeSlide?.src"
           :key="activeIndex"
           :src="activeSlide.src"
-          :alt="activeSlide.alt"
+          :alt="activeSlide.alt || 'Gallery slide'"
           :width="stageDims.width"
           :height="stageDims.height"
-          sizes="380px sm:640px md:768px lg:900px xl:1200px"
+          sizes="600px lg:1000px"
           format="webp"
           quality="80"
-          densities="x1"
           loading="lazy"
           decoding="async"
           draggable="false"
@@ -112,14 +112,14 @@
           @click="onThumbnailClick(idx)"
         >
           <NuxtImg
+            v-if="item?.src"
             :src="item.src"
-            :alt="item.alt"
+            :alt="item.alt || 'Thumbnail'"
             width="300"
             height="225"
-            sizes="100px sm:140px md:180px"
+            sizes="300px"
             format="webp"
             quality="80"
-            densities="x1"
             loading="lazy"
             decoding="async"
             draggable="false"

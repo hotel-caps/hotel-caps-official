@@ -74,18 +74,15 @@
         <div class="split-image-reveal w-full flex justify-center lg:w-2/5 mt-4 lg:mt-0">
           <!-- Fixed Aspect Ratio Container: perfectly matching PageIntro sizing -->
           <div class="relative w-full sm:w-8/12 lg:w-full aspect-[1/1] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-2xl">
-            <NuxtImg 
+            <img 
+              v-if="image"
               :src="image" 
-              :alt="imageAlt" 
-              width="600"
-              height="600"
-              sizes="380px sm:580px md:480px lg:600px"
-              format="webp"
-              quality="80"
-              densities="x1"
-              loading="lazy"
-              decoding="async"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              :alt="imageAlt || 'Gallery item'" 
+              width="600" 
+              height="600" 
+              loading="lazy" 
+              decoding="async" 
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
             />
           </div>
         </div>

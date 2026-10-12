@@ -48,16 +48,14 @@ onMounted(() => {
     <!-- Fixed Parallax Background Layer -->
     <div class="absolute inset-0 z-0 overflow-hidden">
       
-      <!-- NuxtImg acting as the background -->
-      <NuxtImg 
+      <!-- Image acting as the background -->
+      <img 
         src="/images/home/about-bg.jpg" 
         alt="About Hotel CAPS"
         width="1366"
         height="910"
-        format="webp"
-        quality="80"
         loading="lazy"
-        densities="x1"
+        decoding="async"
         class="absolute inset-0 w-full h-full object-cover object-center"
       />
       

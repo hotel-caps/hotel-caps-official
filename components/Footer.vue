@@ -36,16 +36,14 @@ const footerNav = ref([
 
       <div class="flex justify-center items-center">
         <NuxtLink to="/" class="flex flex-col items-center">
-          <NuxtImg 
+          <img 
             src="/images/caps-solid-logo.png" 
-            alt="Hotel CAPS Logo"
-            width="300"
-            height="267"
-            quality="80"
-            format="webp"
-            loading="lazy"
-            densities="x1"
-            class="h-[5rem] w-[5.618rem]" 
+            alt="Hotel CAPS Logo" 
+            width="300" 
+            height="267" 
+            loading="lazy" 
+            decoding="async" 
+            class="h-[5rem] w-[5.618rem] object-contain" 
           />
           <div class="text-white flex flex-col items-center font-display">
             <p class="text-xl font-medium tracking-widest leading-loose">HOTEL</p>

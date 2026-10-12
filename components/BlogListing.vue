@@ -72,14 +72,14 @@
                 FEATURED
               </div>
               <NuxtImg
+                v-if="showcaseBlog?.coverImage"
                 :src="showcaseBlog.coverImage"
-                :alt="showcaseBlog.title"
+                :alt="showcaseBlog.title || 'Blog post cover'"
                 width="1200"
                 height="800"
-                sizes="380px sm:640px md:768px lg:640px xl:800px"
+                sizes="300px md:600px lg:1000px"
                 format="webp"
                 quality="80"
-                densities="x1"
                 loading="eager"
                 decoding="async"
                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -127,14 +127,14 @@
                 FEATURED
               </div>
               <NuxtImg
+                v-if="blog?.coverImage"
                 :src="blog.coverImage"
-                :alt="blog.title"
+                :alt="blog.title || 'Blog post cover'"
                 width="1200"
                 height="800"
-                sizes="380px sm:380px md:450px lg:525px xl:450px"
+                sizes="300px md:600px"
                 format="webp"
                 quality="80"
-                densities="x1"
                 loading="lazy"
                 decoding="async"
                 class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"

@@ -16,19 +16,16 @@
     <div class="relative z-10 flex flex-col items-center">
       
       <!-- Logo Image -->
-      <NuxtImg
+      <img
         ref="logoRef"
-        class="h-20 sm:h-28 w-auto mb-6 opacity-0 will-change-[opacity]"
         src="/images/caps-solid-logo.png"
         alt="Hotel CAPS Logo"
         width="300"
         height="267"
-        format="webp"
-        quality="80"
-        densities="x1"
         fetchpriority="high"
         loading="eager"
-        preload
+        decoding="sync"
+        class="h-20 sm:h-28 w-auto mb-6 opacity-0 will-change-[opacity]"
       />
 
       <!-- Text Container with 3D Perspective -->

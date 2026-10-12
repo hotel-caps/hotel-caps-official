@@ -5,14 +5,14 @@
       <NuxtLink v-for="rel in block.articles" :key="rel.title" :to="rel.link" class="group flex flex-col gap-4">
         <div class="w-full aspect-[16/9] rounded-3xl overflow-hidden shadow-md">
           <NuxtImg 
+            v-if="rel?.thumbnail"
             :src="rel.thumbnail" 
-            :alt="rel.title"
-            format="webp" 
+            :alt="rel.title || 'Related Article'"
             width="1200"
             height="800"
-            sizes="300px lg:400px"
+            sizes="300px md:600px"
+            format="webp" 
             quality="80"
-            densities="x1"
             loading="lazy"
             decoding="async"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 

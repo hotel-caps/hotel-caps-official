@@ -51,15 +51,12 @@
           <!-- Right Column: Director Image -->
           <div class="w-full lg:w-2/5 flex justify-center">
             <div class="quote-image-reveal relative w-full sm:w-10/12 lg:w-full aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden border border-amber-500/30 shadow-2xl group">
-              <NuxtImg 
+              <img 
+                v-if="directorsQuoteData?.image"
                 :src="directorsQuoteData.image" 
-                :alt="directorsQuoteData.imageAlt"
+                :alt="directorsQuoteData.imageAlt || 'Director Quote'"
                 width="800"
                 height="600"
-                sizes="380px sm:580px md:480px lg:800px"
-                format="webp"
-                quality="80"
-                densities="x1"
                 loading="lazy"
                 decoding="async"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"

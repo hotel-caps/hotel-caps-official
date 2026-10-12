@@ -47,23 +47,18 @@
         @wheel="onWheel"
         @scroll="onScroll"
       >
-        <NuxtImg 
+        <img 
           v-for="(img, index) in displayImages" 
           :key="index"
           :src="img.src" 
-          :alt="index >= images.length ? '' : img.alt" 
+          :alt="index >= images.length ? '' : (img.alt || 'Gallery photo')" 
           :aria-hidden="index >= images.length ? 'true' : undefined"
           :width="img.width" 
           :height="img.height"
-          sizes="300px sm:450px lg:525px"
-          :style="{ aspectRatio: `${img.width} / ${img.height}` }"
-          format="webp"
-          quality="80"
-          densities="x1"
           loading="lazy"
           decoding="async"
           draggable="false" 
-          class="h-[200px] sm:h-[300px] lg:h-[350px] w-auto max-w-none flex-shrink-0 rounded-[1.25rem] sm:rounded-[1.5rem] shadow-md duration-300 hover:brightness-110 hover:ring-2 hover:ring-[#1c1c1c]/30"
+          class="h-[200px] sm:h-[300px] lg:h-[350px] w-auto max-w-none flex-shrink-0 rounded-[1.25rem] sm:rounded-[1.5rem] shadow-md duration-300 hover:brightness-110 hover:ring-1 hover:ring-[#1c1c1c]/10"
         />
       </div>
     </div>

@@ -70,15 +70,12 @@
                     <svg v-if="sig.type === 'veg'" class="w-4 h-4" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#16a34a" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#16a34a"/></svg>
                     <svg v-else class="w-4 h-4" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#dc2626" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#dc2626"/></svg>
                   </div>
-                  <NuxtImg
+                  <img
+                    v-if="sig?.image"
                     :src="sig.image"
-                    :alt="sig.title"
+                    :alt="sig.title || 'Signature Dish'"
                     width="600"
                     height="450"
-                    sizes="360px sm:540px"
-                    format="webp"
-                    quality="80"
-                    densities="x1"
                     loading="lazy"
                     decoding="async"
                     class="w-full h-full object-cover pointer-events-none"
@@ -303,20 +300,16 @@
               <div class="overflow-hidden">
                 <div class="p-5 pt-7 flex flex-col gap-6 border-t border-[#2e2e2e]">
                   <div v-for="item in getItemsByCategory(category)" :key="item.id" class="flex items-start gap-4">
-                    <div class="w-24 h-18 aspect-[4/3] shrink-0 rounded-xl overflow-hidden">
-                      <NuxtImg 
-                        :src="item.image ? item.image : '/images/live/placeholder.jpg'" 
-                        @error="$event.target.srcset = ''; $event.target.src = '/images/menu/placeholder.jpg'"
-                        :alt="item.alt || item.name" 
+                    <div class="w-24 h-18 aspect-[4/3] shrink-0 rounded-lg overflow-hidden">
+                      <img 
+                        :src="item.image || '/images/live/placeholder.jpg'" 
+                        :alt="item.alt || item.name || 'Menu item'" 
                         width="590"
                         height="442"
-                        sizes="160px sm:240px md:340px lg:420px xl:590px"
-                        format="webp"
-                        quality="80"
-                        densities="x1"
                         loading="lazy"
                         decoding="async"
-                        class="w-full h-full rounded-xl object-cover shadow-sm" 
+                        @error="$event.target.src = '/images/menu/placeholder.jpg'"
+                        class="w-full h-full rounded-lg object-cover shadow-sm" 
                       />
                     </div>
                     <div class="flex-1 flex flex-col justify-center">
@@ -392,15 +385,12 @@
                       <svg v-if="sig.type === 'veg'" class="w-5 h-5" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#16a34a" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#16a34a"/></svg>
                       <svg v-else class="w-5 h-5" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" stroke="#dc2626" stroke-width="2" rx="2"/><circle cx="8" cy="8" r="4" fill="#dc2626"/></svg>
                     </div>
-                    <NuxtImg
+                    <img
+                      v-if="sig?.image"
                       :src="sig.image"
-                      :alt="sig.title"
+                      :alt="sig.title || 'Signature Dish'"
                       width="600"
                       height="450"
-                      sizes="340px md:400px lg:500px xl:600px"
-                      format="webp"
-                      quality="80"
-                      densities="x1"
                       loading="lazy"
                       decoding="async"
                       class="w-full h-full object-cover pointer-events-none"
@@ -635,18 +625,14 @@
             >
               <!-- Image -->
               <div class="w-full aspect-[4/3] overflow-hidden relative border-b border-[#2a2a2a]">
-                <NuxtImg 
-                  :src="item.image ? item.image : '/images/live/placeholder.jpg'" 
-                  @error="$event.target.srcset = ''; $event.target.src = '/images/menu/placeholder.jpg'"
-                  :alt="item.name" 
+                <img 
+                  :src="item.image || '/images/live/placeholder.jpg'" 
+                  :alt="item.name || 'Menu item'" 
                   width="590"
                   height="442"
-                  sizes="360px sm:480px md:340px lg:420px xl:590px"
-                  format="webp"
-                  quality="80"
-                  densities="x1"
                   loading="lazy"
                   decoding="async"
+                  @error="$event.target.src = '/images/menu/placeholder.jpg'"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />
               </div>

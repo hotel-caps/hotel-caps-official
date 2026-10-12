@@ -57,20 +57,17 @@
                   <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
                   VEG SIGNATURE
                 </div>
-                <!-- Veg Card NuxtImg -->
-                <NuxtImg 
+                <!-- Veg Card -->
+                <img 
+                  v-if="monthData?.veg?.image"
                   :src="monthData.veg.image" 
-                  :alt="monthData.veg.title" 
+                  :alt="monthData.veg.title || 'Veg Special'" 
                   width="600"
                   height="450"
-                  sizes="380px sm:580px md:360px lg:580px"
-                  format="webp"
-                  quality="80"
                   loading="lazy"
                   decoding="async"
-                  densities="x1"
                   class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                /> 
+                />
               </div>
               <div class="p-6 sm:p-8 text-center flex flex-col items-center">
                 <h4 class="font-display font-bold text-xl sm:text-2xl text-zinc-900 mb-3">
@@ -90,18 +87,15 @@
                   <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/><path d="M8 16l8-8" stroke-linecap="round"/><path d="M16 16L8 8" stroke-linecap="round"/></svg>
                   NON-VEG SIGNATURE
                 </div>
-                <!-- Non-Veg Card NuxtImg -->
-                <NuxtImg 
+                <!-- Non-Veg Card -->
+                <img 
+                  v-if="monthData?.nonVeg?.image"
                   :src="monthData.nonVeg.image" 
-                  :alt="monthData.nonVeg.title" 
+                  :alt="monthData.nonVeg.title || 'Non-Veg Special'" 
                   width="600"
                   height="450"
-                  sizes="380px sm:580px md:360px lg:580px"
-                  format="webp"
-                  quality="80"
                   loading="lazy"
                   decoding="async"
-                  densities="x1"
                   class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>

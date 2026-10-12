@@ -5,20 +5,15 @@
   >
     <!-- 1. Background Image Layer (z-0) -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      <NuxtImg 
+      <img 
         ref="bgImageRef"
         :src="slide.image" 
         :alt="slide.title" 
-        format="webp"
         width="1600"
         height="1067"
-        sizes="640px sm:768px md:1024px lg:1280px xl:1600px"
-        quality="80"
-        densities="x1"
         fetchpriority="high"
         loading="eager"
         decoding="sync"
-        :preload="{ fetchPriority: 'high' }"
         class="bg-image h-full w-full object-cover object-center will-change-transform" 
       />
     </div>

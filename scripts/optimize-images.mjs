@@ -8,11 +8,7 @@ const __dirname = path.dirname(__filename)
 
 // 1. Combine your screens and baseImageWidths so we never miss a size
 const screens = [320, 640, 768, 1024, 1280, 1536]
-const baseImageWidths = [
-  100, 140, 160, 180, 190, 225, 240, 300, 340, 360, 
-  380, 400, 420, 450, 480, 500, 525, 540, 580, 590, 
-  600, 720, 800, 900, 960, 1200, 1366, 1600
-]
+const baseImageWidths = [300, 600, 1000]
 const uniqueWidths = [...new Set([...screens, ...baseImageWidths])].sort((a, b) => a - b)
 
 // 2. Resolve target directories

@@ -57,19 +57,18 @@
                 </div>
 
                 <NuxtImg 
+                  v-if="blog?.coverImage"
                   :src="blog.coverImage" 
-                  :alt="blog.title"
-                  :width="blog.width || 1200"
-                  :height="blog.height || 675"
-                  sizes="380px sm:580px md:450px lg:600px"
-                  :style="{ aspectRatio: `${blog.width || 16} / ${blog.height || 9}` }"
+                  :alt="blog.title || 'Blog post cover'"
+                  width="1200"
+                  height="675"
+                  sizes="300px md:600px"
                   format="webp"
                   quality="80"
-                  densities="x1"
                   loading="lazy"
                   decoding="async"
                   draggable="false"
-                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none"
+                  class="w-full h-full aspect-video object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out pointer-events-none"
                 />
               </div>
 

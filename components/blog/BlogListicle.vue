@@ -15,37 +15,35 @@
       <!-- BACKGROUND IMAGES (z-0) -->
       <transition-group name="crossfade" tag="div" class="absolute inset-0 w-full h-full pointer-events-none z-0">
         
-        <!-- Title Slide -->
+        <!-- Title Slide (LCP) -->
         <NuxtImg 
-          v-if="isTitleSlide" 
+          v-if="isTitleSlide && titleSlide?.image" 
           :key="'bg-title'" 
           :src="titleSlide.image" 
-          :alt="titleSlide.titleMain"
-          format="webp" 
+          :alt="titleSlide.titleMain || 'Cover slide'"
           width="600"
           height="900"
-          sizes="400px sm:600px"
+          sizes="300px md:600px"
+          format="webp" 
           quality="80"
-          densities="x1"
+          preload
           fetchpriority="high"
           loading="eager"
           decoding="sync"
-          :preload="{ fetchPriority: 'high' }"
           class="absolute inset-0 w-full h-full object-cover will-change-[transform,opacity]" 
         />
         
         <!-- Content Slides -->
         <NuxtImg 
-          v-else-if="isContentSlide" 
+          v-else-if="isContentSlide && activeContent?.image" 
           :key="`bg-${currentSlide}`" 
           :src="activeContent.image" 
-          :alt="activeContent.title"
-          format="webp" 
+          :alt="activeContent.title || 'Slide'"
           width="600"
           height="900"
-          sizes="400px sm:600px"
+          sizes="300px md:600px"
+          format="webp" 
           quality="80"
-          densities="x1"
           loading="lazy"
           decoding="async"
           class="absolute inset-0 w-full h-full object-cover will-change-[transform,opacity]" 
@@ -53,13 +51,17 @@
         
         <!-- Related Slide Base (Blurred & Tinted) -->
         <NuxtImg 
-          v-else-if="isRelatedSlide" 
+          v-else-if="isRelatedSlide && titleSlide?.image" 
           :key="'bg-related'" 
-          :src="relatedSlide.backgroundImage" 
-          alt=""
+          :src="titleSlide.image" 
+          :alt="titleSlide.titleMain || 'Blurred backdrop'"
+          width="600"
+          height="900"
+          sizes="300px md:600px"
           format="webp" 
-          width="100"
-          densities="x1"
+          quality="80"
+          loading="lazy"
+          decoding="async"
           class="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 brightness-[0.25] pointer-events-none" 
         />
       </transition-group>
@@ -122,16 +124,17 @@
                 class="relative z-50 pointer-events-auto flex items-center gap-4 bg-white/5 p-3 rounded-2xl border border-white/10 hover:bg-white/10 transition-all group"
               >
                 <NuxtImg 
-                    :src="post.image" 
-                    :alt="post.title"
-                    format="webp"
-                    width="1200"
-                    height="800"
-                    sizes= "100px"
-                    densities="x1"
-                    quality="80"
-                    loading="lazy"
-                    class="w-20 h-20 rounded-xl object-cover shrink-0 shadow-md" 
+                  v-if="post?.image"
+                  :src="post.image" 
+                  :alt="post.title || 'Related post'"
+                  format="webp"
+                  width="1200"
+                  height="800"
+                  sizes="300px"
+                  quality="80"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-20 h-20 rounded-xl object-cover shrink-0 shadow-md" 
                 />
                 <div class="flex flex-col justify-center">
                   <span class="text-[9px] font-sans tracking-[0.2em] text-[#d99706] uppercase font-bold mb-1">{{ post.date }}</span>

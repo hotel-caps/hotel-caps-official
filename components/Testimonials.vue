@@ -177,15 +177,12 @@ onUnmounted(() => {
       <div class="image-gallery-col lg:col-span-5">
         <div class="grid grid-cols-2 grid-rows-2 gap-4 aspect-square">
           <div v-for="(image, index) in galleryImages" :key="index" class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg">
-            <NuxtImg 
+            <img 
+              v-if="image?.src"
               :src="image.src" 
-              :alt="image.alt"
-              :width="image.width"
-              :height="image.height"
-              sizes="380px sm:480px md:450px lg:600px"
-              format="webp"
-              quality="80"
-              densities="x1"
+              :alt="image.alt || 'Gallery image'"
+              :width="image.width || 400"
+              :height="image.height || 400"
               loading="lazy"
               decoding="async"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"

@@ -8,17 +8,15 @@
         
         <!-- LOGO -->
         <NuxtLink to="/" class="flex items-end space-x-2 xl:space-x-3">
-          <NuxtImg 
+          <img 
             src="/images/caps-solid-logo.png" 
             alt="Hotel CAPS Logo"
             width="300"
             height="267"
-            quality="80"
-            format="webp"
             fetchpriority="high"
             loading="eager"
-            densities="x1"
-            class="h-[2rem] sm:h-[2.5rem] w-[2.2472rem] sm:w-[2.809rem]" 
+            decoding="sync"
+            class="h-[2rem] sm:h-[2.5rem] w-[2.2472rem] sm:w-[2.809rem] object-contain" 
           />
           <div class="text-white font-medium font-display text-3xl leading-6 sm:text-3xl xl:text-4xl tracking-wider xl:leading-9 lg:leading-8 sm:leading-7">
             <span>HOTEL </span>

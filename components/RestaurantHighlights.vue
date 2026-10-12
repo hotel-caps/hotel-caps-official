@@ -32,15 +32,12 @@
                 <!-- Image Container -->
                 <div class="highlight-image-reveal w-full sm:w-3/4 xl:w-1/2 flex-shrink-0">
                   <div class="relative w-full aspect-square rounded-2xl sm:rounded-3xl overflow-hidden border border-[#03a661]/30 shadow-xl group">
-                    <NuxtImg 
+                    <img 
+                      v-if="item?.image"
                       :src="item.image" 
-                      :alt="item.imageAlt"
+                      :alt="item.imageAlt || 'Gallery item'"
                       width="600"
                       height="600"
-                      sizes="380px sm:580px md:480px lg:600px"
-                      format="webp"
-                      quality="80"
-                      densities="x1"
                       loading="lazy"
                       decoding="async"
                       class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"

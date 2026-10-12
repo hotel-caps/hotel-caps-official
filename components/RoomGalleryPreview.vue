@@ -42,11 +42,10 @@ const scrollThumbs = (direction) => {
           :alt="`Room image ${index + 1}`"
           width="1200"
           height="800"
-          sizes="380px sm:640px md:768px lg:960px xl:1200px"
+          sizes="600px lg:1000px"
           format="webp"
           quality="80"
-          densities="x1"
-          loading="lazy"
+          :loading="index === 0 ? 'eager' : 'lazy'"
           decoding="async"
           class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
         />
@@ -78,16 +77,15 @@ const scrollThumbs = (direction) => {
           class="relative shrink-0 w-[calc(25%-0.375rem)] aspect-[3/2] snap-start rounded-lg overflow-hidden border-2 transition-all duration-300"
           :class="activeIndex === index ? 'border-amber-500 opacity-100' : 'border-transparent opacity-50 hover:opacity-80'"
         >
-          <!-- Optimized tiny thumbnail cuts from Vercel -->
+          <!-- Optimized thumbnail: pinned directly to the 300px universal tier -->
           <NuxtImg
             :src="image"
             :alt="`Thumbnail ${index + 1}`"
             width="300"
             height="200"
-            sizes="100px sm:140px md:180px lg:240px"
+            sizes="300px"
             format="webp"
             quality="80"
-            densities="x1"
             loading="lazy"
             decoding="async"
             class="w-full h-full object-cover"

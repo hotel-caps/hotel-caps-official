@@ -30,14 +30,14 @@
               
               <!-- Background Image -->
               <NuxtImg 
+                v-if="room?.image"
                 :src="room.image" 
-                :alt="room.imageAlt"
+                :alt="room.imageAlt || 'Hotel Room'"
                 width="1200"
                 height="800"
-                sizes="380px sm:580px md:480px lg:600px xl:800px"
+                sizes="300px md:600px"
                 format="webp"
                 quality="80"
-                densities="x1"
                 loading="lazy"
                 decoding="async"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"

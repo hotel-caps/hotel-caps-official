@@ -16,21 +16,21 @@
     <!-- 1. THUMBNAIL STATE (Before Click) -->
     <template v-if="!isActive">
       <NuxtImg
+        v-if="block?.thumbnail"
         :src="block.thumbnail"
-        :alt="block.caption || 'Hotel CAPS Video Highlight'"
+        :alt="block.caption || 'Video Highlight'"
         width="800"
         height="450"
-        sizes="380px sm:640px md:768px lg:800px"
+        sizes="300px md:600px lg:1000px"
         format="webp"
         quality="80"
-        densities="x1"
         loading="lazy"
         decoding="async"
         class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
       />
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div class="w-20 h-20 md:w-24 md:h-24 bg-[#bd5c17] rounded-full flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:bg-[#C86A22] transition-all duration-300">
-          <svg class="w-8 h-8 md:w-10 md:h-10 ml-1" fill="currentColor" viewBox="0 0 24 24">
+        <div class="w-12 h-12 md:w-18 md:h-18 bg-[#bd5c17] rounded-full flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:bg-[#C86A22] transition-all duration-300">
+          <svg class="w-6 h-6 md:w-10 md:h-10 ml-1" fill="currentColor" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" />
           </svg>
         </div>

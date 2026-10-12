@@ -84,21 +84,16 @@ onUnmounted(() => {
     
     <!-- Background Image Layer (z-0) -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      <NuxtImg 
+      <img 
         v-if="images.length > 0"
         ref="bgImageRef"
         :src="images[0]" 
         :alt="`${title} background image`" 
-        format="webp"
         width="1600"
         height="1067"
-        sizes="640px sm:768px md:1024px lg:1280px xl:1600px"
-        quality="80"
-        densities="x1"
         fetchpriority="high"
         loading="eager"
         decoding="sync"
-        :preload="{ fetchPriority: 'high' }"
         class="bg-image h-full w-full object-cover will-change-transform" 
       />
     </div>

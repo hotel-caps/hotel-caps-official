@@ -172,15 +172,11 @@
           <div class="relative w-full max-w-[300px] sm:max-w-[440px] md:max-w-[500px] lg:max-w-[640px] flex flex-col items-center">
             
             <!-- Floating Cloche PNG -->
-            <NuxtImg
+            <img
               src="/images/404/cloche.png"
               alt="Open golden cloche revealing an empty plate — 404 page not found"
-              width="800"
-              height="555"
-              sizes="380px sm:600px md:640px lg:768px xl:800px"
-              format="webp"
-              quality="85"
-              densities="x1"
+              width="600"
+              height="450"
               loading="eager"
               decoding="async"
               draggable="false"

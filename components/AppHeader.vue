@@ -1,6 +1,6 @@
 <template>
   <header 
-    class="fixed top-0 left-0 w-full lg:px-0 xl:px-4 z-50 transition-all duration-500 ease-in-out"
+    class="fixed top-0 left-0 w-full lg:px-0 xl:px-4 z-[9999] transition-all duration-500 ease-in-out"
     :class="headerBgClass"
   >
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,7 +55,7 @@
             <Transition name="dropdown">
               <div 
                 v-if="navItem.subLinks.length > 0 && activeDropdown === navItem.text"
-                class="absolute top-[70px] left-1/2 -translate-x-1/2 pt-4 w-56 z-50"
+                class="absolute top-[70px] left-1/2 -translate-x-1/2 pt-4 w-56 z-[99999]"
               >
                 <!-- Upward Pointer / Caret -->
                 <div 
@@ -93,7 +93,7 @@
         <!-- MOBILE HAMBURGER BUTTON -->
         <ClientOnly>
           <Teleport to="body">
-            <div class="fixed top-0 right-0 h-20 z-[60] lg:hidden flex items-center pt-2 pr-4 sm:pr-6">
+            <div class="fixed top-0 right-0 h-20 z-[999999] lg:hidden flex items-center pt-2 pr-4 sm:pr-6">
               <button @click="$emit('toggle')" class="hamburger-button" aria-label="Toggle menu">
                 <span class="line top" :class="{ 'toggled bg-zinc-300': isOpen, 'bg-white': !isOpen }"></span>
                 <span class="line bottom" :class="{ 'toggled bg-zinc-300': isOpen, 'bg-white': !isOpen }"></span>

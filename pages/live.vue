@@ -312,7 +312,7 @@
                    <template v-for="(evt, eIdx) in eventTypes" :key="eIdx">
                      <div class="flex flex-col items-center text-center w-[140px] group">
                        <div class="w-[60px] h-[60px] mb-4 transition-transform duration-500 group-hover:scale-110 drop-shadow-md" 
-                            :class="activeSlide.format === 'EVENTS' ? 'text-[#ec4899]' : 'text-[#d4af37]'" v-html="evt.icon"></div>
+                            :class="activeSlide.format === 'EVENTS' ? 'text-[#ec4899]' : 'text-[#ff6262]'" v-html="evt.icon"></div>
                        <span class="text-[16px] font-sans font-medium tracking-wide text-white/90 whitespace-pre-line leading-tight">{{ evt.name }}</span>
                      </div>
                    </template>
@@ -320,7 +320,7 @@
               </div>
 
               <!-- Shared 3 Features Horizontal Strip -->
-              <div 
+              <div  
                 v-if="['ROOMS', 'EVENTS', 'CATERING'].includes(activeSlide.format)" 
                 class="w-full absolute bottom-[10px] flex justify-center inset-x-0 mx-auto mb-[25px] live-fade-el"
               >

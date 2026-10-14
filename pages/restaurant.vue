@@ -294,7 +294,7 @@ const restaurantCtaData = {
   description: "Visit us for an exquisite dining experience featuring fresh ingredients and delicious options.",
   buttonText: "Check Our Menu",
   buttonLink: "/menu",
-  bgGradientClass: "bg-gradient-to-r from-[#14532d] via-[#15803d] to-[#22c55e]",
+  bgGradientClass: "bg-gradient-to-r from-[#14532d] via-[#106834] to-[#12a550]",
   buttonTextClass: "text-[#15803d]",
   // Food Plate / Dining Watermark SVG
   watermarkSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="w-full h-full"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>`

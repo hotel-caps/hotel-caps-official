@@ -2,7 +2,7 @@
   <Transition name="cinematic-overlay">
     <div 
       v-if="isOpen" 
-      class="mobile-menu-overlay fixed inset-0 z-50 overflow-hidden"
+      class="mobile-menu-overlay fixed inset-0 z-[999999] overflow-hidden"
     >
       <!-- Cinematic Diagonal Background (Locked completely) -->
       <div class="absolute inset-0 bg-gradient-to-br from-[#1c1c1c]/95 via-[#0a0a0a]/95 to-black backdrop-blur-xl z-0 pointer-events-none"></div>

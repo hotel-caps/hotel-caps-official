@@ -83,7 +83,7 @@ const props = defineProps({
   description: { type: String, required: true },
   buttonText: { type: String, default: 'Request a Quote' },
   buttonLink: { type: String, default: '/contact' },
-  bgGradientClass: { type: String, default: 'bg-gradient-to-r from-[#800d0d] via-[#b91b1b] to-[#ea580c]' },
+  bgGradientClass: { type: String, default: 'bg-gradient-to-b from-[#800d0d] via-[#b91b1b] to-[#ea580c]' },
   buttonTextClass: { type: String, default: 'text-[#b91b1b]' },
   watermarkSvg: { type: String, default: '' }
 });

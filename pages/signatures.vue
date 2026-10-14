@@ -1,10 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import PageHero from '~/components/PageHero.vue';
-import PageIntro from '~/components/PageIntro.vue';
-import PageSplit from '~/components/PageSplit.vue';
-import SignatureCollection from '~/components/SignatureCollection.vue';
-import PageCtaBanner from '~/components/PageCtaBanner.vue';
 import { signatureMonths } from '~/signaturesData.js';
 
 // Define the data for our hero section

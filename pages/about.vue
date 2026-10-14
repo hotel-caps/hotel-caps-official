@@ -197,7 +197,7 @@ const aboutCtaData = {
   description: "Whether for business, leisure, or dining, reach out to our team for inquiries and reservations.",
   buttonText: "Get in Touch",
   buttonLink: "/contact",
-  bgGradientClass: "bg-gradient-to-r from-[#78350f] via-[#d18108] to-[#f59e0b]",
+  bgGradientClass: "bg-gradient-to-r from-[#78350f] via-[#c17205] to-[#d58408]",
   buttonTextClass: "text-[#d18108]",
   // Ribbon / Excellence Watermark SVG
   watermarkSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="w-full h-full"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>`

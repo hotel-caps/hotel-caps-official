@@ -214,7 +214,7 @@ const roomsCtaData = {
   description: "Enjoy luxurious amenities, daily housekeeping, and peaceful relaxation. Book your stay now.",
   buttonText: "Check Pricing",
   buttonLink: "/pricing",
-  bgGradientClass: "bg-gradient-to-r from-[#1e3a8a] via-[#2563eb] to-[#38bdf8]",
+  bgGradientClass: "bg-gradient-to-r from-[#1e3a8a] via-[#1442bd] to-[#2690b8]",
   buttonTextClass: "text-[#2563eb]",
   // Bed / Comfort Watermark SVG
   watermarkSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="w-full h-full"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>`

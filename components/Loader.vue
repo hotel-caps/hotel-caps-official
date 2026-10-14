@@ -2,7 +2,7 @@
   <div
     v-if="isVisible"
     ref="loaderContainer"
-    class="fixed inset-0 z-[10000] bg-black flex justify-center items-center overflow-hidden"
+    class="fixed inset-0 z-[1000000] bg-black flex justify-center items-center overflow-hidden"
     @touchmove.prevent
     @wheel.prevent
   >

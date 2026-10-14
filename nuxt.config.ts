@@ -160,6 +160,10 @@ export default defineNuxtConfig({
     // Tells the Nitro engine to compress the pre-rendered HTML files
     // further reducing the initial payload for mobile devices.
     compressPublicAssets: true,
+    prerender: {
+      crawlLinks: true,
+      routes: ['/', '/blog']
+    }
   },
 
   experimental: {

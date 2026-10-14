@@ -104,7 +104,7 @@ if (error.value || !article.value) {
 
 // Generate ToC from H2s
 const toc = computed(() => {
-  if (!article.value) return []
+  if (!article.value || !Array.isArray(article.value.blocks)) return []
   return article.value.blocks
     .filter(b => b.type === 'heading' && b.level === 'h2')
     .map(b => ({ id: b.text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''), text: b.text }))

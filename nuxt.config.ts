@@ -2,7 +2,7 @@
 // import { blogsData } from './data/blogs.js'
 
 // Universal core cache tiers
-const baseImageWidths = [300, 600, 1000]
+const baseImageWidths = [300, 600, 1000, 1200, 2000]
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-07-30',

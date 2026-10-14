@@ -55,10 +55,11 @@
           :aria-hidden="index >= images.length ? 'true' : undefined"
           :width="img.width" 
           :height="img.height"
+          :style="{ aspectRatio: `${img.width} / ${img.height}` }"
           loading="lazy"
           decoding="async"
           draggable="false" 
-          class="h-[200px] sm:h-[300px] lg:h-[350px] w-auto max-w-none flex-shrink-0 rounded-[1.25rem] sm:rounded-[1.5rem] shadow-md duration-300 hover:brightness-110 hover:ring-1 hover:ring-[#1c1c1c]/10"
+          class="h-[250px] sm:h-[300px] lg:h-[350px] w-auto max-w-none flex-shrink-0 rounded-[1.25rem] sm:rounded-[1.5rem] shadow-md duration-300 hover:brightness-110 hover:ring-1 hover:ring-[#1c1c1c]/10"
         />
       </div>
     </div>

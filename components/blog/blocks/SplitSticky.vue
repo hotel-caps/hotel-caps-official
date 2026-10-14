@@ -36,6 +36,7 @@
               :alt="singleImageLayout.alt || 'Split image'"
               :width="singleImageLayout.renderWidth"
               :height="singleImageLayout.renderHeight"
+              :style="{ aspectRatio: `${singleImageLayout.renderWidth} / ${singleImageLayout.renderHeight}` }"
               sizes="300px md:600px lg:1000px"
               format="webp"
               quality="80"
@@ -69,6 +70,7 @@
               :alt="item.alt || 'Split image'"
               :width="item.renderWidth"
               :height="item.renderHeight"
+              :style="{ aspectRatio: `${item.renderWidth} / ${item.renderHeight}` }"
               sizes="300px md:600px"
               format="webp"
               quality="80"
@@ -102,7 +104,8 @@
               :alt="item.alt || 'Grid image'"
               :width="item.renderWidth"
               :height="item.renderHeight"
-              sizes="300px md:600px"
+              :style="{ aspectRatio: `${item.renderWidth} / ${item.renderHeight}` }"
+              :sizes="item.sizes"
               format="webp"
               quality="80"
               loading="lazy"
@@ -257,7 +260,8 @@ const multiGridLayout = computed(() => {
       renderHeight,
       colSpanClass: isTopWide ? 'col-span-2' : 'col-span-1',
       aspectClass: isTopWide ? 'aspect-[2/1]' : 'aspect-square',
-      sizes: isTopWide ? SIZES_FULL : SIZES_HALF,
+      // Locked to the universal cache tiers
+      sizes: isTopWide ? '300px md:600px lg:1000px' : '300px md:600px',
       lightboxWidth: norm.hasDims ? norm.width : renderWidth,
       lightboxHeight: norm.hasDims ? norm.height : renderHeight
     }

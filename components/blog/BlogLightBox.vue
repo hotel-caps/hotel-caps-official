@@ -52,9 +52,13 @@
           :key="activeIndex"
           :src="currentItem.src"
           :alt="currentItem.alt || currentItem.caption || 'Hotel CAPS Visual'"
+          :width="currentItem.width"
+          :height="currentItem.height"
           :style="imageBoxStyle"
+          loading="eager"
+          decoding="sync"
           draggable="false"
-          class="z-20 block object-contain rounded-2xl shadow-2xl transition-transform duration-200"
+          class="z-20 block object-contain shadow-2xl transition-transform duration-200"
           @click.stop
         />
 

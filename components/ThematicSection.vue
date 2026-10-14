@@ -38,7 +38,7 @@ const bgImageRef = ref(null);
 onMounted(() => {
   let ctx = gsap.context(() => {
     const textContainer = sectionRef.value.querySelector('.feature-text-container');
-    const image = bgImageRef.value.$el;
+    const image = bgImageRef.value;
 
     gsap.set(textContainer, { xPercent: props.align === 'right' ? 100 : -100, opacity: 0 });
     gsap.set(image, { scale: 1.2 });

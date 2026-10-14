@@ -28,7 +28,7 @@ const playHeroAnimation = () => {
   ctx = gsap.context(() => {
     
     // Background slow zoom
-    gsap.from(bgImageRef.value.$el, {
+    gsap.from(bgImageRef.value, {
       delay: 0,
       opacity: 0,
       scale: 1.15,

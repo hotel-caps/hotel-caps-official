@@ -23,7 +23,7 @@
           :alt="activeSlide.alt || 'Gallery slide'"
           :width="stageDims.width"
           :height="stageDims.height"
-          sizes="600px lg:1000px"
+          sizes="300px 600px lg:1000px"
           format="webp"
           quality="80"
           loading="lazy"

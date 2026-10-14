@@ -8,6 +8,7 @@
           :alt="singleLayout.alt || 'Masonry image'"
           :width="singleLayout.renderWidth"
           :height="singleLayout.renderHeight"
+          :style="{ aspectRatio: `${singleLayout.renderWidth} / ${singleLayout.renderHeight}` }"
           sizes="300px md:600px lg:1000px"
           format="webp"
           quality="80"
@@ -41,6 +42,7 @@
           :alt="item.alt || 'Masonry image'"
           :width="item.renderWidth"
           :height="item.renderHeight"
+          :style="{ aspectRatio: `${item.renderWidth} / ${item.renderHeight}` }"
           sizes="300px md:600px lg:1000px"
           format="webp"
           quality="80"
@@ -67,6 +69,7 @@
           :alt="trioLayout.top.alt || 'Masonry image'"
           :width="trioLayout.top.renderWidth"
           :height="trioLayout.top.renderHeight"
+          :style="{ aspectRatio: `${trioLayout.top.renderWidth} / ${trioLayout.top.renderHeight}` }"
           sizes="300px md:600px lg:1000px"
           format="webp"
           quality="80"
@@ -95,6 +98,7 @@
             :alt="item.alt || 'Masonry image'"
             :width="item.renderWidth"
             :height="item.renderHeight"
+            :style="{ aspectRatio: `${item.renderWidth} / ${item.renderHeight}` }"
             sizes="300px md:600px"
             format="webp"
             quality="80"
@@ -161,12 +165,6 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['open-lightbox'])
-
-// Standard sizes presets strictly matching registered nuxt.config.ts baseImageWidths
-const SIZES_FULL = '380px sm:640px md:768px lg:1024px xl:1200px'
-const SIZES_PAIR_STACK_LG = '380px sm:640px md:768px lg:500px xl:600px'
-const SIZES_PAIR_STACK_MD = '380px sm:600px md:380px lg:500px xl:600px'
-const SIZES_HALF = '190px sm:300px md:380px lg:500px xl:600px'
 
 const rawImages = computed(() => Array.isArray(props.block?.images) ? props.block.images : [])
 const rawCount = computed(() => rawImages.value.length)
@@ -241,22 +239,9 @@ const normalizeRawItem = (entry, idx, total) => {
 }
 
 const getPairGridAndSizes = (avgRatio) => {
-  if (avgRatio > 1.9) {
-    return {
-      gridClass: 'grid-cols-1 lg:grid-cols-2',
-      sizes: SIZES_PAIR_STACK_LG
-    }
-  }
-  if (avgRatio > 1.5) {
-    return {
-      gridClass: 'grid-cols-1 md:grid-cols-2',
-      sizes: SIZES_PAIR_STACK_MD
-    }
-  }
-  return {
-    gridClass: 'grid-cols-2',
-    sizes: SIZES_HALF
-  }
+  if (avgRatio > 1.9) return { gridClass: 'grid-cols-1 lg:grid-cols-2' }
+  if (avgRatio > 1.5) return { gridClass: 'grid-cols-1 md:grid-cols-2' }
+  return { gridClass: 'grid-cols-2' }
 }
 
 // --- CASE 1: 1 IMAGE ---
@@ -269,8 +254,7 @@ const singleLayout = computed(() => {
   return {
     ...item,
     renderWidth,
-    renderHeight,
-    sizes: SIZES_FULL
+    renderHeight
   }
 })
 
@@ -284,7 +268,7 @@ const pairLayout = computed(() => {
   })
 
   const avgRatio = (items[0].ratio + items[1].ratio) / 2
-  const { gridClass, sizes } = getPairGridAndSizes(avgRatio)
+  const { gridClass } = getPairGridAndSizes(avgRatio)
   const renderWidth = Math.round(600 * avgRatio)
   const renderHeight = 600
 
@@ -293,8 +277,7 @@ const pairLayout = computed(() => {
     items: items.map((item) => ({
       ...item,
       renderWidth,
-      renderHeight,
-      sizes
+      renderHeight
     }))
   }
 })
@@ -345,13 +328,12 @@ const trioLayout = computed(() => {
   }
 
   const topItem = {
-    ...resolved[topIndex],
-    sizes: SIZES_FULL
+    ...resolved[topIndex]
   }
 
   const bottomItems = resolved.filter((_, idx) => idx !== topIndex)
   const bottomAvgRatio = (bottomItems[0].ratio + bottomItems[1].ratio) / 2
-  const { gridClass: bottomGridClass, sizes: bottomSizes } = getPairGridAndSizes(bottomAvgRatio)
+  const { gridClass: bottomGridClass } = getPairGridAndSizes(bottomAvgRatio)
   const bottomRenderWidth = Math.round(600 * bottomAvgRatio)
   const bottomRenderHeight = 600
 
@@ -361,8 +343,7 @@ const trioLayout = computed(() => {
     bottom: bottomItems.map((item) => ({
       ...item,
       renderWidth: bottomRenderWidth,
-      renderHeight: bottomRenderHeight,
-      sizes: bottomSizes
+      renderHeight: bottomRenderHeight
     }))
   }
 })
@@ -390,8 +371,7 @@ const masonryColumns = computed(() => {
     shortestCol.items.push({
       ...norm,
       renderWidth,
-      renderHeight,
-      sizes: SIZES_HALF
+      renderHeight
     })
 
     // Add normalized relative vertical height (1 / aspect_ratio) to track column height

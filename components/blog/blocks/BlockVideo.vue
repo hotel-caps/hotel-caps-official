@@ -29,8 +29,8 @@
         class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
       />
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div class="w-12 h-12 md:w-18 md:h-18 bg-[#bd5c17] rounded-full flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:bg-[#C86A22] transition-all duration-300">
-          <svg class="w-6 h-6 md:w-10 md:h-10 ml-1" fill="currentColor" viewBox="0 0 24 24">
+        <div class="w-16 h-16 md:w-18 md:h-18 bg-[#bd5c17] rounded-full flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:bg-[#C86A22] transition-all duration-300">
+          <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" />
           </svg>
         </div>

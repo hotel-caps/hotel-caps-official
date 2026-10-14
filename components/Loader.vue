@@ -110,7 +110,7 @@ onMounted(() => {
       tl.to(glowBg.value, { opacity: 1, duration: 1, ease: "power2.inOut" }, 0)
         
         // 0.15s: Logo fades in
-        .to(logoRef.value.$el, { opacity: 1, duration: 1.2, ease: "power2.inOut" }, 0.15)
+        .to(logoRef.value, { opacity: 1, duration: 1.2, ease: "power2.inOut" }, 0.15)
         
         // 0.25s: "HOTEL" swirl (tighter stagger)
         .fromTo('.hotel-char',

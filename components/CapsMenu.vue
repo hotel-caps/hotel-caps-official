@@ -121,7 +121,7 @@
         >
           <div class="absolute top-2 right-2 z-20 flex items-center gap-2 bg-[#141414]/50 backdrop-blur-md px-4 py-2 rounded-full border border-[#2a2a2a] shadow-sm">
             <svg class="w-3 h-3 text-[#d4af37]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span class="text-[.6rem] font-bold tracking-widest uppercase text-white">Today's Special</span>
+            <span class="text-[.6rem] font-bold tracking-widest uppercase text-white">Today's Specials</span>
           </div>
           
           <div v-if="outletSpecials.length === 0" class="p-12 text-center text-zinc-400 text-sm font-medium tracking-wide">

@@ -183,7 +183,7 @@ const aboutGalleryData = {
     },
     {
       src: "/images/about/caps-family/11.jpg",
-      alt: "Hotel CAPS fourth anniversary celebration marking four years of food, hospitality and memories, powered by Brandsta Interactive",
+      alt: "Hotel CAPS fourth anniversary celebration announcing the Digital Platform, powered by Brandsta Interactive",
       width: 600,
       height: 400
     }

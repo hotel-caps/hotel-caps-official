@@ -85,7 +85,7 @@ const directorsQuoteData = {
   author: "Mr. Unnikrishnan P",
   designation: "Managing Director, Hotel CAPS",
   image: "/images/about/director.jpg",
-  imageAlt: "Managing Director, Hotel CAPS"
+  imageAlt: "Hotel CAPS Head Office"
 };
 
 const sectionRef = ref(null);

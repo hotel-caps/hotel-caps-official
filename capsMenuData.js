@@ -542,7 +542,7 @@ export const capsMenuData = ref([
     "name": "Kadai Chicken",
     "category": "Chicken Delights",
     "outlet": "Multi Cuisine Restaurant",
-    "info": "flavourful chicken dish tossed in a traditional wok with bell peppers and crushed coriander.",
+    "info": "Flavourful chicken dish tossed in a traditional wok with bell peppers and crushed coriander.",
     "isBestseller": false,
     "image": "/images/menu/items/kadai_chicken.jpg",
     "alt": "Kadai Chicken wok tossed bell peppers crushed coriander",

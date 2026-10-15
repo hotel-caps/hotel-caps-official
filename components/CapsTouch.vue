@@ -32,7 +32,7 @@ const services = shallowRef([
     iconColorClass: 'text-emerald-700'
   },
   { 
-    text: 'Banquet and Events Hall', 
+    text: 'Auditorium and Events Hall', 
     icon: markRaw(PhProjectorScreenChart),
     iconBgClass: 'bg-pink-100',
     iconColorClass: 'text-pink-700'

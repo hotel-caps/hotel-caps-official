@@ -64,8 +64,8 @@ onMounted(() => {
 const roomsGalleryData = {
   eyebrow: "Our Amenities",
   title: "Comfort in Every Detail",
-  themeTextClass: "text-[#2563eb]",
-  themeBgClass: "bg-[#2563eb]",
+  themeTextClass: "text-[#0282bd]",
+  themeBgClass: "bg-[#0282bd]",
   images: [
     {
       src: "/images/rooms/amenities/1.jpg",
@@ -157,7 +157,7 @@ useCapsSeo({
       :images="heroImages"
       imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-sky-950/70 to-black/70 z-5"
       eyebrowColorClass="text-[#0ea5e9]"
-      themeColorClass="text-[#075985]"
+      themeColorClass="text-[#027db5]"
     />
     
     <PageGallery 
@@ -175,7 +175,7 @@ useCapsSeo({
         <div 
           v-for="(room, index) in roomsData" 
           :key="room.id"
-          class="room-card grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-2xl p-4 sm:p-6 border-4 border-sky-700 items-center"
+          class="room-card grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-2xl p-4 sm:p-6 border-4 border-[#0282bd] items-center"
         >
           <!-- The layout alternates for each room using the 'order' class, now starting at the LG breakpoint -->
           <div class="room-details-col" :class="{ 'lg:order-2': index % 2 !== 0 }">

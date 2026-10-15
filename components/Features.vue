@@ -13,8 +13,8 @@ const features = ref([
     alt: 'Elegant hotel room with a comfortable bed',
     title: 'Book a Stay',
     description: 'Discover our elegant rooms and suites designed for your ultimate comfort.',
-    buttonText: 'Explore Rooms',
-    buttonLink: '/rooms',
+    buttonText: 'View Pricing',
+    buttonLink: '/pricing',
     buttonClass: 'bubble-button-blue'
   },
   {
@@ -133,20 +133,20 @@ onMounted(() => {
 
 /* Blue Button */
 .bubble-button-blue { 
-  border: 2px solid #2563eb; 
-  color: #2563eb; 
+  border: 2px solid #0282bd; 
+  color: #0282bd; 
 }
 .bubble-button-blue::before { 
-  background-color: #2563eb; 
+  background-color: #0282bd; 
 }
 
 /* Green Button */
 .bubble-button-green { 
-  border: 2px solid #03a661; 
-  color: #03a661; 
+  border: 2px solid #027d70; 
+  color: #027d70; 
 }
 .bubble-button-green::before { 
-  background-color: #03a661; 
+  background-color: #027d70; 
 }
 
 /* Pink Button */

@@ -50,7 +50,7 @@ const achievements = shallowRef([
     lineBg: 'bg-blue-600',
     colorClass: 'bg-white text-blue-600',
     startNumber: 0,
-    targetNumber: 10, 
+    targetNumber: 12, 
     suffix: 'K+', 
     label: 'Guests Hosted' 
   },
@@ -61,7 +61,7 @@ const achievements = shallowRef([
     lineBg: 'bg-emerald-600',
     colorClass: 'bg-white text-emerald-600',
     startNumber: 0,
-    targetNumber: 400, 
+    targetNumber: 450, 
     suffix: 'K+', 
     label: 'Customers Served' 
   },
@@ -72,7 +72,7 @@ const achievements = shallowRef([
     lineBg: 'bg-rose-500',
     colorClass: 'bg-white text-rose-500',
     startNumber: 0,
-    targetNumber: 400, 
+    targetNumber: 480, 
     suffix: '+', 
     label: 'Events Conducted' 
   },

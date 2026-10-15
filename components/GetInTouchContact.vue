@@ -39,7 +39,7 @@
           ></div>
 
           <!-- Circular Icon Container -->
-          <div class="contact-page-icon-reveal w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#df9c4d] mb-5 sm:mb-6 transition-transform duration-500 hover:-translate-y-1 hover:bg-white/10 cursor-default">
+          <div class="contact-icon-reveal w-20 h-20 lg:w-16 lg:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#df9c4d] mb-5 sm:mb-6 transition-transform duration-500 hover:-translate-y-1 hover:bg-white/10 cursor-default">
             <div v-html="item.svg"></div>
           </div>
 
@@ -72,10 +72,10 @@ const contactData = {
   title: "Get In Touch",
   subtitle: "Need assistance? We'd love to hear from you.\nReach out to us through any of the following ways.",
   items: [
-    { title: "Address", details: "Main Road, Pittupeedika,\nKoduvayur, Palakkad – 678501\nKerala, India", svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>` },
-    { title: "Email", details: `<a href="mailto:capsfamilybakes@gmail.com" class="hover:text-[#f4b366] transition-colors duration-300">capsfamilybakes@gmail.com</a>`, svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>` },
-    { title: "Call Us", details: `<a href="tel:+919207517064" class="block hover:text-[#f4b366] transition-colors duration-300">+91 92075 17064</a><a href="tel:+918848369567" class="block hover:text-[#f4b366] transition-colors duration-300">+91 8848 369 567</a>`, svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>` },
-    { title: "Hours", details: "Every day\n7:00 AM – 10:00 PM", svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>` }
+    { title: "Address", details: "Main Road, Pittupeedika,\nKoduvayur, Palakkad – 678501\nKerala, India", svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 lg:w-8 lg:h-8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>` },
+    { title: "Email", details: `<a href="mailto:capsfamilybakes@gmail.com" class="hover:text-[#f4b366] transition-colors duration-300">capsfamilybakes@gmail.com</a>`, svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 lg:w-8 lg:h-8"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>` },
+    { title: "Call Us", details: `<a href="tel:+919207517064" class="block hover:text-[#f4b366] transition-colors duration-300">+91 92075 17064</a><a href="tel:+918848369567" class="block hover:text-[#f4b366] transition-colors duration-300">+91 8848 369 567</a>`, svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 lg:w-8 lg:h-8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>` },
+    { title: "Hours", details: "Every day\n7:00 AM – 10:00 PM", svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 lg:w-8 lg:h-8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>` }
   ]
 };
 

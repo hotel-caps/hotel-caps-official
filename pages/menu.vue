@@ -65,7 +65,7 @@ const heroImages = '/images/menu/menu.jpg'
 
 // 1. Core Meta Values
 const pageTitle = 'Digital Restaurant Menu | Hotel CAPS - Koduvayur, Palakkad'
-const pageDesc = 'Browse the Digital Menu of Hotel CAPS - Koduvayur, Palakkad. Explore specials, multi-cuisine delicacies, snacks, hot & cold drinks & desserts for dining & delivery.'
+const pageDesc = 'Browse the Digital Menu of Hotel CAPS - Koduvayur, Palakkad. Explore specials, multi cuisine delicacies, snacks, hot & cold drinks & desserts for dining & delivery.'
 const canonicalUrl = 'https://capsfamily.in/menu'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-menu-og-image.jpg'
 

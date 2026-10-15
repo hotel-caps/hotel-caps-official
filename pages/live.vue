@@ -973,7 +973,7 @@ const capsSpecialsData = computed(() => {
     },
 
     {
-      key: 'Multi-Cuisine Restaurant',
+      key: 'Multi Cuisine Restaurant',
       name: 'Restaurant',
       subtitle: 'Many Flavours · One Table',
       color: '#14532d',
@@ -1173,7 +1173,7 @@ useHead({
         "url": canonicalUrl,
         "mainEntity": {
           "@type": "Restaurant",
-          "name": "Hotel CAPS Multi-Cuisine Restaurant",
+          "name": "Hotel CAPS Multi Cuisine Restaurant",
           "url": "https://capsfamily.in/restaurant",
           "telephone": [
             "+919207517064",

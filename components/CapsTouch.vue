@@ -26,7 +26,7 @@ const services = shallowRef([
     iconColorClass: 'text-amber-800'
   },
   { 
-    text: 'Multi-Cuisine Restaurant', 
+    text: 'Multi Cuisine Restaurant', 
     icon: markRaw(PhForkKnife),
     iconBgClass: 'bg-emerald-100',
     iconColorClass: 'text-emerald-700'

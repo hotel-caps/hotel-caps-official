@@ -32,7 +32,7 @@ export const capsCategoriesData = [
 // UI THEME DICTIONARY: Maps the incoming WordPress dynamic JSON to the exact UI colors and icons.
 export const specialsThemeDictionary = {
   'CAPS': { trackerId: 'specials', mainTitle: 'SPECIALS', mainTitleColor: '#f05b22', darkHex: '#b45309', lightHex: '#f9a230', tagBgHex: '#c78226', priceColor: '#f05b22', tags: foodTags },
-  'Multi-Cuisine Restaurant': { trackerId: 'restaurant', mainTitle: 'SPECIALS', mainTitleColor: '#f0cb52', darkHex: '#14532d', lightHex: '#16a34a', tagBgHex: '#11823b', tags: foodTags },
+  'Multi Cuisine Restaurant': { trackerId: 'restaurant', mainTitle: 'SPECIALS', mainTitleColor: '#f0cb52', darkHex: '#14532d', lightHex: '#16a34a', tagBgHex: '#11823b', tags: foodTags },
   'Chill N Chai': { trackerId: 'chai', mainTitle: 'SPECIALS', mainTitleColor: '#f0cb52', darkHex: '#78350f', lightHex: '#b45309', tagBgHex: '#904207', tags: foodTags },
   'Arabic Corner': { trackerId: 'arabic', mainTitle: 'SPECIALS', mainTitleColor: '#f0cb52', darkHex: '#451a03', lightHex: '#82300b', tagBgHex: '#682609', tags: foodTags }
 };

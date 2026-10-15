@@ -302,7 +302,7 @@ const restaurantCtaData = {
 
 // 1. Core Meta Values
 const pageTitle = 'AC Family Restaurant | Hotel CAPS - Koduvayur, Palakkad'
-const pageDesc = 'Enjoy Multi-Cuisine Dining at Hotel CAPS, Koduvayur, Palakkad. Kerala, Indian, Chinese & Arabic dishes, snacks, desserts, hot & cold drinks & free delivery.'
+const pageDesc = 'Enjoy Multi Cuisine Dining at Hotel CAPS, Koduvayur, Palakkad. Kerala, Indian, Chinese & Arabic dishes, snacks, desserts, hot & cold drinks & free delivery.'
 const canonicalUrl = 'https://capsfamily.in/restaurant'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-restaurant-og-image.jpg'
 
@@ -313,7 +313,7 @@ useCapsSeo({
   canonicalUrl,
   ogImage,
   pageType: 'restaurant',
-  breadcrumbName: 'Multi-Cuisine Restaurant'
+  breadcrumbName: 'Multi Cuisine Restaurant'
 })
 
 </script>

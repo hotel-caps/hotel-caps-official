@@ -355,7 +355,7 @@
       <div class="hidden lg:flex gap-10 items-start">
         
         <!-- LEFT COLUMN: Sticky Specials Slider (h-auto via Grid) -->
-        <aside class="w-[30%] xl:w-[25%] relative [@media(max-aspect-ratio:1.9/1)]:sticky top-[6rem] flex flex-col gap-6 pt-2">
+        <aside class="w-[30%] xl:w-[25%] relative [@media(max-aspect-ratio:2/1)]:sticky top-[6rem] flex flex-col gap-6 pt-2">
 
           <!-- DESKTOP: MONTHLY SIGNATURES SLIDER -->
           <div class="flex flex-col gap-3 mb-4">

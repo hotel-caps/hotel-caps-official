@@ -24,7 +24,7 @@ const homeGalleryData = {
 
 // 1. Core Meta Values
 const pageTitle = 'Hotel CAPS Koduvayur | Rooms, Restaurant & Auditorium'
-const pageDesc = 'Stay, Dine & Celebrate at Hotel CAPS - Koduvayur, Palakkad. AC Luxury Rooms, Multi Cuisine Restaurant & Auditorium. Catering, Free Delivery, Lift & Car Parking.' 
+const pageDesc = 'Stay, Dine & Celebrate at Hotel CAPS - Koduvayur, Palakkad. AC Luxury Rooms, Multi-Cuisine Restaurant & Auditorium. Catering, Free Delivery, Lift & Car Parking.' 
 const canonicalUrl = 'https://capsfamily.in/' // Added trailing slash for consistency
 const ogImage = 'https://capsfamily.in/images/favicons/caps-home-og-image.jpg'
 

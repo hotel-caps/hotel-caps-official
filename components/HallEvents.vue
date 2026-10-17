@@ -2,7 +2,7 @@
   <section ref="sectionRef" class="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
     <div class="max-w-7xl xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Main Container Card with Events Hall Pink/Magenta Gradient -->
+      <!-- Main Container Card with Event Hall Pink/Magenta Gradient -->
       <div class="hall-container-reveal relative bg-gradient-to-r from-[#6b0832] via-[#a81350] to-[#6b0832] rounded-[1.75rem] sm:rounded-[2.5rem] p-8 sm:p-12 lg:p-16 shadow-2xl border border-pink-950/40 text-center flex flex-col items-center">
         
         <!-- Header Section -->

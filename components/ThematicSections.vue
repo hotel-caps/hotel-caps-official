@@ -34,10 +34,10 @@ const sections = shallowRef([
     theme: 'green',
     align: 'right',
     imageSrc: '/images/home/themed/restaurant-theme.jpg',
-    imageAlt: 'The elegant dining area of the multi cuisine restaurant',
+    imageAlt: 'The elegant dining area of the multi-cuisine restaurant',
     category: 'Restaurant',
     title: 'A Culinary Journey',
-    description: "Embark on an epicurean adventure at our multi cuisine restaurant. Our chefs prepare a symphony of flavours, from authentic Keralan delicacies to global favourites. Every dish is a celebration of taste served with a touch of homely flavour.",
+    description: "Embark on an epicurean adventure at our multi-cuisine restaurant. Our chefs prepare a symphony of flavours, from authentic Keralan delicacies to global favourites. Every dish is a celebration of taste served with a touch of homely flavour.",
     buttonText: 'Explore Restaurant',
     buttonLink: '/restaurant',
     icon: markRaw(PhForkKnife)

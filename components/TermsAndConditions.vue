@@ -85,9 +85,9 @@ const termsData = {
       ]
     },
     {
-      heading: "2. Events Hall & Venue Usage",
+      heading: "2. Event Hall & Venue Usage",
       paragraphs: [
-        "Our events hall is a premium space designed for celebrations and corporate functions. Guests booking the hall are responsible for the conduct of their attendees and any external vendors they contract."
+        "Our event hall is a premium space designed for celebrations and corporate functions. Guests booking the hall are responsible for the conduct of their attendees and any external vendors they contract."
       ],
       bullets: [
         "A non-refundable 30% deposit is required to secure your event date.",
@@ -101,7 +101,7 @@ const termsData = {
         "We strive to provide exceptional culinary experiences. To maintain our high standards of food safety and service quality, we enforce strict guidelines regarding food consumption on our premises."
       ],
       bullets: [
-        "Outside food and beverages are strictly prohibited in the restaurant and events hall.",
+        "Outside food and beverages are strictly prohibited in the restaurant and event hall.",
         "For bulk catering orders, the final guest count must be confirmed 72 hours prior to the event.",
         "We will make every effort to accommodate dietary restrictions, provided they are communicated at least 48 hours in advance."
       ]

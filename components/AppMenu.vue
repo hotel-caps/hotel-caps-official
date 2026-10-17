@@ -85,7 +85,7 @@ const menuItems = [
   { text: 'Menu', link: '/menu', color: '#14b8a6', icon: markRaw(PhBookOpen) },
   { text: 'Signatures', link: '/signatures', color: '#0f9a7d', icon: markRaw(PhShieldCheck) },
   { text: 'Live', link: '/live', color: '#82e9a6', icon: markRaw(PhPlayCircle) },
-  { text: 'Events Hall', link: '/hall', color: '#e22473', icon: markRaw(PhBuildings) },
+  { text: 'Event Hall', link: '/hall', color: '#e22473', icon: markRaw(PhBuildings) },
   { text: 'Catering', link: '/catering', color: '#df4444', icon: markRaw(PhCoffee) },
 ];
 </script>

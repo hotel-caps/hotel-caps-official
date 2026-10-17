@@ -4,7 +4,7 @@ import PageHero from '~/components/PageHero.vue';
 
 // Define the data for our hero section
 const heroImages = ref([
-  '/images/about/hero/about.jpg'
+  '/images/about/hero/about.webp'
 ]);
 
 // Your page-specific JSON payload for Intro Section

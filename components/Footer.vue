@@ -18,7 +18,7 @@ const footerNav = ref([
   { text: 'Home', href: '/' },
   { text: 'Rooms', href: '/rooms' },
   { text: 'Restaurant', href: '/restaurant' },
-  { text: 'Events Hall', href: '/hall' },
+  { text: 'Event Hall', href: '/hall' },
   { text: 'About Us', href: '/about' },
   { text: 'Our Blog', href: '/blog' },
   { text: 'Pricing', href: '/pricing' },

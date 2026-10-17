@@ -137,7 +137,7 @@
               :class="[
                   special.category === 'Chill N Chai' ? 'bg-gradient-to-br from-[#5C4033] to-[#2A1C14]' :
                   special.category === 'Arabic Corner' ? 'bg-gradient-to-br from-[#3E2723] to-[#1B100B]' :
-                  special.category === 'Multi Cuisine Restaurant' ? 'bg-gradient-to-br from-[#1B3320] to-[#0A1A0F]' :
+                  special.category === 'Multi-Cuisine Restaurant' ? 'bg-gradient-to-br from-[#1B3320] to-[#0A1A0F]' :
                   'bg-gradient-to-br from-[#1c1c1c] to-[#252525]' // Default case (if needed)
                 ]"
             >
@@ -190,9 +190,9 @@
                   "
                 />
 
-                <!-- Multi Cuisine Restaurant : Chef Hat -->
+                <!-- Multi-Cuisine Restaurant : Chef Hat -->
                 <path
-                  v-else-if="special.category === 'Multi Cuisine Restaurant'"
+                  v-else-if="special.category === 'Multi-Cuisine Restaurant'"
                   d="
                     M31 68
                     V51
@@ -436,7 +436,7 @@
                 :class="[
                   special.category === 'Chill N Chai' ? 'bg-gradient-to-br from-[#5C4033] to-[#2A1C14]' :
                   special.category === 'Arabic Corner' ? 'bg-gradient-to-br from-[#3E2723] to-[#1B100B]' :
-                  special.category === 'Multi Cuisine Restaurant' ? 'bg-gradient-to-br from-[#1B3320] to-[#0A1A0F]' :
+                  special.category === 'Multi-Cuisine Restaurant' ? 'bg-gradient-to-br from-[#1B3320] to-[#0A1A0F]' :
                   'bg-gradient-to-br from-[#1c1c1c] to-[#252525]' // Default case (if needed)
                 ]"
               >
@@ -489,9 +489,9 @@
                     "
                   />
 
-                  <!-- Multi Cuisine Restaurant : Chef Hat -->
+                  <!-- Multi-Cuisine Restaurant : Chef Hat -->
                   <path
-                    v-else-if="special.category === 'Multi Cuisine Restaurant'"
+                    v-else-if="special.category === 'Multi-Cuisine Restaurant'"
                     d="
                       M31 68
                       V51
@@ -801,8 +801,8 @@ const handleSigSwipe = () => {
 // Outlet Configuration with thicker SVG Icons
 const outlets = [
   { 
-    name: 'Multi Cuisine Restaurant', 
-    titleHtml: 'Multi Cuisine',
+    name: 'Multi-Cuisine Restaurant', 
+    titleHtml: 'Multi-Cuisine',
     icon: `<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17h18M12 4v2m-7 8a7 7 0 0114 0v3H5v-3z"/></svg>` 
   },
   { 
@@ -817,7 +817,7 @@ const outlets = [
   }
 ];
 
-const activeOutlet = ref('Multi Cuisine Restaurant');
+const activeOutlet = ref('Multi-Cuisine Restaurant');
 const activeCategory = ref('');
 
 // Change from a string to an array to hold multiple open accordions
@@ -910,7 +910,7 @@ const outletSpecials = computed(() => {
   let specials = props.dynamicSpecials.filter(item => {
     // Match the exact outlet name (handling the hyphen difference)
     let targetOutlet = activeOutlet.value;
-    if (targetOutlet === 'Multi Cuisine Restaurant') targetOutlet = 'Multi Cuisine Restaurant';
+    if (targetOutlet === 'Multi-Cuisine Restaurant') targetOutlet = 'Multi-Cuisine Restaurant';
 
     return item.category === targetOutlet;
   });

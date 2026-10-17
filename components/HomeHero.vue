@@ -1,21 +1,39 @@
 <template>
   <section 
     ref="heroSectionRef" 
-    class="relative w-full h-[100vh] min-h-[640px] portrait:h-[96vh] pb-12 sm:pb-16 lg:pb-20 flex items-end overflow-hidden bg-[#0B0D13]"
+    class="relative w-full h-[100vh] min-h-[640px] portrait:h-[98vh] pb-12 sm:pb-16 lg:pb-20 flex items-end overflow-hidden bg-[#0B0D13]"
   >
     <!-- 1. Background Image Layer (z-0) -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      <img 
-        ref="bgImageRef"
-        :src="slide.image" 
-        :alt="slide.title" 
-        width="1600"
-        height="1067"
-        fetchpriority="high"
-        loading="eager"
-        decoding="sync"
-        class="bg-image h-full w-full object-cover object-center will-change-transform" 
-      />
+      <picture>
+        <!-- Desktop & Tablet Landscape (>= 768px): 1600x1065 -->
+        <source 
+          media="(min-width: 768px)" 
+          :srcset="slide.imageDesktop" 
+          type="image/webp"
+          width="1600"
+          height="1065"
+        />
+        <!-- Mobile Portrait (< 768px): 750x1000 -->
+        <source 
+          media="(max-width: 767px)" 
+          :srcset="slide.imageMobile" 
+          type="image/webp"
+          width="750"
+          height="1000"
+        />
+        <!-- Fallback <img> element (animated by GSAP) -->
+        <img 
+          :src="slide.imageDesktop" 
+          :alt="slide.title" 
+          width="1600"
+          height="1065"
+          fetchpriority="high"
+          loading="eager"
+          decoding="sync"
+          class="bg-image h-full w-full object-cover object-center will-change-transform" 
+        />
+      </picture>
     </div>
 
     <!-- 2. Left-Weighted Dark Gradient Overlay (z-5) -->
@@ -27,10 +45,9 @@
         ref="heroContentRef" 
         class="flex flex-col items-start justify-start text-left text-white max-w-xl lg:max-w-2xl"
       >
-
         <!-- H1 Title with Desktop Decorative Dash (— Hotel CAPS) -->
         <h1 class="font-display text-2xl sm:text-3xl md:text-4xl font-normal tracking-wider flex items-center gap-3 mb-3 sm:mb-4">
-          <span :class="slide.eyebrowBgClass" class="inline-block w-8 md:w-10 h-[1px] "></span>
+          <span :class="slide.eyebrowBgClass" class="inline-block w-8 md:w-10 h-[1px]"></span>
           <span :class="slide.eyebrowColorClass">{{ slide.title }}</span>
         </h1>
 
@@ -104,12 +121,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { gsap } from 'gsap'
 
 // --- HERO CONTENT & THEME CONFIGURATION ---
 const slide = {
-  image: '/images/home/hero/hotel-caps-hero.webp',
+  imageDesktop: '/images/home/hero/caps-landscape.webp',
+  imageMobile: '/images/home/hero/caps-portrait.webp',
   title: 'Hotel CAPS',
   subTitle: 'STAY. DINE.',
   highlightText: 'CELEBRATE.',
@@ -126,15 +144,14 @@ const slide = {
   ctaClass: 'bubble-button-gold',
 
   // 3-Layer Wave Classes (1 Translucent + 2 Opaque)
-  translucentWaveClass: 'text-[#d18108]/40', // Layer 1: Translucent accent layer
-  themeWaveClass: 'text-[#bd5c17]',          // Layer 2: Opaque middle ribbon
-  baseWaveClass: 'text-stone-200'            // Layer 3: Opaque bottom page base
+  translucentWaveClass: 'text-[#d18108]/40',
+  themeWaveClass: 'text-[#bd5c17]',
+  baseWaveClass: 'text-stone-200'
 }
 
 // --- REFS ---
 const heroSectionRef = ref(null)
 const heroContentRef = ref(null)
-const bgImageRef = ref(null)
 const waveRef = ref(null)
 
 // --- GLOBAL STATE ---
@@ -161,18 +178,23 @@ const handleCtaClick = () => {
 // --- GSAP ANIMATION ---
 const playHeroAnimation = () => {
   ctx = gsap.context(() => {
-    // Background slow zoom
-    if (bgImageRef.value && bgImageRef.value.$el) {
-      gsap.from(bgImageRef.value.$el, {
-        delay: 0,
+    // 1. Background slow zoom + fade in (targeted via scoped class directly)
+    gsap.fromTo(
+      '.bg-image',
+      {
         opacity: 0,
-        scale: 1.15,
+        scale: 1.15
+      },
+      {
+        opacity: 1,
+        scale: 1,
         duration: 3,
-        ease: 'power3.out'
-      })
-    }
+        ease: 'power3.out',
+        clearProps: 'transform' // Cleans up inline styles post-animation
+      }
+    )
 
-    // Staggered text & CTA entry
+    // 2. Staggered text & CTA entry
     if (heroContentRef.value) {
       gsap.from(heroContentRef.value.children, {
         opacity: 0,
@@ -184,7 +206,7 @@ const playHeroAnimation = () => {
       })
     }
 
-    // Elegant upward wave reveal
+    // 3. Upward wave reveal
     if (waveRef.value) {
       gsap.from(waveRef.value, {
         y: 50,
@@ -198,12 +220,16 @@ const playHeroAnimation = () => {
 }
 
 // --- LIFECYCLE HOOKS ---
-onMounted(() => {
+onMounted(async () => {
+  // Await next tick guarantees the DOM is fully constructed and painted before GSAP reads it
+  await nextTick()
+  
   if (!isInitialAppLoad.value) {
     playHeroAnimation()
   } else {
-    const unwatch = watch(isInitialAppLoad, (isStillLoading) => {
+    const unwatch = watch(isInitialAppLoad, async (isStillLoading) => {
       if (!isStillLoading) {
+        await nextTick()
         playHeroAnimation()
         unwatch()
       }
@@ -246,7 +272,7 @@ onUnmounted(() => {
   transform: scaleX(1); 
 }
 
-/* Blue Button */
+/* Gold Button */
 .bubble-button-gold { 
   border: 2px solid #d18108; 
   color: #d18108; 
@@ -254,5 +280,4 @@ onUnmounted(() => {
 .bubble-button-gold::before { 
   background-color: #d18108; 
 }
-
 </style>

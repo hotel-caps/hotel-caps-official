@@ -6,7 +6,7 @@
       <div class="room-container-reveal relative bg-gradient-to-r from-[#03153b] via-[#072a75] to-[#03153b] rounded-[1.75rem] sm:rounded-[2.5rem] p-8 sm:p-12 lg:p-16 shadow-2xl border border-blue-950/40 text-center flex flex-col items-center">
         
         <!-- Header Section -->
-        <span class="room-text-reveal block font-['Julee'] text-xl sm:text-2xl lg:text-3xl mb-1 sm:mb-2 tracking-wide text-[#12a5e6]">
+        <span class="room-text-reveal block font-['Julee'] text-xl sm:text-2xl lg:text-3xl mb-1 sm:mb-2 tracking-wide text-[#2285e6]">
           {{ roomCategoriesData.eyebrow }}
         </span>
 
@@ -15,7 +15,7 @@
         </h2>
 
         <!-- Signature Light Blue Underline -->
-        <div class="room-text-reveal w-16 sm:w-20 h-1 bg-sky-400 mb-10 sm:mb-14"></div>
+        <div class="room-text-reveal w-16 sm:w-20 h-1 bg-[#2285e6] mb-10 sm:mb-14"></div>
 
         <!-- Rooms Responsive Flex Container -->
         <div class="flex flex-wrap justify-center items-center gap-6 lg:gap-8 w-full">

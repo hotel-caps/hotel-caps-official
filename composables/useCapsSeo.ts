@@ -31,17 +31,17 @@ const SITELINK_NAV_ITEMS = [
   {
     name: 'AC Family Restaurant',
     url: `${SITE_URL}/restaurant`,
-    description: 'Multi cuisine dining with Kerala, Indian, Chinese & Arabic dishes, snacks, desserts & free delivery.'
+    description: 'Multi-cuisine dining with Kerala, Indian, Chinese & Arabic dishes, snacks, desserts & free delivery.'
   },
   {
     name: 'Digital Menu',
     url: `${SITE_URL}/menu`,
-    description: 'Browse our online menu of specials, multi cuisine delicacies, snacks, desserts & hot & cold drinks.'
+    description: 'Browse our online menu of specials, multi-cuisine delicacies, snacks, desserts & hot & cold drinks.'
   },
   {
-    name: 'Auditorium & Events Hall',
+    name: 'Auditorium & Event Hall',
     url: `${SITE_URL}/hall`,
-    description: 'Spacious AC auditorium & events hall with A/V facilities, catering, lift & ample car parking.'
+    description: 'Spacious AC auditorium & event hall with A/V facilities, catering, lift & ample car parking.'
   },
   {
     name: 'Outdoor Catering',
@@ -103,7 +103,7 @@ export function useCapsSeo(options: CapsSeoOptions) {
     '@id': `${SITE_URL}/#hotel`,
     name: 'Hotel CAPS',
     alternateName: ['Hotel CAPS Family', 'CAPS Family', 'Hotel CAPS Koduvayur', 'Hotel CAPS - Koduvayur, Palakkad'],
-    description: 'Stay, dine & celebrate at Hotel CAPS - Koduvayur, Palakkad. AC luxury rooms, multi cuisine restaurant & auditorium. Catering, free delivery, lift & car parking.',
+    description: 'Stay, dine & celebrate at Hotel CAPS - Koduvayur, Palakkad. AC luxury rooms, multi-cuisine restaurant & auditorium. Catering, free delivery, lift & car parking.',
     url: `${SITE_URL}/`,
     logo: {
       '@type': 'ImageObject',
@@ -139,8 +139,8 @@ export function useCapsSeo(options: CapsSeoOptions) {
     amenityFeature: [
       { '@type': 'LocationFeatureSpecification', name: 'Fully Air-Conditioned (Rooms, Restaurant & Auditorium)', value: true },
       { '@type': 'LocationFeatureSpecification', name: 'Luxury AC Suites & Rooms', value: true },
-      { '@type': 'LocationFeatureSpecification', name: 'AC Multi Cuisine Family Restaurant', value: true },
-      { '@type': 'LocationFeatureSpecification', name: 'AC Auditorium & Events Hall with A/V Facilities', value: true },
+      { '@type': 'LocationFeatureSpecification', name: 'AC Multi-Cuisine Family Restaurant', value: true },
+      { '@type': 'LocationFeatureSpecification', name: 'AC Auditorium & Event Hall with A/V Facilities', value: true },
       { '@type': 'LocationFeatureSpecification', name: 'Outdoor Catering Services', value: true },
       { '@type': 'LocationFeatureSpecification', name: 'Free Home Delivery', value: true },
       { '@type': 'LocationFeatureSpecification', name: 'Lift / Elevator Facility', value: true },
@@ -215,7 +215,7 @@ export function useCapsSeo(options: CapsSeoOptions) {
       description: pageDesc,
       url: canonicalUrl,
       image: ogImage,
-      servesCuisine: ['Kerala', 'Indian', 'Chinese', 'Arabic', 'Multi Cuisine'],
+      servesCuisine: ['Kerala', 'Indian', 'Chinese', 'Arabic', 'Multi-Cuisine'],
       telephone: ['+919207517064', '+918848369567'],
       priceRange: '$$',
       hasMenu: `${SITE_URL}/menu`,
@@ -227,7 +227,7 @@ export function useCapsSeo(options: CapsSeoOptions) {
     graph.push({
       '@type': 'EventVenue',
       '@id': `${SITE_URL}/hall#venue`,
-      name: 'Hotel CAPS Auditorium & Events Hall',
+      name: 'Hotel CAPS Auditorium & Event Hall',
       description: pageDesc,
       url: canonicalUrl,
       image: ogImage,
@@ -244,7 +244,7 @@ export function useCapsSeo(options: CapsSeoOptions) {
       description: pageDesc,
       url: canonicalUrl,
       image: ogImage,
-      servesCuisine: ['Kerala', 'Indian', 'Chinese', 'Arabic', 'Multi Cuisine'],
+      servesCuisine: ['Kerala', 'Indian', 'Chinese', 'Arabic', 'Multi-Cuisine'],
       telephone: ['+919207517064', '+918848369567'],
       priceRange: '$$',
       address: masterHotelEntity.address,

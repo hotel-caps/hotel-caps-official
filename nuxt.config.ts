@@ -184,7 +184,7 @@ export default defineNuxtConfig({
       },
       
       meta: [
-        { name: 'description', content: 'Stay, Dine & Celebrate at Hotel CAPS - Koduvayur, Palakkad. AC Luxury Rooms, Multi Cuisine Restaurant & Auditorium. Catering, Free Delivery, Lift & Car Parking.' },
+        { name: 'description', content: 'Stay, Dine & Celebrate at Hotel CAPS - Koduvayur, Palakkad. AC Luxury Rooms, Multi-Cuisine Restaurant & Auditorium. Catering, Free Delivery, Lift & Car Parking.' },
         { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'author', content: 'kriz - https://brandsta.in' },
         { name: 'application-name', content: 'Hotel CAPS' },

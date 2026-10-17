@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Define the data for our hero section
 const heroImages = ref([
-  '/images/pricing/hero/pricing.jpg'
+  '/images/pricing/hero/pricing.webp'
 ]);
 
 const main = ref(null);

@@ -62,7 +62,7 @@ const cateringSplitData = {
   ],
   image: "/images/catering/split.jpg", // Adjust path as needed
   buttonClass: "border-2 border-solid border-[#df4444] text-[#df4444] before:bg-[#df4444]",
-  buttonText: "View Events Hall",
+  buttonText: "View Event Hall",
   buttonLink: "/hall",
   themeTextClass: "text-[#df4444]",
   themeBgClass: "bg-[#df4444]"
@@ -171,7 +171,7 @@ const cateringCtaData = {
   eyebrow: "Ready to Plan Your Event?",
   eyebrowColorClass: "text-[#ff6262]",
   title: "Let's Make Your Occasion Unforgettable.",
-  description: "Get in touch with us today to book our Events Hall.",
+  description: "Get in touch with us today to book our Event Hall.",
   buttonText: "Check Availability",
   buttonLink: "/hall",
   bgGradientClass: "bg-gradient-to-r from-[#7f1d1d] via-[#b91b1b] to-[#d46012]",

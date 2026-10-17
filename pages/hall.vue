@@ -10,7 +10,7 @@ const heroImages = ref([
 const eventsHallIntroData = {
   eyebrow: "Welcome to Hotel CAPS",
   title: "A Space for Every Occasion.\nMemories for a Lifetime.",
-  description: "Hotel CAPS Events Hall is designed to host a wide range of events with elegance and ease. From grand celebrations to corporate meetings, we provide the perfect setting, service, and support to make every event truly special.",
+  description: "Hotel CAPS Event Hall is designed to host a wide range of events with elegance and ease. From grand celebrations to corporate meetings, we provide the perfect setting, service, and support to make every event truly special.",
   image: "/images/hall/intro.jpg", 
   themeTextClass: "text-[#e22473]", 
   themeBgClass: "bg-[#e22473]",
@@ -112,7 +112,7 @@ const eventsHallAssureData = {
     },
     {
       title: "In-house Catering",
-      description: "Delicious multi cuisine menu prepared with quality ingredients.",
+      description: "Delicious multi-cuisine menu prepared with quality ingredients.",
       svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 sm:w-10 sm:h-10"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>`
     },
     {
@@ -132,55 +132,55 @@ const hallGalleryData = {
   images: [
     {
       src: "/images/hall/amenities/1.jpg",
-      alt: "Hotel CAPS Events Hall stage arranged for celebrations and special occasions",
+      alt: "Hotel CAPS Event Hall stage arranged for celebrations and special occasions",
       width: 600,
       height: 400
     },
     {
       src: "/images/hall/amenities/2.jpg",
-      alt: "Hotel CAPS Events Hall with theatre-style seating facing the stage",
+      alt: "Hotel CAPS Event Hall with theatre-style seating facing the stage",
       width: 576,
       height: 400
     },
     {
       src: "/images/hall/amenities/3.jpg",
-      alt: "Hotel CAPS Events Hall arranged with rows of seating for an event",
+      alt: "Hotel CAPS Event Hall arranged with rows of seating for an event",
       width: 533,
       height: 400
     },
     {
       src: "/images/hall/amenities/4.jpg",
-      alt: "Spacious Hotel CAPS Events Hall with seating arranged for guests",
+      alt: "Spacious Hotel CAPS Event Hall with seating arranged for guests",
       width: 600,
       height: 399
     },
     {
       src: "/images/hall/amenities/5.jpg",
-      alt: "Hotel CAPS Events Hall interior prepared for a gathering",
+      alt: "Hotel CAPS Event Hall interior prepared for a gathering",
       width: 519,
       height: 400
     },
     {
       src: "/images/hall/amenities/6.jpg",
-      alt: "Hotel CAPS Events Hall stage and seating area",
+      alt: "Hotel CAPS Event Hall stage and seating area",
       width: 634,
       height: 400
     },
     {
       src: "/images/hall/amenities/7.jpg",
-      alt: "Hotel CAPS Events Hall with spacious seating and illuminated ceiling",
+      alt: "Hotel CAPS Event Hall with spacious seating and illuminated ceiling",
       width: 533,
       height: 400
     },
     {
       src: "/images/hall/amenities/8.jpg",
-      alt: "Interior corridor providing access to the Hotel CAPS Events Hall",
+      alt: "Interior corridor providing access to the Hotel CAPS Event Hall",
       width: 711,
       height: 400
     },
     {
       src: "/images/hall/amenities/9.jpg",
-      alt: "Hotel CAPS Events Hall stage with red backdrop and decorative seating",
+      alt: "Hotel CAPS Event Hall stage with red backdrop and decorative seating",
       width: 600,
       height: 400
     },
@@ -213,7 +213,7 @@ const hallCtaData = {
 };
 
 // 1. Core Meta Values
-const pageTitle = 'Auditorium & Events Hall | Hotel CAPS - Koduvayur, Palakkad'
+const pageTitle = 'Auditorium & Event Hall | Hotel CAPS - Koduvayur, Palakkad'
 const pageDesc = 'Plan weddings, receptions, parties, meetings & celebrations at Hotel CAPS - Koduvayur, Palakkad. Spacious AC Auditorium with A/V, catering, lift & car parking.'
 const canonicalUrl = 'https://capsfamily.in/hall'
 const ogImage = 'https://capsfamily.in/images/favicons/caps-hall-og-image.jpg'
@@ -225,7 +225,7 @@ useCapsSeo({
   canonicalUrl,
   ogImage,
   pageType: 'hall',
-  breadcrumbName: 'Auditorium & Events Hall'
+  breadcrumbName: 'Auditorium & Event Hall'
 })
 
 </script>
@@ -234,7 +234,7 @@ useCapsSeo({
   <div>
     <PageHero 
       eyebrow="Make Your Occasions Unforgettable."
-      title="Our Events Hall"
+      title="Our Event Hall"
       subtitle="The perfect venue for your special moments - every celebration, meeting and milestone."
       :images="heroImages"
       imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-pink-950/70 to-black/70 z-5"

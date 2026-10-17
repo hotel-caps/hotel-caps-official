@@ -4,7 +4,7 @@ import PageHero from '~/components/PageHero.vue';
 
 // Define the data for our hero section
 const heroImages = ref([
-  '/images/rooms/hero/rooms.jpg'
+  '/images/rooms/hero/rooms.webp'
 ]);
 
 // Your page-specific JSON payload for Intro Section
@@ -209,7 +209,7 @@ const roomsGalleryData = {
 
 const roomsCtaData = {
   eyebrow: "Need a Comfortable Stay?",
-  eyebrowColorClass: "text-[#12a5e6]",
+  eyebrowColorClass: "text-[#2285e6]",
   title: "Reserve Your Sanctuary with Us.",
   description: "Enjoy luxurious amenities, daily housekeeping, and peaceful relaxation. Book your stay now.",
   buttonText: "Check Pricing",
@@ -246,7 +246,7 @@ useCapsSeo({
       subtitle="Thoughtfully designed rooms and suites for a comfortable stay every time."
       :images="heroImages"
       imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-blue-950/70 to-black/70 z-5"
-      eyebrowColorClass="text-[#12a5e6]"
+      eyebrowColorClass="text-[#2285e6]"
       themeColorClass="text-[#1e40af]"
     />
 

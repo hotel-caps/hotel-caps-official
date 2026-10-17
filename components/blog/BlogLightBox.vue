@@ -3,7 +3,7 @@
     <Transition name="lightbox-fade">
       <div
         v-if="isOpen && currentItem"
-        class="fixed inset-0 z-[9999] bg-black/85 backdrop-blur-md flex items-center justify-center select-none"
+        class="fixed inset-0 z-[1000000] bg-black/85 backdrop-blur-md flex items-center justify-center select-none"
         role="dialog"
         aria-modal="true"
         @click="emit('close')"

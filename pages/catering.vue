@@ -58,7 +58,7 @@ const cateringSplitData = {
     "Hygienic preparation and safe handling",
     "Elegant presentation, setup and service",
     "Wide variety of cuisines and dishes",
-    "Outdoor and indoor Services for any event size"
+    "Outdoor and indoor services for any event size"
   ],
   image: "/images/catering/split.jpg", // Adjust path as needed
   buttonClass: "border-2 border-solid border-[#df4444] text-[#df4444] before:bg-[#df4444]",
@@ -96,7 +96,7 @@ const cateringAssureData = {
     },
     {
       title: "Professional Service",
-      description: "Trained staff ensures seamless service and guest satisfaction.",
+      description: "Our trained team ensures seamless service and guest satisfaction.",
       // User Check SVG
       svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 sm:w-10 sm:h-10"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>`
     },

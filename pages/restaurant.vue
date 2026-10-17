@@ -45,12 +45,12 @@ const restaurantIntroData = {
 
 const restaurantSplitData = {
   eyebrow: "Why Choose Us?",
-  title: "flavours You Love.\nService You Trust.",
+  title: "Flavours You Love.\nService You Trust.",
   description: "We combine great taste, a cozy atmosphere, and attentive service to create a dining experience you'll love.",
   bullets: [
     "Variety of cuisines to suit every mood",
     "Skilled chefs with a passion for perfection",
-    "Clean, comfortable, and family-friendly ambiance",
+    "Clean, comfortable, and family-friendly ambience",
     "Quality service with attention to detail"
   ],
   image: "/images/restaurant/split.jpg", // Adjust path as needed
@@ -123,7 +123,7 @@ const restaurantAssureData = {
 
 const restaurantGalleryData = {
   eyebrow: "Our Delicacies",
-  title: "flavours That Speak for Us",
+  title: "Flavours That Speak for Us",
   themeTextClass: "text-[#03a661]",
   themeBgClass: "bg-[#03a661]",
 
@@ -154,7 +154,7 @@ const restaurantGalleryData = {
     },
     {
       src: "/images/restaurant/food/5.jpg",
-      alt: "Bread toast served with a savory side dish",
+      alt: "Bread toast served with a savoury side dish",
       width: 400,
       height: 400
     },
@@ -321,7 +321,7 @@ useCapsSeo({
 <template>
   <div>
     <PageHero 
-      eyebrow="Global flavours. Local Freshness."
+      eyebrow="Global Flavours. Local Freshness."
       title="Our Restaurant"
       subtitle="Savour a world of culinary delights crafted uniquely for your taste."
       :images="heroImages"

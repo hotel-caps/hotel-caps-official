@@ -88,10 +88,10 @@
               <span class="w-8 h-[1px] bg-[#d99706]"></span>
               <span>{{ titleSlide.eyebrow }}</span>
             </h3>
-            <h1 class="font-display text-[2.5rem] sm:text-5xl lg:text-6xl text-white font-light leading-[1.15]">
+            <h2 class="font-display text-[2.5rem] sm:text-5xl lg:text-6xl text-white font-light leading-[1.15]">
               {{ titleSlide.titleMain }} 
               <span class="italic text-[#d99706] font-normal">{{ titleSlide.titleItalic }}</span>
-            </h1>
+            </h2>
           </div>
 
           <!-- 2. CONTENT SLIDES -->

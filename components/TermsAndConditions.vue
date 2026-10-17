@@ -7,9 +7,9 @@
         <span class="legal-header-item block font-['Julee'] text-xl sm:text-2xl text-zinc-500 mb-3">
           {{ termsData.eyebrow }}
         </span>
-        <h1 class="legal-header-item font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-zinc-900 tracking-tight mb-6">
+        <h2 class="legal-header-item font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-zinc-900 tracking-tight mb-6">
           {{ termsData.title }}
-        </h1>
+        </h2>
         <div class="legal-header-item w-24 h-1 bg-zinc-200 mx-auto mb-6"></div>
         <p class="legal-header-item font-sans text-sm sm:text-base text-zinc-500 uppercase tracking-widest">
           Last Updated: {{ termsData.lastUpdated }}

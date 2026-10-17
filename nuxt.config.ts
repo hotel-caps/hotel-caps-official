@@ -24,7 +24,7 @@ export default defineNuxtConfig({
 
   // 1. Site configuration for Sitemap & Robots
   site: {
-    url: 'https://capsfamily.in',
+    url: 'https://www.capsfamily.in',
     name: 'Hotel CAPS'
   },
 

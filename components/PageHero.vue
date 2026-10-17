@@ -115,9 +115,9 @@ onUnmounted(() => {
         </span>
 
         <!-- Main Title (Strict Capitalization + Defined Serif Font) -->
-        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold lg:font-semibold tracking-widest leading-tight capitalize mb-3">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold lg:font-semibold tracking-widest leading-tight capitalize mb-3">
           {{ title }}
-        </h2>
+        </h1>
         
         <!-- Subtitle (Inter / Sans-serif + Scaled Down) -->
         <p class="font-sans text-base md:text-lg lg:text-xl mt-3 sm:mt-5 font-normal tracking-wide leading-relaxed">

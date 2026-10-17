@@ -68,10 +68,10 @@ onMounted(() => {
       
       <!-- Paragraph with Styled Keywords -->
       <div class="about-text-container">
-        <h1 
+        <p 
           class="about-text font-display text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-white leading-relaxed md:leading-loose  lg:leading-loose xl:leading-loose tracking-wider md:tracking-widest justify-center text-center font-body"
           v-html="aboutParagraph"
-        ></h1>
+        ></p>
       </div>
 
     </div>

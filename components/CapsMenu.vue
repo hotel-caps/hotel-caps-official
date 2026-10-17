@@ -11,9 +11,13 @@
       <div class="flex flex-wrap items-center justify-end gap-4 mb-8">
         
         <!-- Veg / Non-Veg Filter -->
-        <div 
+        <button 
+          type="button"
+          role="switch"
+          :aria-checked="showOnlyVeg"
+          aria-label="Toggle Vegetarian Only"
           @click="showOnlyVeg = !showOnlyVeg"
-          class="flex items-center bg-[#2a2a2a] border border-[#2a2a2a] p-1 rounded-full cursor-pointer shadow-sm hover:shadow-md transition-all duration-300 select-none"
+          class="flex items-center bg-[#2a2a2a] border border-[#2a2a2a] p-1 rounded-full cursor-pointer shadow-sm hover:shadow-md transition-all duration-300 select-none outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0D13]"
         >
           <div :class="['px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase transition-colors flex items-center gap-1.5', !showOnlyVeg ? 'bg-red-600 text-white shadow-inner' : 'text-zinc-400 hover:text-zinc-300']">
             <div class="w-2 h-2 rounded-full border border-current flex items-center justify-center p-[1px]"><div class="w-full h-full rounded-full bg-current"></div></div> All
@@ -21,12 +25,16 @@
           <div :class="['px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase transition-colors flex items-center gap-1.5', showOnlyVeg ? 'bg-green-600 text-white shadow-inner' : 'text-zinc-400 hover:text-zinc-300']">
             <div class="w-2 h-2 rounded-full border border-current flex items-center justify-center p-[1px]"><div class="w-full h-full rounded-full bg-current"></div></div> Veg
           </div>
-        </div>
+        </button>
 
         <!-- Light / Dark Mode -->
-        <div 
+        <button 
+          type="button"
+          role="switch"
+          :aria-checked="isDark"
+          aria-label="Toggle Dark Mode"
           @click="isDark = !isDark"
-          class="flex items-center bg-[#2a2a2a] border border-[#2a2a2a] p-1 rounded-full cursor-pointer shadow-sm hover:shadow-md transition-all duration-300 select-none"
+          class="flex items-center bg-[#2a2a2a] border border-[#2a2a2a] p-1 rounded-full cursor-pointer shadow-sm hover:shadow-md transition-all duration-300 select-none outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0D13]"
         >
           <div :class="['px-5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase transition-colors', !isDark ? 'bg-[#d4af37] text-white shadow-inner' : 'text-zinc-400 hover:text-zinc-300']">
             Light
@@ -34,7 +42,7 @@
           <div :class="['px-5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase transition-colors', isDark ? 'bg-[#d4af37] text-black shadow-inner' : 'text-zinc-400 hover:text-zinc-300']">
             Dark
           </div>
-        </div>
+        </button>
 
       </div>
 

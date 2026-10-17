@@ -85,10 +85,10 @@
                   </p>
 
                   <!-- Dual-Tone Title -->
-                  <h1 class="text-[55px] sm:text-[75px] font-bold tracking-widest font-display uppercase leading-none drop-shadow-sm mb-4">
+                  <h2 class="text-[55px] sm:text-[75px] font-bold tracking-widest font-display uppercase leading-none drop-shadow-sm mb-4">
                     <span class="text-[#0f172a]">TODAY'S</span>
                     <span class="text-[#b47525] ml-2 sm:ml-4">SPECIALS</span>
-                  </h1>
+                  </h2>
 
                   <!-- Intro Paragraph (Moved above the underline as requested) -->
                   <p class="text-[18px] sm:text-[22px] tracking-wide text-[#0f172a]/90 font-sans font-medium mb-5">
@@ -189,10 +189,10 @@
                     <span> {{ liveDate.weekday }} </span>
                   </p>
 
-                  <h1 class="text-[55px] sm:text-[75px] font-bold tracking-widest font-display uppercase leading-none drop-shadow-sm mb-4">
+                  <h2 class="text-[55px] sm:text-[75px] font-bold tracking-widest font-display uppercase leading-none drop-shadow-sm mb-4">
                     <span class="text-[#0f172a]">CAPS</span>
                     <span class="text-[#b47525] ml-2 sm:ml-4">SIGNATURES</span>
-                  </h1>
+                  </h2>
 
                   <p class="text-[24px] sm:text-[28px] tracking-[0.2em] uppercase text-[#0f172a]/90 font-sans font-bold mb-5">
                     {{ activeSlide.month }}
@@ -257,9 +257,9 @@
               <!-- Shared Center Title Header -->
               <div class="flex flex-col items-center justify-center w-full mt-[10px] mb-[40px] live-fade-el opacity-0 translate-y-[-20px]">
                 <div class="w-[350px] h-[2px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mb-5 opacity-80"></div>
-                <h1 class="text-[85px] font-display font-bold tracking-[0.1em] uppercase text-white shadow-black drop-shadow-2xl text-center leading-none">
+                <h2 class="text-[85px] font-display font-bold tracking-[0.1em] uppercase text-white shadow-black drop-shadow-2xl text-center leading-none">
                   {{ activeSlide.title }}
-                </h1>
+                </h2>
                 <!-- Intro Paragraph (Moved above the underline as requested) -->
                 <p class="text-[18px] sm:text-[22px] tracking-wide text-white/90 font-sans font-medium mt-6">
                   {{ activeSlide.subtitle }}
@@ -389,10 +389,10 @@
               <div class="absolute top-[280px] left-[70px] z-20">
                 
                 <!-- Scaled down Main Title -->
-                <h1 class="text-[80px] font-display font-bold leading-[1.1] tracking-tighter drop-shadow-lg live-del-anim opacity-0 translate-x-[-30px]">
+                <h2 class="text-[80px] font-display font-bold leading-[1.1] tracking-tighter drop-shadow-lg live-del-anim opacity-0 translate-x-[-30px]">
                   FOOD.<br/>
                   <span class="text-[#2563eb] text-[100px] mb-[30px]">DELIVERED.</span>
-                </h1>
+                </h2>
                 
                 <!-- Scaled down Subtitle -->
                 <p class="text-[30px] font-sans font-bold text-gray-800 my-[15px] leading-tight live-del-anim drop-shadow-sm opacity-0 translate-x-[-30px]">

@@ -33,10 +33,14 @@
             @mouseenter="openDropdownOnHover(navItem.text)"
             @mouseleave="closeDropdownOnMouseLeave"
           >
-            <!-- Main navigation link -->
-            <div
+            <!-- Main navigation link / trigger -->
+            <button
+              type="button"
               @click.prevent="toggleDropdown(navItem.subLinks.length > 0 ? navItem.text : null)"
-              class="flex items-center xl:text-lg text-white font-display tracking-wider transition-all duration-300"
+              @keydown.esc="closeDropdownOnMouseLeave"
+              :aria-haspopup="navItem.subLinks.length > 0 ? 'menu' : false"
+              :aria-expanded="navItem.subLinks.length > 0 ? (activeDropdown === navItem.text) : undefined"
+              class="flex items-center xl:text-lg text-white font-display tracking-wider transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-[#d18108] focus-visible:ring-offset-4 focus-visible:ring-offset-[#0B0D13] rounded-sm"
               :class="[
                 navItem.mainHoverClass, 
                 activeDropdown === navItem.text ? navItem.mainHoverClass.split(' ')[0].replace('hover:', '') : ''
@@ -49,7 +53,7 @@
                 class="ml-1.5 transition-transform duration-300 opacity-70"
                 :class="{ 'rotate-180': activeDropdown === navItem.text }" 
               />
-            </div>
+            </button>
 
             <!-- Dropdown Menu -->
             <Transition name="dropdown">
@@ -70,7 +74,7 @@
                     <NuxtLink 
                       :to="subLink.link" 
                       @click="activeDropdown = null"
-                      class="flex items-center h-11 px-4 text-sm font-medium text-gray-200 rounded-lg transition-colors duration-200"
+                      class="flex items-center h-11 px-4 text-sm font-medium text-gray-200 rounded-lg transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-[#d18108]"
                       :class="subLink.hoverClass"
                     >
                       <component :is="subLink.icon" :size="18" class="mr-3 opacity-70" />

@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Data for the feature cards. To add or change a card, you only need to edit this array.
 const features = ref([
   {
-    image: '/images/home/plan-cards/rooms.jpg',
+    image: '/images/home/plan-cards/rooms.webp',
     alt: 'Elegant hotel room with a comfortable bed',
     title: 'Book a Stay',
     description: 'Discover our elegant rooms and suites designed for your ultimate comfort.',
@@ -18,7 +18,7 @@ const features = ref([
     buttonClass: 'bubble-button-blue'
   },
   {
-    image: '/images/home/plan-cards/restaurant.jpg',
+    image: '/images/home/plan-cards/restaurant.webp',
     alt: 'Modern restaurant with stylish seating',
     title: 'Family Dinner',
     description: 'Treat your loved ones to a memorable dining experience at our restaurant.',
@@ -27,7 +27,7 @@ const features = ref([
     buttonClass: 'bubble-button-green'
   },
   {
-    image: '/images/home/plan-cards/catering.jpg',
+    image: '/images/home/plan-cards/catering.webp',
     alt: 'Freshly prepared catering spread for special occasions',
     title: 'Catering for Events',
     description: 'Serve your special occasions with our flavourful catering services.',

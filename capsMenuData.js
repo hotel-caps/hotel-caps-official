@@ -1627,7 +1627,7 @@ export const capsMenuData = ref([
     "image": "/images/menu/items/shawarma_kuboos_plate.jpg",
     "alt": "Shawarma Kuboos Plate deconstructed generously served sliced bread",
     "specializations": [{ "name": "Regular", "price": 140, "isVeg": false }],
-    "offers": "Buy 2 Get 1 Free",
+    "offers": "",
   },
   {
     "id": 130,
@@ -1651,7 +1651,7 @@ export const capsMenuData = ref([
     "image": "/images/menu/items/shawarma_kuboos_cheese_plate.jpg",
     "alt": "Shawarma Kuboos Cheese Plate loaded meat absolutely smothered gooey",
     "specializations": [{ "name": "Regular", "price": 160, "isVeg": false }],
-    "offers": "Buy 2 Get 1 Free",
+    "offers": "",
   },
   {
     "id": 132,
@@ -1675,7 +1675,7 @@ export const capsMenuData = ref([
     "image": "/images/menu/items/shawarma_kuboos_peri_peri_plate.jpg",
     "alt": "Shawarma Kuboos Peri Peri Plate fiery chicken chunks sharing plate",
     "specializations": [{ "name": "Regular", "price": 160, "isVeg": false }],
-    "offers": "Buy 2 Get 1 Free",
+    "offers": "",
   },
   {
     "id": 134,
@@ -1699,7 +1699,7 @@ export const capsMenuData = ref([
     "image": "/images/menu/items/shawarma_kuboos_full_meat_plate.jpg",
     "alt": "Shawarma Kuboos Full Meat Plate ultimate carnivore massive portion pure",
     "specializations": [{ "name": "Regular", "price": 210, "isVeg": false }],
-    "offers": "Buy 2 Get 1 Free",
+    "offers": "",
   },
   {
     "id": 136,
@@ -1735,7 +1735,7 @@ export const capsMenuData = ref([
     "image": "/images/menu/items/shawarma_romali_rotti_plate.jpg",
     "alt": "Shawarma Rumali Rotti Plate delicious openly folded freshly",
     "specializations": [{ "name": "Regular", "price": 150, "isVeg": false }],
-    "offers": "Buy 2 Get 1 Free",
+    "offers": "",
   },
   {
     "id": 139,
@@ -1759,7 +1759,7 @@ export const capsMenuData = ref([
     "image": "/images/menu/items/shawarma_romali_rotti_cheese_plate.jpg",
     "alt": "Shawarma Rumali Rotti Cheese Plate smothered presented delicate bread",
     "specializations": [{ "name": "Regular", "price": 170, "isVeg": false }],
-    "offers": "Buy 2 Get 1 Free",
+    "offers": "",
   },
   {
     "id": 141,
@@ -1783,7 +1783,7 @@ export const capsMenuData = ref([
     "image": "/images/menu/items/shawarma_peri_peri_romali_rotti_plate.jpg",
     "alt": "Shawarma Peri Peri Rumali Rotti Plate tangy spicy served open",
     "specializations": [{ "name": "Regular", "price": 170, "isVeg": false }],
-    "offers": "Buy 2 Get 1 Free",
+    "offers": "",
   },
   {
     "id": 143,
@@ -1807,7 +1807,7 @@ export const capsMenuData = ref([
     "image": "/images/menu/items/shawarma_romali_rotti_full_meat.jpg",
     "alt": "Shawarma Rumali Rotti Full Meat massive meat only platter paired perfectly",
     "specializations": [{ "name": "Regular", "price": 220, "isVeg": false }],
-    "offers": "Buy 2 Get 1 Free",
+    "offers": "",
   },
   {
     "id": 145,
@@ -1831,7 +1831,7 @@ export const capsMenuData = ref([
     "image": "/images/menu/items/shawarma_romali_rotti_honey_plate.jpg",
     "alt": "Shawarma Rumali Rotti Honey Plate savoury sweet accompanied fresh thin",
     "specializations": [{ "name": "Regular", "price": 180, "isVeg": false }],
-    "offers": "Buy 2 Get 1 Free",
+    "offers": "",
   },
   {
     "id": 147,
@@ -1855,7 +1855,7 @@ export const capsMenuData = ref([
     "image": "/images/menu/items/shawarma_pollichathu.jpg",
     "alt": "Shawarma Pollichathu unique fusion Arabian meat roasted slowly banana leaf",
     "specializations": [{ "name": "Regular", "price": 190, "isVeg": false }],
-    "offers": "Buy 2 Get 1 Free",
+    "offers": "",
   },
   {
     "id": 149,

@@ -808,7 +808,7 @@ const eventTypes = [
 const staticSlidesData = [
   { format: 'DELIVERY', trackerId: 'delivery' },
   { 
-    format: 'ROOMS', trackerId: 'rooms', title: 'SUITES & ROOMS', subtitle: 'Comfort for every journey.',
+    format: 'ROOMS', trackerId: 'rooms', title: 'LUXURY AC ROOMS', subtitle: 'Comfort for every journey.',
     images: ['/images/rooms/standard/1.jpg', '/images/rooms/deluxe/1.jpg', '/images/rooms/suite/1.jpg'],
     roomDetails: [
       { name: 'STANDARD ROOM', desc: 'Comfortable, elegantly furnished rooms designed for a restful stay.', price: '2,500' },

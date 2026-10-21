@@ -233,7 +233,7 @@ useCapsSeo({
   canonicalUrl,
   ogImage,
   pageType: 'rooms',
-  breadcrumbName: 'Suites & Rooms'
+  breadcrumbName: 'Luxury AC Rooms'
 })
 
 </script>
@@ -242,7 +242,7 @@ useCapsSeo({
   <div>
     <PageHero 
       eyebrow="Rest Easy, Wake Inspired."
-      title="Suites & Rooms"
+      title="Luxury AC Rooms"
       subtitle="Thoughtfully designed rooms and suites for a comfortable stay every time."
       :images="heroImages"
       imageGradientClass="absolute inset-0 bg-gradient-to-r from-black/90 via-blue-950/70 to-black/70 z-5"

@@ -143,7 +143,7 @@ useCapsSeo({
   canonicalUrl,
   ogImage,
   pageType: 'webpage',
-  breadcrumbName: 'Suites & Rooms Pricing'
+  breadcrumbName: 'Luxury Rooms Pricing'
 })
 
 </script>

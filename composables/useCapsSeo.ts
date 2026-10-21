@@ -24,7 +24,7 @@ const SITE_URL = 'https://capsfamily.in'
 // Primary Navigation Sitelinks for Google Search (Perfios-style expandable rows)
 const SITELINK_NAV_ITEMS = [
   {
-    name: 'Suites & Rooms',
+    name: 'Luxury Rooms',
     url: `${SITE_URL}/rooms`,
     description: 'Explore luxury AC suites and rooms with modern amenities, lift facility & ample car parking.'
   },

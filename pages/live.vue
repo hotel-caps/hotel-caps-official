@@ -176,7 +176,7 @@
             <!-- ---------------------------------------- -->
             <!-- FORMAT: MONTHLY SIGNATURES               -->
             <!-- ---------------------------------------- -->
-            <div v-else-if="activeSlide.format === 'SIGNATURES'" class="w-full h-full flex flex-col pt-[50px] pb-[40px] px-[60px] live-slide-wrapper">
+            <!-- <div v-else-if="activeSlide.format === 'SIGNATURES'" class="w-full h-full flex flex-col pt-[50px] pb-[40px] px-[60px] live-slide-wrapper">
               
               <div class="flex justify-between items-start w-full mb-[40px] px-[20px] live-fade-el opacity-0 translate-y-[-20px]">
                 <div class="flex flex-col items-center flex-1 text-center">
@@ -247,7 +247,7 @@
                 </div>
 
               </div>
-            </div>
+            </div> -->
 
             <!-- ---------------------------------------- -->
             <!-- FORMAT B: UNIVERSAL (ROOMS, EVENTS, CATERING)-->

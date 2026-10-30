@@ -1,0 +1,102 @@
+{
+  "slug": "top-10-caps-dishes",
+  "layout": "listicle",
+  "showcase": true,
+  "featured": true,
+  "pageTitle": "10 Must-Try Dishes at Hotel CAPS",
+  "pageDesc": "Explore ten food and drink favourites at Hotel CAPS, from comforting soups, starters, main courses, snacks and desserts.",
+  "publishDate": "2026-10-30T00:00:00Z",
+  "author": "Hotel CAPS",
+  "ogImage": "/images/blog/top-10-caps-dishes/og-image.jpg",
+  "coverImage": "/images/blog/top-10-caps-dishes/cover.jpg",
+  "tags": ["Hotel CAPS", "Food", "Local Flavours"],
+  "listicleData": {
+    "titleSlide": {
+      "eyebrow": "A Taste of CAPS",
+      "titleMain": "10 Must-Try Dishes",
+      "titleItalic": "at Hotel CAPS.",
+      "image": "/images/blog/top-10-caps-dishes/title.jpg"
+    },
+    "slides": [
+      {
+        "num": "01",
+        "title": "Variety of Soups",
+        "text": "Start with a comforting bowl of soup. Choose from creamy tomato, mushroom, vegetable or chicken soups, or explore favourites like sweet corn, hot and sour, Manchow, lemon coriander and East Chinese noodle soup.",
+        "image": "/images/blog/top-10-caps-dishes/soups.jpg"
+      },
+      {
+        "num": "02",
+        "title": "Paal Porotta Combo",
+        "text": "Soft, layered Paal Porotta makes a delicious companion to a choice of vegetarian or non-vegetarian curries. Pick your favourite combination and enjoy a comforting meal made for sharing.",
+        "image": "/images/blog/top-10-caps-dishes/paal-porotta.jpg"
+      },
+      {
+        "num": "03",
+        "title": "Paneer Roast & Mushroom Roast",
+        "text": "For a vegetarian favourite, choose paneer or mushroom roast. Both bring a rich, savoury character to the table and pair beautifully with a porotta or your choice of bread.",
+        "image": "/images/blog/top-10-caps-dishes/paneer-mushroom-roast.jpg"
+      },
+      {
+        "num": "04",
+        "title": "Chicken Mughlai, Patiala & Honey Chicken",
+        "text": "Three chicken dishes, three different ways to enjoy them. Choose Chicken Mughlai, Chicken Patiala or Honey Chicken for a satisfying addition to your meal.",
+        "image": "/images/blog/top-10-caps-dishes/chicken-specials.jpg"
+      },
+      {
+        "num": "05",
+        "title": "CAPS Special Biriyani",
+        "text": "Fragrant rice and satisfying flavours make CAPS Special Biriyani a meal to look forward to. With vegetarian and non-vegetarian options, there’s a choice for everyone at the table.",
+        "image": "/images/blog/top-10-caps-dishes/caps-special-biriyani.jpg"
+      },
+      {
+        "num": "06",
+        "title": "Chatti Choru",
+        "text": "Enjoy a generous combination of rice and accompaniments served in a chatti. Available in vegetarian and non-vegetarian options, it brings a variety of flavours together in one memorable meal.",
+        "image": "/images/blog/top-10-caps-dishes/chatti-choru.jpg"
+      },
+      {
+        "num": "07",
+        "title": "Rosemary & Masala Al Faham Mandi",
+        "text": "A generous serving of mandi rice meets grilled Al Faham chicken in two tempting choices: Rosemary and Masala. Bring an appetite and enjoy a meal worth sharing.",
+        "image": "/images/blog/top-10-caps-dishes/al-faham-mandi.jpg"
+      },
+      {
+        "num": "08",
+        "title": "Paal Kappa with Fish, Chicken & Beef",
+        "text": "Creamy Paal Kappa meets your choice of fish curry, chicken curry or beef. Each combination brings its own character to this comforting Kerala favourite.",
+        "image": "/images/blog/top-10-caps-dishes/paal-kappa.jpg"
+      },
+      {
+        "num": "09",
+        "title": "Porotta Shawarma: Plate & Roll",
+        "text": "Enjoy shawarma with the familiar appeal of Kerala porotta. Choose the plate when you want to settle in for a meal, or the roll when you’re in the mood for a handheld bite.",
+        "image": "/images/blog/top-10-caps-dishes/porotta-shawarma.jpg"
+      },
+      {
+        "num": "10",
+        "title": "Avil Milk Specials",
+        "text": "Finish with a refreshing Avil Milk. Choose the classic Normal, the Special with extra treats, or the Tender Coconut variety for a cool, satisfying finish.",
+        "image": "/images/blog/top-10-caps-dishes/avil-milk.jpg"
+      }
+    ],
+    "relatedSlide": {
+      "backgroundImage": "/images/blog/more-than-just-a-meal/cover.jpg",
+      "articles": [
+        {
+          "title": "10 Must-Try Veg Dishes in Palakkad",
+          "date": "12 October 2026",
+          "tag": "Dining",
+          "image": "/images/blog/must-try-veg-palakkad-dishes/cover.jpg",
+          "url": "/blog/must-try-veg-palakkad-dishes"
+        },
+        {
+          "title": "More Than Just a Meal: The Little Things That Make Dining Memorable",
+          "date": "06 October 2026",
+          "tag": "Dining",
+          "image": "/images/blog/more-than-just-a-meal/cover.jpg",
+          "url": "/blog/more-than-just-a-meal"
+        }
+      ]
+    }
+  }
+}

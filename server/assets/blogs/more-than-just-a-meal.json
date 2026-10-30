@@ -246,11 +246,18 @@
         "type": "related-articles",
         "articles": [
           {
-            "thumbnail": "/images/blog/must-try-veg-kerala-dishes-october/cover.jpg",
+            "thumbnail": "/images/blog/must-try-veg-palakkad-dishes/cover.jpg",
             "date": "12 October 2026",
-            "title": "10 Must-Try Vegetarian Kerala Dishes This October",
-            "intro": "Discover the authentic tastes of Kerala with our curated selection of vegetarian dishes.",
-            "link": "/blog/must-try-veg-kerala-dishes-october"
+            "title": "10 Must-Try Vegetarian Dishes in Palakkad",
+            "intro": "Discover the authentic tastes of Palakkad with our curated selection of vegetarian dishes.",
+            "link": "/blog/must-try-veg-palakkad-dishes"
+          },
+          {
+            "thumbnail": "/images/blog/top-10-caps-dishes/cover.jpg",
+            "date": "30 October 2026",
+            "title": "10 Must-Try Dishes at Hotel CAPS",
+            "intro": "Explore ten food and drink favourites at Hotel CAPS, from comforting soups, starters, main courses, snacks and desserts.",
+            "link": "/blog/top-10-caps-dishes"
           }
         ]
       }

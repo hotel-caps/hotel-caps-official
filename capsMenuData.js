@@ -243,7 +243,11 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/dragon-chicken.jpg",
     "alt": "Dragon Chicken fiery Indo Chinese dark soy garlic",
-    "specializations": [{ "name": "Regular", "price": 280, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 300, "isVeg": false },
+      { "name": "Half", "price": 580, "isVeg": false },
+      { "name": "Full", "price": 1050, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -342,7 +346,27 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/paneer_butter_masala.jpg",
     "alt": "Paneer Butter Masala creamy tomato cottage cheese curry",
-    "specializations": [{ "name": "Regular", "price": 210, "isVeg": true }],
+    "specializations": [
+      { "name": "Quarter", "price": 230, "isVeg": true },
+      { "name": "Half", "price": 440, "isVeg": true },
+      { "name": "Full", "price": 840, "isVeg": true }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 235,
+    "name": "Kadai Paneer",
+    "category": "Veg Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Paneer cubes simmered with peppers in robust kadai masala.",
+    "isBestseller": false,
+    "image": "/images/menu/items/kadai-paneer.jpg",
+    "alt": "Kadai Paneer cubes with onions and bell peppers in masala",
+    "specializations": [
+      { "name": "Quarter", "price": 230, "isVeg": true },
+      { "name": "Half", "price": 440, "isVeg": true },
+      { "name": "Full", "price": 850, "isVeg": true }
+    ],
     "offers": "",
   },
   {
@@ -354,7 +378,11 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/veg_kadai.jpg",
     "alt": "Veg Kadai mixed seasonal vegetable traditional wok curry",
-    "specializations": [{ "name": "Regular", "price": 210, "isVeg": true }],
+    "specializations": [
+      { "name": "Quarter", "price": 230, "isVeg": true },
+      { "name": "Half", "price": 440, "isVeg": true },
+      { "name": "Full", "price": 840, "isVeg": true }
+    ],
     "offers": "",
   },
   {
@@ -366,7 +394,27 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/veg_kuruma.jpg",
     "alt": "Veg Kuruma mild coconut vegetable stew South Indian",
-    "specializations": [{ "name": "Regular", "price": 140, "isVeg": true }],
+    "specializations": [
+      { "name": "Quarter", "price": 140, "isVeg": true },
+      { "name": "Half", "price": 250, "isVeg": true },
+      { "name": "Full", "price": 480, "isVeg": true }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 253,
+    "name": "Veg Stew",
+    "category": "Veg Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Mixed vegetables simmered in delicate coconut milk.",
+    "isBestseller": false,
+    "image": "/images/menu/items/veg-stew.jpg",
+    "alt": "Veg Stew coconut milk Kerala curry with mixed vegetables",
+    "specializations": [
+      { "name": "Quarter", "price": 160, "isVeg": true },
+      { "name": "Half", "price": 280, "isVeg": true },
+      { "name": "Full", "price": 530, "isVeg": true }
+    ],
     "offers": "",
   },
   {
@@ -390,7 +438,11 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/mushroom_masala.jpg",
     "alt": "Mushroom Masala button mushrooms spiced tomato gravy",
-    "specializations": [{ "name": "Regular", "price": 200, "isVeg": true }],
+    "specializations": [
+      { "name": "Quarter", "price": 220, "isVeg": true },
+      { "name": "Half", "price": 410, "isVeg": true },
+      { "name": "Full", "price": 790, "isVeg": true }
+    ],
     "offers": "",
   },
   {
@@ -414,7 +466,11 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/mushroom_kadai.jpg",
     "alt": "Mushroom Kadai stir fried bell peppers kadai masala",
-    "specializations": [{ "name": "Regular", "price": 200, "isVeg": true }],
+    "specializations": [
+      { "name": "Quarter", "price": 220, "isVeg": true },
+      { "name": "Half", "price": 410, "isVeg": true },
+      { "name": "Full", "price": 790, "isVeg": true }
+    ],
     "offers": "",
   },
   {
@@ -426,7 +482,27 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/gobi_manchurian.jpg",
     "alt": "Gobi Manchurian crispy cauliflower sweet tangy sauce",
-    "specializations": [{ "name": "Regular", "price": 190, "isVeg": true }],
+    "specializations": [
+      { "name": "Quarter", "price": 210, "isVeg": true },
+      { "name": "Half", "price": 390, "isVeg": true },
+      { "name": "Full", "price": 760, "isVeg": true }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 234,
+    "name": "Chilli Gobi",
+    "category": "Veg Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Crispy cauliflower tossed in a bold chilli-garlic sauce.",
+    "isBestseller": false,
+    "image": "/images/menu/items/chilli-gobi.jpg",
+    "alt": "Chilli Gobi crispy cauliflower in spicy chilli garlic sauce",
+    "specializations": [
+      { "name": "Quarter", "price": 190, "isVeg": true },
+      { "name": "Half", "price": 360, "isVeg": true },
+      { "name": "Full", "price": 680, "isVeg": true }
+    ],
     "offers": "",
   },
   {
@@ -526,15 +602,35 @@ export const capsMenuData = ref([
     "offers": "",
   },
   {
+    "id": 237,
+    "name": "Chettinad Chicken Curry",
+    "category": "Chicken Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Spicy chicken curry with freshly roasted Chettinad masala.",
+    "isBestseller": false,
+    "image": "/images/menu/items/chettinad-chicken-curry.jpg",
+    "alt": "Chettinad Chicken Curry roasted spices rich chicken gravy",
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 1020, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
     "id": 43,
-    "name": "Butter Chicken",
+    "name": "Butter Chicken Masala",
     "category": "Chicken Delights",
     "outlet": "Multi-Cuisine Restaurant",
     "info": "Tender chicken pieces simmered in a world-famous rich, creamy, buttery tomato sauce.",
     "isBestseller": false,
     "image": "/images/menu/items/butter_chicken.jpg",
     "alt": "Butter Chicken creamy buttery tomato sauce tender chicken",
-    "specializations": [{ "name": "Regular", "price": 275, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 285, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 1010, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -546,7 +642,11 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/kadai_chicken.jpg",
     "alt": "Kadai Chicken wok tossed bell peppers crushed coriander",
-    "specializations": [{ "name": "Regular", "price": 260, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 1010, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -570,7 +670,11 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/chicken_kondattam.jpg",
     "alt": "Chicken Kondattam crispy fried fiery red chili sauce",
-    "specializations": [{ "name": "Regular", "price": 270, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 1010, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -582,31 +686,43 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/chilli_chicken_gravy.jpg",
     "alt": "Chilli Chicken Gravy dark spicy soy Indo Chinese gravy",
-    "specializations": [{ "name": "Regular", "price": 270, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 1010, "isVeg": false }
+    ],
     "offers": "",
   },
   {
     "id": 48,
-    "name": "Chilli Chicken Manchurian",
+    "name": "Chicken Manchurian",
     "category": "Chicken Delights",
     "outlet": "Multi-Cuisine Restaurant",
     "info": "A sweet, spicy, and tangy fusion dish loaded with batter-fried chicken pieces.",
     "isBestseller": false,
     "image": "/images/menu/items/chilli_chicken_manchurian.jpg",
     "alt": "Chilli Chicken Manchurian sweet spicy tangy fusion",
-    "specializations": [{ "name": "Regular", "price": 270, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 1010, "isVeg": false }
+    ],
     "offers": "",
   },
   {
     "id": 49,
-    "name": "Ginger Garlic Chicken",
+    "name": "Ginger / Garlic Chicken",
     "category": "Chicken Delights",
     "outlet": "Multi-Cuisine Restaurant",
     "info": "Aromatic and pungent chicken preparation heavily infused with minced ginger and garlic.",
     "isBestseller": false,
     "image": "/images/menu/items/ginger_garlic_chicken.jpg",
     "alt": "Ginger Garlic Chicken aromatic pungent minced aromatics",
-    "specializations": [{ "name": "Regular", "price": 270, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 1010, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -618,7 +734,11 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/chicken_mughlai.jpg",
     "alt": "Chicken Mughlai rich creamy mildly spiced Mughal curry",
-    "specializations": [{ "name": "Regular", "price": 330, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 330, "isVeg": false },
+      { "name": "Half", "price": 610, "isVeg": false },
+      { "name": "Full", "price": 1100, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -630,7 +750,11 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/chicken_patiala.jpg",
     "alt": "Chicken Patiala rich nutty flavourful Punjabi style topped omelet",
-    "specializations": [{ "name": "Regular", "price": 330, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 330, "isVeg": false },
+      { "name": "Half", "price": 610, "isVeg": false },
+      { "name": "Full", "price": 1100, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -642,7 +766,91 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/malabari_chicken_curry.jpg",
     "alt": "Malabari Chicken Curry authentic coastal Kerala simmered coconut milk",
-    "specializations": [{ "name": "Regular", "price": 260, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 270, "isVeg": false },
+      { "name": "Half", "price": 520, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 236,
+    "name": "Achayan Chicken Curry",
+    "category": "Chicken Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Kerala-style chicken curry rich with roasted spices.",
+    "isBestseller": false,
+    "image": "/images/menu/items/achayan-chicken-curry.jpg",
+    "alt": "Achayan Chicken Curry Kerala spiced chicken gravy",
+    "specializations": [
+      { "name": "Quarter", "price": 270, "isVeg": false },
+      { "name": "Half", "price": 520, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 240,
+    "name": "Chicken Kurma",
+    "category": "Chicken Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Tender chicken cooked in a mild, fragrant coconut gravy.",
+    "isBestseller": false,
+    "image": "/images/menu/items/chicken-kurma.jpg",
+    "alt": "Chicken Kurma mild creamy coconut chicken curry",
+    "specializations": [
+      { "name": "Quarter", "price": 260, "isVeg": false },
+      { "name": "Half", "price": 490, "isVeg": false },
+      { "name": "Full", "price": 930, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 241,
+    "name": "Chicken Stew",
+    "category": "Chicken Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Chicken simmered in gentle coconut milk and whole spices.",
+    "isBestseller": false,
+    "image": "/images/menu/items/chicken-stew.jpg",
+    "alt": "Chicken Stew coconut milk curry with chicken and vegetables",
+    "specializations": [
+      { "name": "Quarter", "price": 260, "isVeg": false },
+      { "name": "Half", "price": 490, "isVeg": false },
+      { "name": "Full", "price": 940, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 242,
+    "name": "Chicken Mappas",
+    "category": "Chicken Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Kerala chicken simmered in a lightly spiced coconut gravy.",
+    "isBestseller": false,
+    "image": "/images/menu/items/chicken-mappas.jpg",
+    "alt": "Chicken Mappas creamy Kerala coconut milk chicken curry",
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 243,
+    "name": "Chicken Varattiyathu",
+    "category": "Chicken Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Chicken slow-roasted in a thick, aromatic Kerala masala.",
+    "isBestseller": false,
+    "image": "/images/menu/items/chicken-varattiyathu.jpg",
+    "alt": "Chicken Varattiyathu dark roasted Kerala chicken masala",
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -678,7 +886,11 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/pepper_chicken_masala.jpg",
     "alt": "Pepper Chicken Masala thick flavour packed coating tender crushed",
-    "specializations": [{ "name": "Regular", "price": 270, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 520, "isVeg": false },
+      { "name": "Full", "price": 1010, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -690,7 +902,43 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/pepper_chicken_fry.jpg",
     "alt": "Pepper Chicken Fry intensely spiced dry roasted chunks coated",
-    "specializations": [{ "name": "Regular", "price": 270, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 238,
+    "name": "Chicken Coconut Dry Fry",
+    "category": "Chicken Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Dry-fried chicken with toasted coconut and curry leaves.",
+    "isBestseller": false,
+    "image": "/images/menu/items/chicken-coconut-dry-fry.jpg",
+    "alt": "Chicken Coconut Dry Fry dry roasted chicken with coconut",
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 1020, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 239,
+    "name": "Chicken Coconut Ularthu",
+    "category": "Chicken Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Slow-roasted chicken with coconut, onions and spices.",
+    "isBestseller": false,
+    "image": "/images/menu/items/chicken-coconut-ularthu.jpg",
+    "alt": "Chicken Coconut Ularthu roasted chicken coconut and curry leaves",
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 1020, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -706,6 +954,22 @@ export const capsMenuData = ref([
     "offers": "",
   },
   {
+    "id": 245,
+    "name": "Nadan Beef Fry",
+    "category": "Beef Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Kerala-style beef fried with onions and curry leaves.",
+    "isBestseller": false,
+    "image": "/images/menu/items/nadan-beef-fry.jpg",
+    "alt": "Nadan Beef Fry Kerala beef roasted with curry leaves",
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
     "id": 58,
     "name": "Beef Kondattam",
     "category": "Beef Delights",
@@ -714,7 +978,43 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/beef_kondattam.jpg",
     "alt": "Beef Kondattam intensely spicy deep fried sun dried chilies",
-    "specializations": [{ "name": "Regular", "price": 260, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 300, "isVeg": false },
+      { "name": "Half", "price": 550, "isVeg": false },
+      { "name": "Full", "price": 1050, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 248,
+    "name": "Dragon Beef",
+    "category": "Beef Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Crispy beef tossed in a hot, tangy Indo-Chinese sauce.",
+    "isBestseller": false,
+    "image": "/images/menu/items/dragon-beef.jpg",
+    "alt": "Dragon Beef spicy Indo Chinese glazed beef and peppers",
+    "specializations": [
+      { "name": "Quarter", "price": 300, "isVeg": false },
+      { "name": "Half", "price": 550, "isVeg": false },
+      { "name": "Full", "price": 1050, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 252,
+    "name": "Dragon Beef Kondattam",
+    "category": "Beef Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Deep-fried beef tossed in a fiery, sticky chilli masala.",
+    "isBestseller": false,
+    "image": "/images/menu/items/dragon-beef-kondattam.jpg",
+    "alt": "Dragon Beef Kondattam spicy fried beef in chilli masala",
+    "specializations": [
+      { "name": "Quarter", "price": 300, "isVeg": false },
+      { "name": "Half", "price": 550, "isVeg": false },
+      { "name": "Full", "price": 1050, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -726,7 +1026,27 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/beef_masala.jpg",
     "alt": "Beef Masala thick aromatic slow cooked beef gravy",
-    "specializations": [{ "name": "Regular", "price": 260, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 247,
+    "name": "Beef Poralan",
+    "category": "Beef Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Beef slow-roasted with onions and traditional Kerala spices.",
+    "isBestseller": false,
+    "image": "/images/menu/items/beef-poriyal.jpg",
+    "alt": "Beef Poralan Kerala dry roasted beef with onions",
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -738,7 +1058,59 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/beef_roast.jpg",
     "alt": "Beef Roast dark semi dry pepper onions classic Kerala",
-    "specializations": [{ "name": "Regular", "price": 260, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 290, "isVeg": false },
+      { "name": "Half", "price": 540, "isVeg": false },
+      { "name": "Full", "price": 1010, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 246,
+    "name": "Ginger Beef",
+    "category": "Beef Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Tender beef tossed with ginger in a savoury spiced sauce.",
+    "isBestseller": false,
+    "image": "/images/menu/items/ginger-beef.jpg",
+    "alt": "Ginger Beef stir fried meat with ginger and peppers",
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 249,
+    "name": "Pepper Beef",
+    "category": "Beef Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Beef coated in coarse black pepper and roasted masala.",
+    "isBestseller": false,
+    "image": "/images/menu/items/pepper-beef.jpg",
+    "alt": "Pepper Beef roasted meat with crushed black pepper",
+    "specializations": [
+      { "name": "Quarter", "price": 290, "isVeg": false },
+      { "name": "Half", "price": 560, "isVeg": false },
+      { "name": "Full", "price": 1040, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 250,
+    "name": "Wayanadan Beef Fry",
+    "category": "Beef Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Dark roasted beef with Wayanad-style spices and herbs.",
+    "isBestseller": false,
+    "image": "/images/menu/items/wayanadan-beef-fry.jpg",
+    "alt": "Wayanadan Beef Fry dark spicy Kerala roasted beef",
+    "specializations": [
+      { "name": "Quarter", "price": 290, "isVeg": false },
+      { "name": "Half", "price": 560, "isVeg": false },
+      { "name": "Full", "price": 1040, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -750,7 +1122,11 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/achayan_beef_curry.jpg",
     "alt": "Achayan Beef Curry Christian style robust coconut broth",
-    "specializations": [{ "name": "Regular", "price": 280, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
     "offers": "",
   },
   {
@@ -762,7 +1138,43 @@ export const capsMenuData = ref([
     "isBestseller": false,
     "image": "/images/menu/items/beef_coconut_dry_fry.jpg",
     "alt": "Beef Coconut Dry Fry crispy toasted coconut shards pepper",
-    "specializations": [{ "name": "Regular", "price": 260, "isVeg": false }],
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 244,
+    "name": "Beef Coconut Ularthu",
+    "category": "Beef Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Beef roasted with coconut slices and fragrant spices.",
+    "isBestseller": false,
+    "image": "/images/menu/items/beef-coconut-ularthu.jpg",
+    "alt": "Beef Coconut Ularthu slow roasted beef with coconut",
+    "specializations": [
+      { "name": "Quarter", "price": 300, "isVeg": false },
+      { "name": "Half", "price": 580, "isVeg": false },
+      { "name": "Full", "price": 1110, "isVeg": false }
+    ],
+    "offers": "",
+  },
+  {
+    "id": 251,
+    "name": "Beef Dry Fry",
+    "category": "Beef Delights",
+    "outlet": "Multi-Cuisine Restaurant",
+    "info": "Crisp beef morsels dry-fried with onions and curry leaves.",
+    "isBestseller": false,
+    "image": "/images/menu/items/beef-dry-fry.jpg",
+    "alt": "Beef Dry Fry crispy Kerala beef roasted with coconut",
+    "specializations": [
+      { "name": "Quarter", "price": 280, "isVeg": false },
+      { "name": "Half", "price": 530, "isVeg": false },
+      { "name": "Full", "price": 990, "isVeg": false }
+    ],
     "offers": "",
   },
   {

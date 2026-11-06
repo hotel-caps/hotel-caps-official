@@ -3,6 +3,8 @@ import path from 'path'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
+// npm run optimize-images
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 

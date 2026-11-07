@@ -19,7 +19,7 @@ export interface CapsSeoOptions {
   blogPosts?: Array<{ title: string; intro: string; url: string; coverImage?: string }>
 }
 
-const SITE_URL = 'https://www.capsfamily.in'
+const SITE_URL = 'https://capsfamily.in'
 
 // Primary Navigation Sitelinks for Google Search (Perfios-style expandable rows)
 const SITELINK_NAV_ITEMS = [

@@ -24,7 +24,7 @@ export default defineNuxtConfig({
 
   // 1. Site configuration for Sitemap & Robots
   site: {
-    url: 'https://www.capsfamily.in',
+    url: 'https://capsfamily.in',
     name: 'Hotel CAPS'
   },
 
@@ -114,7 +114,7 @@ export default defineNuxtConfig({
   // 3. Robots.txt Module Configuration
   robots: {
     disallow: [], // An empty array explicitly means "Allow Everything"
-    sitemap: ['https://www.capsfamily.in/sitemap.xml']
+    sitemap: ['https://capsfamily.in/sitemap.xml']
   },
 
   // 3. Keep your Vite chunk splitting for GSAP

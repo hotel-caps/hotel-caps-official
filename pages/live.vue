@@ -374,7 +374,7 @@
                   </span>
               </div>
               <div class="absolute bottom-[40px] right-[80px] live-fade-el opacity-0">
-                 <span class="text-[24px] font-display font-medium tracking-widest text-white/90 drop-shadow-md">www.capsfamily.in</span>
+                 <span class="text-[24px] font-display font-medium tracking-widest text-white/90 drop-shadow-md">capsfamily.in</span>
               </div>
 
             </div>

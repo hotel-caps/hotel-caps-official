@@ -114,7 +114,7 @@ export default defineNuxtConfig({
   // 3. Robots.txt Module Configuration
   robots: {
     disallow: [], // An empty array explicitly means "Allow Everything"
-    sitemap: ['https://capsfamily.in/sitemap.xml']
+    sitemap: ['https://www.capsfamily.in/sitemap.xml']
   },
 
   // 3. Keep your Vite chunk splitting for GSAP

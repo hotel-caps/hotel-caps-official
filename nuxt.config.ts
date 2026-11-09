@@ -205,9 +205,9 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
 
         // Windows PWA & Mobile Meta Tags
-        { name: 'msapplication-TileColor', content: '#ffffff' },
+        { name: 'msapplication-TileColor', content: '#1c1c1c' },
         { name: 'msapplication-TileImage', content: '/images/favicons/ms-icon-144x144.png' },
-        { name: 'theme-color', content: '#ffffff' },
+        { name: 'theme-color', content: '#1c1c1c' },
         { name: 'msapplication-config', content: '/browserconfig.xml' },
 
         // PWA & Mobile Device Customizations

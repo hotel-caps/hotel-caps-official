@@ -1,0 +1,6 @@
+# public/_robots.txt
+User-agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://capsfamily.in/sitemap.xml

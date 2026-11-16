@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.ts
 // import { blogsData } from './data/blogs.js'
 
 // Universal core cache tiers
@@ -7,25 +7,28 @@ const baseImageWidths = [300, 600, 1000, 1200, 2000]
 export default defineNuxtConfig({
   compatibilityDate: '2026-07-30',
   ssr: true,
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   devServer: {
-    host: '0.0.0.0', // e.g., '0.0.0.0' for external access
-    port: 3002, // or your desired port
+    host: '0.0.0.0',
+    port: 3002,
   },
 
   modules: [
-    '@nuxtjs/tailwindcss', 
-    '@nuxtjs/sitemap', 
-    '@nuxtjs/robots', '@nuxt/image', 
-    '@nuxt/fonts', 
-    '@vercel/analytics/nuxt', 
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+    '@nuxt/image',
+    '@nuxt/fonts',
+    '@vercel/analytics/nuxt',
     '@vercel/speed-insights/nuxt'
   ],
 
-  // 1. Site configuration for Sitemap & Robots
+  // 1. Site configuration for Sitemap & Robots (Forced Production Indexable)
   site: {
     url: 'https://capsfamily.in',
-    name: 'Hotel CAPS'
+    name: 'Hotel CAPS',
+    indexable: true,
+    env: 'production'
   },
 
   image: {
@@ -68,17 +71,17 @@ export default defineNuxtConfig({
 
   fonts: {
     defaults: {
-      styles: ['normal'], 
+      styles: ['normal'],
       subsets: ['latin'],
     },
     families: [
-      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700], global: true },
-      { name: 'Faculty Glyphic', provider: 'google', weights: [400, 500, 600, 700], global: true },
-      { name: 'Julee', provider: 'google', weights: [400], global: true }
+      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700], global: true, preload: true },
+      { name: 'Faculty Glyphic', provider: 'google', weights: [400], global: true, preload: true },
+      { name: 'Julee', provider: 'google', weights: [400], global: true, preload: false }
     ]
   },
 
-  // The modern, stable way to inline component CSS
+  // Inline component CSS to eliminate render-blocking requests
   features: {
     inlineStyles: true
   },
@@ -111,20 +114,23 @@ export default defineNuxtConfig({
     ]
   },
 
-  // 3. Robots.txt Module Configuration
+  // 3. Robots.txt Module Configuration (Explicitly Open to All Search Crawlers)
   robots: {
-    disallow: [], // An empty array explicitly means "Allow Everything"
+    blockNonSeoBots: false,
+    blockAiBots: false,
+    allow: ['/'],
+    disallow: [],
     sitemap: ['https://capsfamily.in/sitemap.xml']
   },
 
-  // 3. Keep your Vite chunk splitting for GSAP
+  // 4. Keep Vite chunk splitting for GSAP
   vite: {
     build: {
       rollupOptions: {
         output: {
           manualChunks(id) {
-            if (id.includes('node_modules/gsap')) { return 'gsap-core'; }
-            if (id.includes('node_modules/vue')) { return 'vue-core'; }
+            if (id.includes('node_modules/gsap')) { return 'gsap-core' }
+            if (id.includes('node_modules/vue')) { return 'vue-core' }
           }
         }
       }
@@ -132,6 +138,9 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    '/robots.txt': { prerender: true },
+    '/sitemap.xml': { prerender: true },
+
     // Core Navigation & Content (100% Static Prerendered at Build Time)
     '/': { prerender: true },
     '/about': { prerender: true },
@@ -143,7 +152,7 @@ export default defineNuxtConfig({
     '/catering': { prerender: true },
     '/contact': { prerender: true },
 
-    // Editorial Blog Ecosystem (Prerendered + ISR Edge Cached)
+    // Editorial Blog Ecosystem
     '/blog': { prerender: true },
     '/blog/**': { prerender: true },
 
@@ -157,18 +166,19 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    // Tells the Nitro engine to compress the pre-rendered HTML files
-    // further reducing the initial payload for mobile devices.
     compressPublicAssets: true,
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/blog']
+      routes: [
+        '/robots.txt',
+        '/sitemap.xml',
+        '/',
+        '/blog'
+      ]
     }
   },
 
   experimental: {
-    // Ensures Nuxt extracts the payloads for static routes so the Vue 
-    // router stays lightning fast during client-side navigation.
     payloadExtraction: true
   },
 
@@ -182,29 +192,50 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
-      
+
       meta: [
-        { name: 'description', content: 'Stay, Dine & Celebrate at Hotel CAPS - Koduvayur, Palakkad. AC Luxury Rooms, Multi-Cuisine Restaurant & Auditorium. Catering, Free Delivery, Lift & Car Parking.' },
+        {
+          name: 'description',
+          content: 'Stay, Dine & Celebrate at Hotel CAPS - Koduvayur, Palakkad. AC Luxury Rooms, Multi-Cuisine Restaurant & Auditorium. Catering, Free Delivery, Lift & Car Parking.'
+        },
         { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'author', content: 'kriz - https://brandsta.in' },
         { name: 'application-name', content: 'Hotel CAPS' },
 
-        // Local Business Geographic Coordinates 
+        // Local Business Geographic Coordinates (Koduvayur, Palakkad, Kerala)
         { name: 'geo.region', content: 'IN-KL' },
         { name: 'geo.placename', content: 'Koduvayur, Palakkad' },
-        { name: 'geo.position', content: '10.680926464534636;76.65040838503162' }, 
+        { name: 'geo.position', content: '10.680926464534636;76.65040838503162' },
         { name: 'ICBM', content: '10.680926464534636, 76.65040838503162' },
 
-        // Global Social Layout Standards
+        // Global Social Layout Standards (1200x630 JPG Fallback)
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'en_IN' },
         { property: 'og:site_name', content: 'Hotel CAPS' },
+        { property: 'og:url', content: 'https://capsfamily.in/' },
+        { property: 'og:title', content: 'Hotel CAPS - Koduvayur | AC Rooms, Restaurant & Auditorium' },
+        {
+          property: 'og:description',
+          content: 'Stay, Dine & Celebrate at Hotel CAPS - Koduvayur, Palakkad. AC Luxury Rooms, Multi-Cuisine Restaurant & Auditorium. Catering, Free Delivery, Lift & Car Parking.'
+        },
+        { property: 'og:image', content: 'https://capsfamily.in/images/og/home.jpg' },
+        { property: 'og:image:secure_url', content: 'https://capsfamily.in/images/og/home.jpg' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
         { property: 'og:image:type', content: 'image/jpeg' },
-        { name: 'twitter:card', content: 'summary_large_image' },
+        { property: 'og:image:alt', content: 'Hotel CAPS - Koduvayur, Palakkad' },
 
-        // Windows PWA & Mobile Meta Tags
+        // Twitter / X Layout Standards
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:url', content: 'https://capsfamily.in/' },
+        { name: 'twitter:title', content: 'Hotel CAPS - Koduvayur | AC Rooms, Restaurant & Auditorium' },
+        {
+          name: 'twitter:description',
+          content: 'Stay, Dine & Celebrate at Hotel CAPS - Koduvayur, Palakkad. AC Luxury Rooms, Multi-Cuisine Restaurant & Auditorium. Catering, Free Delivery, Lift & Car Parking.'
+        },
+        { name: 'twitter:image', content: 'https://capsfamily.in/images/og/home.jpg' },
+
+        // Windows PWA & Mobile Meta Tags (#1c1c1c Unified)
         { name: 'msapplication-TileColor', content: '#1c1c1c' },
         { name: 'msapplication-TileImage', content: '/images/favicons/ms-icon-144x144.png' },
         { name: 'theme-color', content: '#1c1c1c' },
@@ -218,6 +249,8 @@ export default defineNuxtConfig({
       ],
 
       link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+
         // Apple Icons
         { rel: 'apple-touch-icon', sizes: '57x57', href: '/images/favicons/apple-icon-57x57.png' },
         { rel: 'apple-touch-icon', sizes: '60x60', href: '/images/favicons/apple-icon-60x60.png' },
@@ -230,11 +263,13 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/favicons/apple-icon-180x180.png' },
         { rel: 'apple-touch-icon', sizes: '167x167', href: '/images/favicons/apple-icon.png' },
         { rel: 'apple-touch-icon', sizes: '190x190', href: '/images/favicons/apple-icon-precomposed.png' },
+
         // Standard Favicons
         { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/images/favicons/android-icon-192x192.png' },
-        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicons/favicon-32x32.png' },
         { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/images/favicons/favicon-96x96.png' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicons/favicon-32x32.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicons/favicon-16x16.png' },
+
         // Web Manifest
         { rel: 'manifest', crossorigin: 'use-credentials', href: '/manifest.json' }
       ]

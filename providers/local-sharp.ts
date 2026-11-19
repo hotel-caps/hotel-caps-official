@@ -1,9 +1,6 @@
 import { defineProvider } from '@nuxt/image/runtime'
 
 export default defineProvider({
-  // Name property is intentionally removed here to fix ts(2353)
-
-  // Options parameter is kept intact to fix ts(2322)
   getImage(src: string, options: any) {
     const modifiers = options?.modifiers || {}
 
@@ -12,8 +9,14 @@ export default defineProvider({
       return { url: '' }
     }
 
-    // 2. Ignore SVGs, GIFs, or external URLs (http/https)
-    if (src.endsWith('.svg') || src.endsWith('.gif') || src.startsWith('http')) {
+    // 2. Ignore SVGs, GIFs, favicons, OG cards, or external URLs (http/https)
+    if (
+      src.endsWith('.svg') ||
+      src.endsWith('.gif') ||
+      src.startsWith('http') ||
+      src.startsWith('/images/favicons/') ||
+      src.startsWith('/images/og/')
+    ) {
       return { url: src }
     }
 

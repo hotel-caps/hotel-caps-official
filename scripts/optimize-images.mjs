@@ -17,13 +17,17 @@ const uniqueWidths = [...new Set([...screens, ...baseImageWidths])].sort((a, b) 
 const inputDir = path.resolve(__dirname, '../public/images')
 const outputDir = path.resolve(__dirname, '../public/_img')
 
+// Ignored folders inside /public/images that must NEVER become responsive WebPs
+const ignoredFolders = new Set(['favicons', 'og'])
+
 function getAllFiles(dirPath, arrayOfFiles = []) {
   if (!fs.existsSync(dirPath)) return arrayOfFiles
-  
+
   const files = fs.readdirSync(dirPath)
   files.forEach(file => {
     const fullPath = path.join(dirPath, file)
     if (fs.statSync(fullPath).isDirectory()) {
+      if (ignoredFolders.has(file)) return // Skip /favicons and /og completely
       arrayOfFiles = getAllFiles(fullPath, arrayOfFiles)
     } else {
       const ext = path.extname(file).toLowerCase()
@@ -40,6 +44,10 @@ async function processImages() {
   const files = getAllFiles(inputDir)
   let generated = 0
   let skipped = 0
+
+  for (const folder of ignoredFolders) {
+    fs.rmSync(path.join(outputDir, folder), { recursive: true, force: true })
+  }
 
   for (const file of files) {
     const relativePath = path.relative(inputDir, file)

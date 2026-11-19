@@ -249,7 +249,7 @@ export default defineNuxtConfig({
       ],
 
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', sizes: '32x32', href: '/favicon.ico' },
 
         // Apple Icons
         { rel: 'apple-touch-icon', sizes: '57x57', href: '/images/favicons/apple-icon-57x57.png' },
@@ -264,9 +264,10 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', sizes: '167x167', href: '/images/favicons/apple-icon.png' },
         { rel: 'apple-touch-icon', sizes: '190x190', href: '/images/favicons/apple-icon-precomposed.png' },
 
-        // Standard Favicons
+        // Standard Favicons (192, 96, 48 = #1c1c1c square for Google | 32, 16 = transparent for browser tabs)
         { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/images/favicons/android-icon-192x192.png' },
         { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/images/favicons/favicon-96x96.png' },
+        { rel: 'icon', type: 'image/png', sizes: '48x48', href: '/images/favicons/android-icon-48x48.png' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicons/favicon-32x32.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicons/favicon-16x16.png' },
 

@@ -2,8 +2,8 @@
 
 export const signatureMonths = [
   {
-    id: "october-2026",
-    monthName: "October 2026",
+    id: "default",
+    monthName: "Still Cooking",
     subtitle: "THIS MONTH'S SIGNATURES",
     isCurrentMonth: true, // <-- Move this flag to the new month when November hits
     veg: {
